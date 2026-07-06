@@ -1,18 +1,23 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using ShopSphere.Application.Interfaces;
+using System.Security.Claims;
 
-namespace ShopSphere.Infrastructure.Authentication;
-
-public sealed class CurrentUserService(
-    IHttpContextAccessor httpContextAccessor)
-    : ICurrentUserService
+public sealed class CurrentUserService : ICurrentUserService
 {
+    private readonly IHttpContextAccessor _httpContextAccessor;
+
+    public CurrentUserService(IHttpContextAccessor httpContextAccessor)
+    {
+        _httpContextAccessor = httpContextAccessor;
+    }
+
     public string? UserId =>
-        httpContextAccessor.HttpContext?
-            .User?
+        _httpContextAccessor.HttpContext?
+            .User
             .FindFirstValue(ClaimTypes.NameIdentifier);
 
-    public bool IsAuthenticated =>
-        httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated ?? false;
+    public string? Email =>
+        _httpContextAccessor.HttpContext?
+            .User
+            .FindFirstValue(ClaimTypes.Email);
 }

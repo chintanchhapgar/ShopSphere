@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using ShopSphere.Application.Features.Authentication.Me;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Authentication;
 using ShopSphere.Domain.Constants;
@@ -75,6 +76,23 @@ public sealed class IdentityService : IIdentityService
         return await _tokenProvider.CreateAsync(
             user.Id,
             user.Email!,
+            roles);
+    }
+
+    public async Task<CurrentUserResponse?> GetCurrentUserAsync(string userId)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+
+        if (user is null)
+            return null;
+
+        var roles = await _userManager.GetRolesAsync(user);
+
+        return new CurrentUserResponse(
+            user.Id,
+            user.Email!,
+            user.FirstName,
+            user.LastName,
             roles);
     }
 }

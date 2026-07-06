@@ -1,4 +1,5 @@
-﻿using ShopSphere.Contracts.Authentication;
+﻿using ShopSphere.Application.Features.Authentication.Me;
+using ShopSphere.Contracts.Authentication;
 
 namespace ShopSphere.Application.Interfaces;
 
@@ -13,4 +14,6 @@ public interface IIdentityService
     Task<TokenResponse?> LoginAsync(
         string email,
         string password);
+
+    Task<CurrentUserResponse?> GetCurrentUserAsync(string userId);
 }

@@ -1,6 +1,50 @@
 [
   {
     "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_1",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Authentication.Login.LoginCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_2",
+    "RelativePath": "api/auth/me",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_0",
     "RelativePath": "api/auth/register",
     "HttpMethod": "POST",

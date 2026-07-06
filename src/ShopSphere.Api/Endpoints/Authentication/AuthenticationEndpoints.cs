@@ -1,6 +1,9 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
+using ShopSphere.Application.Features.Authentication.Login;
+using ShopSphere.Application.Features.Authentication.Me;
 using ShopSphere.Application.Features.Authentication.Register;
 
 namespace ShopSphere.Api.Endpoints.Authentication;
@@ -26,6 +29,33 @@ public static class AuthenticationEndpoints
                 }
 
                 return Results.Ok(result);
+            });
+
+        group.MapPost("/login",
+            async (
+                LoginCommand command,
+                ISender sender) =>
+            {
+                var token = await sender.Send(command);
+
+                if (token is null)
+                {
+                    return Results.Unauthorized();
+                }
+
+                return Results.Ok(token);
+            });
+
+        group.MapGet("/me",
+            [Authorize] async (
+                ISender sender) =>
+            {
+                var user = await sender.Send(
+                    new GetCurrentUserQuery());
+
+                return user is null
+                    ? Results.NotFound()
+                    : Results.Ok(user);
             });
 
         return app;
