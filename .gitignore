@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+.vscode/
+
+# Build
+bin/
+obj/
+
+# Rider
+.idea/
+
+# User files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Publish
+publish/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
