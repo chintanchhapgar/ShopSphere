@@ -1,3 +1,8 @@
 {
-  "ShopSphere.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api"
+  "ShopSphere.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api",
+  "ShopSphere.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application",
+  "ShopSphere.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts",
+  "ShopSphere.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain",
+  "ShopSphere.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure",
+  "ShopSphere.SharedKernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Projects\\ShopSphere\\src\\ShopSphere.SharedKernel"
 }
