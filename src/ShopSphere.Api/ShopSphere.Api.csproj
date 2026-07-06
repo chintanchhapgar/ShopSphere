@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Configurations\" />
-    <Folder Include="Endpoints\" />
     <Folder Include="Extensions\" />
     <Folder Include="Middlewares\" />
   </ItemGroup>

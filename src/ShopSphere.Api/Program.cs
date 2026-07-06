@@ -1,5 +1,8 @@
 using ShopSphere.Application;
 using ShopSphere.Infrastructure;
+using Microsoft.AspNetCore.Identity;
+using ShopSphere.Infrastructure.Identity;
+using ShopSphere.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,5 +28,15 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.MapRegisterEndpoint();
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider
+        .GetRequiredService<RoleManager<ApplicationRole>>();
+
+    await RoleSeeder.SeedAsync(roleManager);
+}
 
 app.Run();

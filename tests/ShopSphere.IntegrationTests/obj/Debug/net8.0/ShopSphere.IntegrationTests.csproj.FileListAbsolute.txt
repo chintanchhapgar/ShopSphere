@@ -509,3 +509,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\ShopSp
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\ShopSphere.Domain.pdb
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\ShopSphere.Infrastructure.pdb
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\ShopSphere.SharedKernel.pdb
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\FluentValidation.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
