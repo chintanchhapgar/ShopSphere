@@ -9,3 +9,4 @@ D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.
 D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\refint\ShopSphere.Domain.dll
 D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.pdb
 D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ref\ShopSphere.Domain.dll
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.sourcelink.json

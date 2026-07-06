@@ -31,3 +31,4 @@ D:\Projects\ShopSphere\src\ShopSphere.Api\obj\Debug\net8.0\refint\ShopSphere.Api
 D:\Projects\ShopSphere\src\ShopSphere.Api\obj\Debug\net8.0\ShopSphere.Api.pdb
 D:\Projects\ShopSphere\src\ShopSphere.Api\obj\Debug\net8.0\ShopSphere.Api.genruntimeconfig.cache
 D:\Projects\ShopSphere\src\ShopSphere.Api\obj\Debug\net8.0\ref\ShopSphere.Api.dll
+D:\Projects\ShopSphere\src\ShopSphere.Api\obj\Debug\net8.0\ShopSphere.Api.sourcelink.json

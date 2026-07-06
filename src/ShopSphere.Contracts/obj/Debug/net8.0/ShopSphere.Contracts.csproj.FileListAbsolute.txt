@@ -9,3 +9,4 @@ D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Cont
 D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\refint\ShopSphere.Contracts.dll
 D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.pdb
 D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ref\ShopSphere.Contracts.dll
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.sourcelink.json

@@ -9,3 +9,12 @@ D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Ap
 D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\refint\ShopSphere.Application.dll
 D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.pdb
 D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ref\ShopSphere.Application.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Contracts.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Domain.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.SharedKernel.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Domain.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.SharedKernel.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Contracts.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.csproj.AssemblyReference.cache
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.sourcelink.json
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphe.CB9458DB.Up2Date

@@ -9,3 +9,16 @@ D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere
 D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\refint\ShopSphere.Infrastructure.dll
 D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.pdb
 D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ref\ShopSphere.Infrastructure.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Application.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Contracts.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Domain.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.SharedKernel.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Application.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Domain.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.SharedKernel.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Contracts.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.csproj.AssemblyReference.cache
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.sourcelink.json
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphe.561084DD.Up2Date
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Infrastructure.runtimeconfig.json
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.genruntimeconfig.cache
