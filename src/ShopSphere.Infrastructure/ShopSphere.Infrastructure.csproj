@@ -37,7 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Authentication\" />
     <Folder Include="Caching\" />
     <Folder Include="Configurations\" />
     <Folder Include="Identity\Seed\" />

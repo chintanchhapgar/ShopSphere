@@ -2667,6 +2667,7 @@
       "xunit.runner.visualstudio/2.5.3": {},
       "ShopSphere.Api/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.16",
           "Microsoft.AspNetCore.OpenApi": "8.0.28",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.16",
           "ShopSphere.Application": "1.0.0",
