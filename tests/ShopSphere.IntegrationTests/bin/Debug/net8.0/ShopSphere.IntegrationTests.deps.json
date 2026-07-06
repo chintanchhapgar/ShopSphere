@@ -2668,6 +2668,7 @@
       "ShopSphere.Api/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "8.0.28",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.16",
           "ShopSphere.Application": "1.0.0",
           "ShopSphere.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2"
