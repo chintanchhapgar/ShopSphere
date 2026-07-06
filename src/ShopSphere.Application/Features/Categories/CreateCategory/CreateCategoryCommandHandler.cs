@@ -1,17 +1,18 @@
 ﻿using MediatR;
-using ShopSphere.Application.Interfaces;
 using ShopSphere.Domain.Entities;
+using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Application.Features.Categories.CreateCategory;
 
 public sealed class CreateCategoryCommandHandler
     : IRequestHandler<CreateCategoryCommand, Guid>
 {
-    private readonly IApplicationDbContext _dbContext;
+    private readonly ICategoryRepository _repository;
 
-    public CreateCategoryCommandHandler(IApplicationDbContext dbContext)
+    public CreateCategoryCommandHandler(
+        ICategoryRepository repository)
     {
-        _dbContext = dbContext;
+        _repository = repository;
     }
 
     public async Task<Guid> Handle(
@@ -23,9 +24,12 @@ public sealed class CreateCategoryCommandHandler
             request.Description,
             request.ParentCategoryId);
 
-        _dbContext.Categories.Add(category);
+        await _repository.AddAsync(
+            category,
+            cancellationToken);
 
-        await _dbContext.SaveChangesAsync(cancellationToken);
+        await _repository.SaveChangesAsync(
+            cancellationToken);
 
         return category.Id;
     }

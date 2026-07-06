@@ -5,9 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
+using ShopSphere.Infrastructure.Persistence.Repositories;
 using System.Text;
 
 namespace ShopSphere.Infrastructure;
@@ -73,6 +75,7 @@ public static class DependencyInjection
         services.AddScoped<ITokenProvider, JwtTokenProvider>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IApplicationDbContext>(sp =>
     sp.GetRequiredService<ApplicationDbContext>());
 
