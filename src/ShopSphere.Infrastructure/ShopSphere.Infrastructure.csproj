@@ -40,7 +40,6 @@
     <Folder Include="Caching\" />
     <Folder Include="Configurations\" />
     <Folder Include="Identity\Seed\" />
-    <Folder Include="Persistence\Configurations\" />
     <Folder Include="Persistence\Migrations\" />
     <Folder Include="Repositories\" />
     <Folder Include="Services\" />
