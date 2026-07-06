@@ -1,0 +1,11 @@
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\bin\Debug\net8.0\ShopSphere.SharedKernel.deps.json
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\bin\Debug\net8.0\ShopSphere.SharedKernel.dll
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\bin\Debug\net8.0\ShopSphere.SharedKernel.pdb
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ShopSphere.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ShopSphere.SharedKernel.AssemblyInfoInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ShopSphere.SharedKernel.AssemblyInfo.cs
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ShopSphere.SharedKernel.csproj.CoreCompileInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ShopSphere.SharedKernel.dll
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\refint\ShopSphere.SharedKernel.dll
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ShopSphere.SharedKernel.pdb
+D:\Projects\ShopSphere\src\ShopSphere.SharedKernel\obj\Debug\net8.0\ref\ShopSphere.SharedKernel.dll

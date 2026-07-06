@@ -1,0 +1,11 @@
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Infrastructure.deps.json
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Infrastructure.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Infrastructure.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.AssemblyInfoInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.AssemblyInfo.cs
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\refint\ShopSphere.Infrastructure.dll
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ref\ShopSphere.Infrastructure.dll

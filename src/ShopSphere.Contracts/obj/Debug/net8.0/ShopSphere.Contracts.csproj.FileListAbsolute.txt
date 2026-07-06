@@ -1,0 +1,11 @@
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\bin\Debug\net8.0\ShopSphere.Contracts.deps.json
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\bin\Debug\net8.0\ShopSphere.Contracts.dll
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\bin\Debug\net8.0\ShopSphere.Contracts.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.AssemblyInfoInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.AssemblyInfo.cs
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.csproj.CoreCompileInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.dll
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\refint\ShopSphere.Contracts.dll
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ShopSphere.Contracts.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Contracts\obj\Debug\net8.0\ref\ShopSphere.Contracts.dll

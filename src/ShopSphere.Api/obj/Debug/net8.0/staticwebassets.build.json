@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kv6TRkhpy8p2H69aHqTGRrCVutNzvHuhBuIYcCdYY4w=",
+  "Source": "ShopSphere.Api",
+  "BasePath": "_content/ShopSphere.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

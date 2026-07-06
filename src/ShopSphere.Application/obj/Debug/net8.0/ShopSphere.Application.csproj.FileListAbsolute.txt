@@ -1,0 +1,11 @@
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Application.deps.json
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Application.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\bin\Debug\net8.0\ShopSphere.Application.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.AssemblyInfoInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.AssemblyInfo.cs
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.csproj.CoreCompileInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\refint\ShopSphere.Application.dll
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ShopSphere.Application.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Application\obj\Debug\net8.0\ref\ShopSphere.Application.dll

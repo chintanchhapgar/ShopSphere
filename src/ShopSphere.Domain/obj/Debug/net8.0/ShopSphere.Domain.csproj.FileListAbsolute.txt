@@ -1,0 +1,11 @@
+D:\Projects\ShopSphere\src\ShopSphere.Domain\bin\Debug\net8.0\ShopSphere.Domain.deps.json
+D:\Projects\ShopSphere\src\ShopSphere.Domain\bin\Debug\net8.0\ShopSphere.Domain.dll
+D:\Projects\ShopSphere\src\ShopSphere.Domain\bin\Debug\net8.0\ShopSphere.Domain.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.AssemblyInfoInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.AssemblyInfo.cs
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.csproj.CoreCompileInputs.cache
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.dll
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\refint\ShopSphere.Domain.dll
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ShopSphere.Domain.pdb
+D:\Projects\ShopSphere\src\ShopSphere.Domain\obj\Debug\net8.0\ref\ShopSphere.Domain.dll

@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{023C3745-45B4-4750-96D9-73D40A6105C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Api", "src\ShopSphere.Api\ShopSphere.Api.csproj", "{671CAC05-20B4-41B9-A369-7E1FDF522E28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Application", "src\ShopSphere.Application\ShopSphere.Application.csproj", "{DF66BA50-5081-4CB5-AAEF-59A9111136C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Domain", "src\ShopSphere.Domain\ShopSphere.Domain.csproj", "{8A620C99-96B5-48DB-941B-31429F5E0CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Infrastructure", "src\ShopSphere.Infrastructure\ShopSphere.Infrastructure.csproj", "{49FF608B-D46D-4346-AF2F-DCA922178DF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.SharedKernel", "src\ShopSphere.SharedKernel\ShopSphere.SharedKernel.csproj", "{BEDD38D9-C249-4044-A94E-5519152D5F55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Contracts", "src\ShopSphere.Contracts\ShopSphere.Contracts.csproj", "{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{73B643FA-045C-4048-89FD-1E6AE27EFBBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.UnitTests", "tests\ShopSphere.UnitTests\ShopSphere.UnitTests.csproj", "{55BA36E5-74FF-4724-A533-206EC53119F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.IntegrationTests", "tests\ShopSphere.IntegrationTests\ShopSphere.IntegrationTests.csproj", "{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.ArchitectureTests", "tests\ShopSphere.ArchitectureTests\ShopSphere.ArchitectureTests.csproj", "{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{671CAC05-20B4-41B9-A369-7E1FDF522E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{671CAC05-20B4-41B9-A369-7E1FDF522E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{671CAC05-20B4-41B9-A369-7E1FDF522E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{671CAC05-20B4-41B9-A369-7E1FDF522E28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF66BA50-5081-4CB5-AAEF-59A9111136C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF66BA50-5081-4CB5-AAEF-59A9111136C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF66BA50-5081-4CB5-AAEF-59A9111136C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF66BA50-5081-4CB5-AAEF-59A9111136C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A620C99-96B5-48DB-941B-31429F5E0CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A620C99-96B5-48DB-941B-31429F5E0CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A620C99-96B5-48DB-941B-31429F5E0CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A620C99-96B5-48DB-941B-31429F5E0CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FF608B-D46D-4346-AF2F-DCA922178DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FF608B-D46D-4346-AF2F-DCA922178DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FF608B-D46D-4346-AF2F-DCA922178DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FF608B-D46D-4346-AF2F-DCA922178DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEDD38D9-C249-4044-A94E-5519152D5F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEDD38D9-C249-4044-A94E-5519152D5F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEDD38D9-C249-4044-A94E-5519152D5F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEDD38D9-C249-4044-A94E-5519152D5F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55BA36E5-74FF-4724-A533-206EC53119F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55BA36E5-74FF-4724-A533-206EC53119F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55BA36E5-74FF-4724-A533-206EC53119F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55BA36E5-74FF-4724-A533-206EC53119F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{671CAC05-20B4-41B9-A369-7E1FDF522E28} = {023C3745-45B4-4750-96D9-73D40A6105C3}
+		{DF66BA50-5081-4CB5-AAEF-59A9111136C3} = {023C3745-45B4-4750-96D9-73D40A6105C3}
+		{8A620C99-96B5-48DB-941B-31429F5E0CF5} = {023C3745-45B4-4750-96D9-73D40A6105C3}
+		{49FF608B-D46D-4346-AF2F-DCA922178DF5} = {023C3745-45B4-4750-96D9-73D40A6105C3}
+		{BEDD38D9-C249-4044-A94E-5519152D5F55} = {023C3745-45B4-4750-96D9-73D40A6105C3}
+		{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867} = {023C3745-45B4-4750-96D9-73D40A6105C3}
+		{55BA36E5-74FF-4724-A533-206EC53119F6} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
+		{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
+		{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
+	EndGlobalSection
+EndGlobal
