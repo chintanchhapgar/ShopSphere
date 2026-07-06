@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
+using ShopSphere.Api.Endpoints;
 using ShopSphere.Api.Endpoints.Authentication;
 using ShopSphere.Application;
 using ShopSphere.Application.Features.Authentication.Register;
@@ -64,7 +65,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapAuthenticationEndpoints();
+app.MapEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -73,5 +74,12 @@ using (var scope = app.Services.CreateScope())
 
     await RoleSeeder.SeedAsync(roleManager);
 }
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager =
+        scope.ServiceProvider
+             .GetRequiredService<RoleManager<ApplicationRole>>();
 
+    await RoleSeeder.SeedAsync(roleManager);
+}
 app.Run();
