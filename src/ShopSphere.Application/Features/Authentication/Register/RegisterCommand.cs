@@ -1,10 +1,10 @@
 ﻿using MediatR;
 
-namespace ShopSphere.Application.Authentication.Register;
+namespace ShopSphere.Application.Features.Authentication.Register;
 
 public sealed record RegisterCommand(
     string FirstName,
     string LastName,
     string Email,
     string Password)
-    : IRequest<Guid>;
+    : IRequest<RegisterResponse>;

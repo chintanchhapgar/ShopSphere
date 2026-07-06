@@ -1,6 +1,8 @@
-using ShopSphere.Application;
-using ShopSphere.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using ShopSphere.Api.Endpoints.Authentication;
+using ShopSphere.Application;
+using ShopSphere.Application.Features.Authentication.Register;
+using ShopSphere.Infrastructure;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 
@@ -29,7 +31,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
-app.MapRegisterEndpoint();
+app.MapAuthenticationEndpoints();
 
 using (var scope = app.Services.CreateScope())
 {

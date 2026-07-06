@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using ShopSphere.Application.Common.Behaviors;
 using System.Reflection;
 
 namespace ShopSphere.Application;
@@ -11,9 +12,17 @@ public static class DependencyInjection
         this IServiceCollection services)
     {
         services.AddMediatR(cfg =>
-            cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+        {
+            cfg.RegisterServicesFromAssembly(
+                Assembly.GetExecutingAssembly());
+        });
 
-        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+        services.AddValidatorsFromAssembly(
+            Assembly.GetExecutingAssembly());
+
+        services.AddTransient(
+            typeof(IPipelineBehavior<,>),
+            typeof(ValidationBehavior<,>));
 
         return services;
     }

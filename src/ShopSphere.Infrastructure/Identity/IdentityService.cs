@@ -21,11 +21,11 @@ public sealed class IdentityService : IIdentityService
         _tokenProvider = tokenProvider;
     }
 
-    public async Task<(bool Succeeded, IEnumerable<string> Errors)> RegisterAsync(
-        string firstName,
-        string lastName,
-        string email,
-        string password)
+    public async Task<RegisterResult> RegisterAsync(
+      string firstName,
+      string lastName,
+      string email,
+      string password)
     {
         var user = new ApplicationUser
         {
@@ -39,14 +39,18 @@ public sealed class IdentityService : IIdentityService
 
         if (!result.Succeeded)
         {
-            return (
+            return new RegisterResult(
                 false,
-                result.Errors.Select(e => e.Description));
+                result.Errors
+                    .Select(e => e.Description)
+                    .ToList());
         }
 
         await _userManager.AddToRoleAsync(user, Roles.Customer);
 
-        return (true, Enumerable.Empty<string>());
+        return new RegisterResult(
+            true,
+            Array.Empty<string>());
     }
 
     public async Task<TokenResponse?> LoginAsync(

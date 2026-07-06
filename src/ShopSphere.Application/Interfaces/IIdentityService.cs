@@ -4,7 +4,7 @@ namespace ShopSphere.Application.Interfaces;
 
 public interface IIdentityService
 {
-    Task<(bool Succeeded, IEnumerable<string> Errors)> RegisterAsync(
+    Task<RegisterResult> RegisterAsync(
         string firstName,
         string lastName,
         string email,
