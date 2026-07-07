@@ -32,4 +32,26 @@ public sealed class BrandService : IBrandService
 
         return Result<Brand>.Success(brand);
     }
+
+    public async Task<Result> EnsureActiveAsync(
+    Guid id,
+    CancellationToken cancellationToken)
+    {
+        var result = await GetRequiredAsync(
+            id,
+            cancellationToken);
+
+        if (!result.IsSuccess)
+        {
+            return Result.Failure(result.Error!);
+        }
+
+        if (!result.Value!.IsActive)
+        {
+            return Result.Failure(
+                BrandErrors.Inactive);
+        }
+
+        return Result.Success();
+    }
 }

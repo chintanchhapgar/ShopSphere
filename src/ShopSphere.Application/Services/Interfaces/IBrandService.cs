@@ -8,4 +8,8 @@ public interface IBrandService
     Task<Result<Brand>> GetRequiredAsync(
         Guid id,
         CancellationToken cancellationToken);
+
+    Task<Result> EnsureActiveAsync(
+        Guid id,
+        CancellationToken cancellationToken);
 }

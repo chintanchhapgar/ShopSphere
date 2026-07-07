@@ -59,4 +59,26 @@ public sealed class CategoryService : ICategoryService
 
         return Result.Success();
     }
+
+    public async Task<Result> EnsureActiveAsync(
+    Guid id,
+    CancellationToken cancellationToken)
+    {
+        var result = await GetRequiredAsync(
+            id,
+            cancellationToken);
+
+        if (!result.IsSuccess)
+        {
+            return Result.Failure(result.Error!);
+        }
+
+        if (!result.Value!.IsActive)
+        {
+            return Result.Failure(
+                CategoryErrors.Inactive);
+        }
+
+        return Result.Success();
+    }
 }

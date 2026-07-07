@@ -19,4 +19,5 @@ public static class BrandErrors
         new(
             "BRAND_INACTIVE",
             "Brand is inactive.");
+
 }

@@ -28,4 +28,9 @@ public static class CategoryErrors
     new(
         "CATEGORY_HAS_CHILDREN",
         "Category cannot be deleted because it has child categories.");
+
+    public static readonly Error Inactive =
+    new(
+        "CATEGORY_INACTIVE",
+        "Category is inactive.");
 }
