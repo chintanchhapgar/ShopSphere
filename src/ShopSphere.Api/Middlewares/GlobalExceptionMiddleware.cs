@@ -70,7 +70,8 @@ public sealed class GlobalExceptionMiddleware
         context.Response.StatusCode = StatusCodes.Status400BadRequest;
         context.Response.ContentType = "application/json";
 
-        var field = GetJsonField((ex.InnerException as JsonException)?.Path);
+        var jsonException = ex.InnerException as JsonException;
+        var field = GetJsonField(jsonException?.Path);
 
         var response = new ApiResponse
         {
@@ -82,7 +83,7 @@ public sealed class GlobalExceptionMiddleware
                     ErrorCodes.InvalidRequest,
                     field is not null
                         ? $"The value provided for '{field}' is invalid."
-                        : "Invalid request payload.",
+                        : "Invalid JSON payload.",
                     field)
             ]
         };
@@ -158,8 +159,21 @@ public sealed class GlobalExceptionMiddleware
             return null;
         }
 
-        return path
-            .Replace("$.", string.Empty)
-            .Replace("$", string.Empty);
+        path = path.Trim();
+
+        // Invalid JSON syntax (extra comma, missing brace, etc.)
+        if (path == "$")
+        {
+            return null;
+        }
+
+        if (path.StartsWith("$."))
+        {
+            path = path[2..];
+        }
+
+        return string.IsNullOrWhiteSpace(path)
+            ? null
+            : path;
     }
 }
