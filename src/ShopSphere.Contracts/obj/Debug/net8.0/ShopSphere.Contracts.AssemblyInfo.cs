@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.Contracts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d178080bc3baa3fdc1d86cd1cb75586c803f7f48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f44c419c9379d7e27deafe5c2d93ae389079225")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

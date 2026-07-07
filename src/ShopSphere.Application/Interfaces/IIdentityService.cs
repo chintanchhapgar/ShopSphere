@@ -15,5 +15,6 @@ public interface IIdentityService
         string email,
         string password);
 
-    Task<CurrentUserResponse?> GetCurrentUserAsync(string userId);
+    Task<CurrentUserResponse?> GetCurrentUserAsync(
+        string userId);
 }

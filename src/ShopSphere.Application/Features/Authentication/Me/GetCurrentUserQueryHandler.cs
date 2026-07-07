@@ -1,9 +1,12 @@
 ﻿using MediatR;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Contracts.Common;
+using ShopSphere.Contracts.Common.Errors;
+
 namespace ShopSphere.Application.Features.Authentication.Me;
 
 public sealed class GetCurrentUserQueryHandler
-    : IRequestHandler<GetCurrentUserQuery, CurrentUserResponse?>
+    : IRequestHandler<GetCurrentUserQuery, Result<CurrentUserResponse>>
 {
     private readonly ICurrentUserService _currentUser;
     private readonly IIdentityService _identity;
@@ -16,14 +19,27 @@ public sealed class GetCurrentUserQueryHandler
         _identity = identity;
     }
 
-    public async Task<CurrentUserResponse?> Handle(
+    public async Task<Result<CurrentUserResponse>> Handle(
         GetCurrentUserQuery request,
         CancellationToken cancellationToken)
     {
         if (_currentUser.UserId is null)
-            return null;
+        {
+            return Result<CurrentUserResponse>.Failure(
+                AuthenticationErrors.Unauthorized);
+        }
 
-        return await _identity.GetCurrentUserAsync(
+        var user = await _identity.GetCurrentUserAsync(
             _currentUser.UserId);
+
+        if (user is null)
+        {
+            return Result<CurrentUserResponse>.Failure(
+                UserErrors.NotFound);
+        }
+
+        return Result<CurrentUserResponse>.Success(
+            user,
+            "User retrieved successfully.");
     }
 }

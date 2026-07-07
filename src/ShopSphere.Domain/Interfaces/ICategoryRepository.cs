@@ -2,21 +2,14 @@
 
 namespace ShopSphere.Domain.Interfaces;
 
-public interface ICategoryRepository
+public interface ICategoryRepository : IRepository<Category>
 {
-    Task AddAsync(
-        Category category,
+    Task<bool> ExistsByNameAsync(
+        string name,
+        Guid? excludeId,
         CancellationToken cancellationToken);
 
-    Task<Category?> GetByIdAsync(
+    Task<bool> HasChildrenAsync(
         Guid id,
         CancellationToken cancellationToken);
-
-    Task<List<Category>> GetAllAsync(
-        CancellationToken cancellationToken);
-
-    Task SaveChangesAsync(
-        CancellationToken cancellationToken);
-
-    void Remove(Category category);
 }

@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Authentication;
 using ShopSphere.Contracts.Common;
+using ShopSphere.Contracts.Common.Errors;
 
 namespace ShopSphere.Application.Features.Authentication.Login;
 

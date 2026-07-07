@@ -1,8 +1,9 @@
-﻿namespace ShopSphere.Domain.Entities;
+﻿using ShopSphere.Domain.Common;
 
-public sealed class Category
+namespace ShopSphere.Domain.Entities;
+
+public sealed class Category : AuditableEntity
 {
-    public Guid Id { get; private set; }
 
     public string Name { get; private set; } = string.Empty;
 
@@ -31,10 +32,14 @@ public sealed class Category
     }
 
     public void Update(
-        string name,
-        string? description)
+    string name,
+    string? description,
+    Guid? parentCategoryId)
     {
         Name = name;
         Description = description;
+        ParentCategoryId = parentCategoryId;
     }
+
+    
 }

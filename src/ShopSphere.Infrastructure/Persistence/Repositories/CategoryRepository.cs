@@ -5,50 +5,40 @@ using ShopSphere.Domain.Interfaces;
 namespace ShopSphere.Infrastructure.Persistence.Repositories;
 
 public sealed class CategoryRepository
-    : ICategoryRepository
+    : Repository<Category>, ICategoryRepository
 {
-    private readonly ApplicationDbContext _context;
-
-    public CategoryRepository(ApplicationDbContext context)
+    public CategoryRepository(
+        ApplicationDbContext context)
+        : base(context)
     {
-        _context = context;
     }
 
-    public async Task AddAsync(
-        Category category,
+    public override async Task<IReadOnlyList<Category>> GetAllAsync(
         CancellationToken cancellationToken)
     {
-        await _context.Categories.AddAsync(
-            category,
-            cancellationToken);
-    }
-
-    public async Task<Category?> GetByIdAsync(
-        Guid id,
-        CancellationToken cancellationToken)
-    {
-        return await _context.Categories
-            .FirstOrDefaultAsync(
-                x => x.Id == id,
-                cancellationToken);
-    }
-
-    public async Task<List<Category>> GetAllAsync(
-        CancellationToken cancellationToken)
-    {
-        return await _context.Categories
+        return await Entities
+            .AsNoTracking()
             .OrderBy(x => x.Name)
             .ToListAsync(cancellationToken);
     }
 
-    public void Remove(Category category)
-    {
-        _context.Categories.Remove(category);
-    }
-
-    public async Task SaveChangesAsync(
+    public async Task<bool> ExistsByNameAsync(
+        string name,
+        Guid? excludeId,
         CancellationToken cancellationToken)
     {
-        await _context.SaveChangesAsync(cancellationToken);
+        return await Entities.AnyAsync(
+            x => x.Name == name &&
+                 x.Id != excludeId,
+            cancellationToken);
+    }
+
+    public async Task<bool> HasChildrenAsync(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        return await Entities.AnyAsync(
+            x => x.ParentCategoryId == id,
+            cancellationToken);
     }
 }

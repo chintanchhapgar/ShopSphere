@@ -70,7 +70,7 @@
   },
   {
     "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
-    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_0",
+    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_1",
     "RelativePath": "api/categories/",
     "HttpMethod": "POST",
     "IsController": false,
@@ -79,6 +79,135 @@
       {
         "Name": "command",
         "Type": "ShopSphere.Application.Features.Categories.CreateCategory.CreateCategoryCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Categories"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_3",
+    "RelativePath": "api/categories/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Categories"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_2",
+    "RelativePath": "api/categories/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Categories"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_4",
+    "RelativePath": "api/categories/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Application.Features.Categories.UpdateCategory.UpdateCategoryCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Categories"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_5",
+    "RelativePath": "api/categories/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Categories"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCategoryEndpoints\u003Eb__0_6",
+    "RelativePath": "api/categories/{id:guid}/status",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Contracts.Categories.ChangeCategoryStatusRequest",
         "IsRequired": true
       }
     ],

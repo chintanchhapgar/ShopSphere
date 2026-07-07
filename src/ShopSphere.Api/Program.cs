@@ -1,22 +1,22 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using ShopSphere.Api.Endpoints;
-using ShopSphere.Api.Endpoints.Authentication;
+using ShopSphere.Api.Extensions;
+using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
-using ShopSphere.Application.Features.Authentication.Register;
 using ShopSphere.Infrastructure;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register application services
 builder.Services
     .AddApplication()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure(builder.Configuration)
+    .AddJwtAuthentication(builder.Configuration);
 
-// Swagger
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -58,12 +58,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapEndpoints();
@@ -75,12 +75,5 @@ using (var scope = app.Services.CreateScope())
 
     await RoleSeeder.SeedAsync(roleManager);
 }
-using (var scope = app.Services.CreateScope())
-{
-    var roleManager =
-        scope.ServiceProvider
-             .GetRequiredService<RoleManager<ApplicationRole>>();
 
-    await RoleSeeder.SeedAsync(roleManager);
-}
 app.Run();

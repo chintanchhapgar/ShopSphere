@@ -33,8 +33,10 @@ public sealed class ValidationBehavior<TRequest, TResponse>
             .Where(f => f != null)
             .ToList();
 
-        if (failures.Count != 0)
+        if (failures.Any())
+        {
             throw new ValidationException(failures);
+        }
 
         return await next();
     }

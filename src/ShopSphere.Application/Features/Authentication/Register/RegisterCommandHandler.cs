@@ -1,37 +1,37 @@
 ﻿using MediatR;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Contracts.Common;
+using ShopSphere.Contracts.Common.Errors;
 
 namespace ShopSphere.Application.Features.Authentication.Register;
 
 public sealed class RegisterCommandHandler
-    : IRequestHandler<RegisterCommand, RegisterResponse>
+    : IRequestHandler<RegisterCommand, Result>
 {
     private readonly IIdentityService _identityService;
 
-    public RegisterCommandHandler(IIdentityService identityService)
+    public RegisterCommandHandler(
+        IIdentityService identityService)
     {
         _identityService = identityService;
     }
 
-    public async Task<RegisterResponse> Handle(
-        RegisterCommand request,
-        CancellationToken cancellationToken)
+    public async Task<Result> Handle(
+    RegisterCommand request,
+    CancellationToken cancellationToken)
     {
-        var result = await _identityService.RegisterAsync(
+        var response = await _identityService.RegisterAsync(
             request.FirstName,
             request.LastName,
             request.Email,
             request.Password);
 
-        if (!result.Succeeded)
+        if (!response.Succeeded)
         {
-            return new RegisterResponse(
-                false,
-                string.Join(", ", result.Errors));
+            // We'll improve this later to return actual Identity errors.
+            return Result.Failure(AuthenticationErrors.RegistrationFailed);
         }
 
-        return new RegisterResponse(
-            true,
-            "User registered successfully.");
+        return Result.Success("Registration completed successfully.");
     }
 }

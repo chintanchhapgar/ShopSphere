@@ -1,0 +1,41 @@
+﻿using MediatR;
+using ShopSphere.Contracts.Common;
+using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Interfaces;
+
+namespace ShopSphere.Application.Features.Categories.ChangeCategoryStatus;
+
+public sealed class ChangeCategoryStatusCommandHandler
+    : IRequestHandler<ChangeCategoryStatusCommand, Result>
+{
+    private readonly ICategoryRepository _repository;
+
+    public ChangeCategoryStatusCommandHandler(
+        ICategoryRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<Result> Handle(
+        ChangeCategoryStatusCommand request,
+        CancellationToken cancellationToken)
+    {
+        var category = await _repository.GetByIdAsync(
+            request.Id,
+            cancellationToken);
+
+        if (category is null)
+        {
+            return Result.Failure(CategoryErrors.NotFound);
+        }
+
+        category.SetStatus(request.IsActive);
+
+        await _repository.SaveChangesAsync(cancellationToken);
+
+        return Result.Success(
+            request.IsActive
+                ? "Category activated successfully."
+                : "Category deactivated successfully.");
+    }
+}

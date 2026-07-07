@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,7 @@ using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
+using ShopSphere.Infrastructure.Persistence.Interceptors;
 using ShopSphere.Infrastructure.Persistence.Repositories;
 using System.Text;
 
@@ -49,28 +51,8 @@ public static class DependencyInjection
             .GetSection(JwtOptions.SectionName)
             .Get<JwtOptions>()!;
 
-        services
-            .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-
-                    ValidIssuer = jwtOptions.Issuer,
-                    ValidAudience = jwtOptions.Audience,
-
-                    IssuerSigningKey = new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(jwtOptions.SecretKey)),
-
-                    ClockSkew = TimeSpan.Zero
-                };
-            });
-
-        services.AddAuthorization();
+        services.Configure<JwtOptions>(
+            configuration.GetSection(JwtOptions.SectionName));
 
         services.AddScoped<ITokenProvider, JwtTokenProvider>();
         services.AddScoped<IIdentityService, IdentityService>();
@@ -78,6 +60,8 @@ public static class DependencyInjection
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IApplicationDbContext>(sp =>
     sp.GetRequiredService<ApplicationDbContext>());
+
+        services.AddScoped<AuditableEntityInterceptor>();
 
         return services;
     }

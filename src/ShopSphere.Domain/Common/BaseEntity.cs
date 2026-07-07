@@ -1,10 +1,9 @@
-﻿namespace ShopSphere.Domain.Common;
-
-public abstract class BaseEntity
+﻿public abstract class Entity
 {
-    public Guid Id { get; protected set; } = Guid.NewGuid();
+    public Guid Id { get; protected init; }
 
-    public DateTime CreatedOnUtc { get; set; }
-
-    public DateTime? ModifiedOnUtc { get; set; }
+    protected Entity()
+    {
+        Id = Guid.NewGuid();
+    }
 }

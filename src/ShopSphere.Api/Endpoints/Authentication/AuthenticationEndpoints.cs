@@ -24,12 +24,7 @@ public static class AuthenticationEndpoints
             {
                 var result = await sender.Send(command);
 
-                if (!result.Success)
-                {
-                    return Results.BadRequest(result);
-                }
-
-                return Results.Ok(result);
+                return result.ToHttpResult();
             });
 
         group.MapPost("/login",
@@ -43,15 +38,12 @@ public static class AuthenticationEndpoints
             });
 
         group.MapGet("/me",
-            [Authorize] async (
-                ISender sender) =>
+            [Authorize]
+                async (ISender sender) =>
             {
-                var user = await sender.Send(
-                    new GetCurrentUserQuery());
+                var result = await sender.Send(new GetCurrentUserQuery());
 
-                return user is null
-                    ? Results.NotFound()
-                    : Results.Ok(user);
+                return result.ToHttpResult();
             });
 
         return app;
