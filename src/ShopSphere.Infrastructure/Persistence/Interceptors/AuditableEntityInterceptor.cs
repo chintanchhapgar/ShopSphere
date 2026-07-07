@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using ShopSphere.Application.Interfaces;
-using ShopSphere.Domain.Common;
+using ShopSphere.Domain.Entities;
 
 namespace ShopSphere.Infrastructure.Persistence.Interceptors;
 
@@ -46,8 +46,7 @@ public sealed class AuditableEntityInterceptor
         var utcNow = DateTime.UtcNow;
         var userId = _currentUser.UserId ?? "System";
 
-        foreach (var entry in context.ChangeTracker
-                     .Entries<AuditableEntity>())
+        foreach (var entry in context.ChangeTracker.Entries<AuditableEntity>())
         {
             switch (entry.State)
             {
@@ -64,11 +63,16 @@ public sealed class AuditableEntityInterceptor
                     break;
 
                 case EntityState.Deleted:
+
+                    // Convert physical delete into soft delete
                     entry.State = EntityState.Modified;
 
-                    entry.Entity.SoftDelete(
+                    entry.Entity.Delete();
+
+                    entry.Entity.SetUpdated(
                         utcNow,
                         userId);
+
                     break;
             }
         }

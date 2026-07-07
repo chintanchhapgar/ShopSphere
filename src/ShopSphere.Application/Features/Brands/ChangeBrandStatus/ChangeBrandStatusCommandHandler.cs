@@ -30,7 +30,14 @@ public sealed class ChangeBrandStatusCommandHandler
                 BrandErrors.NotFound);
         }
 
-        brand.SetStatus(request.IsActive);
+        if (request.IsActive)
+        {
+            brand.Activate();
+        }
+        else
+        {
+            brand.Deactivate();
+        }
 
         await _repository.SaveChangesAsync(cancellationToken);
 

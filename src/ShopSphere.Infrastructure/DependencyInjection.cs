@@ -6,12 +6,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Persistence.Interceptors;
 using ShopSphere.Infrastructure.Persistence.Repositories;
+using ShopSphere.Infrastructure.Services;
 using System.Text;
 
 namespace ShopSphere.Infrastructure;
@@ -59,6 +61,8 @@ public static class DependencyInjection
         services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<IBrandService, BrandService>();
 
         services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 

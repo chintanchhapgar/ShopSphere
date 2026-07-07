@@ -29,7 +29,14 @@ public sealed class ChangeCategoryStatusCommandHandler
             return Result.Failure(CategoryErrors.NotFound);
         }
 
-        category.SetStatus(request.IsActive);
+        if (request.IsActive)
+        {
+            category.Activate();
+        }
+        else
+        {
+            category.Deactivate();
+        }
 
         await _repository.SaveChangesAsync(cancellationToken);
 

@@ -1,5 +1,4 @@
-﻿using ShopSphere.Domain.Common;
-
+﻿
 namespace ShopSphere.Domain.Interfaces;
 
 public interface IRepository<TEntity>

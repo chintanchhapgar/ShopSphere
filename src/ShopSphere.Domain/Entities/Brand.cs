@@ -1,6 +1,4 @@
-﻿using ShopSphere.Domain.Common;
-
-namespace ShopSphere.Domain.Entities;
+﻿namespace ShopSphere.Domain.Entities;
 
 public sealed class Brand : AuditableEntity
 {

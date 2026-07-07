@@ -1,8 +1,4 @@
-﻿using System;
-
-namespace ShopSphere.Domain.Common;
-
-public abstract class AuditableEntity : Entity
+﻿public abstract class AuditableEntity : Entity
 {
     public DateTime CreatedAtUtc { get; private set; }
 
@@ -12,7 +8,7 @@ public abstract class AuditableEntity : Entity
 
     public string? UpdatedBy { get; private set; }
 
-    public bool IsActive { get; private set; } = true;
+    public bool IsActive { get; protected set; } = true;
 
     public bool IsDeleted { get; private set; }
 
@@ -22,9 +18,6 @@ public abstract class AuditableEntity : Entity
     {
         CreatedAtUtc = createdAtUtc;
         CreatedBy = createdBy;
-
-        IsActive = true;
-        IsDeleted = false;
     }
 
     public void SetUpdated(
@@ -35,19 +28,19 @@ public abstract class AuditableEntity : Entity
         UpdatedBy = updatedBy;
     }
 
-    public void SoftDelete(
-        DateTime deletedAtUtc,
-        string? deletedBy)
+    public void Activate()
+    {
+        IsActive = true;
+    }
+
+    public void Deactivate()
+    {
+        IsActive = false;
+    }
+
+    public void Delete()
     {
         IsDeleted = true;
         IsActive = false;
-
-        UpdatedAtUtc = deletedAtUtc;
-        UpdatedBy = deletedBy;
-    }
-
-    public void SetStatus(bool isActive)
-    {
-        IsActive = isActive;
     }
 }

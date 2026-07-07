@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Interfaces;
 
@@ -9,25 +10,29 @@ public sealed class UpdateBrandCommandHandler
 {
     private readonly IBrandRepository _repository;
 
+    private readonly IBrandService _brandService;
+
     public UpdateBrandCommandHandler(
-        IBrandRepository repository)
+        IBrandRepository repository, IBrandService brandService)
     {
         _repository = repository;
+        _brandService = brandService;
     }
 
     public async Task<Result> Handle(
         UpdateBrandCommand request,
         CancellationToken cancellationToken)
     {
-        var brand = await _repository.GetByIdAsync(
+        var brandResult = await _brandService.GetRequiredAsync(
             request.Id,
             cancellationToken);
 
-        if (brand is null)
+        if (!brandResult.IsSuccess)
         {
-            return Result.Failure(
-                BrandErrors.NotFound);
+            return Result.Failure(brandResult.Error!);
         }
+
+        var brand = brandResult.Value!;
 
         var exists = await _repository.ExistsByNameAsync(
             request.Name,

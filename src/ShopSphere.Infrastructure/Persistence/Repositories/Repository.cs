@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopSphere.Domain.Common;
 using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Infrastructure.Persistence.Repositories;

@@ -1,7 +1,5 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-using ShopSphere.Domain.Common;
-
 namespace ShopSphere.Infrastructure.Persistence.Extensions;
 
 public static class ModelBuilderExtensions

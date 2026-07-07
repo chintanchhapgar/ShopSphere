@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
 using ShopSphere.Domain.Interfaces;
@@ -9,42 +10,35 @@ public sealed class DeleteCategoryCommandHandler
     : IRequestHandler<DeleteCategoryCommand, Result>
 {
     private readonly ICategoryRepository _repository;
-
+    private readonly ICategoryService _categoryService;
     public DeleteCategoryCommandHandler(
-        ICategoryRepository repository)
+        ICategoryRepository repository, ICategoryService categoryService)
     {
         _repository = repository;
+        _categoryService = categoryService;
     }
 
     public async Task<Result> Handle(
         DeleteCategoryCommand request,
         CancellationToken cancellationToken)
     {
-        var category = await _repository.GetByIdAsync(
-            request.Id,
-            cancellationToken);
+        var validation = await _categoryService.EnsureCanDeleteAsync(
+        request.Id,
+        cancellationToken);
 
-        if (category is null)
-        {
-            return Result.Failure(
-                CategoryErrors.NotFound);
-        }
+            if (!validation.IsSuccess)
+            {
+                return validation;
+            }
 
-        var hasChildren = await _repository.HasChildrenAsync(
-            request.Id,
-            cancellationToken);
+            var category = (await _categoryService.GetRequiredAsync(
+                request.Id,
+                cancellationToken)).Value!;
 
-        if (hasChildren)
-        {
-            return Result.Failure(
-                CategoryErrors.HasChildCategories);
-        }
+            category.Delete();
 
-        _repository.Remove(category);
+            await _repository.SaveChangesAsync(cancellationToken);
 
-        await _repository.SaveChangesAsync(cancellationToken);
-
-        return Result.Success(
-            "Category deleted successfully.");
+            return Result.Success("Category deleted successfully.");
     }
 }

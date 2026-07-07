@@ -1,4 +1,4 @@
-﻿using ShopSphere.Domain.Common;
+﻿
 
 namespace ShopSphere.Domain.Entities;
 
