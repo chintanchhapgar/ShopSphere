@@ -9,45 +9,89 @@ public static class HttpResultExtensions
     {
         if (result.IsSuccess)
         {
-            return Results.Ok();
+            return Results.Ok(new ApiResponse
+            {
+                Success = true,
+                Message = result.Message!
+            });
         }
 
-        return result.Error!.Code switch
-        {
-            "Validation" => Results.BadRequest(result.Error),
-
-            "Unauthorized" => Results.Unauthorized(),
-
-            "Forbidden" => Results.Forbid(),
-
-            "NotFound" => Results.NotFound(result.Error),
-
-            "Conflict" => Results.Conflict(result.Error),
-
-            _ => Results.Problem(result.Error.Description)
-        };
+        return MapFailure(result.Error!);
     }
 
     public static IResult ToHttpResult<T>(this Result<T> result)
     {
         if (result.IsSuccess)
         {
-            return Results.Ok(result.Value);
+            return Results.Ok(new ApiResponse<T>
+            {
+                Success = true,
+                Message = result.Message!,
+                Data = result.Value
+            });
         }
 
-        return result.Error!.Code switch
+        return MapFailure(result.Error!);
+    }
+
+    public static IResult ToCreatedHttpResult<T>(
+        this Result<T> result,
+        string location)
+    {
+        if (result.IsFailure)
         {
-            "Validation" => Results.BadRequest(result.Error),
+            return MapFailure(result.Error!);
+        }
 
-            "Unauthorized" => Results.Unauthorized(),
+        return Results.Created(
+            location,
+            new ApiResponse<T>
+            {
+                Success = true,
+                Message = result.Message!,
+                Data = result.Value
+            });
+    }
 
-            "Forbidden" => Results.Forbid(),
+    private static IResult MapFailure(Error error)
+    {
+        var response = new ApiResponse
+        {
+            Success = false,
+            Message = error.Description,
+            Errors =
+            [
+                new ApiError(
+                    error.Code,
+                    error.Description)
+            ]
+        };
 
-            "NotFound" => Results.NotFound(result.Error),
+        return error.Code switch
+        {
+            "VALIDATION_ERROR" =>
+                Results.BadRequest(response),
 
-            "Conflict" => Results.Conflict(result.Error),
+            "AUTH_INVALID_CREDENTIALS" =>
+                Results.Json(
+                    response,
+                    statusCode: StatusCodes.Status401Unauthorized),
 
-            _ => Results.Problem(result.Error.Description)
+            "AUTH_FORBIDDEN" =>
+                Results.Json(
+                    response,
+                    statusCode: StatusCodes.Status403Forbidden),
+
+            "CATEGORY_NOT_FOUND" =>
+                Results.NotFound(response),
+
+            "CATEGORY_ALREADY_EXISTS" =>
+                Results.Conflict(response),
+
+            _ =>
+                Results.Json(
+                    response,
+                    statusCode: StatusCodes.Status500InternalServerError)
         };
     }
 }

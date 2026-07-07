@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Authentication;
+using ShopSphere.Contracts.Common;
 
 namespace ShopSphere.Application.Features.Authentication.Login;
 
 public sealed class LoginCommandHandler
-    : IRequestHandler<LoginCommand, TokenResponse?>
+    : IRequestHandler<LoginCommand, Result<TokenResponse>>
 {
     private readonly IIdentityService _identityService;
 
@@ -14,12 +15,22 @@ public sealed class LoginCommandHandler
         _identityService = identityService;
     }
 
-    public async Task<TokenResponse?> Handle(
-        LoginCommand request,
-        CancellationToken cancellationToken)
+    public async Task<Result<TokenResponse>> Handle(
+     LoginCommand request,
+     CancellationToken cancellationToken)
     {
-        return await _identityService.LoginAsync(
+        var token = await _identityService.LoginAsync(
             request.Email,
             request.Password);
+
+        if (token is null)
+        {
+            return Result<TokenResponse>.Failure(
+                AuthenticationErrors.InvalidCredentials);
+        }
+
+        return Result<TokenResponse>.Success(
+            token,
+            "Login successful.");
     }
 }

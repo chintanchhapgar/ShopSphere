@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
+using ShopSphere.Api.Common.Extensions;
 using ShopSphere.Application.Features.Authentication.Login;
 using ShopSphere.Application.Features.Authentication.Me;
 using ShopSphere.Application.Features.Authentication.Register;
@@ -36,14 +37,9 @@ public static class AuthenticationEndpoints
                 LoginCommand command,
                 ISender sender) =>
             {
-                var token = await sender.Send(command);
+                var result = await sender.Send(command);
 
-                if (token is null)
-                {
-                    return Results.Unauthorized();
-                }
-
-                return Results.Ok(token);
+                return result.ToHttpResult();
             });
 
         group.MapGet("/me",
