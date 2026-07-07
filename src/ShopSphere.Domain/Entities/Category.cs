@@ -16,6 +16,8 @@ public sealed class Category : AuditableEntity
     public ICollection<Category> Children { get; private set; }
         = new List<Category>();
 
+    public ICollection<Product> Products { get; private set; } = [];
+
     private Category()
     {
     }

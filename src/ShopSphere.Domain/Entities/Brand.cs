@@ -8,6 +8,8 @@ public sealed class Brand : AuditableEntity
 
     public string? Description { get; private set; }
 
+    public ICollection<Product> Products { get; private set; } = [];
+
     private Brand()
     {
     }
