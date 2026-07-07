@@ -69,6 +69,31 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Brands.BrandEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBrandEndpoints\u003Eb__0_0",
+    "RelativePath": "api/brands/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Brands.CreateBrand.CreateBrandCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Brands"
+    ]
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapCategoryEndpoints\u003Eb__0_1",
     "RelativePath": "api/categories/",

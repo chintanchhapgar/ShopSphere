@@ -23,6 +23,7 @@ public class ApplicationDbContext
     }
 
     public DbSet<Category> Categories => Set<Category>();
+    public DbSet<Brand> Brands => Set<Brand>();
 
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)

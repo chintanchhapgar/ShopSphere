@@ -58,8 +58,9 @@ public static class DependencyInjection
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
         services.AddScoped<ICategoryRepository, CategoryRepository>();
-        services.AddScoped<IApplicationDbContext>(sp =>
-    sp.GetRequiredService<ApplicationDbContext>());
+        services.AddScoped<IBrandRepository, BrandRepository>();
+
+        services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
         services.AddScoped<AuditableEntityInterceptor>();
 
