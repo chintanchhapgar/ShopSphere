@@ -94,6 +94,135 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Brands.BrandEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBrandEndpoints\u003Eb__0_1",
+    "RelativePath": "api/brands/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Brands"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Brands.BrandEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBrandEndpoints\u003Eb__0_2",
+    "RelativePath": "api/brands/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Brands"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Brands.BrandEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBrandEndpoints\u003Eb__0_3",
+    "RelativePath": "api/brands/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Brands.UpdateBrand.UpdateBrandCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Brands"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Brands.BrandEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBrandEndpoints\u003Eb__0_4",
+    "RelativePath": "api/brands/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Brands"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Brands.BrandEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapBrandEndpoints\u003Eb__0_5",
+    "RelativePath": "api/brands/{id:guid}/status",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Contracts.Categories.ChangeBrandStatusRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Brands"
+    ]
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapCategoryEndpoints\u003Eb__0_1",
     "RelativePath": "api/categories/",
