@@ -37,6 +37,9 @@ public sealed class Product : AuditableEntity
 
     public Inventory? Inventory { get; private set; }
 
+    public ICollection<CartItem> CartItems { get; private set; }
+    = [];
+
     private Product()
     {
     }

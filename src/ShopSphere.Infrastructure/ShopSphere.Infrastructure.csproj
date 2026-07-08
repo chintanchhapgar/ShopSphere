@@ -37,8 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Caching\" />
-    <Folder Include="Configurations\" />
     <Folder Include="Identity\Seed\" />
     <Folder Include="Persistence\Migrations\" />
   </ItemGroup>
