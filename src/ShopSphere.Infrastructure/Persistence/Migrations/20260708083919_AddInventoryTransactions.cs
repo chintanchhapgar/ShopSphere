@@ -12,7 +12,7 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "InventoryTransaction",
+                name: "InventoryTransactions",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -30,9 +30,9 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_InventoryTransaction", x => x.Id);
+                    table.PrimaryKey("PK_InventoryTransactions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_InventoryTransaction_Inventories_InventoryId",
+                        name: "FK_InventoryTransactions_Inventories_InventoryId",
                         column: x => x.InventoryId,
                         principalTable: "Inventories",
                         principalColumn: "Id",
@@ -40,13 +40,13 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_InventoryTransaction_CreatedAtUtc",
-                table: "InventoryTransaction",
+                name: "IX_InventoryTransactions_CreatedAtUtc",
+                table: "InventoryTransactions",
                 column: "CreatedAtUtc");
 
             migrationBuilder.CreateIndex(
-                name: "IX_InventoryTransaction_InventoryId",
-                table: "InventoryTransaction",
+                name: "IX_InventoryTransactions_InventoryId",
+                table: "InventoryTransactions",
                 column: "InventoryId");
         }
 
@@ -54,7 +54,7 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "InventoryTransaction");
+                name: "InventoryTransactions");
         }
     }
 }

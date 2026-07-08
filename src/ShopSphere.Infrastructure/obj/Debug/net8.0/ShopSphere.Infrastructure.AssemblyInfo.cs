@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0518e7ff9cb8a6f5b55ad8e15fb61fdae11909a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1385b82f4ebfd2d6ea1dda5d79c8c2f6d6dc62ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

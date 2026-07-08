@@ -12,7 +12,7 @@ using ShopSphere.Infrastructure.Persistence;
 namespace ShopSphere.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260708081025_AddInventoryTransactions")]
+    [Migration("20260708083919_AddInventoryTransactions")]
     partial class AddInventoryTransactions
     {
         /// <inheritdoc />
@@ -305,7 +305,7 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("InventoryId");
 
-                    b.ToTable("InventoryTransaction");
+                    b.ToTable("InventoryTransactions");
                 });
 
             modelBuilder.Entity("ShopSphere.Domain.Entities.Product", b =>

@@ -27,7 +27,7 @@ public class ApplicationDbContext
     public DbSet<Product> Products => Set<Product>();
     public DbSet<ProductImage> ProductImages => Set<ProductImage>();
     public DbSet<Inventory> Inventories =>  Set<Inventory>();
-
+    public DbSet<InventoryTransaction> InventoryTransactions => Set<InventoryTransaction>();
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)
     {

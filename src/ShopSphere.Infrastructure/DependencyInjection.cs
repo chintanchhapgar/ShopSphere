@@ -62,24 +62,27 @@ public static class DependencyInjection
         services.AddScoped<ITokenProvider, JwtTokenProvider>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
-        services.AddScoped<ICategoryRepository, CategoryRepository>();
-        services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<IFileStorageService, LocalFileStorageService>();
+        services.AddScoped<IFileValidationService, FileValidationService>();
+        services.AddScoped<IFileStorageService, LocalFileStorageService>();
+        services.AddScoped<IFileValidationService, FileValidationService>();
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IBrandService, BrandService>();
+
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<IBrandRepository, BrandRepository>();    
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IInventoryTransactionRepository, InventoryTransactionRepository>();
+        services.AddScoped<IProductImageRepository, ProductImageRepository>();
+        services.AddScoped<IInventoryRepository, InventoryRepository>();
+
         services.AddScoped<ICategoryQueries, CategoryQueries>();
         services.AddScoped<IBrandQueries, BrandQueries>();
         services.AddScoped<IProductQueries, ProductQueries>();
-        services.AddScoped<IProductImageRepository, ProductImageRepository>();
-        services.AddScoped<IInventoryRepository, InventoryRepository>();
         services.AddScoped<IInventoryQueries, InventoryQueries>();
-        services.AddScoped<IInventoryTransactionRepository, InventoryTransactionRepository>();
+        services.AddScoped<IInventoryTransactionQueries, InventoryTransactionQueries>();     
 
         services.Configure<FileStorageOptions>(configuration.GetSection(FileStorageOptions.SectionName));
-
-        services.AddScoped<IFileStorageService, LocalFileStorageService>();
-        services.AddScoped<IFileValidationService, FileValidationService>();
-
         services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
         services.AddScoped<AuditableEntityInterceptor>();

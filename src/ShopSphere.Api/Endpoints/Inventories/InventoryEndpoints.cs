@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Routing;
 using ShopSphere.Api.Extensions;
 using ShopSphere.Application.Features.Inventories.AdjustInventory;
 using ShopSphere.Application.Features.Inventories.GetInventory;
+using ShopSphere.Application.Features.Inventory.GetInventoryHistory;
 
 namespace ShopSphere.Api.Endpoints;
 
@@ -29,6 +30,12 @@ public static class InventoryEndpoints
         group.MapPost(
             "/adjust",
             AdjustInventory);
+
+        group.MapGet(
+                "/history",
+                GetInventoryHistory)
+            .WithName("GetInventoryHistory")
+            .WithSummary("Get inventory transaction history");
 
         return app;
     }
@@ -58,6 +65,18 @@ public static class InventoryEndpoints
 
         var result = await sender.Send(
             command,
+            cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
+
+    private static async Task<IResult> GetInventoryHistory(
+        Guid productId,
+        ISender sender,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(
+            new GetInventoryHistoryQuery(productId),
             cancellationToken);
 
         return result.ToMinimalApiResult();

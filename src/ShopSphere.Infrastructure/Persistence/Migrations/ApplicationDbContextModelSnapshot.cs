@@ -302,7 +302,7 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("InventoryId");
 
-                    b.ToTable("InventoryTransaction");
+                    b.ToTable("InventoryTransactions");
                 });
 
             modelBuilder.Entity("ShopSphere.Domain.Entities.Product", b =>

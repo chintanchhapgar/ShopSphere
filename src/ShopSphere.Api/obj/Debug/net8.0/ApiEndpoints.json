@@ -688,5 +688,99 @@
     "Tags": [
       "Product Images"
     ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.InventoryEndpoints",
+    "Method": "GetInventory",
+    "RelativePath": "api/products/{productId:guid}/inventory/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Inventory"
+    ],
+    "EndpointName": "GetInventory",
+    "Summary": "Get inventory for a product"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.InventoryEndpoints",
+    "Method": "AdjustInventory",
+    "RelativePath": "api/products/{productId:guid}/inventory/adjust",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "AdjustInventoryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Inventory"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.InventoryEndpoints",
+    "Method": "GetInventoryHistory",
+    "RelativePath": "api/products/{productId:guid}/inventory/history",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Inventory"
+    ],
+    "EndpointName": "GetInventoryHistory",
+    "Summary": "Get inventory transaction history"
   }
 ]

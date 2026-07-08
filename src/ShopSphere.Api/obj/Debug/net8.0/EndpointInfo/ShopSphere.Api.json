@@ -341,6 +341,95 @@
         }
       }
     },
+    "/api/products/{productId}/inventory": {
+      "get": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Get inventory for a product",
+        "operationId": "GetInventory",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/api/products/{productId}/inventory/adjust": {
+      "post": {
+        "tags": [
+          "Inventory"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdjustInventoryRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/products/{productId}/inventory/history": {
+      "get": {
+        "tags": [
+          "Inventory"
+        ],
+        "summary": "Get inventory transaction history",
+        "operationId": "GetInventoryHistory",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/products/{productId}/images": {
       "post": {
         "tags": [
@@ -669,6 +758,20 @@
   },
   "components": {
     "schemas": {
+      "AdjustInventoryRequest": {
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ChangeBrandStatusRequest": {
         "type": "object",
         "properties": {
