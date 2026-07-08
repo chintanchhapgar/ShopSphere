@@ -30,6 +30,11 @@ public sealed class Product : AuditableEntity
 
     public bool IsFeatured { get; private set; }
 
+    private readonly List<ProductImage> _images = [];
+
+    public IReadOnlyCollection<ProductImage> Images
+        => _images.AsReadOnly();
+
     private Product()
     {
     }

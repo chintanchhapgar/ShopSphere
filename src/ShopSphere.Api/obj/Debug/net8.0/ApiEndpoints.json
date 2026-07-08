@@ -529,5 +529,42 @@
     "Tags": [
       "Products"
     ]
+  },
+  {
+    "ContainingType": "ProductImageEndpoints",
+    "Method": "UploadImage",
+    "RelativePath": "api/products/{productId:guid}/images/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": true
+      },
+      {
+        "Name": "isPrimary",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Product Images"
+    ],
+    "EndpointName": "UploadProductImage",
+    "Summary": "Upload product image"
   }
 ]

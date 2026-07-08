@@ -41,7 +41,6 @@
     <Folder Include="Configurations\" />
     <Folder Include="Identity\Seed\" />
     <Folder Include="Persistence\Migrations\" />
-    <Folder Include="Storage\" />
   </ItemGroup>
 
   <PropertyGroup>

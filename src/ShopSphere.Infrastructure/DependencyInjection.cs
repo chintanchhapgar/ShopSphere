@@ -16,6 +16,7 @@ using ShopSphere.Infrastructure.Persistence.Interceptors;
 using ShopSphere.Infrastructure.Persistence.Repositories;
 using ShopSphere.Infrastructure.Queries;
 using ShopSphere.Infrastructure.Services;
+using ShopSphere.Infrastructure.Storage;
 using System.Text;
 
 namespace ShopSphere.Infrastructure;
@@ -69,6 +70,12 @@ public static class DependencyInjection
         services.AddScoped<ICategoryQueries, CategoryQueries>();
         services.AddScoped<IBrandQueries, BrandQueries>();
         services.AddScoped<IProductQueries, ProductQueries>();
+        services.AddScoped<IProductImageRepository, ProductImageRepository>();
+
+        services.Configure<FileStorageOptions>(configuration.GetSection(FileStorageOptions.SectionName));
+
+        services.AddScoped<IFileStorageService, LocalFileStorageService>();
+        services.AddScoped<IFileValidationService, FileValidationService>();
 
         services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 

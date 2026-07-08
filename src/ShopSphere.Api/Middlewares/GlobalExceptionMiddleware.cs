@@ -8,13 +8,15 @@ public sealed class GlobalExceptionMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<GlobalExceptionMiddleware> _logger;
-
+    private readonly IHostEnvironment _environment;
     public GlobalExceptionMiddleware(
-        RequestDelegate next,
-        ILogger<GlobalExceptionMiddleware> logger)
+    RequestDelegate next,
+    ILogger<GlobalExceptionMiddleware> logger,
+    IHostEnvironment environment)
     {
         _next = next;
         _logger = logger;
+        _environment = environment;
     }
 
     public async Task InvokeAsync(HttpContext context)
@@ -119,13 +121,17 @@ public sealed class GlobalExceptionMiddleware
     }
 
     private async Task HandleException(
-        HttpContext context,
-        Exception ex)
+    HttpContext context,
+    Exception ex)
     {
         _logger.LogError(ex, ex.Message);
 
         context.Response.StatusCode = StatusCodes.Status500InternalServerError;
         context.Response.ContentType = "application/json";
+
+        var description = _environment.IsDevelopment()
+            ? ex.ToString()
+            : "Please contact support if the problem persists.";
 
         var response = new ApiResponse
         {
@@ -134,8 +140,8 @@ public sealed class GlobalExceptionMiddleware
             Errors =
             [
                 new ApiError(
-                    ErrorCodes.ServerError,
-                    "Please contact support if the problem persists.")
+                ErrorCodes.ServerError,
+                description)
             ]
         };
 

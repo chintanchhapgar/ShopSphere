@@ -67,6 +67,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapEndpoints();
+app.UseStaticFiles();
 
 using (var scope = app.Services.CreateScope())
 {

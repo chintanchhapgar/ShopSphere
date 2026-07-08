@@ -42,5 +42,6 @@ public sealed class ProductConfiguration
             .WithMany(x => x.Products)
             .HasForeignKey(x => x.BrandId)
             .OnDelete(DeleteBehavior.Restrict);
+
     }
 }

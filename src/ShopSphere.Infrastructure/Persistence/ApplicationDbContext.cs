@@ -24,8 +24,8 @@ public class ApplicationDbContext
 
     public DbSet<Category> Categories => Set<Category>();
     public DbSet<Brand> Brands => Set<Brand>();
-
     public DbSet<Product> Products => Set<Product>();
+    public DbSet<ProductImage> ProductImages => Set<ProductImage>();
 
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)

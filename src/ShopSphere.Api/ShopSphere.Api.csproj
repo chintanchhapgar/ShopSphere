@@ -24,6 +24,8 @@
 
   <ItemGroup>
     <Folder Include="Configurations\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>
