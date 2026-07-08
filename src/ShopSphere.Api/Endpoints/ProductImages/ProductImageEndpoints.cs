@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ShopSphere.Api.Extensions;
+using ShopSphere.Application.Features.ProductImages.DeleteProductImage;
 using ShopSphere.Application.Features.ProductImages.GetProductImages;
 using ShopSphere.Application.Features.ProductImages.SetPrimaryProductImage;
 
@@ -24,6 +25,10 @@ public static class ProductImageEndpoints
         group.MapPatch(
             "/{imageId:guid}/primary",
             SetPrimaryImage);
+
+        group.MapDelete(
+            "/{imageId:guid}",
+            DeleteProductImage);
 
         return app;
     }
@@ -50,9 +55,9 @@ public static class ProductImageEndpoints
     }
 
     private static async Task<IResult> GetProductImages(
-    Guid productId,
-    ISender sender,
-    CancellationToken cancellationToken)
+        Guid productId,
+        ISender sender,
+        CancellationToken cancellationToken)
     {
         var result = await sender.Send(
             new GetProductImagesQuery(productId),
@@ -62,10 +67,10 @@ public static class ProductImageEndpoints
     }
 
     private static async Task<IResult> SetPrimaryImage(
-    Guid productId,
-    Guid imageId,
-    ISender sender,
-    CancellationToken cancellationToken)
+        Guid productId,
+        Guid imageId,
+        ISender sender,
+        CancellationToken cancellationToken)
     {
         var command = new SetPrimaryProductImageCommand(
             productId,
@@ -77,4 +82,21 @@ public static class ProductImageEndpoints
 
         return result.ToMinimalApiResult();
     }
+    private static async Task<IResult> DeleteProductImage(
+        Guid productId,
+        Guid imageId,
+        ISender sender,
+        CancellationToken cancellationToken)
+    {
+        var command = new DeleteProductImageCommand(
+            productId,
+            imageId);
+
+        var result = await sender.Send(
+            command,
+            cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
+
 }

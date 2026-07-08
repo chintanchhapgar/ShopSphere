@@ -596,6 +596,36 @@
   },
   {
     "ContainingType": "ProductImageEndpoints",
+    "Method": "DeleteProductImage",
+    "RelativePath": "api/products/{productId:guid}/images/{imageId:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "imageId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Product Images"
+    ]
+  },
+  {
+    "ContainingType": "ProductImageEndpoints",
     "Method": "SetPrimaryImage",
     "RelativePath": "api/products/{productId:guid}/images/{imageId:guid}/primary",
     "HttpMethod": "PATCH",
