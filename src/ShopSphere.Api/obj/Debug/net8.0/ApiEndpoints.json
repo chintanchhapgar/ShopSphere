@@ -566,5 +566,32 @@
     ],
     "EndpointName": "UploadProductImage",
     "Summary": "Upload product image"
+  },
+  {
+    "ContainingType": "ProductImageEndpoints",
+    "Method": "GetProductImages",
+    "RelativePath": "api/products/{productId:guid}/images/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Product Images"
+    ],
+    "EndpointName": "GetProductImages",
+    "Summary": "Get product images"
   }
 ]

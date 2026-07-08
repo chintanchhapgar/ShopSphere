@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ShopSphere.Api.Extensions;
+using ShopSphere.Application.Features.ProductImages.GetProductImages;
 
 public static class ProductImageEndpoints
 {
@@ -14,6 +15,10 @@ public static class ProductImageEndpoints
     .WithName("UploadProductImage")
     .WithSummary("Upload product image")
     .DisableAntiforgery();
+
+        group.MapGet("/", GetProductImages)
+    .WithName("GetProductImages")
+    .WithSummary("Get product images");
 
         return app;
     }
@@ -35,6 +40,18 @@ public static class ProductImageEndpoints
             isPrimary);
 
         var result = await sender.Send(command, cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
+
+    private static async Task<IResult> GetProductImages(
+    Guid productId,
+    ISender sender,
+    CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(
+            new GetProductImagesQuery(productId),
+            cancellationToken);
 
         return result.ToMinimalApiResult();
     }

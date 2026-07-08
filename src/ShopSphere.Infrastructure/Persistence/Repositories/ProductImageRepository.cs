@@ -18,11 +18,13 @@ public sealed class ProductImageRepository
 
     public async Task<IReadOnlyList<ProductImage>> GetByProductIdAsync(
         Guid productId,
-        CancellationToken cancellationToken)
+    CancellationToken cancellationToken)
     {
         return await _context.ProductImages
+            .AsNoTracking()
             .Where(x => x.ProductId == productId)
             .OrderBy(x => x.DisplayOrder)
+            .ThenByDescending(x => x.IsPrimary)
             .ToListAsync(cancellationToken);
     }
 

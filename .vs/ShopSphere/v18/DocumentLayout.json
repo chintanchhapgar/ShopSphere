@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "D:\\Projects\\ShopSphere\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\features\\productimages\\getproductimages\\productimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\features\\productimages\\getproductimages\\productimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\endpoints\\productimages\\productimageendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\endpoints\\productimages\\productimageendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\features\\productimages\\getproductimages\\getproductimagesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\features\\productimages\\getproductimages\\getproductimagesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\persistence\\repositories\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\persistence\\repositories\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\interfaces\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\interfaces\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\features\\productimages\\getproductimages\\getproductimagesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\features\\productimages\\getproductimages\\getproductimagesquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\endpoints\\endpointextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\persistence\\repositories\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\persistence\\repositories\\productimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\interfaces\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\interfaces\\iproductimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -475,10 +491,6 @@
       "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\features\\authentication\\register\\registercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}|src\\ShopSphere.Contracts\\ShopSphere.Contracts.csproj|d:\\projects\\shopsphere\\src\\shopsphere.contracts\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{566D3A7A-138A-4A4B-B8A4-14EFCF6CD867}|src\\ShopSphere.Contracts\\ShopSphere.Contracts.csproj|solutionrelative:src\\shopsphere.contracts\\common\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -666,20 +678,85 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FileStorageOptions.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
-              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "GetProductImagesQueryHandler.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQueryHandler.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQueryHandler.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T04:43:04.439Z",
+              "WhenOpened": "2026-07-08T05:59:10.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "IProductImageRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
+              "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwBcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T04:49:24.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductImageRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T04:49:37.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductImageEndpoints.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs*",
+              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs*",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T05:14:07.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductImageDto.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\ProductImageDto.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\ProductImageDto.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\ProductImageDto.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\ProductImageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T05:59:20.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetProductImagesQuery.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQuery.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQuery.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQuery.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Features\\ProductImages\\GetProductImages\\GetProductImagesQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T05:59:02.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "IFileStorageService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IFileStorageService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IFileStorageService.cs",
@@ -692,7 +769,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 18,
+              "Title": "FileStorageOptions.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T04:43:04.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "EndpointExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
@@ -705,20 +795,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductImageEndpoints.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
-              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwA8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T05:14:07.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "LocalFileStorageService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
@@ -731,20 +808,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "Result.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Result.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Result.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Result.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Common\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-06T08:11:02.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "GlobalExceptionMiddleware.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
               "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
               "RelativeToolTip": "src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAqwIYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAqwIcAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-08T05:34:37.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
@@ -757,7 +847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "UploadProductImageCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\UploadProductImage\\UploadProductImageCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\ProductImages\\UploadProductImage\\UploadProductImageCommandHandler.cs",
@@ -770,33 +860,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductImageRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
-              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwBwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T04:49:37.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IProductImageRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
-              "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IProductImageRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T04:49:24.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Program.cs",
@@ -809,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ProductEndpoints.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\Products\\ProductEndpoints.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\Products\\ProductEndpoints.cs",
@@ -822,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\appsettings.json",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\appsettings.json",
@@ -835,7 +899,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "EndpointResultExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Extensions\\EndpointResultExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Extensions\\EndpointResultExtensions.cs",
@@ -848,7 +912,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "FileValidationService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\FileValidationService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Storage\\FileValidationService.cs",
@@ -861,7 +925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "ProductImageErrors.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Errors\\ProductImageErrors.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Errors\\ProductImageErrors.cs",
@@ -874,7 +938,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "IFileValidationService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IFileValidationService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IFileValidationService.cs",
@@ -887,7 +951,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "UploadProductImageCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\UploadProductImage\\UploadProductImageCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\ProductImages\\UploadProductImage\\UploadProductImageCommand.cs",
@@ -900,7 +964,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "AuthenticationErrors.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Errors\\AuthenticationErrors.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Errors\\AuthenticationErrors.cs",
@@ -913,7 +977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "UploadProductImageCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\ProductImages\\UploadProductImage\\UploadProductImageCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\ProductImages\\UploadProductImage\\UploadProductImageCommandValidator.cs",
@@ -926,7 +990,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IProductRepository.cs",
@@ -939,7 +1003,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
@@ -952,7 +1016,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "ProductImage.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\ProductImage.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\ProductImage.cs",
@@ -965,7 +1029,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "ProductConfiguration.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\ProductConfiguration.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\ProductConfiguration.cs",
@@ -978,7 +1042,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "ProductImageConfiguration.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\ProductImageConfiguration.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\ProductImageConfiguration.cs",
@@ -991,7 +1055,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductRepository.cs",
@@ -1004,7 +1068,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\Product.cs",
@@ -1017,7 +1081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "CategoryConfiguration.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\CategoryConfiguration.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\CategoryConfiguration.cs",
@@ -1030,7 +1094,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "PagedResultT.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Pagination\\PagedResultT.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Pagination\\PagedResultT.cs",
@@ -1043,7 +1107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "QueryableExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Extensions\\QueryableExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Extensions\\QueryableExtensions.cs",
@@ -1056,7 +1120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "PaginationRequest.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Pagination\\PaginationRequest.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Pagination\\PaginationRequest.cs",
@@ -1069,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\ICategoryRepository.cs",
@@ -1081,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "CreateProductCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\CreateProduct\\CreateProductCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\CreateProduct\\CreateProductCommandHandler.cs",
@@ -1093,7 +1157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IRepository.cs",
@@ -1105,7 +1169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "DeleteProductCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\DeleteProduct\\DeleteProductCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\DeleteProduct\\DeleteProductCommandHandler.cs",
@@ -1117,7 +1181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Services\\CategoryService.cs",
@@ -1129,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "ProductQueries.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Queries\\ProductQueries.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Queries\\ProductQueries.cs",
@@ -1141,7 +1205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "RoleSeeder.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\RoleSeeder.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\RoleSeeder.cs",
@@ -1153,7 +1217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\CategoryRepository.cs",
@@ -1165,7 +1229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "CategoryQueries.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Queries\\CategoryQueries.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Queries\\CategoryQueries.cs",
@@ -1177,7 +1241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "BrandRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\BrandRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\BrandRepository.cs",
@@ -1189,7 +1253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "BrandQueries.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Queries\\BrandQueries.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Queries\\BrandQueries.cs",
@@ -1201,7 +1265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "GetProductByIdQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\GetProductById\\GetProductByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\GetProductById\\GetProductByIdQueryHandler.cs",
@@ -1213,7 +1277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 50,
               "Title": "GetCategoriesQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\GetCategories\\GetCategoriesQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\GetCategories\\GetCategoriesQueryHandler.cs",
@@ -1225,7 +1289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "GetProductsQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\GetProducts\\GetProductsQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\GetProducts\\GetProductsQueryHandler.cs",
@@ -1237,7 +1301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 48,
               "Title": "GetCategoryByIdQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\GetCategoryById\\GetCategoryByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\GetCategoryById\\GetCategoryByIdQueryHandler.cs",
@@ -1249,7 +1313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 49,
               "Title": "GetCategoryByIdValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\GetCategoryById\\GetCategoryByIdValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\GetCategoryById\\GetCategoryByIdValidator.cs",
@@ -1261,7 +1325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 51,
               "Title": "GetBrandsQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\GetBrands\\GetBrandsQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\GetBrands\\GetBrandsQueryHandler.cs",
@@ -1273,7 +1337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 52,
               "Title": "GetBrandByIdQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\GetBrandById\\GetBrandByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\GetBrandById\\GetBrandByIdQueryHandler.cs",
@@ -1285,7 +1349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 53,
               "Title": "GetCategoriesQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\GetCategories\\GetCategoriesQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\GetCategories\\GetCategoriesQuery.cs",
@@ -1297,7 +1361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 55,
               "Title": "GetBrandByIdQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\GetBrandById\\GetBrandByIdQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\GetBrandById\\GetBrandByIdQuery.cs",
@@ -1309,7 +1373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 56,
               "Title": "GetBrandsQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\GetBrands\\GetBrandsQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\GetBrands\\GetBrandsQuery.cs",
@@ -1321,7 +1385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 54,
               "Title": "IBrandQueries.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Queries\\IBrandQueries.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Queries\\IBrandQueries.cs",
@@ -1333,7 +1397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 57,
               "Title": "IBrandRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IBrandRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IBrandRepository.cs",
@@ -1345,7 +1409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 58,
               "Title": "ICategoryQueries.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Queries\\ICategoryQueries.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Queries\\ICategoryQueries.cs",
@@ -1357,7 +1421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 59,
               "Title": "IProductQueries.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Queries\\IProductQueries.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Queries\\IProductQueries.cs",
@@ -1369,7 +1433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 60,
               "Title": "BrandDto.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\GetBrands\\BrandDto.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\GetBrands\\BrandDto.cs",
@@ -1381,7 +1445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 63,
               "Title": "ProductCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\Common\\ProductCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\Common\\ProductCommandValidator.cs",
@@ -1393,7 +1457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 62,
               "Title": "CreateProductCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\CreateProduct\\CreateProductCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\CreateProduct\\CreateProductCommandValidator.cs",
@@ -1405,7 +1469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 64,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\Common\\ProductDto.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\Common\\ProductDto.cs",
@@ -1417,7 +1481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 61,
               "Title": "UpdateProductCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\UpdateProduct\\UpdateProductCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\UpdateProduct\\UpdateProductCommandValidator.cs",
@@ -1429,7 +1493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 65,
               "Title": "UpdateProductCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\UpdateProduct\\UpdateProductCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\UpdateProduct\\UpdateProductCommandHandler.cs",
@@ -1441,7 +1505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 68,
               "Title": "ChangeProductStatusRequest.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\ChangeProductStatus\\ChangeProductStatusRequest.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\ChangeProductStatus\\ChangeProductStatusRequest.cs",
@@ -1453,7 +1517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 69,
               "Title": "ChangeCategoryStatusCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusCommandValidator.cs",
@@ -1465,7 +1529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 66,
               "Title": "ChangeCategoryStatusRequest.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusRequest.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusRequest.cs",
@@ -1477,7 +1541,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 67,
               "Title": "CategoryEndpoints.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\Categories\\CategoryEndpoints.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\Categories\\CategoryEndpoints.cs",
@@ -1489,7 +1553,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 70,
               "Title": "ChangeCategoryStatusCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusCommand.cs",
@@ -1501,7 +1565,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 72,
               "Title": "ChangeProductStatusCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\ChangeProductStatus\\ChangeProductStatusCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\ChangeProductStatus\\ChangeProductStatusCommandHandler.cs",
@@ -1513,7 +1577,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 71,
               "Title": "ChangeProductStatusCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\ChangeProductStatus\\ChangeProductStatusCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\ChangeProductStatus\\ChangeProductStatusCommand.cs",
@@ -1525,7 +1589,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 73,
               "Title": "DeleteProductCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\DeleteProduct\\DeleteProductCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\DeleteProduct\\DeleteProductCommand.cs",
@@ -1537,7 +1601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 74,
               "Title": "GetProductByIdQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\GetProductById\\GetProductByIdQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\GetProductById\\GetProductByIdQuery.cs",
@@ -1549,7 +1613,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 75,
               "Title": "GetProductsQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Products\\GetProducts\\GetProductsQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Products\\GetProducts\\GetProductsQuery.cs",
@@ -1561,7 +1625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 77,
               "Title": "CategoryErrors.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Errors\\CategoryErrors.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Errors\\CategoryErrors.cs",
@@ -1573,7 +1637,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 78,
               "Title": "BrandErrors.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Errors\\BrandErrors.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Errors\\BrandErrors.cs",
@@ -1585,7 +1649,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 76,
               "Title": "BrandService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Services\\BrandService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Services\\BrandService.cs",
@@ -1597,7 +1661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 79,
               "Title": "IBrandService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Services\\Interfaces\\IBrandService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Services\\Interfaces\\IBrandService.cs",
@@ -1609,7 +1673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 80,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Services\\Interfaces\\ICategoryService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Services\\Interfaces\\ICategoryService.cs",
@@ -1621,7 +1685,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 81,
               "Title": "ProductErrors.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Errors\\ProductErrors.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Errors\\ProductErrors.cs",
@@ -1633,7 +1697,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 83,
               "Title": "ChangeBrandStatusCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\ChangeBrandStatus\\ChangeBrandStatusCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\ChangeBrandStatus\\ChangeBrandStatusCommandHandler.cs",
@@ -1645,7 +1709,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 84,
               "Title": "ChangeCategoryStatusCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\ChangeCategoryStatus\\ChangeCategoryStatusCommandHandler.cs",
@@ -1657,7 +1721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 82,
               "Title": "UpdateBrandCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\UpdateBrand\\UpdateBrandCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\UpdateBrand\\UpdateBrandCommandHandler.cs",
@@ -1669,7 +1733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 87,
               "Title": "Brand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Brand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\Brand.cs",
@@ -1681,7 +1745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 88,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\Category.cs",
@@ -1693,7 +1757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 86,
               "Title": "ModelBuilderExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Extensions\\ModelBuilderExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Extensions\\ModelBuilderExtensions.cs",
@@ -1705,7 +1769,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 85,
               "Title": "Repository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\Repository.cs",
@@ -1717,7 +1781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 89,
               "Title": "DeleteCategoryCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\DeleteCategory\\DeleteCategoryCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\DeleteCategory\\DeleteCategoryCommandHandler.cs",
@@ -1729,7 +1793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 90,
               "Title": "AuditableEntity.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Common\\AuditableEntity.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Common\\AuditableEntity.cs",
@@ -1741,7 +1805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 91,
               "Title": "AuditableEntityInterceptor.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Interceptors\\AuditableEntityInterceptor.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Interceptors\\AuditableEntityInterceptor.cs",
@@ -1753,7 +1817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 92,
               "Title": "DeleteBrandCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\DeleteBrand\\DeleteBrandCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\DeleteBrand\\DeleteBrandCommandHandler.cs",
@@ -1765,7 +1829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 93,
               "Title": "DeleteBrandCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\DeleteBrand\\DeleteBrandCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\DeleteBrand\\DeleteBrandCommand.cs",
@@ -1777,7 +1841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 94,
               "Title": "DeleteCategoryCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\DeleteCategory\\DeleteCategoryCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\DeleteCategory\\DeleteCategoryCommand.cs",
@@ -1789,7 +1853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 95,
               "Title": "UpdateBrandCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\UpdateBrand\\UpdateBrandCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\UpdateBrand\\UpdateBrandCommandValidator.cs",
@@ -1801,7 +1865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 96,
               "Title": "UpdateBrandCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\UpdateBrand\\UpdateBrandCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\UpdateBrand\\UpdateBrandCommand.cs",
@@ -1813,7 +1877,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 97,
               "Title": "CreateBrandCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\CreateBrand\\CreateBrandCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\CreateBrand\\CreateBrandCommandHandler.cs",
@@ -1825,7 +1889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 99,
               "Title": "CreateBrandCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\CreateBrand\\CreateBrandCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\CreateBrand\\CreateBrandCommand.cs",
@@ -1837,7 +1901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 100,
               "Title": "CreateBrandCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Brands\\CreateBrand\\CreateBrandCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Brands\\CreateBrand\\CreateBrandCommandValidator.cs",
@@ -1849,7 +1913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 102,
               "Title": "Error.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Error.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Error.cs",
@@ -1861,7 +1925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 98,
               "Title": "ResultT.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\ResultT.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\ResultT.cs",
@@ -1873,7 +1937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 101,
               "Title": "CreateCategoryCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\CreateCategory\\CreateCategoryCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\CreateCategory\\CreateCategoryCommandHandler.cs",
@@ -1885,7 +1949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 103,
               "Title": "UpdateCategoryCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\UpdateCategory\\UpdateCategoryCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\UpdateCategory\\UpdateCategoryCommandHandler.cs",
@@ -1897,7 +1961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 104,
               "Title": "ErrorCodes.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\ErrorCodes.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\ErrorCodes.cs",
@@ -1909,7 +1973,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 105,
               "Title": "ValidationBehavior.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Behaviors\\ValidationBehavior.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Behaviors\\ValidationBehavior.cs",
@@ -1921,7 +1985,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 106,
               "Title": "CategoryDto.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\Common\\CategoryDto.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\Common\\CategoryDto.cs",
@@ -1933,7 +1997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 107,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Common\\BaseEntity.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Common\\BaseEntity.cs",
@@ -1945,7 +2009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 108,
               "Title": "GetCategoryByIdQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\GetCategoryById\\GetCategoryByIdQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\GetCategoryById\\GetCategoryByIdQuery.cs",
@@ -1957,7 +2021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 109,
               "Title": "AuthenticationExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Extensions\\AuthenticationExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Extensions\\AuthenticationExtensions.cs",
@@ -1969,7 +2033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 110,
               "Title": "JwtBearerEventsConfiguration.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Authentication\\JwtBearerEventsConfiguration.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Authentication\\JwtBearerEventsConfiguration.cs",
@@ -1981,7 +2045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 111,
               "Title": "RegisterCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterCommandHandler.cs",
@@ -1993,7 +2057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 112,
               "Title": "RegisterResult.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Authentication\\RegisterResult.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Authentication\\RegisterResult.cs",
@@ -2005,7 +2069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 113,
               "Title": "ApiResponse.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\ApiResponse.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\ApiResponse.cs",
@@ -2017,7 +2081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 114,
               "Title": "ApiResponseT.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\ApiResponseT.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\ApiResponseT.cs",
@@ -2029,7 +2093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 115,
               "Title": "GetCurrentUserQueryHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Me\\GetCurrentUserQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Me\\GetCurrentUserQueryHandler.cs",
@@ -2041,7 +2105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 116,
               "Title": "IIdentityService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IIdentityService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IIdentityService.cs",
@@ -2053,7 +2117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 117,
               "Title": "LoginCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Login\\LoginCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Login\\LoginCommandHandler.cs",
@@ -2065,7 +2129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 118,
               "Title": "UserErrors.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Errors\\UserErrors.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Errors\\UserErrors.cs",
@@ -2077,7 +2141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 119,
               "Title": "AuthenticationEndpoints.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\Authentication\\AuthenticationEndpoints.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\Authentication\\AuthenticationEndpoints.cs",
@@ -2089,7 +2153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 120,
               "Title": "GetCurrentUserQuery.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Me\\GetCurrentUserQuery.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Me\\GetCurrentUserQuery.cs",
@@ -2101,7 +2165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 121,
               "Title": "RegisterCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterCommand.cs",
@@ -2113,19 +2177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
-              "Title": "Result.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Result.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Result.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Result.cs",
-              "RelativeToolTip": "src\\ShopSphere.Application\\Common\\Result.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-06T08:11:02.777Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 122,
               "Title": "Result.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\Result.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\Result.cs",
@@ -2137,7 +2189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 123,
               "Title": "ApiError.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\ApiError.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\ApiError.cs",
@@ -2149,7 +2201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 124,
               "Title": "ValidationException.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Common\\Exceptions\\ValidationException.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Common\\Exceptions\\ValidationException.cs",
@@ -2161,7 +2213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 126,
               "Title": "ErrorType.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Common\\ErrorType.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Common\\ErrorType.cs",
@@ -2173,7 +2225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 125,
               "Title": "HttpResultExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Common\\Extensions\\HttpResultExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Common\\Extensions\\HttpResultExtensions.cs",
@@ -2185,7 +2237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 127,
               "Title": "LoginCommand.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Login\\LoginCommand.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Login\\LoginCommand.cs",
@@ -2197,7 +2249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 128,
               "Title": "RoleSeeder.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Seed\\RoleSeeder.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Seed\\RoleSeeder.cs",
@@ -2209,7 +2261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 129,
               "Title": "IApplicationDbContext.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
@@ -2221,7 +2273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 130,
               "Title": "CreateCategoryCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Categories\\CreateCategory\\CreateCategoryCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Categories\\CreateCategory\\CreateCategoryCommandValidator.cs",
@@ -2233,7 +2285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 131,
               "Title": "ICurrentUserService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\ICurrentUserService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\ICurrentUserService.cs",
@@ -2245,7 +2297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 133,
               "Title": "CurrentUserResponse.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Me\\CurrentUserResponse.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Me\\CurrentUserResponse.cs",
@@ -2257,7 +2309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 132,
               "Title": "CurrentUserService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Authentication\\CurrentUserService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Authentication\\CurrentUserService.cs",
@@ -2269,7 +2321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 134,
               "Title": "LoginCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Login\\LoginCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Login\\LoginCommandValidator.cs",
@@ -2281,7 +2333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 135,
               "Title": "RegisterResponse.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterResponse.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterResponse.cs",
@@ -2293,7 +2345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 136,
               "Title": "RegisterCommandValidator.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Authentication\\Register\\RegisterCommandValidator.cs",
@@ -2305,7 +2357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 137,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\DependencyInjection.cs",
@@ -2317,7 +2369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 138,
               "Title": "JwtTokenProvider.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Authentication\\JwtTokenProvider.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Authentication\\JwtTokenProvider.cs",
@@ -2329,7 +2381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 139,
               "Title": "ITokenProvider.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\ITokenProvider.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\ITokenProvider.cs",
@@ -2341,7 +2393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 140,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Identity\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Identity\\ApplicationUser.cs",
@@ -2353,7 +2405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 141,
               "Title": "TokenResponse.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Contracts\\Authentication\\TokenResponse.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Contracts\\Authentication\\TokenResponse.cs",
@@ -2365,7 +2417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 142,
               "Title": "JwtOptions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Authentication\\JwtOptions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Authentication\\JwtOptions.cs",
@@ -2377,7 +2429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 143,
               "Title": "TokenProvider.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Authentication\\TokenProvider.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Authentication\\TokenProvider.cs",
@@ -2389,7 +2441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 144,
               "Title": "Permissions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Constants\\Permissions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Constants\\Permissions.cs",
@@ -2401,7 +2453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 145,
               "Title": "Roles.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Constants\\Roles.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Constants\\Roles.cs",
@@ -2413,7 +2465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 146,
               "Title": "ApplicationRole.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Identity\\ApplicationRole.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Identity\\ApplicationRole.cs",

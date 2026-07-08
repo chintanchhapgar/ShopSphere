@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Projects\\ShopSphere\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\endpoints\\productimages\\productimageendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\endpoints\\productimages\\productimageendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\middlewares\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\middlewares\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\storage\\localfilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\interfaces\\ifilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -666,19 +666,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GlobalExceptionMiddleware.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
-              "RelativeToolTip": "src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAqwIYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T05:34:37.172Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 14,
               "Title": "FileStorageOptions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\FileStorageOptions.cs",
@@ -705,7 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EndpointExtensions.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
@@ -718,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProductImageEndpoints.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\ProductImages\\ProductImageEndpoints.cs",
@@ -727,6 +714,32 @@
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwA8AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-08T05:14:07.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LocalFileStorageService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADgvxgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T03:55:18.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GlobalExceptionMiddleware.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "RelativeToolTip": "src\\ShopSphere.Api\\Middlewares\\GlobalExceptionMiddleware.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAqwIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-08T05:34:37.172Z",
               "EditorCaption": ""
             },
             {
@@ -753,19 +766,6 @@
               "ViewState": "AgIAACoAAAAAAAAAAAAYwDcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-08T04:49:11.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LocalFileStorageService.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
-              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Storage\\LocalFileStorageService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAADgvxMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-08T03:55:18.961Z",
               "EditorCaption": ""
             },
             {

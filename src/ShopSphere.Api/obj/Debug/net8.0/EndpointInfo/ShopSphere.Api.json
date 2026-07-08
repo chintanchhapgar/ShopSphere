@@ -395,6 +395,29 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Product Images"
+        ],
+        "summary": "Get product images",
+        "operationId": "GetProductImages",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/products": {
