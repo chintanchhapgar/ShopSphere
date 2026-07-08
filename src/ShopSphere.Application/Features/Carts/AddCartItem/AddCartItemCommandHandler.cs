@@ -56,7 +56,6 @@ public sealed class AddCartItemCommandHandler
             return Result.Failure(InventoryErrors.NotFound);
         }
 
-        // Replace AvailableQuantity with the property used in your Inventory entity.
         if (inventory.AvailableQuantity < request.Quantity)
         {
             return Result.Failure(InventoryErrors.InsufficientStock);

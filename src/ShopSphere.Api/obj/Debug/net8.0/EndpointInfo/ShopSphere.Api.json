@@ -216,6 +216,18 @@
             "description": "Unauthorized"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Cart"
+        ],
+        "summary": "Clear the shopping cart",
+        "operationId": "ClearCart",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/cart/items": {

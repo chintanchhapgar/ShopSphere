@@ -37,4 +37,14 @@ public sealed class CartRepository
                 x => x.Items.Any(i => i.Id == itemId),
                 cancellationToken);
     }
+
+    public void RemoveItem(CartItem item)
+    {
+        _context.CartItems.Remove(item);
+    }
+
+    public void RemoveItems(Cart cart)
+    {
+        _context.CartItems.RemoveRange(cart.Items);
+    }
 }

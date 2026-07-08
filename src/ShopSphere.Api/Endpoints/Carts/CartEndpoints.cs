@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ShopSphere.Api.Extensions;
 using ShopSphere.Application.Features.Carts.AddCartItem;
+using ShopSphere.Application.Features.Carts.ClearCart;
 using ShopSphere.Application.Features.Carts.GetCart;
 using ShopSphere.Application.Features.Carts.RemoveCartItem;
 using ShopSphere.Application.Features.Carts.UpdateCartItem;
@@ -47,6 +48,12 @@ public static class CartEndpoints
                 RemoveCartItem)
             .WithName("RemoveCartItem")
             .WithSummary("Remove item from shopping cart");
+
+        group.MapDelete(
+                "/",
+                ClearCart)
+            .WithName("ClearCart")
+            .WithSummary("Clear the shopping cart");
 
         return app;
     }
@@ -102,6 +109,17 @@ public static class CartEndpoints
     {
         var result = await sender.Send(
             new RemoveCartItemCommand(itemId),
+            cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
+
+    private static async Task<IResult> ClearCart(
+        ISender sender,
+        CancellationToken cancellationToken)
+    {
+        var result = await sender.Send(
+            new ClearCartCommand(),
             cancellationToken);
 
         return result.ToMinimalApiResult();

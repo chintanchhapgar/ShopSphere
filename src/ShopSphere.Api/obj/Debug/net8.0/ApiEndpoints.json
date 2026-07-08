@@ -250,6 +250,27 @@
   },
   {
     "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints",
+    "Method": "ClearCart",
+    "RelativePath": "api/cart/",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Cart"
+    ],
+    "EndpointName": "ClearCart",
+    "Summary": "Clear the shopping cart"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints",
     "Method": "AddCartItem",
     "RelativePath": "api/cart/items",
     "HttpMethod": "POST",

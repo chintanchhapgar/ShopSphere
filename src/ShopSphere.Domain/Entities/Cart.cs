@@ -15,7 +15,7 @@ public sealed class Cart : AuditableEntity
 
     public Guid CustomerId { get; private set; }
 
-    public IReadOnlyCollection<CartItem> Items => _items.AsReadOnly();
+    public IReadOnlyCollection<CartItem> Items => _items;
 
     public decimal Total =>
         _items.Sum(x => x.Subtotal);
@@ -53,14 +53,18 @@ public sealed class Cart : AuditableEntity
         item.UpdateQuantity(quantity);
     }
 
-    public void RemoveItem(Guid itemId)
+    public CartItem? RemoveItem(Guid itemId)
     {
         var item = _items.FirstOrDefault(x => x.Id == itemId);
 
-        if (item is not null)
+        if (item is null)
         {
-            _items.Remove(item);
+            return null;
         }
+
+        _items.Remove(item);
+
+        return item;
     }
 
     public void Clear()
