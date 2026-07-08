@@ -13,29 +13,6 @@ public sealed class ProductRepository
     {
     }
 
-    public override async Task<IReadOnlyList<Product>> GetAllAsync(
-        CancellationToken cancellationToken)
-    {
-        return await Entities
-            .Include(x => x.Category)
-            .Include(x => x.Brand)
-            .AsNoTracking()
-            .OrderBy(x => x.Name)
-            .ToListAsync(cancellationToken);
-    }
-
-    public override async Task<Product?> GetByIdAsync(
-        Guid id,
-        CancellationToken cancellationToken)
-    {
-        return await Entities
-            .Include(x => x.Category)
-            .Include(x => x.Brand)
-            .FirstOrDefaultAsync(
-                x => x.Id == id,
-                cancellationToken);
-    }
-
     public async Task<bool> ExistsBySkuAsync(
         string sku,
         Guid? excludeId,

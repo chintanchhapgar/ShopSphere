@@ -19,13 +19,9 @@
   <ItemGroup>
     <Folder Include="Administration\" />
     <Folder Include="Behaviors\" />
-    <Folder Include="Catalog\" />
     <Folder Include="Contracts\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Mappings\" />
-    <Folder Include="Orders\" />
-    <Folder Include="Shopping\" />
-    <Folder Include="Vendors\" />
   </ItemGroup>
 
   <PropertyGroup>

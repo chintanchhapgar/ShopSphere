@@ -1,6 +1,6 @@
 ﻿namespace ShopSphere.Application.Features.Brands.GetBrands;
 
-public sealed record BrandResponse(
+public sealed record BrandDto(
     Guid Id,
     string Name,
     string? Description,

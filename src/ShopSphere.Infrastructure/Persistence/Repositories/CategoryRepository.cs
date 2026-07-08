@@ -13,15 +13,6 @@ public sealed class CategoryRepository
     {
     }
 
-    public override async Task<IReadOnlyList<Category>> GetAllAsync(
-        CancellationToken cancellationToken)
-    {
-        return await Entities
-            .AsNoTracking()
-            .OrderBy(x => x.Name)
-            .ToListAsync(cancellationToken);
-    }
-
     public async Task<bool> ExistsByNameAsync(
         string name,
         Guid? excludeId,

@@ -11,5 +11,8 @@ public sealed record UpdateProductCommand(
     decimal BasePrice,
     decimal? CostPrice,
     Guid CategoryId,
-    Guid BrandId)
+    Guid BrandId,
+    string Slug,
+    string? Barcode,
+    decimal? Weight)
     : IRequest<Result>;

@@ -69,7 +69,10 @@ public sealed class UpdateProductCommandHandler
             request.BasePrice,
             request.CostPrice,
             request.CategoryId,
-            request.BrandId);
+            request.BrandId,
+            request.Slug,
+            request.Barcode,
+            request.Weight);
 
         await _repository.SaveChangesAsync(
             cancellationToken);

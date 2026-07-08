@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ShopSphere.Application.Features.Categories.Common;
 using ShopSphere.Application.Features.Products.Common;
+using ShopSphere.Application.Queries;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Interfaces;
 
@@ -9,38 +11,21 @@ namespace ShopSphere.Application.Features.Products.GetProducts;
 public sealed class GetProductsQueryHandler
     : IRequestHandler<GetProductsQuery, Result<IReadOnlyList<ProductDto>>>
 {
-    private readonly IProductRepository _repository;
+    private readonly IProductQueries _queries;
 
     public GetProductsQueryHandler(
-        IProductRepository repository)
+        IProductQueries queries)
     {
-        _repository = repository;
+        _queries = queries;
     }
 
     public async Task<Result<IReadOnlyList<ProductDto>>> Handle(
         GetProductsQuery request,
         CancellationToken cancellationToken)
     {
-        var products = await _repository.GetAllAsync(
-            cancellationToken);
+        var products = await _queries.GetAllAsync(cancellationToken);
 
-        var response = products
-            .Select(x => new ProductDto(
-                x.Id,
-                x.Name,
-                x.Description,
-                x.SKU,
-                x.BasePrice,
-                x.CostPrice,
-                x.CategoryId,
-                x.Category.Name,
-                x.BrandId,
-                x.Brand.Name,
-                x.IsActive))
-            .ToList();
-
-        return Result<IReadOnlyList<ProductDto>>.Success(
-            response,
-            "Products retrieved successfully.");
+        return Result<IReadOnlyList<ProductDto>>
+             .Success(products, "Products retrieved successfully.");
     }
 }

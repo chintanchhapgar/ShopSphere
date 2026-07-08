@@ -22,6 +22,14 @@ public sealed class Product : AuditableEntity
 
     public Brand Brand { get; private set; } = null!;
 
+    public string Slug { get; private set; } = default!;
+
+    public string? Barcode { get; private set; }
+
+    public decimal? Weight { get; private set; }
+
+    public bool IsFeatured { get; private set; }
+
     private Product()
     {
     }
@@ -33,7 +41,10 @@ public sealed class Product : AuditableEntity
         decimal basePrice,
         decimal? costPrice,
         Guid categoryId,
-        Guid brandId)
+        Guid brandId,
+        string slug,
+        string? barcode,
+        decimal? weight)
     {
         Name = name.Trim();
         Description = description.Trim();
@@ -42,6 +53,14 @@ public sealed class Product : AuditableEntity
         CostPrice = costPrice;
         CategoryId = categoryId;
         BrandId = brandId;
+        Slug = slug;
+        Barcode = barcode;
+        Weight = weight;
+    }
+
+    public void SetFeatured(bool featured)
+    {
+        IsFeatured = featured;
     }
 
     public void Update(
@@ -51,15 +70,21 @@ public sealed class Product : AuditableEntity
         decimal basePrice,
         decimal? costPrice,
         Guid categoryId,
-        Guid brandId)
+        Guid brandId,
+        string slug,
+        string? barcode,
+        decimal? weight)
     {
-        Name = name.Trim();
-        Description = description.Trim();
-        SKU = sku.Trim().ToUpperInvariant();
+        Name = name;
+        Description = description;
+        SKU = sku.ToUpperInvariant();
         BasePrice = basePrice;
         CostPrice = costPrice;
         CategoryId = categoryId;
         BrandId = brandId;
+        Slug = slug;
+        Barcode = barcode;
+        Weight = weight;
     }
 
 }

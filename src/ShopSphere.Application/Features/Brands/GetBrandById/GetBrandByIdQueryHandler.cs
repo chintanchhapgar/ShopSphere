@@ -1,41 +1,38 @@
 ﻿using MediatR;
 using ShopSphere.Application.Features.Brands.GetBrands;
+using ShopSphere.Application.Queries;
 using ShopSphere.Contracts.Common;
+using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Application.Features.Brands.GetBrandById;
 
 public sealed class GetBrandByIdQueryHandler
-    : IRequestHandler<GetBrandByIdQuery, Result<BrandResponse>>
+    : IRequestHandler<GetBrandByIdQuery, Result<BrandDto>>
 {
-    private readonly IBrandRepository _repository;
+    private readonly IBrandQueries _queries;
 
     public GetBrandByIdQueryHandler(
-        IBrandRepository repository)
+        IBrandQueries queries)
     {
-        _repository = repository;
+        _queries = queries;
     }
 
-    public async Task<Result<BrandResponse>> Handle(
+    public async Task<Result<BrandDto>> Handle(
         GetBrandByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var brand = await _repository.GetByIdAsync(
+        var brand = await _queries.GetByIdAsync(
             request.Id,
             cancellationToken);
 
         if (brand is null)
         {
-            return Result<BrandResponse>.Failure(
+            return Result<BrandDto>.Failure(
                 BrandErrors.NotFound);
         }
 
-        return Result<BrandResponse>.Success(
-            new BrandResponse(
-                brand.Id,
-                brand.Name,
-                brand.Description,
-                brand.IsActive),
-            "Brand retrieved successfully.");
+        return Result<BrandDto>
+            .Success(brand, "Brand retrieved successfully.");
     }
 }

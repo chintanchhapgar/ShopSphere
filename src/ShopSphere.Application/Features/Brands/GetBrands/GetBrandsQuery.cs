@@ -4,4 +4,4 @@ using ShopSphere.Contracts.Common;
 namespace ShopSphere.Application.Features.Brands.GetBrands;
 
 public sealed record GetBrandsQuery
-    : IRequest<Result<IReadOnlyList<BrandResponse>>>;
+    : IRequest<Result<IReadOnlyList<BrandDto>>>;
