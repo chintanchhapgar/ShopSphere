@@ -35,6 +35,8 @@ public sealed class Product : AuditableEntity
     public IReadOnlyCollection<ProductImage> Images
         => _images.AsReadOnly();
 
+    public Inventory? Inventory { get; private set; }
+
     private Product()
     {
     }

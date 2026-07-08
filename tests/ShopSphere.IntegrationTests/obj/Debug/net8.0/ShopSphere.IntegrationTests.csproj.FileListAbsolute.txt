@@ -512,3 +512,4 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\ShopSp
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\FluentValidation.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\ShopSphere.Api.staticwebassets.runtime.json

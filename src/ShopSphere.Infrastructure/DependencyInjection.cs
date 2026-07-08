@@ -71,6 +71,8 @@ public static class DependencyInjection
         services.AddScoped<IBrandQueries, BrandQueries>();
         services.AddScoped<IProductQueries, ProductQueries>();
         services.AddScoped<IProductImageRepository, ProductImageRepository>();
+        services.AddScoped<IInventoryRepository, InventoryRepository>();
+        services.AddScoped<IInventoryQueries, InventoryQueries>();
 
         services.Configure<FileStorageOptions>(configuration.GetSection(FileStorageOptions.SectionName));
 
