@@ -223,6 +223,69 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints",
+    "Method": "GetCart",
+    "RelativePath": "api/cart/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Cart"
+    ],
+    "EndpointName": "GetCart",
+    "Summary": "Get the current user\u0027s shopping cart"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints",
+    "Method": "AddCartItem",
+    "RelativePath": "api/cart/items",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AddCartItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 401
+      }
+    ],
+    "Tags": [
+      "Cart"
+    ],
+    "EndpointName": "AddCartItem",
+    "Summary": "Add an item to the shopping cart"
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapCategoryEndpoints\u003Eb__0_1",
     "RelativePath": "api/categories/",

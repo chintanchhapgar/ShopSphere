@@ -12,5 +12,10 @@ namespace ShopSphere.Contracts.Common.Errors
             new(
                 "INVENTORY_NOT_FOUND",
                 "Inventory was not found.");
+
+        public static readonly Error InsufficientStock =
+            new(
+                ErrorCodes.Validation,
+                "Insufficient inventory available.");
     }
 }
