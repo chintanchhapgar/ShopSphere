@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using ShopSphere.Api.Extensions;
+using ShopSphere.Application.Features.Carts.UpdateCartItem;
 using ShopSphere.Application.Features.Carts.AddCartItem;
 using ShopSphere.Application.Features.Carts.GetCart;
 
@@ -26,13 +27,19 @@ public static class CartEndpoints
             .Produces(StatusCodes.Status401Unauthorized);
 
         group.MapPost(
-            "/items",
-            AddCartItem)
-        .WithName("AddCartItem")
-        .WithSummary("Add an item to the shopping cart")
-        .Produces(StatusCodes.Status200OK)
-        .Produces(StatusCodes.Status400BadRequest)
-        .Produces(StatusCodes.Status401Unauthorized);
+                "/items",
+                AddCartItem)
+            .WithName("AddCartItem")
+            .WithSummary("Add an item to the shopping cart")
+            .Produces(StatusCodes.Status200OK)
+            .Produces(StatusCodes.Status400BadRequest)
+            .Produces(StatusCodes.Status401Unauthorized);
+
+        group.MapPut(
+                "/items/{itemId:guid}",
+                UpdateCartItem)
+            .WithName("UpdateCartItem")
+            .WithSummary("Update cart item quantity");
 
         return app;
     }
@@ -55,6 +62,23 @@ public static class CartEndpoints
     {
         var command = new AddCartItemCommand(
             request.ProductId,
+            request.Quantity);
+
+        var result = await sender.Send(
+            command,
+            cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
+
+    private static async Task<IResult> UpdateCartItem(
+        Guid itemId,
+        UpdateCartItemRequest request,
+        ISender sender,
+        CancellationToken cancellationToken)
+    {
+        var command = new UpdateCartItemCommand(
+            itemId,
             request.Quantity);
 
         var result = await sender.Send(

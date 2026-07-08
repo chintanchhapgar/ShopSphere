@@ -14,4 +14,8 @@ public interface ICartRepository
 
     Task SaveChangesAsync(
         CancellationToken cancellationToken);
+
+    Task<Cart?> GetByItemIdAsync(
+        Guid itemId,
+        CancellationToken cancellationToken);
 }

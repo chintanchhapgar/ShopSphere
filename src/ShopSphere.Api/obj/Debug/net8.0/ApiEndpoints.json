@@ -286,6 +286,38 @@
     "Summary": "Add an item to the shopping cart"
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints",
+    "Method": "UpdateCartItem",
+    "RelativePath": "api/cart/items/{itemId:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "itemId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Application.Features.Carts.UpdateCartItem.UpdateCartItemRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Cart"
+    ],
+    "EndpointName": "UpdateCartItem",
+    "Summary": "Update cart item quantity"
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Categories.CategoryEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapCategoryEndpoints\u003Eb__0_1",
     "RelativePath": "api/categories/",

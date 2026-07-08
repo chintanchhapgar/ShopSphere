@@ -26,4 +26,15 @@ public sealed class CartRepository
                 x => x.CustomerId == customerId,
                 cancellationToken);
     }
+
+    public async Task<Cart?> GetByItemIdAsync(
+        Guid itemId,
+        CancellationToken cancellationToken)
+    {
+        return await _context.Carts
+            .Include(x => x.Items)
+            .FirstOrDefaultAsync(
+                x => x.Items.Any(i => i.Id == itemId),
+                cancellationToken);
+    }
 }
