@@ -39,8 +39,8 @@ public sealed class ProductImageRepository
     }
 
     public async Task ClearPrimaryImageAsync(
-        Guid productId,
-        CancellationToken cancellationToken)
+    Guid productId,
+    CancellationToken cancellationToken)
     {
         var images = await _context.ProductImages
             .Where(x => x.ProductId == productId &&

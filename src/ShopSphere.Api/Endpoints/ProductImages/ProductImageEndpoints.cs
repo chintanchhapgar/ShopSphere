@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using ShopSphere.Api.Extensions;
 using ShopSphere.Application.Features.ProductImages.GetProductImages;
+using ShopSphere.Application.Features.ProductImages.SetPrimaryProductImage;
 
 public static class ProductImageEndpoints
 {
@@ -12,13 +13,17 @@ public static class ProductImageEndpoints
             .RequireAuthorization();
 
         group.MapPost("/", UploadImage)
-    .WithName("UploadProductImage")
-    .WithSummary("Upload product image")
-    .DisableAntiforgery();
+            .WithName("UploadProductImage")
+            .WithSummary("Upload product image")
+            .DisableAntiforgery();
 
         group.MapGet("/", GetProductImages)
-    .WithName("GetProductImages")
-    .WithSummary("Get product images");
+            .WithName("GetProductImages")
+            .WithSummary("Get product images");
+
+        group.MapPatch(
+            "/{imageId:guid}/primary",
+            SetPrimaryImage);
 
         return app;
     }
@@ -51,6 +56,23 @@ public static class ProductImageEndpoints
     {
         var result = await sender.Send(
             new GetProductImagesQuery(productId),
+            cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
+
+    private static async Task<IResult> SetPrimaryImage(
+    Guid productId,
+    Guid imageId,
+    ISender sender,
+    CancellationToken cancellationToken)
+    {
+        var command = new SetPrimaryProductImageCommand(
+            productId,
+            imageId);
+
+        var result = await sender.Send(
+            command,
             cancellationToken);
 
         return result.ToMinimalApiResult();

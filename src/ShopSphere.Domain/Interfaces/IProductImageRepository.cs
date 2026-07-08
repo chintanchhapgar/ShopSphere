@@ -22,4 +22,5 @@ public interface IProductImageRepository
 
     Task SaveChangesAsync(
         CancellationToken cancellationToken);
+
 }

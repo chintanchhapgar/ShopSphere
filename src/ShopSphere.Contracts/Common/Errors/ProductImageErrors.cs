@@ -18,4 +18,9 @@ public static class ProductImageErrors
         new(
             "PRODUCT_IMAGE_INVALID_EXTENSION",
             "The uploaded file type is not supported.");
+
+    public static readonly Error NotFound =
+        new(
+            "PRODUCT_IMAGE_NOT_FOUND",
+            "Product image was not found.");
 }

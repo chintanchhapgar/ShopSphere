@@ -49,4 +49,5 @@ public sealed class ProductImage : AuditableEntity
     {
         ImageUrl = imageUrl;
     }
+
 }
