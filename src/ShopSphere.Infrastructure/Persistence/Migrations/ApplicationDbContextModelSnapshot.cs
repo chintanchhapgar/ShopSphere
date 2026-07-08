@@ -254,6 +254,57 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                     b.ToTable("Inventories");
                 });
 
+            modelBuilder.Entity("ShopSphere.Domain.Entities.InventoryTransaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("InventoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Reference")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("TransactionType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedAtUtc");
+
+                    b.HasIndex("InventoryId");
+
+                    b.ToTable("InventoryTransaction");
+                });
+
             modelBuilder.Entity("ShopSphere.Domain.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
@@ -551,6 +602,17 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("ShopSphere.Domain.Entities.InventoryTransaction", b =>
+                {
+                    b.HasOne("ShopSphere.Domain.Entities.Inventory", "Inventory")
+                        .WithMany("Transactions")
+                        .HasForeignKey("InventoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Inventory");
+                });
+
             modelBuilder.Entity("ShopSphere.Domain.Entities.Product", b =>
                 {
                     b.HasOne("ShopSphere.Domain.Entities.Brand", "Brand")
@@ -591,6 +653,11 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                     b.Navigation("Children");
 
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("ShopSphere.Domain.Entities.Inventory", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 
             modelBuilder.Entity("ShopSphere.Domain.Entities.Product", b =>

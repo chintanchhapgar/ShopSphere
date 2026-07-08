@@ -32,6 +32,9 @@ public sealed class Inventory : AuditableEntity
     public bool IsLowStock =>
         AvailableQuantity <= LowStockThreshold;
 
+    public ICollection<InventoryTransaction> Transactions { get; private set; }
+    = new List<InventoryTransaction>();
+
     public void IncreaseStock(int quantity)
     {
         if (quantity <= 0)
