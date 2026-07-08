@@ -50,4 +50,9 @@ public sealed class ProductImage : AuditableEntity
         ImageUrl = imageUrl;
     }
 
+    public void SetDisplayOrder(int displayOrder)
+    {
+        DisplayOrder = displayOrder;
+    }
+
 }

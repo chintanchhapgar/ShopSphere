@@ -11,4 +11,5 @@ public sealed record ProductDto(
     string CategoryName,
     Guid BrandId,
     string BrandName,
-    bool IsActive);
+    bool IsActive,
+    string? PrimaryImageUrl);

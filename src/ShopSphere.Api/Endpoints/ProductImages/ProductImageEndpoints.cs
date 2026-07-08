@@ -3,6 +3,7 @@ using ShopSphere.Api.Extensions;
 using ShopSphere.Application.Features.ProductImages.DeleteProductImage;
 using ShopSphere.Application.Features.ProductImages.GetProductImages;
 using ShopSphere.Application.Features.ProductImages.SetPrimaryProductImage;
+using ShopSphere.Application.Features.ProductImages.UpdateProductImageDisplayOrder;
 
 public static class ProductImageEndpoints
 {
@@ -29,6 +30,10 @@ public static class ProductImageEndpoints
         group.MapDelete(
             "/{imageId:guid}",
             DeleteProductImage);
+
+        group.MapPatch(
+            "/{imageId:guid}/display-order",
+            UpdateDisplayOrder);
 
         return app;
     }
@@ -99,4 +104,22 @@ public static class ProductImageEndpoints
         return result.ToMinimalApiResult();
     }
 
+    private static async Task<IResult> UpdateDisplayOrder(
+        Guid productId,
+        Guid imageId,
+        UpdateProductImageDisplayOrderRequest request,
+        ISender sender,
+        CancellationToken cancellationToken)
+    {
+        var command = new UpdateProductImageDisplayOrderCommand(
+            productId,
+            imageId,
+            request.DisplayOrder);
+
+        var result = await sender.Send(
+            command,
+            cancellationToken);
+
+        return result.ToMinimalApiResult();
+    }
 }

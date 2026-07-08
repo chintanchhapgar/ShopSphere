@@ -484,6 +484,48 @@
         }
       }
     },
+    "/api/products/{productId}/images/{imageId}/display-order": {
+      "patch": {
+        "tags": [
+          "Product Images"
+        ],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "imageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProductImageDisplayOrderRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/products": {
       "post": {
         "tags": [
@@ -860,6 +902,16 @@
             "type": "number",
             "format": "double",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateProductImageDisplayOrderRequest": {
+        "type": "object",
+        "properties": {
+          "displayOrder": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

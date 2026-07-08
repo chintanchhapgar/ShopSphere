@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Features.Products.Common;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Interfaces;
 

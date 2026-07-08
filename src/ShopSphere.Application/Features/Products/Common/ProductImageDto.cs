@@ -1,4 +1,4 @@
-﻿namespace ShopSphere.Application.Features.ProductImages.GetProductImages;
+﻿namespace ShopSphere.Application.Features.Products.Common;
 
 public sealed record ProductImageDto(
     Guid Id,

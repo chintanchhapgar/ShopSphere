@@ -47,7 +47,7 @@ public static class ProductEndpoints
                 ISender sender) =>
             {
                 var result = await sender.Send(
-                    new GetProductByIdQuery(id));
+                    new GetProductDetailsQuery(id));
 
                 return result.ToHttpResult();
             });
