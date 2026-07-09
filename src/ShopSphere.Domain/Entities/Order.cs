@@ -100,10 +100,6 @@ public sealed class Order : AuditableEntity
             DiscountAmount;
     }
 
-    public void UpdateStatus(OrderStatus status)
-    {
-        Status = status;
-    }
 
     public void Cancel()
     {
@@ -119,5 +115,43 @@ public sealed class Order : AuditableEntity
     public bool CanBeCancelled()
     {
         return Status == OrderStatus.Pending;
+    }
+
+    public void UpdateStatus(OrderStatus status)
+    {
+        if (!CanMoveTo(status))
+        {
+            throw new InvalidOperationException(
+                $"Cannot change order status from {Status} to {status}.");
+        }
+
+        Status = status;
+    }
+
+    private bool CanMoveTo(OrderStatus status)
+    {
+        return Status switch
+        {
+            OrderStatus.Pending =>
+                status == OrderStatus.Confirmed ||
+                status == OrderStatus.Cancelled,
+
+            OrderStatus.Confirmed =>
+                status == OrderStatus.Processing,
+
+            OrderStatus.Processing =>
+                status == OrderStatus.Shipped,
+
+            OrderStatus.Shipped =>
+                status == OrderStatus.Delivered,
+
+            OrderStatus.Delivered =>
+                false,
+
+            OrderStatus.Cancelled =>
+                false,
+
+            _ => false
+        };
     }
 }

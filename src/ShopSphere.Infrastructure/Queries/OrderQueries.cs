@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopSphere.Application.Features.Orders.Admin.GetOrders;
 using ShopSphere.Application.Features.Orders.GetMyOrders;
 using ShopSphere.Application.Features.Orders.GetOrderById;
 using ShopSphere.Application.Queries;
@@ -69,5 +70,22 @@ public sealed class OrderQueries : IOrderQueries
                     i.TotalPrice))
                 .ToList()))
             .FirstOrDefaultAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<AdminOrderListDto>> GetAllAsync(
+        CancellationToken cancellationToken)
+    {
+        return await _context.Orders
+            .AsNoTracking()
+            .OrderByDescending(x => x.CreatedAtUtc)
+            .Select(x => new AdminOrderListDto(
+                x.Id,
+                x.OrderNumber,
+                x.UserId,
+                x.Status.ToString(),
+                x.TotalAmount,
+                x.Items.Count,
+                x.CreatedAtUtc))
+            .ToListAsync(cancellationToken);
     }
 }

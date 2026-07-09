@@ -19,6 +19,7 @@ public static class EndpointExtensions
         app.MapInventoryEndpoints();
         app.MapCartEndpoints();
         app.MapOrderEndpoints();
+        app.MapAdminOrderEndpoints();
 
         return app;
     }
