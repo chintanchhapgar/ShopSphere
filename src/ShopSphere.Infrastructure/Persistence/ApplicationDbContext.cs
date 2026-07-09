@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Storage;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence.Extensions;
 using ShopSphere.Infrastructure.Persistence.Interceptors;
+using System;
 
 namespace ShopSphere.Infrastructure.Persistence;
 
@@ -30,6 +33,10 @@ public class ApplicationDbContext
     public DbSet<InventoryTransaction> InventoryTransactions => Set<InventoryTransaction>();
     public DbSet<Cart> Carts => Set<Cart>();
     public DbSet<CartItem> CartItems => Set<CartItem>();
+
+    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+    public DatabaseFacade Database => base.Database;
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)
     {

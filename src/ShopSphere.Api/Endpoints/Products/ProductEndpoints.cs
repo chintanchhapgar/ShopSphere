@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using ShopSphere.Api.Common.Extensions;
+using ShopSphere.Application.Features.Orders.GetOrderById;
 using ShopSphere.Application.Features.Products.ChangeProductStatus;
 using ShopSphere.Application.Features.Products.CreateProduct;
 using ShopSphere.Application.Features.Products.DeleteProduct;
@@ -91,7 +92,7 @@ public static class ProductEndpoints
                         request.IsActive));
 
                 return result.ToHttpResult();
-            });
+            });        
 
         return app;
     }

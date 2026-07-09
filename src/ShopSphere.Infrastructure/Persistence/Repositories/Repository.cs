@@ -56,12 +56,6 @@ public class Repository<TEntity> : IRepository<TEntity>
     public virtual async Task SaveChangesAsync(
     CancellationToken cancellationToken)
     {
-        foreach (var entry in Context.ChangeTracker.Entries())
-        {
-            Console.WriteLine(
-                $"{entry.Entity.GetType().Name} | {entry.State} | Id: {(entry.Entity as Entity)?.Id}");
-        }
-
         await Context.SaveChangesAsync(cancellationToken);
     }
 }

@@ -22,5 +22,8 @@ public interface ICartRepository
     void RemoveItem(CartItem item);
     void RemoveItems(Cart cart);
 
+    Task<Cart?> GetByCustomerWithItemsAsync(
+        Guid customerId,
+        CancellationToken cancellationToken);
 
 }

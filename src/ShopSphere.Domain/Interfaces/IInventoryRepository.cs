@@ -1,5 +1,7 @@
 ﻿using ShopSphere.Domain.Entities;
 
+namespace ShopSphere.Domain.Interfaces;
+
 public interface IInventoryRepository
 {
     Task<Inventory?> GetByProductIdAsync(
@@ -11,5 +13,11 @@ public interface IInventoryRepository
         CancellationToken cancellationToken);
 
     Task SaveChangesAsync(
+        CancellationToken cancellationToken);
+
+    void Update(Inventory inventory);
+
+    Task<List<Inventory>> GetByProductIdsAsync(
+        IEnumerable<Guid> productIds,
         CancellationToken cancellationToken);
 }

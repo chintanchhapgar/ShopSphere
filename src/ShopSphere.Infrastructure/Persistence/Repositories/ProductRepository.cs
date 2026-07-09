@@ -7,10 +7,22 @@ namespace ShopSphere.Infrastructure.Persistence.Repositories;
 public sealed class ProductRepository
     : Repository<Product>, IProductRepository
 {
+    private readonly ApplicationDbContext _context;
+
     public ProductRepository(
         ApplicationDbContext context)
         : base(context)
     {
+        _context = context;
+    }
+
+    public async Task<Product?> GetByIdAsync(
+    Guid id,
+    CancellationToken cancellationToken)
+    {
+        return await _context.Products
+            .Include(x => x.Images)
+            .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
 
     public async Task<bool> ExistsBySkuAsync(

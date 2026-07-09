@@ -29,9 +29,9 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
-            .EnableSensitiveDataLogging()
-            .LogTo(Console.WriteLine, LogLevel.Information));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+                .EnableSensitiveDataLogging()
+                .LogTo(Console.WriteLine, LogLevel.Information));
 
         services
             .AddIdentityCore<ApplicationUser>(options =>
@@ -64,27 +64,40 @@ public static class DependencyInjection
         services.AddScoped<ITokenProvider, JwtTokenProvider>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
+
         services.AddScoped<IFileStorageService, LocalFileStorageService>();
         services.AddScoped<IFileValidationService, FileValidationService>();
-        services.AddScoped<IFileStorageService, LocalFileStorageService>();
-        services.AddScoped<IFileValidationService, FileValidationService>();
+
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IBrandService, BrandService>();
 
+        // Repositories
         services.AddScoped<ICategoryRepository, CategoryRepository>();
-        services.AddScoped<IBrandRepository, BrandRepository>();    
+        services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<IProductRepository, ProductRepository>();
-        services.AddScoped<IInventoryTransactionRepository, InventoryTransactionRepository>();
         services.AddScoped<IProductImageRepository, ProductImageRepository>();
         services.AddScoped<IInventoryRepository, InventoryRepository>();
+        services.AddScoped<IInventoryTransactionRepository, InventoryTransactionRepository>();
         services.AddScoped<ICartRepository, CartRepository>();
+        services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 
+        // Queries
         services.AddScoped<ICategoryQueries, CategoryQueries>();
         services.AddScoped<IBrandQueries, BrandQueries>();
         services.AddScoped<IProductQueries, ProductQueries>();
         services.AddScoped<IInventoryQueries, InventoryQueries>();
         services.AddScoped<IInventoryTransactionQueries, InventoryTransactionQueries>();
         services.AddScoped<ICartQueries, CartQueries>();
+        services.AddScoped<IOrderQueries, OrderQueries>();
+
+        services.Configure<FileStorageOptions>(
+            configuration.GetSection(FileStorageOptions.SectionName));
+
+        services.AddScoped<IApplicationDbContext>(
+            sp => sp.GetRequiredService<ApplicationDbContext>());
+
+        services.AddScoped<AuditableEntityInterceptor>();
 
         services.Configure<FileStorageOptions>(configuration.GetSection(FileStorageOptions.SectionName));
         services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
