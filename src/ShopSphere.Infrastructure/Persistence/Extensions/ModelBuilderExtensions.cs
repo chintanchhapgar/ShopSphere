@@ -1,5 +1,6 @@
-﻿using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+
 namespace ShopSphere.Infrastructure.Persistence.Extensions;
 
 public static class ModelBuilderExtensions
@@ -7,31 +8,24 @@ public static class ModelBuilderExtensions
     public static void ApplySoftDeleteQueryFilter(
         this ModelBuilder modelBuilder)
     {
-        var auditableTypes = modelBuilder.Model
-            .GetEntityTypes()
-            .Where(t => typeof(AuditableEntity)
-                .IsAssignableFrom(t.ClrType));
-
-        foreach (var entityType in auditableTypes)
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
         {
-            var parameter = Expression.Parameter(
-                entityType.ClrType,
-                "e");
+            if (!typeof(AuditableEntity).IsAssignableFrom(entityType.ClrType))
+                continue;
 
-            var property = Expression.Property(
-                parameter,
-                nameof(AuditableEntity.IsDeleted));
+            var parameter = Expression.Parameter(entityType.ClrType, "e");
 
             var body = Expression.Equal(
-                property,
+                Expression.Call(
+                    typeof(EF),
+                    nameof(EF.Property),
+                    new[] { typeof(bool) },
+                    parameter,
+                    Expression.Constant(nameof(AuditableEntity.IsDeleted))),
                 Expression.Constant(false));
 
-            var lambda = Expression.Lambda(
-                body,
-                parameter);
-
             modelBuilder.Entity(entityType.ClrType)
-                .HasQueryFilter(lambda);
+                .HasQueryFilter(Expression.Lambda(body, parameter));
         }
     }
 }

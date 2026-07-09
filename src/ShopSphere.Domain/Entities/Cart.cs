@@ -1,6 +1,6 @@
 ﻿namespace ShopSphere.Domain.Entities;
 
-public sealed class Cart : AuditableEntity
+public sealed class Cart : Entity
 {
     private readonly List<CartItem> _items = [];
 
@@ -15,12 +15,9 @@ public sealed class Cart : AuditableEntity
 
     public Guid CustomerId { get; private set; }
 
+    public IReadOnlyCollection<CartItem> Items => _items.AsReadOnly();
 
-    public IReadOnlyCollection<CartItem> Items =>
-        _items.AsReadOnly();
-
-    public decimal Total =>
-        _items.Sum(x => x.Subtotal);
+    public decimal Total => _items.Sum(x => x.Subtotal);
 
     public void AddItem(
         Guid productId,
@@ -45,8 +42,8 @@ public sealed class Cart : AuditableEntity
     }
 
     public void UpdateQuantity(
-        Guid itemId,
-        int quantity)
+         Guid itemId,
+         int quantity)
     {
         var item = _items.FirstOrDefault(x => x.Id == itemId)
             ?? throw new InvalidOperationException("Cart item not found.");
