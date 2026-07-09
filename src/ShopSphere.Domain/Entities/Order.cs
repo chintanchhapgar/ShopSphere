@@ -43,6 +43,8 @@ public sealed class Order : AuditableEntity
 
     public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
 
+    public Payment? Payment { get; private set; }
+
     public static Order Create(
         Guid userId,
         string orderNumber,

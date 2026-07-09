@@ -644,6 +644,66 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Payments.PaymentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPaymentEndpoints\u003Eb__0_0",
+    "RelativePath": "api/orders/{id:guid}/payment",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Contracts.Payments.PaymentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Payments"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Payments.PaymentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPaymentEndpoints\u003Eb__0_1",
+    "RelativePath": "api/orders/{paymentId:guid}/status",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Contracts.Payments.UpdatePaymentStatusRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Payments"
+    ]
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Orders.OrderEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapOrderEndpoints\u003Eb__0_1",
     "RelativePath": "api/orders/my",
