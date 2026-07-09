@@ -103,7 +103,6 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                     Status = table.Column<int>(type: "int", nullable: false),
                     Method = table.Column<int>(type: "int", nullable: false),
                     TransactionId = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    OrderId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedAtUtc = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedAtUtc = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -120,11 +119,6 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                         principalTable: "Orders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Payments_Orders_OrderId1",
-                        column: x => x.OrderId1,
-                        principalTable: "Orders",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -143,13 +137,6 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                 table: "Payments",
                 column: "OrderId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Payments_OrderId1",
-                table: "Payments",
-                column: "OrderId1",
-                unique: true,
-                filter: "[OrderId1] IS NOT NULL");
         }
 
         /// <inheritdoc />

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using ShopSphere.Api.Common.Extensions;
 using ShopSphere.Application.Features.Payments.CreatePayment;
+using ShopSphere.Application.Features.Payments.GetPayment;
 using ShopSphere.Application.Features.Payments.UpdatePaymentStatus;
 using ShopSphere.Contracts.Payments;
 using ShopSphere.Domain.Enums;
@@ -42,6 +43,17 @@ public static class PaymentEndpoints
                         paymentId,
                         request.Status,
                         request.TransactionId));
+
+                return result.ToHttpResult();
+            });
+
+        group.MapGet("/{orderId:guid}/payment",
+            [Authorize] async (
+                Guid orderId,
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+                    new GetPaymentQuery(orderId));
 
                 return result.ToHttpResult();
             });

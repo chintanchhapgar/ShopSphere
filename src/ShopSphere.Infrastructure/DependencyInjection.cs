@@ -91,6 +91,7 @@ public static class DependencyInjection
         services.AddScoped<IInventoryTransactionQueries, InventoryTransactionQueries>();
         services.AddScoped<ICartQueries, CartQueries>();
         services.AddScoped<IOrderQueries, OrderQueries>();
+        services.AddScoped<IPaymentQueries, PaymentQueries>();
 
         services.Configure<FileStorageOptions>(
             configuration.GetSection(FileStorageOptions.SectionName));

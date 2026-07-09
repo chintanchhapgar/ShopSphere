@@ -12,7 +12,7 @@ using ShopSphere.Infrastructure.Persistence;
 namespace ShopSphere.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260709075603_AddPayment")]
+    [Migration("20260709082833_AddPayment")]
     partial class AddPayment
     {
         /// <inheritdoc />
@@ -523,9 +523,6 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("OrderId1")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -543,10 +540,6 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("OrderId")
                         .IsUnique();
-
-                    b.HasIndex("OrderId1")
-                        .IsUnique()
-                        .HasFilter("[OrderId1] IS NOT NULL");
 
                     b.ToTable("Payments", (string)null);
                 });
@@ -890,14 +883,10 @@ namespace ShopSphere.Infrastructure.Persistence.Migrations
             modelBuilder.Entity("ShopSphere.Domain.Entities.Payment", b =>
                 {
                     b.HasOne("ShopSphere.Domain.Entities.Order", "Order")
-                        .WithOne()
+                        .WithOne("Payment")
                         .HasForeignKey("ShopSphere.Domain.Entities.Payment", "OrderId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("ShopSphere.Domain.Entities.Order", null)
-                        .WithOne("Payment")
-                        .HasForeignKey("ShopSphere.Domain.Entities.Payment", "OrderId1");
 
                     b.Navigation("Order");
                 });

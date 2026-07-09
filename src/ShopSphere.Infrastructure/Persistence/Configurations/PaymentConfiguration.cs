@@ -27,9 +27,9 @@ public sealed class PaymentConfiguration
             .HasMaxLength(200);
 
         builder.HasOne(x => x.Order)
-            .WithOne()
-            .HasForeignKey<Payment>(
-                x => x.OrderId)
-            .OnDelete(DeleteBehavior.Restrict);
+        .WithOne(x => x.Payment)
+        .HasForeignKey<Payment>(
+            x => x.OrderId)
+        .OnDelete(DeleteBehavior.Restrict);
     }
 }

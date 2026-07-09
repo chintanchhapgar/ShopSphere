@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.SharedKernel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf99b16e924475ff6cd773dcca68fddc511e488e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+296db5dda7c8bb2c19cd3ac2fc152c6d013e19dd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.SharedKernel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.SharedKernel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

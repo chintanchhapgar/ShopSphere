@@ -675,6 +675,31 @@
   },
   {
     "ContainingType": "ShopSphere.Api.Endpoints.Payments.PaymentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPaymentEndpoints\u003Eb__0_2",
+    "RelativePath": "api/orders/{orderId:guid}/payment",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Payments"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Payments.PaymentEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapPaymentEndpoints\u003Eb__0_1",
     "RelativePath": "api/orders/{paymentId:guid}/status",
     "HttpMethod": "PATCH",
