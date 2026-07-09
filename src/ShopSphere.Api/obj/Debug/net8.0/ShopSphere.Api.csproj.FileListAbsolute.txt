@@ -178,8 +178,3 @@ D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\MailKit.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\MimeKit.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\EmailTemplates\OrderPlaced.html
-D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\EmailTemplates\PaymentSucceeded.html
-D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\EmailTemplates\ShipmentCreated.html
-D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\EmailTemplates\ShipmentDelivered.html
-D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\EmailTemplates\Welcome.html

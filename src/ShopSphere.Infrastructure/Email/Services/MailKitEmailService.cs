@@ -3,9 +3,9 @@ using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using ShopSphere.Application.Interfaces;
-using ShopSphere.Infrastructure.Settings;
+using ShopSphere.Infrastructure.Email.Settings;
 
-namespace ShopSphere.Infrastructure.Services;
+namespace ShopSphere.Infrastructure.Email.Services;
 
 public sealed class MailKitEmailService : IEmailService
 {

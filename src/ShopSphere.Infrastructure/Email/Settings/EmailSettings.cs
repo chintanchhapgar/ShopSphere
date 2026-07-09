@@ -1,4 +1,4 @@
-﻿namespace ShopSphere.Infrastructure.Settings;
+﻿namespace ShopSphere.Infrastructure.Email.Settings;
 
 public sealed class EmailSettings
 {

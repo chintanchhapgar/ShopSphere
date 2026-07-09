@@ -1,8 +1,8 @@
 ﻿using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Notifications;
-using ShopSphere.Infrastructure.Helpers;
+using ShopSphere.Infrastructure.Email.Helpers;
 
-namespace ShopSphere.Infrastructure.Services;
+namespace ShopSphere.Infrastructure.Email.Services;
 
 public sealed class NotificationService
     : INotificationService
@@ -19,17 +19,21 @@ public sealed class NotificationService
          OrderPlacedEmailModel model,
          CancellationToken cancellationToken = default)
     {
-        var html = EmailTemplateReader.Read("OrderPlaced.html");
+        var layout = TemplateReader.Read("Layout.html");
 
-        html = html
+        var body = TemplateReader.Read("OrderPlaced.html");
+
+        layout = layout.Replace("{{Content}}", body);
+
+        layout = layout
             .Replace("{{CustomerName}}", model.CustomerName)
             .Replace("{{OrderNumber}}", model.OrderNumber)
-            .Replace("{{TotalAmount}}", model.TotalAmount.ToString("0.00"));
+            .Replace("{{TotalAmount}}", model.TotalAmount.ToString("N2"));
 
         await _emailService.SendAsync(
             model.Email,
             "Your ShopSphere Order Confirmation",
-            html,
+            layout,
             cancellationToken);
     }
 

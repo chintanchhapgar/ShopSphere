@@ -22,8 +22,3 @@ D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere
 D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphe.561084DD.Up2Date
 D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\ShopSphere.Infrastructure.runtimeconfig.json
 D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\obj\Debug\net8.0\ShopSphere.Infrastructure.genruntimeconfig.cache
-D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\EmailTemplates\OrderPlaced.html
-D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\EmailTemplates\PaymentSucceeded.html
-D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\EmailTemplates\ShipmentCreated.html
-D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\EmailTemplates\ShipmentDelivered.html
-D:\Projects\ShopSphere\src\ShopSphere.Infrastructure\bin\Debug\net8.0\EmailTemplates\Welcome.html

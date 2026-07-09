@@ -11,6 +11,7 @@ using ShopSphere.Application.Queries;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
+using ShopSphere.Infrastructure.Email.Services;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Persistence.Interceptors;

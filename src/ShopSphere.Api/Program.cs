@@ -6,10 +6,10 @@ using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Infrastructure;
+using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Services;
-using ShopSphere.Infrastructure.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
