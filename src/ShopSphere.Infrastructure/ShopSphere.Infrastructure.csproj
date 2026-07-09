@@ -14,9 +14,14 @@
     <ProjectReference Include="..\ShopSphere.Domain\ShopSphere.Domain.csproj" />
     <ProjectReference Include="..\ShopSphere.SharedKernel\ShopSphere.SharedKernel.csproj" />
   </ItemGroup>
-
+<ItemGroup>
+  <None Update="EmailTemplates\**\*">
+	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
   <ItemGroup>
     <PackageReference Include="CloudinaryDotNet" Version="1.29.2" />
+    <PackageReference Include="MailKit" Version="4.17.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.16" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.16" />

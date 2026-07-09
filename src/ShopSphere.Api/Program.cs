@@ -4,9 +4,12 @@ using ShopSphere.Api.Endpoints;
 using ShopSphere.Api.Extensions;
 using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Infrastructure;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
+using ShopSphere.Infrastructure.Services;
+using ShopSphere.Infrastructure.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,9 @@ builder.Services
     .AddJwtAuthentication(builder.Configuration);
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection(EmailSettings.SectionName));
 
 builder.Services.AddSwaggerGen(options =>
 {

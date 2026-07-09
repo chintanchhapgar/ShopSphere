@@ -1445,5 +1445,30 @@
     "Tags": [
       "Shipments"
     ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Test.TestEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTestEndpoints\u003Eb__0_0",
+    "RelativePath": "api/test/email",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Test"
+    ]
   }
 ]

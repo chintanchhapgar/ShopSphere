@@ -6,6 +6,7 @@ using ShopSphere.Api.Endpoints.Orders;
 using ShopSphere.Api.Endpoints.Payments;
 using ShopSphere.Api.Endpoints.Products;
 using ShopSphere.Api.Endpoints.Shipments;
+using ShopSphere.Api.Endpoints.Test;
 
 namespace ShopSphere.Api.Endpoints;
 
@@ -26,6 +27,7 @@ public static class EndpointExtensions
         app.MapPaymentEndpoints();
         app.MapShipmentEndpoints();
         app.MapCouponEndpoints();
+        app.MapTestEndpoints();
 
         return app;
     }

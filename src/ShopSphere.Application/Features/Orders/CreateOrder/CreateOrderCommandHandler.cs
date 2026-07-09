@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Common.Errors;
 using ShopSphere.Contracts.Errors;
@@ -15,17 +16,22 @@ public sealed class CreateOrderCommandHandler
     private readonly IInventoryRepository _inventoryRepository;
     private readonly IOrderRepository _orderRepository;
     private readonly ICurrentUserService _currentUserService;
-
+    private readonly IUserService _userService;
+    private readonly INotificationService _notificationService;
     public CreateOrderCommandHandler(
         ICartRepository cartRepository,
         IInventoryRepository inventoryRepository,
         IOrderRepository orderRepository,
-        ICurrentUserService currentUserService)
+        ICurrentUserService currentUserService,
+        IUserService userService,
+        INotificationService notificationService)
     {
         _cartRepository = cartRepository;
         _inventoryRepository = inventoryRepository;
         _orderRepository = orderRepository;
         _currentUserService = currentUserService;
+        _userService = userService;
+        _notificationService = notificationService;
     }
 
     public async Task<Result<CreateOrderResponse>> Handle(
@@ -137,6 +143,21 @@ public sealed class CreateOrderCommandHandler
 
         await _orderRepository.SaveChangesAsync(
             cancellationToken);
+
+        var user = await _userService.GetByIdAsync(
+            _currentUserService.UserId,
+            cancellationToken);
+
+        if (user is not null)
+        {
+            await _notificationService.SendOrderPlacedAsync(
+                new OrderPlacedEmailModel(
+                    user.FullName,
+                    user.Email,
+                    order.OrderNumber,
+                    order.TotalAmount),
+                cancellationToken);
+        }
 
         return Result<CreateOrderResponse>.Success(
             new CreateOrderResponse(

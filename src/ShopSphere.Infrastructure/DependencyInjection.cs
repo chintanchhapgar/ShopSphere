@@ -61,9 +61,14 @@ public static class DependencyInjection
         services.Configure<JwtOptions>(
             configuration.GetSection(JwtOptions.SectionName));
 
+
         services.AddScoped<ITokenProvider, JwtTokenProvider>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
+
+        services.AddScoped<IEmailService, MailKitEmailService>();
+        services.AddScoped<INotificationService, NotificationService>();
+        services.AddScoped<IUserService, UserService>();
 
         services.AddScoped<IFileStorageService, LocalFileStorageService>();
         services.AddScoped<IFileValidationService, FileValidationService>();
@@ -71,6 +76,7 @@ public static class DependencyInjection
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<IOrderFulfillmentService, OrderFulfillmentService>();
+
 
         // Repositories
         services.AddScoped<ICategoryRepository, CategoryRepository>();
