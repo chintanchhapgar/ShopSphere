@@ -41,6 +41,8 @@ public sealed class Order : AuditableEntity
 
     public string Country { get; private set; } = default!;
 
+    public Guid? CouponId { get; private set; }
+    public string? CouponCode { get; private set; }
     public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
 
     public Payment? Payment { get; private set; }
@@ -91,18 +93,40 @@ public sealed class Order : AuditableEntity
         RecalculateTotals();
     }
 
+    public void SetCharges(
+    decimal taxAmount,
+    decimal shippingAmount)
+    {
+        TaxAmount = taxAmount;
+        ShippingAmount = shippingAmount;
+
+        RecalculateTotals();
+    }
+
     private void RecalculateTotals()
     {
         SubTotal = _items.Sum(x => x.TotalPrice);
 
         TotalAmount =
+        Math.Max(
+            0,
             SubTotal +
             TaxAmount +
             ShippingAmount -
-            DiscountAmount;
+            DiscountAmount);
     }
 
+    public void ApplyCoupon(
+    Guid couponId,
+    string couponCode,
+    decimal discountAmount)
+    {
+        CouponId = couponId;
+        CouponCode = couponCode;
+        DiscountAmount = discountAmount;
 
+        RecalculateTotals();
+    }
     public void Cancel()
     {
         if (Status != OrderStatus.Pending)

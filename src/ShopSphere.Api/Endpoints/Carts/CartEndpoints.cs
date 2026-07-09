@@ -1,9 +1,13 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using ShopSphere.Api.Common.Extensions;
 using ShopSphere.Api.Extensions;
+using ShopSphere.Application.Features.Carts.RemoveCoupon;
 using ShopSphere.Application.Features.Carts.AddCartItem;
+using ShopSphere.Application.Features.Carts.ApplyCoupon;
 using ShopSphere.Application.Features.Carts.ClearCart;
 using ShopSphere.Application.Features.Carts.GetCart;
 using ShopSphere.Application.Features.Carts.RemoveCartItem;
@@ -54,6 +58,26 @@ public static class CartEndpoints
                 ClearCart)
             .WithName("ClearCart")
             .WithSummary("Clear the shopping cart");
+
+        group.MapPost("/coupon",
+            [Authorize] async (
+                ApplyCouponCommand command,
+                ISender sender) =>
+            {
+                var result = await sender.Send(command);
+
+                return result.ToHttpResult();
+            });
+
+        group.MapDelete("/coupon",
+            [Authorize] async (
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+                    new RemoveCouponCommand());
+
+                return result.ToHttpResult();
+            });
 
         return app;
     }

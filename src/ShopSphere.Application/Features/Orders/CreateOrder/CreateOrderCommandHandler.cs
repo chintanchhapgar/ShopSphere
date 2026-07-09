@@ -56,8 +56,7 @@ public sealed class CreateOrderCommandHandler
             productIds,
             cancellationToken);
 
-        var inventoryLookup = inventories
-            .ToDictionary(x => x.ProductId);
+        var inventoryLookup = inventories.ToDictionary(x => x.ProductId);
 
         foreach (var item in cart.Items)
         {
@@ -74,8 +73,8 @@ public sealed class CreateOrderCommandHandler
             }
         }
 
-        var orderNumber = $"ORD-{DateTime.UtcNow:yyyyMMdd}" +
-                          $"-{Guid.NewGuid().ToString("N")[..6].ToUpperInvariant()}";
+        var orderNumber =
+            $"ORD-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid():N}"[..23];
 
         var order = Order.Create(
             customerId,
@@ -105,24 +104,39 @@ public sealed class CreateOrderCommandHandler
             order.AddItem(orderItem);
         }
 
+        // Apply coupon if present
+        if (cart.CouponId.HasValue && cart.Coupon is not null)
+        {
+            order.ApplyCoupon(
+                cart.Coupon.Id,
+                cart.Coupon.Code,
+                cart.DiscountAmount);
+        }
+
+        // Tax & Shipping
         order.SetCharges(
             taxAmount: 0,
-            shippingAmount: 0,
-            discountAmount: 0);
+            shippingAmount: 0);
 
         await _orderRepository.AddAsync(
             order,
             cancellationToken);
 
+        // Reduce inventory
         foreach (var cartItem in cart.Items)
         {
             inventoryLookup[cartItem.ProductId]
                 .DecreaseStock(cartItem.Quantity);
         }
 
+        // Increment coupon usage & clear coupon
+        cart.CompleteCheckout();
+
+        // Remove all cart items
         _cartRepository.RemoveItems(cart);
 
-        await _orderRepository.SaveChangesAsync(cancellationToken);
+        await _orderRepository.SaveChangesAsync(
+            cancellationToken);
 
         return Result<CreateOrderResponse>.Success(
             new CreateOrderResponse(

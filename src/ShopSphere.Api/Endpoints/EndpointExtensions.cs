@@ -1,6 +1,7 @@
 ﻿using ShopSphere.Api.Endpoints.Authentication;
 using ShopSphere.Api.Endpoints.Brands;
 using ShopSphere.Api.Endpoints.Categories;
+using ShopSphere.Api.Endpoints.Coupons;
 using ShopSphere.Api.Endpoints.Orders;
 using ShopSphere.Api.Endpoints.Payments;
 using ShopSphere.Api.Endpoints.Products;
@@ -24,6 +25,7 @@ public static class EndpointExtensions
         app.MapAdminOrderEndpoints();
         app.MapPaymentEndpoints();
         app.MapShipmentEndpoints();
+        app.MapCouponEndpoints();
 
         return app;
     }

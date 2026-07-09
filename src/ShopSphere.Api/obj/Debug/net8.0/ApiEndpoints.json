@@ -319,6 +319,50 @@
     "Summary": "Clear the shopping cart"
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCartEndpoints\u003Eb__0_0",
+    "RelativePath": "api/cart/coupon",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Carts.ApplyCoupon.ApplyCouponCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Cart"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCartEndpoints\u003Eb__0_1",
+    "RelativePath": "api/cart/coupon",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Cart"
+    ]
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.CartEndpoints",
     "Method": "AddCartItem",
     "RelativePath": "api/cart/items",
@@ -566,6 +610,130 @@
     ],
     "Tags": [
       "Categories"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Coupons.CouponEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCouponEndpoints\u003Eb__0_0",
+    "RelativePath": "api/coupons/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Coupons.CreateCoupon.CreateCouponCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Coupons"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Coupons.CouponEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCouponEndpoints\u003Eb__0_1",
+    "RelativePath": "api/coupons/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Coupons"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Coupons.CouponEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCouponEndpoints\u003Eb__0_2",
+    "RelativePath": "api/coupons/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Coupons"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Coupons.CouponEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCouponEndpoints\u003Eb__0_3",
+    "RelativePath": "api/coupons/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Coupons.UpdateCoupon.UpdateCouponCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Coupons"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Coupons.CouponEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapCouponEndpoints\u003Eb__0_4",
+    "RelativePath": "api/coupons/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Coupons"
     ]
   },
   {

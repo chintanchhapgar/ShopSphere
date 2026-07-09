@@ -2,7 +2,8 @@
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Persistence;
-using ShopSphere.Infrastructure.Persistence.Repositories;
+
+namespace ShopSphere.Infrastructure.Persistence.Repositories;
 
 public sealed class CartRepository
     : Repository<Cart>,
@@ -21,6 +22,7 @@ public sealed class CartRepository
         CancellationToken cancellationToken)
     {
         return await _context.Carts
+            .Include(x => x.Coupon)
             .Include(x => x.Items)
             .FirstOrDefaultAsync(
                 x => x.CustomerId == customerId,
@@ -32,33 +34,36 @@ public sealed class CartRepository
         CancellationToken cancellationToken)
     {
         return await _context.Carts
+            .Include(x => x.Coupon)
             .Include(x => x.Items)
             .FirstOrDefaultAsync(
                 x => x.Items.Any(i => i.Id == itemId),
                 cancellationToken);
     }
 
-    public void RemoveItem(CartItem item)
-    {
-        _context.CartItems.Remove(item);
-    }
-
-    public void RemoveItems(Cart cart)
-    {
-        _context.CartItems.RemoveRange(cart.Items);
-    }
-
-
     public async Task<Cart?> GetByCustomerWithItemsAsync(
         Guid customerId,
         CancellationToken cancellationToken)
     {
         return await _context.Carts
+            .Include(c => c.Coupon)
             .Include(c => c.Items)
                 .ThenInclude(i => i.Product)
                     .ThenInclude(p => p.Images)
             .FirstOrDefaultAsync(
                 c => c.CustomerId == customerId,
                 cancellationToken);
+    }
+
+    public void RemoveItem(
+        CartItem item)
+    {
+        _context.CartItems.Remove(item);
+    }
+
+    public void RemoveItems(
+        Cart cart)
+    {
+        _context.CartItems.RemoveRange(cart.Items);
     }
 }

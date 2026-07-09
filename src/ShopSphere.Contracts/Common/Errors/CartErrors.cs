@@ -27,4 +27,8 @@ public static class CartErrors
     public static readonly Error Unauthorized = new(
         "Cart.Unauthorized",
         "You are not authorized to access this cart.");
+
+    public static readonly Error CouponNotApplied = new(
+        "Cart.CouponNotApplied",
+        "No coupon is applied to the cart.");
 }

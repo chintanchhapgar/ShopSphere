@@ -15,6 +15,12 @@ public sealed class CartConfiguration : IEntityTypeConfiguration<Cart>
             .HasForeignKey(x => x.CartId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        builder
+        .HasOne(x => x.Coupon)
+        .WithMany()
+        .HasForeignKey(x => x.CouponId)
+        .OnDelete(DeleteBehavior.SetNull);
+
         builder.HasIndex(x => x.CustomerId)
             .IsUnique();
     }

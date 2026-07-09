@@ -37,6 +37,7 @@ public class ApplicationDbContext
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
     public DbSet<Payment> Payments => Set<Payment>();
     public DbSet<Shipment> Shipments => Set<Shipment>();
+    public DbSet<Coupon> Coupons => Set<Coupon>();
     public DatabaseFacade Database => base.Database;
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)
