@@ -44,7 +44,7 @@ public sealed class Order : AuditableEntity
     public IReadOnlyCollection<OrderItem> Items => _items.AsReadOnly();
 
     public Payment? Payment { get; private set; }
-
+    public Shipment? Shipment { get; private set; }
     public static Order Create(
         Guid userId,
         string orderNumber,
@@ -119,15 +119,48 @@ public sealed class Order : AuditableEntity
         return Status == OrderStatus.Pending;
     }
 
-    public void UpdateStatus(OrderStatus status)
+    public void Confirm()
     {
-        if (!CanMoveTo(status))
+        if (Status != OrderStatus.Pending)
         {
             throw new InvalidOperationException(
-                $"Cannot change order status from {Status} to {status}.");
+                "Only pending orders can be confirmed.");
         }
 
-        Status = status;
+        Status = OrderStatus.Confirmed;
+    }
+
+    public void StartProcessing()
+    {
+        if (Status != OrderStatus.Confirmed)
+        {
+            throw new InvalidOperationException(
+                "Only confirmed orders can be processed.");
+        }
+
+        Status = OrderStatus.Processing;
+    }
+
+    public void MarkShipped()
+    {
+        if (Status != OrderStatus.Processing)
+        {
+            throw new InvalidOperationException(
+                "Only processing orders can be shipped.");
+        }
+
+        Status = OrderStatus.Shipped;
+    }
+
+    public void MarkDelivered()
+    {
+        if (Status != OrderStatus.Shipped)
+        {
+            throw new InvalidOperationException(
+                "Only shipped orders can be delivered.");
+        }
+
+        Status = OrderStatus.Delivered;
     }
 
     private bool CanMoveTo(OrderStatus status)

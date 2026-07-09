@@ -70,6 +70,7 @@ public static class DependencyInjection
 
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IBrandService, BrandService>();
+        services.AddScoped<IOrderFulfillmentService, OrderFulfillmentService>();
 
         // Repositories
         services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -82,6 +83,7 @@ public static class DependencyInjection
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<IOrderItemRepository, OrderItemRepository>();
         services.AddScoped<IPaymentRepository, PaymentRepository>();
+        services.AddScoped<IShipmentRepository, ShipmentRepository>();
 
         // Queries
         services.AddScoped<ICategoryQueries, CategoryQueries>();
@@ -92,6 +94,7 @@ public static class DependencyInjection
         services.AddScoped<ICartQueries, CartQueries>();
         services.AddScoped<IOrderQueries, OrderQueries>();
         services.AddScoped<IPaymentQueries, PaymentQueries>();
+        services.AddScoped<IShipmentQueries, ShipmentQueries>();
 
         services.Configure<FileStorageOptions>(
             configuration.GetSection(FileStorageOptions.SectionName));

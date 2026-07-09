@@ -4,6 +4,7 @@ using ShopSphere.Api.Endpoints.Categories;
 using ShopSphere.Api.Endpoints.Orders;
 using ShopSphere.Api.Endpoints.Payments;
 using ShopSphere.Api.Endpoints.Products;
+using ShopSphere.Api.Endpoints.Shipments;
 
 namespace ShopSphere.Api.Endpoints;
 
@@ -22,6 +23,7 @@ public static class EndpointExtensions
         app.MapOrderEndpoints();
         app.MapAdminOrderEndpoints();
         app.MapPaymentEndpoints();
+        app.MapShipmentEndpoints();
 
         return app;
     }

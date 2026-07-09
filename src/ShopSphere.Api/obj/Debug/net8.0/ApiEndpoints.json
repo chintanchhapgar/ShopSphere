@@ -1153,5 +1153,129 @@
     ],
     "EndpointName": "GetInventoryHistory",
     "Summary": "Get inventory transaction history"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Shipments.ShipmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapShipmentEndpoints\u003Eb__0_2",
+    "RelativePath": "api/shipments/{shipmentId:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shipmentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Shipments"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Shipments.ShipmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapShipmentEndpoints\u003Eb__0_1",
+    "RelativePath": "api/shipments/{shipmentId:guid}/status",
+    "HttpMethod": "PATCH",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "shipmentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Application.Features.Shipments.UpdateShipmentStatus.UpdateShipmentStatusRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Shipments"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Shipments.ShipmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapShipmentEndpoints\u003Eb__0_4",
+    "RelativePath": "api/shipments/my",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Shipments"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Shipments.ShipmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapShipmentEndpoints\u003Eb__0_0",
+    "RelativePath": "api/shipments/order/{orderId:guid}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Shipments"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Shipments.ShipmentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapShipmentEndpoints\u003Eb__0_3",
+    "RelativePath": "api/shipments/order/{orderId:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Shipments"
+    ]
   }
 ]
