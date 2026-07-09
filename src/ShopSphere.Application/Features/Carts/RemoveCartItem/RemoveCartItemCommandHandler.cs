@@ -39,7 +39,10 @@ public sealed class RemoveCartItemCommandHandler
             return Result.Failure(CommonErrors.NotFound);
         }
 
-        cart.RemoveItem(request.ItemId);
+        // Application: orchestrates domain + infrastructure ✅
+        var removedItem = cart.RemoveItem(request.ItemId);
+        if (removedItem is not null)
+            _cartRepository.RemoveItem(removedItem);
 
         await _cartRepository.SaveChangesAsync(
             cancellationToken);

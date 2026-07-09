@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ShopSphere.Infrastructure.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class AddShoppingCart : Migration
+    public partial class RebuildShoppingCart : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

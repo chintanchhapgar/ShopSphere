@@ -19,8 +19,8 @@ public interface ICartRepository
         Guid itemId,
         CancellationToken cancellationToken);
 
+    void RemoveItem(CartItem item);
     void RemoveItems(Cart cart);
 
-    void RemoveItem(CartItem item);
 
 }

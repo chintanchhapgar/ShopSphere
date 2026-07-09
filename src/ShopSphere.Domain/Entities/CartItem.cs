@@ -7,12 +7,10 @@ public sealed class CartItem : Entity
     }
 
     public CartItem(
-        Guid cartId,
         Guid productId,
         int quantity,
         decimal unitPrice)
     {
-        CartId = cartId;
         ProductId = productId;
         Quantity = quantity;
         UnitPrice = unitPrice;

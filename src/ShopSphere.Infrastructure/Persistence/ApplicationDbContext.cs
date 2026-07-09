@@ -36,14 +36,21 @@ public class ApplicationDbContext
         optionsBuilder.AddInterceptors(_auditableInterceptor);
     }
 
-    protected override void OnModelCreating(
-    ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
 
-        builder.ApplyConfigurationsFromAssembly(
-            typeof(ApplicationDbContext).Assembly);
+        foreach (var entityType in builder.Model.GetEntityTypes())
+        {
+            var idProperty = entityType.FindProperty(nameof(Entity.Id));
 
+            if (idProperty != null && idProperty.ClrType == typeof(Guid))
+            {
+                idProperty.ValueGenerated = Microsoft.EntityFrameworkCore.Metadata.ValueGenerated.Never;
+            }
+        }
+
+        builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         builder.ApplySoftDeleteQueryFilter();
     }
 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Queries;
@@ -28,8 +29,9 @@ public static class DependencyInjection
         IConfiguration configuration)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(
-        configuration.GetConnectionString("DefaultConnection")));
+     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+            .EnableSensitiveDataLogging()
+            .LogTo(Console.WriteLine, LogLevel.Information));
 
         services
             .AddIdentityCore<ApplicationUser>(options =>

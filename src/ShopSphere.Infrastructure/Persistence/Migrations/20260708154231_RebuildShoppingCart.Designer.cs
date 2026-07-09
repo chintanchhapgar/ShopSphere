@@ -12,8 +12,8 @@ using ShopSphere.Infrastructure.Persistence;
 namespace ShopSphere.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260708085731_AddShoppingCart")]
-    partial class AddShoppingCart
+    [Migration("20260708154231_RebuildShoppingCart")]
+    partial class RebuildShoppingCart
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

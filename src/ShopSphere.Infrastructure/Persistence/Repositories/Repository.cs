@@ -59,7 +59,7 @@ public class Repository<TEntity> : IRepository<TEntity>
         foreach (var entry in Context.ChangeTracker.Entries())
         {
             Console.WriteLine(
-                $"{entry.Entity.GetType().Name} | {entry.State}");
+                $"{entry.Entity.GetType().Name} | {entry.State} | Id: {(entry.Entity as Entity)?.Id}");
         }
 
         await Context.SaveChangesAsync(cancellationToken);

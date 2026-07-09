@@ -2,14 +2,13 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ShopSphere.Domain.Entities;
 
-namespace ShopSphere.Infrastructure.Persistence.Configurations;
-
-public sealed class CartItemConfiguration
-    : IEntityTypeConfiguration<CartItem>
+public sealed class CartItemConfiguration : IEntityTypeConfiguration<CartItem>
 {
     public void Configure(EntityTypeBuilder<CartItem> builder)
     {
         builder.HasKey(x => x.Id);
+
+        builder.Property(x => x.Id);
 
         builder.Property(x => x.Quantity)
             .IsRequired();
