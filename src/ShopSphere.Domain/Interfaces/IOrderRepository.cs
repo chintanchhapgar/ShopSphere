@@ -14,4 +14,8 @@ public interface IOrderRepository
 
     Task SaveChangesAsync(
         CancellationToken cancellationToken);
+
+    Task<Order?> GetByIdWithItemsAsync(
+        Guid id,
+        CancellationToken cancellationToken);
 }

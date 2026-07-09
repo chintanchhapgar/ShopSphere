@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using ShopSphere.Api.Common.Extensions;
+using ShopSphere.Application.Features.Orders.CancelOrder;
 using ShopSphere.Application.Features.Orders.CreateOrder;
 using ShopSphere.Application.Features.Orders.GetMyOrders;
 using ShopSphere.Application.Features.Orders.GetOrderById;
@@ -42,6 +43,17 @@ public static class OrderEndpoints
             {
                 var result = await sender.Send(
                     new GetOrderByIdQuery(id));
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/{id:guid}/cancel",
+            [Authorize] async (
+                Guid id,
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+                    new CancelOrderCommand(id));
 
                 return result.ToHttpResult();
             });

@@ -41,4 +41,15 @@ public sealed class OrderRepository : Repository<Order>,IOrderRepository
                 x => x.OrderNumber == orderNumber,
                 cancellationToken);
     }
+
+    public async Task<Order?> GetByIdWithItemsAsync(
+        Guid id,
+        CancellationToken cancellationToken)
+    {
+        return await _context.Orders
+            .Include(x => x.Items)
+            .FirstOrDefaultAsync(
+                x => x.Id == id,
+                cancellationToken);
+    }
 }
