@@ -49,6 +49,75 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Reviews.AdminReviewEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAdminReviewEndpoints\u003Eb__0_2",
+    "RelativePath": "api/admin/reviews/{id:guid}/approve",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Admin Reviews"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Reviews.AdminReviewEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAdminReviewEndpoints\u003Eb__0_3",
+    "RelativePath": "api/admin/reviews/{id:guid}/reject",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Admin Reviews"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Reviews.AdminReviewEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAdminReviewEndpoints\u003Eb__0_1",
+    "RelativePath": "api/admin/reviews/pending",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Admin Reviews"
+    ]
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_1",
     "RelativePath": "api/auth/login",
@@ -1321,6 +1390,61 @@
     ],
     "EndpointName": "GetInventoryHistory",
     "Summary": "Get inventory transaction history"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Reviews.ReviewEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapReviewEndpoints\u003Eb__0_0",
+    "RelativePath": "api/reviews/{productId:guid}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Api.Endpoints.Reviews.AddReviewRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Rseviews"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Reviews.ReviewEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapReviewEndpoints\u003Eb__0_1",
+    "RelativePath": "api/reviews/{productId:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Rseviews"
+    ]
   },
   {
     "ContainingType": "ShopSphere.Api.Endpoints.Shipments.ShipmentEndpoints\u002B\u003C\u003Ec",
