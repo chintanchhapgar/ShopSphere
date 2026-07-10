@@ -1,3 +1,5 @@
+using Hangfire;
+using Hangfire.SqlServer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi.Models;
 using ShopSphere.Api.Endpoints;
@@ -11,13 +13,24 @@ using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration)
     .AddJwtAuthentication(builder.Configuration);
+
+builder.Services.AddHangfire(configuration =>
+{
+    configuration.UseSqlServerStorage(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new SqlServerStorageOptions
+        {
+            PrepareSchemaIfNecessary = true
+        });
+});
+
+builder.Services.AddHangfireServer();
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -61,6 +74,7 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -74,9 +88,13 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
+
 app.UseAuthorization();
 
+app.UseHangfireDashboard("/hangfire");
+
 app.MapEndpoints();
+
 app.UseStaticFiles();
 
 using (var scope = app.Services.CreateScope())

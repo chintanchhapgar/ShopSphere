@@ -299,6 +299,14 @@
               "target": "Package",
               "version": "[1.29.2, )"
             },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.8.23, )"
+            },
+            "Hangfire.SqlServer": {
+              "target": "Package",
+              "version": "[1.8.23, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[4.17.0, )"

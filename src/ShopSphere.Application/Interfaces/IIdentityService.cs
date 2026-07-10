@@ -1,4 +1,5 @@
 ﻿using ShopSphere.Application.Features.Authentication.Me;
+using ShopSphere.Application.Models;
 using ShopSphere.Contracts.Authentication;
 
 namespace ShopSphere.Application.Interfaces;

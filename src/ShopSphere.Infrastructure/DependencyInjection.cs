@@ -11,6 +11,7 @@ using ShopSphere.Application.Queries;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
+using ShopSphere.Infrastructure.BackgroundJobs;
 using ShopSphere.Infrastructure.Email.Rendering;
 using ShopSphere.Infrastructure.Email.Services;
 using ShopSphere.Infrastructure.Identity;
@@ -127,7 +128,7 @@ public static class DependencyInjection
         services.AddScoped<IApplicationDbContext>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
         services.AddScoped<AuditableEntityInterceptor>();
-
+        services.AddBackgroundJobs();
         return services;
     }
 }

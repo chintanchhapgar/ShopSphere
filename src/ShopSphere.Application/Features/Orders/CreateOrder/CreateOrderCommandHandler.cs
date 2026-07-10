@@ -18,13 +18,15 @@ public sealed class CreateOrderCommandHandler
     private readonly ICurrentUserService _currentUserService;
     private readonly IUserService _userService;
     private readonly INotificationService _notificationService;
+    private readonly IBackgroundJobService _backgroundJobs;
     public CreateOrderCommandHandler(
         ICartRepository cartRepository,
         IInventoryRepository inventoryRepository,
         IOrderRepository orderRepository,
         ICurrentUserService currentUserService,
         IUserService userService,
-        INotificationService notificationService)
+        INotificationService notificationService,
+        IBackgroundJobService backgroundJobs)
     {
         _cartRepository = cartRepository;
         _inventoryRepository = inventoryRepository;
@@ -32,6 +34,7 @@ public sealed class CreateOrderCommandHandler
         _currentUserService = currentUserService;
         _userService = userService;
         _notificationService = notificationService;
+        _backgroundJobs = backgroundJobs;
     }
 
     public async Task<Result<CreateOrderResponse>> Handle(
@@ -144,20 +147,18 @@ public sealed class CreateOrderCommandHandler
         await _orderRepository.SaveChangesAsync(
             cancellationToken);
 
-        var user = await _userService.GetByIdAsync(
-            _currentUserService.UserId,
-            cancellationToken);
+        //var user = await _userService.GetByIdAsync(
+        //    _currentUserService.UserId,
+        //    cancellationToken);
 
-        if (user is not null)
-        {
-            await _notificationService.SendOrderPlacedAsync(
-                new OrderPlacedEmailModel(
-                    user.FullName,
-                    user.Email,
-                    order.OrderNumber,
-                    order.TotalAmount),
-                cancellationToken);
-        }
+        //if (user is not null)
+        //{
+        //    _backgroundJobs.Enqueue<IEmailJob>(
+        //        x => x.SendOrderConfirmationAsync(order.Id));
+        //}
+
+        _backgroundJobs.Enqueue<IEmailJob>(
+          x => x.SendOrderConfirmationAsync(order.Id));
 
         return Result<CreateOrderResponse>.Success(
             new CreateOrderResponse(

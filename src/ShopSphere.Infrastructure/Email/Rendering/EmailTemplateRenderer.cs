@@ -16,9 +16,9 @@ public sealed class EmailTemplateRenderer
         _options = options.Value;
     }
 
-    public string Render(
+    public async Task<string> Render(
         string templateName,
-        IDictionary<string, string> placeholders)
+        Dictionary<string, string> placeholders)
     {
         var layout = TemplateReader.Read("Layout.html");
 

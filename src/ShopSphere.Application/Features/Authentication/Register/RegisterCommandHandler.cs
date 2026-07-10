@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using ShopSphere.Application.Interfaces;
-using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Common.Errors;
 
@@ -10,17 +9,19 @@ public sealed class RegisterCommandHandler
     : IRequestHandler<RegisterCommand, Result>
 {
     private readonly IIdentityService _identityService;
-    private readonly INotificationService _notificationService;
+    private readonly IBackgroundJobService _backgroundJobs;
+
     public RegisterCommandHandler(
-        IIdentityService identityService, INotificationService notificationService)
+        IIdentityService identityService,
+        IBackgroundJobService backgroundJobs)
     {
         _identityService = identityService;
-        _notificationService = notificationService;
+        _backgroundJobs = backgroundJobs;
     }
 
     public async Task<Result> Handle(
-    RegisterCommand request,
-    CancellationToken cancellationToken)
+        RegisterCommand request,
+        CancellationToken cancellationToken)
     {
         var response = await _identityService.RegisterAsync(
             request.FirstName,
@@ -28,18 +29,16 @@ public sealed class RegisterCommandHandler
             request.Email,
             request.Password);
 
-        if (!response.Succeeded)
+        if (!response.Succeeded || response.UserId is null)
         {
-            // We'll improve this later to return actual Identity errors.
-            return Result.Failure(AuthenticationErrors.RegistrationFailed);
+            return Result.Failure(
+                AuthenticationErrors.RegistrationFailed);
         }
 
-        await _notificationService.SendWelcomeEmailAsync(
-            new WelcomeEmailModel(
-                $"{request.FirstName} {request.LastName}".Trim(),
-                request.Email!),
-            cancellationToken);
+        _backgroundJobs.Enqueue<IEmailJob>(
+            x => x.SendWelcomeAsync(response.UserId.Value));
 
-        return Result.Success("Registration completed successfully.");
+        return Result.Success(
+            "Registration completed successfully.");
     }
 }

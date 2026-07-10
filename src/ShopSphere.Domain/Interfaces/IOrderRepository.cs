@@ -18,4 +18,8 @@ public interface IOrderRepository
     Task<Order?> GetByIdWithItemsAsync(
         Guid id,
         CancellationToken cancellationToken);
+
+    Task<Order?> GetByIdWithDetailsAsync(
+        Guid orderId,
+        CancellationToken cancellationToken);
 }

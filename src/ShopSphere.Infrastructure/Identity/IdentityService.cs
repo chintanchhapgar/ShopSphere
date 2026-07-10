@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using ShopSphere.Application.Features.Authentication.Me;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Application.Models;
 using ShopSphere.Contracts.Authentication;
 using ShopSphere.Domain.Constants;
 
@@ -23,34 +24,40 @@ public sealed class IdentityService : IIdentityService
     }
 
     public async Task<RegisterResult> RegisterAsync(
-      string firstName,
-      string lastName,
-      string email,
-      string password)
+    string firstName,
+    string lastName,
+    string email,
+    string password)
     {
         var user = new ApplicationUser
         {
-            UserName = email,
-            Email = email,
             FirstName = firstName,
-            LastName = lastName
+            LastName = lastName,
+            UserName = email,
+            Email = email
         };
 
-        var result = await _userManager.CreateAsync(user, password);
+        var result = await _userManager.CreateAsync(
+            user,
+            password);
 
         if (!result.Succeeded)
         {
             return new RegisterResult(
                 false,
+                null,
                 result.Errors
-                    .Select(e => e.Description)
+                    .Select(x => x.Description)
                     .ToList());
         }
 
-        await _userManager.AddToRoleAsync(user, Roles.Customer);
+        await _userManager.AddToRoleAsync(
+            user,
+            Roles.Customer);
 
         return new RegisterResult(
             true,
+            Guid.Parse(user.Id),
             Array.Empty<string>());
     }
 

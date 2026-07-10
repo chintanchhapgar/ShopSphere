@@ -2,7 +2,7 @@
 
 public interface IEmailTemplateRenderer
 {
-    string Render(
-        string templateName,
-        IDictionary<string, string> placeholders);
+    Task<string> Render(
+    string templateName,
+    Dictionary<string, string> placeholders);
 }
