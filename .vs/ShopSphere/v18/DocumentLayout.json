@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\ShopSphere\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\email\\services\\mailkitemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\email\\services\\mailkitemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\email\\helpers\\templatereader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\email\\helpers\\templatereader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\features\\orders\\createorder\\createordercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\features\\orders\\createorder\\createordercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\email\\services\\mailkitemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\email\\services\\mailkitemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -502,7 +502,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 21,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -590,25 +590,24 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IEmailService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:10:48.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:10:48.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MailKitEmailService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Email\\Services\\MailKitEmailService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Email\\Services\\MailKitEmailService.cs",
               "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Email\\Services\\MailKitEmailService.cs",
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Email\\Services\\MailKitEmailService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-09T13:11:09.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TemplateReader.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Email\\Helpers\\TemplateReader.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Email\\Helpers\\TemplateReader.cs",
@@ -616,8 +615,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Email\\Helpers\\TemplateReader.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:37:06.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:37:06.277Z"
             },
             {
               "$type": "Document",
@@ -629,12 +627,11 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\INotificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:32:50.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:32:50.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CreateOrderCommandHandler.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
@@ -642,8 +639,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
               "ViewState": "AgIAAIYAAAAAAAAAAAAAwKYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T05:32:29.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T05:32:29.666Z"
             },
             {
               "$type": "Document",
@@ -655,8 +651,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Email\\Services\\NotificationService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:39:00.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:39:00.786Z"
             },
             {
               "$type": "Document",
@@ -668,8 +663,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Email\\Settings\\EmailSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:09:47.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:09:47.776Z"
             },
             {
               "$type": "Document",
@@ -681,8 +675,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Services\\UserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:49:04.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:49:04.064Z"
             },
             {
               "$type": "Document",
@@ -694,8 +687,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAAwEcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T05:18:55.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T05:18:55.823Z"
             },
             {
               "$type": "Document",
@@ -707,8 +699,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:48:43.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:48:43.828Z"
             },
             {
               "$type": "Document",
@@ -720,8 +711,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Identity\\ApplicationUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:55:04.682Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:55:04.682Z"
             },
             {
               "$type": "Document",
@@ -733,8 +723,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Program.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAQwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:12:19.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:12:19.634Z"
             },
             {
               "$type": "Document",
@@ -746,8 +735,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Test\\TestEndpoints.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T13:26:52.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:26:52.886Z"
             },
             {
               "$type": "Document",
@@ -759,8 +747,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-09T13:10:10.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T13:10:10.137Z"
             },
             {
               "$type": "Document",
@@ -772,8 +759,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:33:45.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:33:45.529Z"
             },
             {
               "$type": "Document",
@@ -785,8 +771,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Carts\\RemoveCoupon\\RemoveCouponCommandHandler.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwC8AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T12:28:57.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T12:28:57.776Z"
             },
             {
               "$type": "Document",
@@ -798,8 +783,7 @@
               "RelativeToolTip": "src\\ShopSphere.Contracts\\Common\\Errors\\CartErrors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T12:31:37.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T12:31:37.652Z"
             },
             {
               "$type": "Document",
@@ -811,8 +795,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Carts\\RemoveCoupon\\RemoveCouponCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T12:28:49.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T12:28:49.156Z"
             },
             {
               "$type": "Document",
@@ -824,8 +807,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\CartConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:10:57.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:10:57.66Z"
             },
             {
               "$type": "Document",
@@ -837,8 +819,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Cart.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAuwBQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:10:00.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:10:00.999Z"
             },
             {
               "$type": "Document",
@@ -850,8 +831,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Order.cs",
               "ViewState": "AgIAAGkAAAAAAAAAAAAiwHsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:57:41.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:57:41.385Z"
             },
             {
               "$type": "Document",
@@ -863,8 +843,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Carts\\CartEndpoints.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:30:04.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:30:04.646Z"
             },
             {
               "$type": "Document",
@@ -876,8 +855,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\CartRepository.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAYwEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:52:57.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:52:57.481Z"
             },
             {
               "$type": "Document",
@@ -889,8 +867,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Orders\\OrderEndpoints.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAzwBcAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:33:23.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:33:23.463Z"
             },
             {
               "$type": "Document",
@@ -902,8 +879,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Carts\\ApplyCoupon\\ApplyCouponCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:28:55.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:28:55.262Z"
             },
             {
               "$type": "Document",
@@ -915,8 +891,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Carts\\ApplyCoupon\\ApplyCouponCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:29:01.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:29:01.066Z"
             },
             {
               "$type": "Document",
@@ -928,8 +903,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Carts\\ApplyCoupon\\ApplyCouponCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:29:07.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:29:07.428Z"
             },
             {
               "$type": "Document",
@@ -941,8 +915,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Coupons\\CouponEndpoints.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:03:18.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:03:18.778Z"
             },
             {
               "$type": "Document",
@@ -954,8 +927,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\GetCouponById\\GetCouponByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:02:24.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:02:24.778Z"
             },
             {
               "$type": "Document",
@@ -967,8 +939,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\GetCoupons\\GetCouponsQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:01:42.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:01:42.369Z"
             },
             {
               "$type": "Document",
@@ -980,8 +951,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\CreateCoupon\\CreateCouponCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:50:05.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:50:05.876Z"
             },
             {
               "$type": "Document",
@@ -993,8 +963,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Enums\\DiscountType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:40:48.609Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:40:48.609Z"
             },
             {
               "$type": "Document",
@@ -1006,8 +975,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\GetCouponById\\GetCouponByIdQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:02:34.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:02:34.534Z"
             },
             {
               "$type": "Document",
@@ -1019,8 +987,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\GetCoupons\\GetCouponsQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T11:01:33.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T11:01:33.754Z"
             },
             {
               "$type": "Document",
@@ -1032,8 +999,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Queries\\CouponQueries.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwD8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:57:54.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:57:54.759Z"
             },
             {
               "$type": "Document",
@@ -1045,8 +1011,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\GetCoupons\\CouponDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:57:34.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:57:34.323Z"
             },
             {
               "$type": "Document",
@@ -1058,8 +1023,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Queries\\ICouponQueries.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:56:44.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:56:44.404Z"
             },
             {
               "$type": "Document",
@@ -1071,8 +1035,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\DeleteCoupon\\DeleteCouponCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:55:53.085Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:55:53.085Z"
             },
             {
               "$type": "Document",
@@ -1084,8 +1047,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\DeleteCoupon\\DeleteCouponCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:55:46.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:55:46.821Z"
             },
             {
               "$type": "Document",
@@ -1097,8 +1059,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\UpdateCoupon\\UpdateCouponCommandHandler.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAYwD4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:53:23.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:53:23.464Z"
             },
             {
               "$type": "Document",
@@ -1110,8 +1071,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\UpdateCoupon\\UpdateCouponCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:53:18.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:53:18.279Z"
             },
             {
               "$type": "Document",
@@ -1123,8 +1083,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\UpdateCoupon\\UpdateCouponCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:53:12.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:53:12.351Z"
             },
             {
               "$type": "Document",
@@ -1136,8 +1095,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\CreateCoupon\\CreateCouponCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:50:19.003Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:50:19.003Z"
             },
             {
               "$type": "Document",
@@ -1149,8 +1107,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Coupon.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAQwIMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:41:14.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:41:14.878Z"
             },
             {
               "$type": "Document",
@@ -1162,8 +1119,7 @@
               "RelativeToolTip": "src\\ShopSphere.Contracts\\Common\\Errors\\CouponErrors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:50:48.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:50:48.824Z"
             },
             {
               "$type": "Document",
@@ -1175,8 +1131,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Coupons\\CreateCoupon\\CreateCouponCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:50:12.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:50:12.823Z"
             },
             {
               "$type": "Document",
@@ -1188,8 +1143,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\CouponRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:44:12.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:44:12.802Z"
             },
             {
               "$type": "Document",
@@ -1201,8 +1155,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\ICouponRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:42:27.773Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:42:27.773Z"
             },
             {
               "$type": "Document",
@@ -1214,8 +1167,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\CouponConfiguration.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwCgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T10:42:08.472Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T10:42:08.472Z"
             },
             {
               "$type": "Document",
@@ -1227,8 +1179,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAA7wCYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T04:36:25.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T04:36:25.879Z"
             },
             {
               "$type": "Document",
@@ -1240,8 +1191,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Shipments\\ShipmentEndpoints.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAQwCIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:53:47.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:53:47.91Z"
             },
             {
               "$type": "Document",
@@ -1253,8 +1203,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\UpdateShipmentStatus\\UpdateShipmentStatusCommand.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:12:38.799Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:12:38.799Z"
             },
             {
               "$type": "Document",
@@ -1266,8 +1215,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\UpdateShipmentStatus\\UpdateShipmentStatusRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:18:29.848Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:18:29.848Z"
             },
             {
               "$type": "Document",
@@ -1279,8 +1227,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetShipmentByOrder\\GetShipmentByOrderQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:25:11.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:25:11.115Z"
             },
             {
               "$type": "Document",
@@ -1292,8 +1239,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Enums\\ShipmentStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:42:21.096Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:42:21.096Z"
             },
             {
               "$type": "Document",
@@ -1305,8 +1251,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetMyShipments\\GetMyShipmentsQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:31:31.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:31:31.932Z"
             },
             {
               "$type": "Document",
@@ -1318,8 +1263,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetMyShipments\\GetMyShipmentsQueryHandler.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAkwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:31:38.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:31:38.023Z"
             },
             {
               "$type": "Document",
@@ -1331,8 +1275,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\UpdateShipmentStatus\\UpdateShipmentStatusCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:12:46.545Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:12:46.545Z"
             },
             {
               "$type": "Document",
@@ -1344,8 +1287,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetShipmentByOrder\\GetShipmentByOrderQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:24:53.406Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:24:53.406Z"
             },
             {
               "$type": "Document",
@@ -1357,8 +1299,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Queries\\ShipmentQueries.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAYwEwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:22:00.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:22:00.993Z"
             },
             {
               "$type": "Document",
@@ -1370,8 +1311,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Queries\\IShipmentQueries.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:21:42.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:21:42.402Z"
             },
             {
               "$type": "Document",
@@ -1383,8 +1323,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetShipment\\GetShipmentQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:21:15.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:21:15.657Z"
             },
             {
               "$type": "Document",
@@ -1396,8 +1335,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetShipment\\GetShipmentQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:21:08.127Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:21:08.127Z"
             },
             {
               "$type": "Document",
@@ -1409,8 +1347,7 @@
               "RelativeToolTip": "src\\ShopSphere.Contracts\\Common\\Errors\\ShipmentErrors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:53:08.032Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:53:08.032Z"
             },
             {
               "$type": "Document",
@@ -1422,8 +1359,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\GetShipment\\ShipmentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:21:02.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:21:02.19Z"
             },
             {
               "$type": "Document",
@@ -1435,8 +1371,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\CreateShipment\\CreateShipmentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:52:41.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:52:41.807Z"
             },
             {
               "$type": "Document",
@@ -1448,8 +1383,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Shipments\\CreateShipment\\CreateShipmentCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:52:48.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:52:48.838Z"
             },
             {
               "$type": "Document",
@@ -1461,8 +1395,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\Admin\\UpdateOrderStatus\\UpdateOrderStatusCommandHandler.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAYwDoAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:07:23.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:07:23.338Z"
             },
             {
               "$type": "Document",
@@ -1474,8 +1407,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Services\\OrderFulfillmentService.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAuwCUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:00:57.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:00:57.348Z"
             },
             {
               "$type": "Document",
@@ -1487,8 +1419,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IShipmentRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:50:12.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:50:12.172Z"
             },
             {
               "$type": "Document",
@@ -1500,8 +1431,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ShipmentRepository.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAkwCoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:50:45.647Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:50:45.647Z"
             },
             {
               "$type": "Document",
@@ -1513,8 +1443,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Services\\BrandService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:01:13.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:01:13.359Z"
             },
             {
               "$type": "Document",
@@ -1526,8 +1455,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Services\\CategoryService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:01:48.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:01:48.025Z"
             },
             {
               "$type": "Document",
@@ -1539,8 +1467,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Services\\Interfaces\\IOrderFulfillmentService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T09:00:37.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T09:00:37.975Z"
             },
             {
               "$type": "Document",
@@ -1552,8 +1479,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\ShipmentConfiguration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:44:29.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:44:29.077Z"
             },
             {
               "$type": "Document",
@@ -1565,8 +1491,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Shipment.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAA5wEMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:41:58.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:41:58.901Z"
             },
             {
               "$type": "Document",
@@ -1578,8 +1503,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\DependencyInjection.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:43:14.499Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:43:14.499Z"
             },
             {
               "$type": "Document",
@@ -1591,8 +1515,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Queries\\PaymentQueries.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:35:30.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:35:30.454Z"
             },
             {
               "$type": "Document",
@@ -1604,8 +1527,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\GetPayment\\PaymentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:35:08.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:35:08.687Z"
             },
             {
               "$type": "Document",
@@ -1617,8 +1539,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\GetPayment\\GetPaymentQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:36:13.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:36:13.351Z"
             },
             {
               "$type": "Document",
@@ -1630,8 +1551,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\GetPayment\\GetPaymentQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:36:29.808Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:36:29.808Z"
             },
             {
               "$type": "Document",
@@ -1643,8 +1563,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Queries\\IPaymentQueries.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:33:25.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:33:25.528Z"
             },
             {
               "$type": "Document",
@@ -1656,8 +1575,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Payments\\PaymentEndpoints.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAQwDIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:05:51.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:05:51.118Z"
             },
             {
               "$type": "Document",
@@ -1669,8 +1587,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\PaymentRepository.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAswCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:01:45.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:01:45.26Z"
             },
             {
               "$type": "Document",
@@ -1682,8 +1599,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\UpdatePaymentStatus\\UpdatePaymentStatusRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:16:02.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:16:02.722Z"
             },
             {
               "$type": "Document",
@@ -1695,8 +1611,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Enums\\PaymentStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:51:46.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:51:46.261Z"
             },
             {
               "$type": "Document",
@@ -1708,8 +1623,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Payment.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAYwEkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:51:22.321Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:51:22.321Z"
             },
             {
               "$type": "Document",
@@ -1721,8 +1635,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Configurations\\PaymentConfiguration.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:53:42.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:53:42.404Z"
             },
             {
               "$type": "Document",
@@ -1734,8 +1647,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IPaymentRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:01:15.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:01:15.704Z"
             },
             {
               "$type": "Document",
@@ -1747,8 +1659,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\UpdatePaymentStatus\\UpdatePaymentStatusCommandHandler.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwB0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:14:08.988Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:14:08.988Z"
             },
             {
               "$type": "Document",
@@ -1760,8 +1671,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\UpdatePaymentStatus\\UpdatePaymentStatusCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:14:00.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:14:00.409Z"
             },
             {
               "$type": "Document",
@@ -1773,8 +1683,7 @@
               "RelativeToolTip": "src\\ShopSphere.Contracts\\Common\\Errors\\PaymentErrors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:04:39.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:04:39.168Z"
             },
             {
               "$type": "Document",
@@ -1786,8 +1695,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\CreatePayment\\CreatePaymentCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:03:00.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:03:00.619Z"
             },
             {
               "$type": "Document",
@@ -1799,8 +1707,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\CreatePayment\\CreatePaymentCommandHandler.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAQwD8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:03:06.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:03:06.093Z"
             },
             {
               "$type": "Document",
@@ -1812,8 +1719,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Enums\\PaymentMethod.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:52:11.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:52:11.353Z"
             },
             {
               "$type": "Document",
@@ -1825,8 +1731,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IOrderRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:03:27.464Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:03:27.464Z"
             },
             {
               "$type": "Document",
@@ -1838,8 +1743,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Payments\\CreatePayment\\PaymentRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T08:06:15.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T08:06:15.571Z"
             },
             {
               "$type": "Document",
@@ -1851,8 +1755,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:53:04.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:53:04.713Z"
             },
             {
               "$type": "Document",
@@ -1864,8 +1767,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\Admin\\UpdateOrderStatus\\UpdateOrderStatusRequest.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:10:21.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:10:21.743Z"
             },
             {
               "$type": "Document",
@@ -1877,8 +1779,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\Admin\\UpdateOrderStatus\\UpdateOrderStatusCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:07:17.127Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:07:17.127Z"
             },
             {
               "$type": "Document",
@@ -1890,8 +1791,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Orders\\AdminOrderEndpoints.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:05:39.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:05:39.343Z"
             },
             {
               "$type": "Document",
@@ -1903,8 +1803,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Enums\\OrderStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:58:32.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:58:32.885Z"
             },
             {
               "$type": "Document",
@@ -1916,8 +1815,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\Admin\\GetOrders\\GetOrdersQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:02:57.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:02:57.236Z"
             },
             {
               "$type": "Document",
@@ -1929,8 +1827,7 @@
               "RelativeToolTip": "src\\ShopSphere.Contracts\\Common\\Errors\\OrderErrors.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:59:59.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:59:59.246Z"
             },
             {
               "$type": "Document",
@@ -1942,8 +1839,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\Admin\\GetOrders\\AdminOrderListDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:03:51.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:03:51.466Z"
             },
             {
               "$type": "Document",
@@ -1955,8 +1851,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\Admin\\GetOrders\\GetOrdersQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T07:02:48.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T07:02:48.293Z"
             },
             {
               "$type": "Document",
@@ -1968,8 +1863,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IOrderQueries.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:39:40.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:39:40.362Z"
             },
             {
               "$type": "Document",
@@ -1981,8 +1875,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Queries\\OrderQueries.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAYwFcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:39:58.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:39:58.704Z"
             },
             {
               "$type": "Document",
@@ -1994,8 +1887,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\OrderRepository.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAYwCsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:56:02.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:56:02.504Z"
             },
             {
               "$type": "Document",
@@ -2007,8 +1899,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\CancelOrder\\CancelOrderCommandHandler.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAAFsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:55:21.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:55:21.666Z"
             },
             {
               "$type": "Document",
@@ -2020,8 +1911,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\CancelOrder\\CancelOrderCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:55:14.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:55:14.578Z"
             },
             {
               "$type": "Document",
@@ -2033,8 +1923,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetOrderById\\GetOrderByIdQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:45:11.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:45:11.475Z"
             },
             {
               "$type": "Document",
@@ -2046,8 +1935,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Products\\ProductEndpoints.cs",
               "ViewState": "AgIAAFcAAAAAAAAAAAAQwF4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:32:22.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:32:22.636Z"
             },
             {
               "$type": "Document",
@@ -2059,8 +1947,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetOrderById\\GetOrderByIdQueryHandler.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAQwC4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:45:22.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:45:22.295Z"
             },
             {
               "$type": "Document",
@@ -2072,8 +1959,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetOrderById\\OrderDetailsDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:45:32.019Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:45:32.019Z"
             },
             {
               "$type": "Document",
@@ -2085,8 +1971,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetOrderById\\OrderItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:45:39.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:45:39.098Z"
             },
             {
               "$type": "Document",
@@ -2098,8 +1983,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetMyOrders\\GetMyOrdersQueryHandler.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAQwCYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:39:04.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:39:04.323Z"
             },
             {
               "$type": "Document",
@@ -2111,8 +1995,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetMyOrders\\GetMyOrdersQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:38:58.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:38:58.131Z"
             },
             {
               "$type": "Document",
@@ -2124,8 +2007,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\GetMyOrders\\OrderListItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:39:10.698Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:39:10.698Z"
             },
             {
               "$type": "Document",
@@ -2137,8 +2019,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\OrderItemRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:24:28.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:24:28.981Z"
             },
             {
               "$type": "Document",
@@ -2150,8 +2031,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:23:38.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:23:38.667Z"
             },
             {
               "$type": "Document",
@@ -2163,8 +2043,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductImageRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:23:11.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:23:11.728Z"
             },
             {
               "$type": "Document",
@@ -2176,8 +2055,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\Repository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T06:22:43.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-09T06:22:43.399Z"
             }
           ]
         }
