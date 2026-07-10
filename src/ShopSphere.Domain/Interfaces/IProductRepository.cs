@@ -16,4 +16,5 @@ public interface IProductRepository : IRepository<Product>
     Task<bool> AddOrRestoreAsync(
         Product product,
         CancellationToken cancellationToken);
+
 }

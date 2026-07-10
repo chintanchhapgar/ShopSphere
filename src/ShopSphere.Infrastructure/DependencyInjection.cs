@@ -96,6 +96,8 @@ public static class DependencyInjection
         services.AddScoped<IWishlistRepository, WishlistRepository>();
         services.AddScoped<IReviewRepository, ReviewRepository>();
         services.AddScoped<IReviewReadRepository, ReviewReadRepository>();
+        services.AddScoped<IProductReadRepository, ProductReadRepository>();
+
         // Queries
         services.AddScoped<ICategoryQueries, CategoryQueries>();
         services.AddScoped<IBrandQueries, BrandQueries>();

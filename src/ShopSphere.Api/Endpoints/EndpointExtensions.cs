@@ -33,6 +33,8 @@ public static class EndpointExtensions
         app.MapWishlistEndpoints();
         app.MapReviewEndpoints();
         app.MapAdminReviewEndpoints();
+        app.MapProductSearchEndpoints();
+
         return app;
     }
 }
