@@ -4,36 +4,36 @@ using ShopSphere.Infrastructure.Email.Helpers;
 
 namespace ShopSphere.Infrastructure.Email.Services;
 
-public sealed class NotificationService
+public sealed class EmailNotificationService
     : INotificationService
 {
     private readonly IEmailService _emailService;
-
-    public NotificationService(
-        IEmailService emailService)
+    private readonly IEmailTemplateRenderer _renderer;
+    public EmailNotificationService(
+    IEmailService emailService,
+    IEmailTemplateRenderer renderer)
     {
         _emailService = emailService;
+        _renderer = renderer;
     }
 
     public async Task SendOrderPlacedAsync(
          OrderPlacedEmailModel model,
          CancellationToken cancellationToken = default)
     {
-        var layout = TemplateReader.Read("Layout.html");
-
-        var body = TemplateReader.Read("OrderPlaced.html");
-
-        layout = layout.Replace("{{Content}}", body);
-
-        layout = layout
-            .Replace("{{CustomerName}}", model.CustomerName)
-            .Replace("{{OrderNumber}}", model.OrderNumber)
-            .Replace("{{TotalAmount}}", model.TotalAmount.ToString("N2"));
+        var html = _renderer.Render(
+            "OrderPlaced",
+            new Dictionary<string, string>
+            {
+                ["CustomerName"] = model.CustomerName,
+                ["OrderNumber"] = model.OrderNumber,
+                ["TotalAmount"] = model.TotalAmount.ToString("N2")
+            });
 
         await _emailService.SendAsync(
             model.Email,
             "Your ShopSphere Order Confirmation",
-            layout,
+            html,
             cancellationToken);
     }
 
@@ -58,10 +58,21 @@ public sealed class NotificationService
         throw new NotImplementedException();
     }
 
-    public Task SendWelcomeEmailAsync(
-        Guid userId,
+    public async Task SendWelcomeEmailAsync(
+        WelcomeEmailModel model,
         CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        var html = _renderer.Render(
+            "Welcome",
+            new Dictionary<string, string>
+            {
+                ["FullName"] = model.FullName
+            });
+
+        await _emailService.SendAsync(
+            model.Email,
+            "Welcome to ShopSphere!",
+            html,
+            cancellationToken);
     }
 }

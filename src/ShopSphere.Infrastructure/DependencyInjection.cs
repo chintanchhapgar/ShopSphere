@@ -11,6 +11,7 @@ using ShopSphere.Application.Queries;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
+using ShopSphere.Infrastructure.Email.Rendering;
 using ShopSphere.Infrastructure.Email.Services;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
@@ -68,7 +69,7 @@ public static class DependencyInjection
         services.AddScoped<ICurrentUserService, CurrentUserService>();
 
         services.AddScoped<IEmailService, MailKitEmailService>();
-        services.AddScoped<INotificationService, NotificationService>();
+        services.AddScoped<INotificationService, EmailNotificationService>();
         services.AddScoped<IUserService, UserService>();
 
         services.AddScoped<IFileStorageService, LocalFileStorageService>();
@@ -104,6 +105,8 @@ public static class DependencyInjection
         services.AddScoped<IPaymentQueries, PaymentQueries>();
         services.AddScoped<IShipmentQueries, ShipmentQueries>();
         services.AddScoped<ICouponQueries, CouponQueries>();
+
+        services.AddScoped<IEmailTemplateRenderer, EmailTemplateRenderer>();
 
         services.Configure<FileStorageOptions>(
             configuration.GetSection(FileStorageOptions.SectionName));

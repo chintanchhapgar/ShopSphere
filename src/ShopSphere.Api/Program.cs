@@ -6,6 +6,7 @@ using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Infrastructure;
+using ShopSphere.Infrastructure.Email.Models;
 using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
@@ -22,6 +23,9 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection(EmailSettings.SectionName));
+
+builder.Services.Configure<EmailTemplateOptions>(
+    builder.Configuration.GetSection("EmailTemplates"));
 
 builder.Services.AddSwaggerGen(options =>
 {

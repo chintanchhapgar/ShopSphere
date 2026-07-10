@@ -21,7 +21,7 @@ public interface INotificationService
         CancellationToken cancellationToken = default);
 
     Task SendWelcomeEmailAsync(
-        Guid userId,
+        WelcomeEmailModel model,
         CancellationToken cancellationToken = default);
 
 }

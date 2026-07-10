@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ShopSphere.Application.Interfaces;
+using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Common.Errors;
 
@@ -9,11 +10,12 @@ public sealed class RegisterCommandHandler
     : IRequestHandler<RegisterCommand, Result>
 {
     private readonly IIdentityService _identityService;
-
+    private readonly INotificationService _notificationService;
     public RegisterCommandHandler(
-        IIdentityService identityService)
+        IIdentityService identityService, INotificationService notificationService)
     {
         _identityService = identityService;
+        _notificationService = notificationService;
     }
 
     public async Task<Result> Handle(
@@ -31,6 +33,12 @@ public sealed class RegisterCommandHandler
             // We'll improve this later to return actual Identity errors.
             return Result.Failure(AuthenticationErrors.RegistrationFailed);
         }
+
+        await _notificationService.SendWelcomeEmailAsync(
+            new WelcomeEmailModel(
+                $"{request.FirstName} {request.LastName}".Trim(),
+                request.Email!),
+            cancellationToken);
 
         return Result.Success("Registration completed successfully.");
     }
