@@ -1,4 +1,6 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
+using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
 using ShopSphere.Domain.Entities;
@@ -11,13 +13,18 @@ public sealed class CreatePaymentCommandHandler
 {
     private readonly IOrderRepository _orderRepository;
     private readonly IPaymentRepository _paymentRepository;
-
+    private readonly IUserService _userService;
+    private readonly INotificationService _notificationService;
     public CreatePaymentCommandHandler(
-        IOrderRepository orderRepository,
-        IPaymentRepository paymentRepository)
+    IOrderRepository orderRepository,
+    IPaymentRepository paymentRepository,
+    IUserService userService,
+    INotificationService notificationService)
     {
         _orderRepository = orderRepository;
         _paymentRepository = paymentRepository;
+        _userService = userService;
+        _notificationService = notificationService;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -56,6 +63,23 @@ public sealed class CreatePaymentCommandHandler
 
         await _paymentRepository.SaveChangesAsync(
             cancellationToken);
+
+        var user = await _userService.GetByIdAsync(
+            order.UserId.ToString(),
+            cancellationToken);
+
+            if (user is not null)
+            {
+                await _notificationService.SendPaymentSucceededAsync(
+                    new PaymentSucceededEmailModel(
+                        user.FullName,
+                        user.Email,
+                        order.OrderNumber,
+                        payment.Amount,
+                        payment.Method.ToString(),
+                        payment.TransactionId),
+                    cancellationToken);
+            }
 
         return Result<Guid>.Success(
             payment.Id,

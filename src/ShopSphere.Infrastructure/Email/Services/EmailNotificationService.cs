@@ -37,25 +37,69 @@ public sealed class EmailNotificationService
             cancellationToken);
     }
 
-    public Task SendPaymentSucceededAsync(
-        Guid paymentId,
-        CancellationToken cancellationToken = default)
+    public async Task SendPaymentSucceededAsync(
+         PaymentSucceededEmailModel model,
+         CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        var html = _renderer.Render(
+            "PaymentSucceeded",
+            new Dictionary<string, string>
+            {
+                ["CustomerName"] = model.CustomerName,
+                ["OrderNumber"] = model.OrderNumber,
+                ["Amount"] = model.Amount.ToString("N2"),
+                ["PaymentMethod"] = model.PaymentMethod,
+                ["TransactionId"] = model.TransactionId
+            });
+
+        await _emailService.SendAsync(
+            model.Email,
+            "Payment Successful",
+            html,
+            cancellationToken);
     }
 
-    public Task SendShipmentCreatedAsync(
-        Guid shipmentId,
+    public async Task SendShipmentCreatedAsync(
+        ShipmentCreatedEmailModel model,
         CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        var html = _renderer.Render(
+            "ShipmentCreated",
+            new Dictionary<string, string>
+            {
+                ["CustomerName"] = model.CustomerName,
+                ["OrderNumber"] = model.OrderNumber,
+                ["TrackingNumber"] = model.TrackingNumber,
+                ["Carrier"] = model.Carrier,
+                ["EstimatedDelivery"] =
+                    model.EstimatedDeliveryDate?.ToString("dd MMM yyyy") ?? "TBD"
+            });
+
+        await _emailService.SendAsync(
+            model.Email,
+            "Your Order Has Shipped",
+            html,
+            cancellationToken);
     }
 
-    public Task SendShipmentDeliveredAsync(
-        Guid shipmentId,
+    public async Task SendShipmentDeliveredAsync(
+        ShipmentDeliveredEmailModel model,
         CancellationToken cancellationToken = default)
     {
-        throw new NotImplementedException();
+        var html = _renderer.Render(
+            "ShipmentDelivered",
+            new Dictionary<string, string>
+            {
+                ["CustomerName"] = model.CustomerName,
+                ["OrderNumber"] = model.OrderNumber,
+                ["TrackingNumber"] = model.TrackingNumber
+            });
+
+        await _emailService.SendAsync(
+            model.Email,
+            "Order Delivered",
+            html,
+            cancellationToken);
     }
 
     public async Task SendWelcomeEmailAsync(

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.ArchitectureTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07e2ebb6213439c2acc251c6fa96c1ded8750653")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8961f0efe1bca7f3210fdc5c80280a4c3eb9eeee")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.ArchitectureTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.ArchitectureTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

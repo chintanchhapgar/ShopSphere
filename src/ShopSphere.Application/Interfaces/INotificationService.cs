@@ -9,15 +9,15 @@ public interface INotificationService
     CancellationToken cancellationToken = default);
 
     Task SendPaymentSucceededAsync(
-        Guid paymentId,
+        PaymentSucceededEmailModel model,
         CancellationToken cancellationToken = default);
 
     Task SendShipmentCreatedAsync(
-        Guid shipmentId,
+        ShipmentCreatedEmailModel model,
         CancellationToken cancellationToken = default);
 
     Task SendShipmentDeliveredAsync(
-        Guid shipmentId,
+        ShipmentDeliveredEmailModel model,
         CancellationToken cancellationToken = default);
 
     Task SendWelcomeEmailAsync(
