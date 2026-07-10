@@ -12,4 +12,8 @@ public interface IProductRepository : IRepository<Product>
         string sku,
         Guid? excludeId,
         CancellationToken cancellationToken);
+
+    Task<bool> AddOrRestoreAsync(
+        Product product,
+        CancellationToken cancellationToken);
 }

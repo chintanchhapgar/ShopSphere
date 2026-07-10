@@ -12,4 +12,8 @@ public interface ICategoryRepository : IRepository<Category>
     Task<bool> HasChildrenAsync(
         Guid id,
         CancellationToken cancellationToken);
+
+    Task<bool> AddOrRestoreAsync(
+        Category category,
+        CancellationToken cancellationToken);
 }

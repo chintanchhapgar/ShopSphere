@@ -1,4 +1,6 @@
 ﻿
+using System.Linq.Expressions;
+
 namespace ShopSphere.Domain.Interfaces;
 
 public interface IRepository<TEntity>
@@ -23,5 +25,9 @@ public interface IRepository<TEntity>
         TEntity entity);
 
     Task SaveChangesAsync(
+        CancellationToken cancellationToken);
+
+    Task<TEntity?> FirstOrDefaultIgnoreQueryFiltersAsync(
+        Expression<Func<TEntity, bool>> predicate,
         CancellationToken cancellationToken);
 }

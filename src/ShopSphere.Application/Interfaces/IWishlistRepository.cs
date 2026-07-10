@@ -3,19 +3,14 @@
 namespace ShopSphere.Domain.Interfaces;
 
 public interface IWishlistRepository
+    : IRepository<Wishlist>
 {
-    Task<Wishlist?> GetByCustomerIdAsync(
-        Guid customerId,
-        CancellationToken cancellationToken);
-
     Task<Wishlist?> GetByCustomerWithItemsAsync(
         Guid customerId,
         CancellationToken cancellationToken);
 
-    Task AddAsync(
+    Task<bool> AddOrRestoreItemAsync(
         Wishlist wishlist,
-        CancellationToken cancellationToken);
-
-    Task SaveChangesAsync(
+        Guid productId,
         CancellationToken cancellationToken);
 }

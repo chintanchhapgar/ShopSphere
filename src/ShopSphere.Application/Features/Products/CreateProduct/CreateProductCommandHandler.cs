@@ -73,9 +73,15 @@ public sealed class CreateProductCommandHandler
             request.Weight);
 
 
-        await _productRepository.AddAsync(
+        var added = await _productRepository.AddOrRestoreAsync(
             product,
             cancellationToken);
+
+                if (!added)
+                {
+                    return Result<Guid>.Failure(
+                        ProductErrors.AlreadyExists);
+                }
 
         await _productRepository.SaveChangesAsync(
             cancellationToken);

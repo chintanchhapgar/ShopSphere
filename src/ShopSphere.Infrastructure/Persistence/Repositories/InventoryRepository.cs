@@ -1,31 +1,29 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
-using ShopSphere.Infrastructure.Persistence;
-using ShopSphere.Infrastructure.Persistence.Repositories;
+
+namespace ShopSphere.Infrastructure.Persistence.Repositories;
 
 public sealed class InventoryRepository
     : Repository<Inventory>,
       IInventoryRepository
 {
-    private readonly ApplicationDbContext _context;
-
     public InventoryRepository(
         ApplicationDbContext context)
         : base(context)
     {
-        _context = context;
     }
 
     public void Update(Inventory inventory)
     {
-        _context.Inventories.Update(inventory);
+        Context.Inventories.Update(inventory);
     }
+
     public async Task<Inventory?> GetByProductIdAsync(
         Guid productId,
         CancellationToken cancellationToken)
     {
-        return await _context.Inventories
+        return await Context.Inventories
             .FirstOrDefaultAsync(
                 x => x.ProductId == productId,
                 cancellationToken);
@@ -35,8 +33,37 @@ public sealed class InventoryRepository
         IEnumerable<Guid> productIds,
         CancellationToken cancellationToken)
     {
-        return await _context.Inventories
+        return await Context.Inventories
             .Where(x => productIds.Contains(x.ProductId))
             .ToListAsync(cancellationToken);
+    }
+
+    public async Task<bool> AddOrRestoreAsync(
+        Inventory inventory,
+        CancellationToken cancellationToken)
+    {
+        var existing = await Context.Inventories
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(
+                x => x.ProductId == inventory.ProductId,
+                cancellationToken);
+
+        if (existing is null)
+        {
+            await AddAsync(
+                inventory,
+                cancellationToken);
+
+            return true;
+        }
+
+        if (!existing.IsDeleted)
+        {
+            return false;
+        }
+
+        existing.Restore();
+
+        return true;
     }
 }

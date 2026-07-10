@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
+using System;
 
 namespace ShopSphere.Infrastructure.Persistence.Repositories;
 
@@ -65,5 +66,47 @@ public sealed class CouponRepository : ICouponRepository
     {
         await _context.SaveChangesAsync(
             cancellationToken);
+    }
+
+    public async Task<bool> AddOrRestoreAsync(
+    Coupon coupon,
+    CancellationToken cancellationToken)
+    {
+        var existing = await _context.Coupons
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(
+                x => x.Code == coupon.Code,
+                cancellationToken);
+
+        if (existing is null)
+        {
+            await AddAsync(
+                coupon,
+                cancellationToken);
+
+            return true;
+        }
+
+        if (!existing.IsDeleted)
+        {
+            return false;
+        }
+
+        existing.Restore();
+
+        existing.Update(
+           coupon.Code,
+           coupon.Name,
+           coupon.Description,
+           coupon.DiscountType,
+           coupon.DiscountValue,
+           coupon.MinimumOrderAmount,
+           coupon.MaximumDiscountAmount,
+           coupon.StartsAtUtc,
+           coupon.ExpiresAtUtc,
+           coupon.UsageLimit,
+           coupon.IsActive);
+
+        return true;
     }
 }

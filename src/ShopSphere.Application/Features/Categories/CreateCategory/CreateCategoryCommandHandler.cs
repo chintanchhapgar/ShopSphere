@@ -37,9 +37,15 @@ public sealed class CreateCategoryCommandHandler
             return Result<Guid>.Failure(CategoryErrors.AlreadyExists);
         }
 
-        await _repository.AddAsync(
+        var added = await _repository.AddOrRestoreAsync(
             category,
             cancellationToken);
+
+        if (!added)
+        {
+            return Result<Guid>.Failure(
+                CategoryErrors.AlreadyExists);
+        }
 
         await _repository.SaveChangesAsync(
             cancellationToken);

@@ -17,5 +17,11 @@ namespace ShopSphere.Contracts.Common.Errors
             new(
                 ErrorCodes.Validation,
                 "Insufficient inventory available.");
+
+        public static readonly Error AlreadyExists =
+       new(
+           "INVENTORY_ALREADY_EXISTS",
+           "A Inventory with the same name already exists.",
+           "name");
     }
 }

@@ -61,13 +61,16 @@ public sealed class AddToWishlistCommandHandler
                 cancellationToken);
         }
 
-        if (wishlist.Contains(request.ProductId))
+        var added = await _wishlistRepository.AddOrRestoreItemAsync(
+            wishlist,
+            request.ProductId,
+            cancellationToken);
+
+        if (!added)
         {
             return Result.Success(
                 "Product is already in your wishlist.");
         }
-
-        wishlist.AddItem(request.ProductId);
 
         await _wishlistRepository.SaveChangesAsync(
             cancellationToken);

@@ -32,4 +32,38 @@ public sealed class CategoryRepository
             x => x.ParentCategoryId == id,
             cancellationToken);
     }
+
+    public async Task<bool> AddOrRestoreAsync(
+    Category category,
+    CancellationToken cancellationToken)
+    {
+        var existing = await Context.Categories
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(
+                x => x.Name == category.Name,
+                cancellationToken);
+
+        if (existing is null)
+        {
+            await AddAsync(
+                category,
+                cancellationToken);
+
+            return true;
+        }
+
+        if (!existing.IsDeleted)
+        {
+            return false;
+        }
+
+        existing.Restore();
+
+        existing.Update(
+            category.Name,
+            category.Description,
+            category.ParentCategoryId);
+
+        return true;
+    }
 }

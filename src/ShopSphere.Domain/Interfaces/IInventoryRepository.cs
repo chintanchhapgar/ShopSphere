@@ -20,4 +20,9 @@ public interface IInventoryRepository
     Task<List<Inventory>> GetByProductIdsAsync(
         IEnumerable<Guid> productIds,
         CancellationToken cancellationToken);
+
+    Task<bool> AddOrRestoreAsync(
+        Inventory inventory,
+        CancellationToken cancellationToken);
+
 }

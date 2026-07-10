@@ -44,9 +44,15 @@ public sealed class CreateCouponCommandHandler
             request.ExpiresAtUtc,
             request.UsageLimit);
 
-        await _couponRepository.AddAsync(
+        var added = await _couponRepository.AddOrRestoreAsync(
             coupon,
             cancellationToken);
+
+        if (!added)
+        {
+            return Result<Guid>.Failure(
+                CouponErrors.AlreadyExists);
+        }
 
         await _couponRepository.SaveChangesAsync(
             cancellationToken);

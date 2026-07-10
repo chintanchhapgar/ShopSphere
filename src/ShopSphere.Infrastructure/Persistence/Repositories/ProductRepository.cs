@@ -38,4 +38,45 @@ public sealed class ProductRepository
                  x.Id != excludeId,
             cancellationToken);
     }
+
+    public async Task<bool> AddOrRestoreAsync(
+    Product product,
+    CancellationToken cancellationToken)
+    {
+        var existing = await Context.Products
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(
+                x => x.SKU == product.SKU,
+                cancellationToken);
+
+        if (existing is null)
+        {
+            await AddAsync(
+                product,
+                cancellationToken);
+
+            return true;
+        }
+
+        if (!existing.IsDeleted)
+        {
+            return false;
+        }
+
+        existing.Restore();
+
+        existing.Update(
+            product.Name,
+            product.Description,
+            product.SKU,
+            product.BasePrice,
+            product.CostPrice,
+            product.CategoryId,
+            product.BrandId,
+            product.Slug,
+            product.Barcode,
+            product.Weight);
+
+        return true;
+    }
 }

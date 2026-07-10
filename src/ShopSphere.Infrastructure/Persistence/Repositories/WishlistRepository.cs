@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
+using ShopSphere.Infrastructure.Persistence;
 
 namespace ShopSphere.Infrastructure.Persistence.Repositories;
 
@@ -17,16 +18,6 @@ public sealed class WishlistRepository
         _context = context;
     }
 
-    public async Task<Wishlist?> GetByCustomerIdAsync(
-        Guid customerId,
-        CancellationToken cancellationToken)
-    {
-        return await _context.Wishlists
-            .FirstOrDefaultAsync(
-                x => x.CustomerId == customerId,
-                cancellationToken);
-    }
-
     public async Task<Wishlist?> GetByCustomerWithItemsAsync(
         Guid customerId,
         CancellationToken cancellationToken)
@@ -38,5 +29,35 @@ public sealed class WishlistRepository
             .FirstOrDefaultAsync(
                 x => x.CustomerId == customerId,
                 cancellationToken);
+    }
+
+    public async Task<bool> AddOrRestoreItemAsync(
+        Wishlist wishlist,
+        Guid productId,
+        CancellationToken cancellationToken)
+    {
+        var existingItem = await _context.WishlistItems
+            .IgnoreQueryFilters()
+            .FirstOrDefaultAsync(
+                x =>
+                    x.WishlistId == wishlist.Id &&
+                    x.ProductId == productId,
+                cancellationToken);
+
+        if (existingItem is not null)
+        {
+            if (!existingItem.IsDeleted)
+            {
+                return false;
+            }
+
+            existingItem.Restore();
+
+            return true;
+        }
+
+        wishlist.AddItem(productId);
+
+        return true;
     }
 }

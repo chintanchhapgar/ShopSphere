@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using ShopSphere.Application.Features.Inventories.AdjustInventory;
 using ShopSphere.Contracts.Common;
+using ShopSphere.Contracts.Common.Errors;
 using ShopSphere.Contracts.Errors;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Enums;
@@ -55,9 +56,15 @@ public sealed class AdjustInventoryCommandHandler
             transactionType,
             request.Reason);
 
-        await _transactionRepository.AddAsync(
-            transaction,
-            cancellationToken);
+        var added = await _inventoryRepository.AddOrRestoreAsync(
+             inventory,
+             cancellationToken);
+
+                if (!added)
+                {
+                    return Result<Guid>.Failure(
+                        InventoryErrors.AlreadyExists);
+                }
 
         await _inventoryRepository.SaveChangesAsync(
             cancellationToken);

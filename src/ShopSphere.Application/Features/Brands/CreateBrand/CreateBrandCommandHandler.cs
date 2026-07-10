@@ -32,12 +32,18 @@ public sealed class CreateBrandCommandHandler
         }
 
         var brand = new Brand(
-            request.Name,
-            request.Description);
+         request.Name,
+         request.Description);
 
-        await _repository.AddAsync(
+        var added = await _repository.AddOrRestoreAsync(
             brand,
             cancellationToken);
+
+        if (!added)
+        {
+            return Result<Guid>.Failure(
+                BrandErrors.AlreadyExists);
+        }
 
         await _repository.SaveChangesAsync(
             cancellationToken);

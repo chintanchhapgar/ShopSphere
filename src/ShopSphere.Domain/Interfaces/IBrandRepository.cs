@@ -8,4 +8,8 @@ public interface IBrandRepository : IRepository<Brand>
         string name,
         Guid? excludeId,
         CancellationToken cancellationToken);
+
+    Task<bool> AddOrRestoreAsync(
+        Brand brand,
+        CancellationToken cancellationToken);
 }

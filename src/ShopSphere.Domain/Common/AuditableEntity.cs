@@ -38,9 +38,15 @@
         IsActive = false;
     }
 
-    public void Delete()
+    public virtual void Delete()
     {
         IsDeleted = true;
         IsActive = false;
+    }
+
+    public virtual void Restore()
+    {
+        IsDeleted = false;
+        IsActive = true;
     }
 }

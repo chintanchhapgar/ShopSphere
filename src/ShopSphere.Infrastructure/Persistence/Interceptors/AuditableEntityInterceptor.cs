@@ -1,21 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using ShopSphere.Application.Interfaces;
-using ShopSphere.Domain.Entities;
 
 namespace ShopSphere.Infrastructure.Persistence.Interceptors;
 
 public sealed class AuditableEntityInterceptor
     : SaveChangesInterceptor
 {
-    private readonly ICurrentUserService _currentUser;
-
-    public AuditableEntityInterceptor(
-        ICurrentUserService currentUser)
-    {
-        _currentUser = currentUser;
-    }
-
     public override InterceptionResult<int> SavingChanges(
         DbContextEventData eventData,
         InterceptionResult<int> result)
@@ -38,41 +28,25 @@ public sealed class AuditableEntityInterceptor
             cancellationToken);
     }
 
-    private void UpdateEntities(DbContext? context)
+    private static void UpdateEntities(DbContext? context)
     {
         if (context is null)
             return;
-
-        var utcNow = DateTime.UtcNow;
-        var userId = _currentUser.UserId ?? "System";
 
         foreach (var entry in context.ChangeTracker.Entries<AuditableEntity>())
         {
             switch (entry.State)
             {
                 case EntityState.Added:
-                    entry.Entity.SetCreated(
-                        utcNow,
-                        userId);
+                    entry.Entity.Restore();
                     break;
 
                 case EntityState.Modified:
-                    entry.Entity.SetUpdated(
-                        utcNow,
-                        userId);
                     break;
 
                 case EntityState.Deleted:
-
-                    // Convert physical delete into soft delete
                     entry.State = EntityState.Modified;
-
                     entry.Entity.Delete();
-
-                    entry.Entity.SetUpdated(
-                        utcNow,
-                        userId);
-
                     break;
             }
         }

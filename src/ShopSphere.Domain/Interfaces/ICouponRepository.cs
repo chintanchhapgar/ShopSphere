@@ -26,4 +26,8 @@ public interface ICouponRepository
 
     Task SaveChangesAsync(
         CancellationToken cancellationToken);
+
+    Task<bool> AddOrRestoreAsync(
+        Coupon coupon,
+        CancellationToken cancellationToken);
 }
