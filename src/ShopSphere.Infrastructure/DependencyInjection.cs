@@ -99,6 +99,7 @@ public static class DependencyInjection
         services.AddScoped<IProductReadRepository, ProductReadRepository>();
         services.AddScoped<IAddressRepository, AddressRepository>();
         services.AddScoped<IAddressReadRepository, AddressReadRepository>();
+        services.AddScoped<IStatisticsReadRepository, StatisticsReadRepository>();
 
         // Queries
         services.AddScoped<ICategoryQueries, CategoryQueries>();

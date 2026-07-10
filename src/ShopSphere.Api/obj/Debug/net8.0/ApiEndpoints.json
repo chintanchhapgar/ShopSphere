@@ -133,6 +133,56 @@
     "Summary": "Set Default Address"
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Admin.DashboardEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDashboardEndpoints\u003Eb__0_0",
+    "RelativePath": "api/admin/dashboard",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Admin Dashboard"
+    ],
+    "EndpointName": "GetDashboard",
+    "Description": "Returns summary statistics for the admin dashboard.",
+    "Summary": "Get dashboard statistics"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Admin.DashboardEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapDashboardEndpoints\u003Eb__0_1",
+    "RelativePath": "api/admin/dashboard/sales",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "days",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Admin Dashboard"
+    ],
+    "EndpointName": "GetSalesAnalytics",
+    "Description": "Returns daily revenue and completed order counts for the specified number of days.",
+    "Summary": "Get sales analytics"
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Orders.AdminOrderEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAdminOrderEndpoints\u003Eb__0_0",
     "RelativePath": "api/admin/orders/",
