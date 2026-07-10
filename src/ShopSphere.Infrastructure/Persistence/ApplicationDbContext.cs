@@ -41,6 +41,7 @@ public class ApplicationDbContext
     public DbSet<Wishlist> Wishlists => Set<Wishlist>();
     public DbSet<WishlistItem> WishlistItems => Set<WishlistItem>();
     public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<Address> Addresses => Set<Address>();
     public DatabaseFacade Database => base.Database;
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)

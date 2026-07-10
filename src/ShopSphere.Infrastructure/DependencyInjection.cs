@@ -97,6 +97,8 @@ public static class DependencyInjection
         services.AddScoped<IReviewRepository, ReviewRepository>();
         services.AddScoped<IReviewReadRepository, ReviewReadRepository>();
         services.AddScoped<IProductReadRepository, ProductReadRepository>();
+        services.AddScoped<IAddressRepository, AddressRepository>();
+        services.AddScoped<IAddressReadRepository, AddressReadRepository>();
 
         // Queries
         services.AddScoped<ICategoryQueries, CategoryQueries>();

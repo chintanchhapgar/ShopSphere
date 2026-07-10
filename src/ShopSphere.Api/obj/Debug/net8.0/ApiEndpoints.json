@@ -1,5 +1,138 @@
 [
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Addresses.AddressEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAddressEndpoints\u003Eb__0_0",
+    "RelativePath": "api/addresses/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Addresses.CreateAddress.CreateAddressCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Addresses"
+    ],
+    "EndpointName": "CreateAddress",
+    "Description": "Creates a new shipping address.",
+    "Summary": "Create Address"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Addresses.AddressEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAddressEndpoints\u003Eb__0_1",
+    "RelativePath": "api/addresses/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Addresses"
+    ],
+    "EndpointName": "GetAddresses",
+    "Description": "Returns all addresses of the authenticated customer.",
+    "Summary": "Get My Addresses"
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Addresses.AddressEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAddressEndpoints\u003Eb__0_3",
+    "RelativePath": "api/addresses/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Addresses.UpdateAddress.UpdateAddressCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Addresses"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Addresses.AddressEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAddressEndpoints\u003Eb__0_4",
+    "RelativePath": "api/addresses/{id:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Addresses"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Addresses.AddressEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAddressEndpoints\u003Eb__0_2",
+    "RelativePath": "api/addresses/{id:guid}/default",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Addresses"
+    ],
+    "EndpointName": "SetDefaultAddress",
+    "Description": "Marks the selected address as the default address.",
+    "Summary": "Set Default Address"
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Orders.AdminOrderEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAdminOrderEndpoints\u003Eb__0_0",
     "RelativePath": "api/admin/orders/",

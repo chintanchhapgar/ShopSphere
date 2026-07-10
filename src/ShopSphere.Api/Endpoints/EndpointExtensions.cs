@@ -1,4 +1,5 @@
-﻿using ShopSphere.Api.Endpoints.Authentication;
+﻿using ShopSphere.Api.Endpoints.Addresses;
+using ShopSphere.Api.Endpoints.Authentication;
 using ShopSphere.Api.Endpoints.Brands;
 using ShopSphere.Api.Endpoints.Categories;
 using ShopSphere.Api.Endpoints.Coupons;
@@ -34,6 +35,7 @@ public static class EndpointExtensions
         app.MapReviewEndpoints();
         app.MapAdminReviewEndpoints();
         app.MapProductSearchEndpoints();
+        app.MapAddressEndpoints();
 
         return app;
     }
