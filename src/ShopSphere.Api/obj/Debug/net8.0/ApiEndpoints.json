@@ -1470,5 +1470,99 @@
     "Tags": [
       "Test"
     ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Wishlists.WishlistEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapWishlistEndpoints\u003Eb__0_0",
+    "RelativePath": "api/wishlist/",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Wishlists.AddToWishlist.AddToWishlistCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Wishlist"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Wishlists.WishlistEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapWishlistEndpoints\u003Eb__0_1",
+    "RelativePath": "api/wishlist/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Wishlist"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Wishlists.WishlistEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapWishlistEndpoints\u003Eb__0_2",
+    "RelativePath": "api/wishlist/{productId:guid}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Wishlist"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Wishlists.WishlistEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapWishlistEndpoints\u003Eb__0_3",
+    "RelativePath": "api/wishlist/{productId:guid}/move-to-cart",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Wishlist"
+    ]
   }
 ]

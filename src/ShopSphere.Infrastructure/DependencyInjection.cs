@@ -93,6 +93,7 @@ public static class DependencyInjection
         services.AddScoped<IPaymentRepository, PaymentRepository>();
         services.AddScoped<IShipmentRepository, ShipmentRepository>();
         services.AddScoped<ICouponRepository, CouponRepository>();
+        services.AddScoped<IWishlistRepository, WishlistRepository>();
 
         // Queries
         services.AddScoped<ICategoryQueries, CategoryQueries>();

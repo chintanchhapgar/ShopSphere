@@ -38,6 +38,8 @@ public class ApplicationDbContext
     public DbSet<Payment> Payments => Set<Payment>();
     public DbSet<Shipment> Shipments => Set<Shipment>();
     public DbSet<Coupon> Coupons => Set<Coupon>();
+    public DbSet<Wishlist> Wishlists => Set<Wishlist>();
+    public DbSet<WishlistItem> WishlistItems => Set<WishlistItem>();
     public DatabaseFacade Database => base.Database;
     protected override void OnConfiguring(
         DbContextOptionsBuilder optionsBuilder)

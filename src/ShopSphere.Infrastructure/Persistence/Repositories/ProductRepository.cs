@@ -22,6 +22,7 @@ public sealed class ProductRepository
     {
         return await _context.Products
             .Include(x => x.Images)
+            .Include(x => x.Inventory)
             .FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
     }
 

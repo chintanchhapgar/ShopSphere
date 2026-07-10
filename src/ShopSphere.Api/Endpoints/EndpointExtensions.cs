@@ -7,6 +7,7 @@ using ShopSphere.Api.Endpoints.Payments;
 using ShopSphere.Api.Endpoints.Products;
 using ShopSphere.Api.Endpoints.Shipments;
 using ShopSphere.Api.Endpoints.Test;
+using ShopSphere.Api.Endpoints.Wishlists;
 
 namespace ShopSphere.Api.Endpoints;
 
@@ -28,6 +29,7 @@ public static class EndpointExtensions
         app.MapShipmentEndpoints();
         app.MapCouponEndpoints();
         app.MapTestEndpoints();
+        app.MapWishlistEndpoints();
 
         return app;
     }
