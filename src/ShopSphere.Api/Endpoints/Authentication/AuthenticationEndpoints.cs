@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using ShopSphere.Api.Common.Extensions;
+using ShopSphere.Application.Features.Authentication.EmailVerification;
+using ShopSphere.Application.Features.Authentication.ForgotPassword;
 using ShopSphere.Application.Features.Authentication.Login;
 using ShopSphere.Application.Features.Authentication.Me;
 using ShopSphere.Application.Features.Authentication.Register;
+using ShopSphere.Application.Features.Authentication.ResetPassword;
 
 namespace ShopSphere.Api.Endpoints.Authentication;
 
@@ -42,6 +45,36 @@ public static class AuthenticationEndpoints
                 async (ISender sender) =>
             {
                 var result = await sender.Send(new GetCurrentUserQuery());
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/forgot-password",
+            async (
+                ForgotPasswordCommand command,
+                ISender sender) =>
+            {
+                var result = await sender.Send(command);
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/reset-password",
+            async (
+                ResetPasswordCommand command,
+                ISender sender) =>
+            {
+                var result = await sender.Send(command);
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/verify-email",
+            async (
+                EmailVerificationCommand command,
+                ISender sender) =>
+            {
+                var result = await sender.Send(command);
 
                 return result.ToHttpResult();
             });

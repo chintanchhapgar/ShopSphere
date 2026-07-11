@@ -16,7 +16,7 @@ public sealed class EmailTemplateRenderer
         _options = options.Value;
     }
 
-    public async Task<string> Render(
+    public async Task<string> RenderAsync(
         string templateName,
         Dictionary<string, string> placeholders)
     {

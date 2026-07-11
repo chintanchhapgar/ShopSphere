@@ -37,7 +37,7 @@ public sealed class EmailJob
             return;
         }
 
-        var body = await _templateRenderer.Render(
+        var body = await _templateRenderer.RenderAsync(
             "Welcome",
             new Dictionary<string, string>
             {
@@ -71,7 +71,7 @@ public sealed class EmailJob
             return;
         }
 
-        var body = await _templateRenderer.Render(
+        var body = await _templateRenderer.RenderAsync(
             "OrderPlaced",
             new Dictionary<string, string>
             {
@@ -109,4 +109,71 @@ public sealed class EmailJob
 
         await Task.CompletedTask;
     }
+
+    public async Task SendPasswordResetAsync(
+        Guid userId,
+        string token)
+    {
+        var user = await _userManager.FindByIdAsync(
+            userId.ToString());
+
+        if (user is null ||
+            string.IsNullOrWhiteSpace(user.Email))
+        {
+            return;
+        }
+
+        var resetLink =
+            $"https://localhost:7065/reset-password?email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(token)}";
+
+        var body =
+            await _templateRenderer.RenderAsync(
+                "PasswordReset",
+                new Dictionary<string, string>
+                {
+                    ["FullName"] =
+                        $"{user.FirstName} {user.LastName}".Trim(),
+                    ["ResetLink"] = resetLink
+                });
+
+        await _emailService.SendAsync(
+            user.Email,
+            "Reset your ShopSphere password",
+            body);
+    }
+
+    public async Task SendEmailVerificationAsync(
+    Guid userId,
+    string token)
+    {
+        var user =
+            await _userManager.FindByIdAsync(
+                userId.ToString());
+
+        if (user is null ||
+            string.IsNullOrWhiteSpace(user.Email))
+        {
+            return;
+        }
+
+        var verifyLink =
+            $"http://localhost:5173/verify-email" +
+            $"?email={Uri.EscapeDataString(user.Email)}" +
+            $"&token={Uri.EscapeDataString(token)}";
+
+        var body =
+            await _templateRenderer.RenderAsync(
+                "VerifyEmail",
+                new Dictionary<string, string>
+                {
+                    ["FullName"] =
+                        $"{user.FirstName} {user.LastName}".Trim(),
+                    ["VerifyLink"] = verifyLink
+                });
+
+        await _emailService.SendAsync(
+            user.Email,
+            "Verify your ShopSphere account",
+            body);
+    }    
 }

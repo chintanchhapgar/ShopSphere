@@ -21,7 +21,7 @@ public sealed class EmailNotificationService
          OrderPlacedEmailModel model,
          CancellationToken cancellationToken = default)
     {
-        var html = await _renderer.Render(
+        var html = await _renderer.RenderAsync(
             "OrderPlaced",
             new Dictionary<string, string>
             {
@@ -41,7 +41,7 @@ public sealed class EmailNotificationService
          PaymentSucceededEmailModel model,
          CancellationToken cancellationToken = default)
     {
-        var html = await _renderer.Render(
+        var html = await _renderer.RenderAsync(
             "PaymentSucceeded",
             new Dictionary<string, string>
             {
@@ -63,7 +63,7 @@ public sealed class EmailNotificationService
         ShipmentCreatedEmailModel model,
         CancellationToken cancellationToken = default)
     {
-        var html = await _renderer.Render(
+        var html = await _renderer.RenderAsync(
             "ShipmentCreated",
             new Dictionary<string, string>
             {
@@ -86,7 +86,7 @@ public sealed class EmailNotificationService
         ShipmentDeliveredEmailModel model,
         CancellationToken cancellationToken = default)
     {
-        var html = await _renderer.Render(
+        var html = await _renderer.RenderAsync(
             "ShipmentDelivered",
             new Dictionary<string, string>
             {
@@ -106,7 +106,7 @@ public sealed class EmailNotificationService
         WelcomeEmailModel model,
         CancellationToken cancellationToken = default)
     {
-        var html = await _renderer.Render(
+        var html = await _renderer.RenderAsync(
             "Welcome",
             new Dictionary<string, string>
             {

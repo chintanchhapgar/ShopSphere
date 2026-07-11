@@ -35,8 +35,17 @@ public sealed class RegisterCommandHandler
                 AuthenticationErrors.RegistrationFailed);
         }
 
-        _backgroundJobs.Enqueue<IEmailJob>(
-            x => x.SendWelcomeAsync(response.UserId.Value));
+        var verification =
+     await _identityService.GenerateEmailVerificationTokenAsync(
+         request.Email);
+
+        if (verification is not null)
+        {
+            _backgroundJobs.Enqueue<IEmailJob>(
+                x => x.SendEmailVerificationAsync(
+                    verification.UserId,
+                    verification.Token));
+        }
 
         return Result.Success(
             "Registration completed successfully.");

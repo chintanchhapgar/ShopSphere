@@ -302,6 +302,31 @@
   },
   {
     "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_3",
+    "RelativePath": "api/auth/forgot-password",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Authentication.ForgotPassword.ForgotPasswordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_1",
     "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
@@ -355,6 +380,56 @@
       {
         "Name": "command",
         "Type": "ShopSphere.Application.Features.Authentication.Register.RegisterCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_4",
+    "RelativePath": "api/auth/reset-password",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Authentication.ResetPassword.ResetPasswordCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_5",
+    "RelativePath": "api/auth/verify-email",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "ShopSphere.Application.Features.Authentication.EmailVerification.EmailVerificationCommand",
         "IsRequired": true
       }
     ],

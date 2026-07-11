@@ -12,4 +12,12 @@ public interface IEmailJob
         Guid orderId);
 
     Task SendWelcomeAsync(Guid userId);
+
+    Task SendPasswordResetAsync(
+        Guid userId,
+        string token);
+
+    Task SendEmailVerificationAsync(
+        Guid userId,
+        string token);
 }

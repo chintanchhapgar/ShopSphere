@@ -13,4 +13,14 @@ public static class AuthenticationErrors
 
     public static readonly Error RegistrationFailed =
         new("REGISTRATION FAILED", "Registration failed");
+
+    public static readonly Error InvalidPasswordResetToken =
+        new(
+            "Authentication.InvalidPasswordResetToken",
+            "Invalid or expired password reset token.");
+
+    public static readonly Error InvalidEmailVerificationToken =
+        new(
+            "Authentication.InvalidEmailVerificationToken",
+            "The email verification token is invalid or has expired.");
 }
