@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using ShopSphere.Application.Features.Payments.PaymentGateway;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Queries;
 using ShopSphere.Application.Services.Interfaces;
@@ -114,6 +115,8 @@ public static class DependencyInjection
         services.AddScoped<IPaymentQueries, PaymentQueries>();
         services.AddScoped<IShipmentQueries, ShipmentQueries>();
         services.AddScoped<ICouponQueries, CouponQueries>();
+
+        services.AddScoped<IPaymentGateway, FakePaymentGateway>();
 
         services.AddScoped<IEmailTemplateRenderer, EmailTemplateRenderer>();
 

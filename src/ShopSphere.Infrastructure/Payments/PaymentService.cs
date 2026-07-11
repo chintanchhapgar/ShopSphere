@@ -1,4 +1,5 @@
-﻿using ShopSphere.Application.Interfaces;
+﻿using ShopSphere.Application.Features.Payments.PaymentGateway;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
 using ShopSphere.Domain.Entities;
@@ -14,16 +15,20 @@ public sealed class PaymentService
     private readonly IOrderRepository _orderRepository;
     private readonly IShipmentRepository _shipmentRepository;
     private readonly IBackgroundJobService _backgroundJobs;
+    private readonly IPaymentGateway _paymentGateway;
+
     public PaymentService(
     IPaymentRepository paymentRepository,
     IOrderRepository orderRepository,
     IShipmentRepository shipmentRepository,
-    IBackgroundJobService backgroundJobs)
+    IBackgroundJobService backgroundJobs,
+    IPaymentGateway paymentGateway)
     {
         _paymentRepository = paymentRepository;
         _orderRepository = orderRepository;
         _shipmentRepository = shipmentRepository;
         _backgroundJobs = backgroundJobs;
+        _paymentGateway = paymentGateway;
     }
 
     public async Task<Result<Guid>> CreatePaymentAsync(
@@ -64,6 +69,17 @@ public sealed class PaymentService
         await _paymentRepository.SaveChangesAsync(
             cancellationToken);
 
+        var gatewayResponse =
+            await _paymentGateway.CreatePaymentAsync(
+                new PaymentGatewayRequest
+                {
+                    PaymentId = payment.Id,
+                    Amount = payment.Amount,
+                    Method = payment.Method,
+                    OrderNumber = order.OrderNumber
+                },
+                cancellationToken);
+
         return Result<Guid>.Success(
             payment.Id,
             "Payment created successfully.");
@@ -88,6 +104,16 @@ public sealed class PaymentService
         {
             return Result.Success();
         }
+
+        var verified = await _paymentGateway.VerifyPaymentAsync(
+            transactionId,
+            cancellationToken);
+
+                if (!verified)
+                {
+                    return Result.Failure(
+                        PaymentErrors.InvalidTransaction);
+                }
 
         payment.MarkPaid(transactionId);
 
@@ -169,6 +195,10 @@ public sealed class PaymentService
             return Result.Failure(
                 PaymentErrors.NotFound);
         }
+
+        await _paymentGateway.RefundAsync(
+            payment.TransactionId!,
+            cancellationToken);
 
         payment.UpdateStatus(
             PaymentStatus.Refunded);
