@@ -13,6 +13,7 @@ using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Authentication;
 using ShopSphere.Infrastructure.BackgroundJobs;
+using ShopSphere.Infrastructure.Caching;
 using ShopSphere.Infrastructure.Email.Rendering;
 using ShopSphere.Infrastructure.Email.Services;
 using ShopSphere.Infrastructure.Identity;
@@ -23,6 +24,7 @@ using ShopSphere.Infrastructure.Persistence.Repositories;
 using ShopSphere.Infrastructure.Queries;
 using ShopSphere.Infrastructure.Services;
 using ShopSphere.Infrastructure.Storage;
+using StackExchange.Redis;
 using System.Text;
 
 namespace ShopSphere.Infrastructure;
@@ -133,6 +135,21 @@ public static class DependencyInjection
 
         services.AddScoped<AuditableEntityInterceptor>();
         services.AddBackgroundJobs();
+
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration =
+                configuration.GetConnectionString("Redis");
+
+            options.InstanceName = "ShopSphere:";
+        });
+
+        services.AddScoped<ICacheService, RedisCacheService>();
+
+        services.AddSingleton<IConnectionMultiplexer>(_ =>
+            ConnectionMultiplexer.Connect(
+                configuration.GetConnectionString("Redis")!));
+
         return services;
     }
 }

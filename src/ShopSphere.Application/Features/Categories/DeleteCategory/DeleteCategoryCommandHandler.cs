@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
@@ -11,11 +12,15 @@ public sealed class DeleteCategoryCommandHandler
 {
     private readonly ICategoryRepository _repository;
     private readonly ICategoryService _categoryService;
+    private readonly ICacheService _cacheService;
     public DeleteCategoryCommandHandler(
-        ICategoryRepository repository, ICategoryService categoryService)
+        ICategoryRepository repository, 
+        ICategoryService categoryService,
+        ICacheService cacheService)
     {
         _repository = repository;
         _categoryService = categoryService;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(
@@ -26,19 +31,23 @@ public sealed class DeleteCategoryCommandHandler
         request.Id,
         cancellationToken);
 
-            if (!validation.IsSuccess)
-            {
-                return validation;
-            }
+        if (!validation.IsSuccess)
+        {
+            return validation;
+        }
 
-            var category = (await _categoryService.GetRequiredAsync(
-                request.Id,
-                cancellationToken)).Value!;
+        var category = (await _categoryService.GetRequiredAsync(
+            request.Id,
+            cancellationToken)).Value!;
 
-            category.Delete();
+        category.Delete();
 
-            await _repository.SaveChangesAsync(cancellationToken);
+        await _repository.SaveChangesAsync(cancellationToken);
 
-            return Result.Success("Category deleted successfully.");
+        await _cacheService.RemoveByPrefixAsync(
+          "categories",
+          cancellationToken);
+
+        return Result.Success("Category deleted successfully.");
     }
 }

@@ -199,7 +199,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.WebSockets.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.WebUtilities.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.CSharp.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Caching.Memory.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Binder.dll
@@ -212,7 +211,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.DependencyInjection.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.dll
@@ -231,7 +229,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Identity.Stores.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Localization.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Localization.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Configuration.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Console.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Logging.Debug.dll
@@ -242,8 +239,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.ObjectPool.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Options.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Primitives.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.WebEncoders.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.JSInterop.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Net.Http.Headers.dll
@@ -274,7 +269,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\S
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Data.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Diagnostics.Contracts.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Diagnostics.Debug.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Diagnostics.DiagnosticSource.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Diagnostics.EventLog.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Diagnostics.FileVersionInfo.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.Diagnostics.Process.dll
@@ -304,7 +298,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\S
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.FileSystem.Watcher.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.IsolatedStorage.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.MemoryMappedFiles.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.Pipelines.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.Pipes.AccessControl.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.Pipes.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\System.IO.UnmanagedMemoryStream.dll
@@ -474,7 +467,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Micros
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Serilog.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Serilog.AspNetCore.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
@@ -536,3 +528,9 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\sv\Han
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\RESPite.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\System.IO.Hashing.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\System.IO.Pipelines.dll

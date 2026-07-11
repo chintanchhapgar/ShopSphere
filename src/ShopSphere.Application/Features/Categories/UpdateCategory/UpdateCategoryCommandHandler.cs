@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
 using ShopSphere.Domain.Interfaces;
@@ -9,11 +10,13 @@ public sealed class UpdateCategoryCommandHandler
     : IRequestHandler<UpdateCategoryCommand, Result>
 {
     private readonly ICategoryRepository _repository;
-
+    private readonly ICacheService _cacheService;
     public UpdateCategoryCommandHandler(
-        ICategoryRepository repository)
+        ICategoryRepository repository,
+        ICacheService cacheService)
     {
         _repository = repository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(
@@ -60,6 +63,10 @@ public sealed class UpdateCategoryCommandHandler
             request.ParentCategoryId);
 
         await _repository.SaveChangesAsync(cancellationToken);
+
+        await _cacheService.RemoveByPrefixAsync(
+           "categories",
+           cancellationToken);
 
         return Result.Success(
             "Category updated successfully.");

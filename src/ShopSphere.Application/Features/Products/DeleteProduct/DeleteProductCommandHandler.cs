@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Interfaces;
 
@@ -8,11 +9,13 @@ public sealed class DeleteProductCommandHandler
     : IRequestHandler<DeleteProductCommand, Result>
 {
     private readonly IProductRepository _repository;
-
+    private readonly ICacheService _cacheService;
     public DeleteProductCommandHandler(
-        IProductRepository repository)
+        IProductRepository repository,
+        ICacheService cacheService)
     {
         _repository = repository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(
@@ -33,6 +36,10 @@ public sealed class DeleteProductCommandHandler
 
         await _repository.SaveChangesAsync(
             cancellationToken);
+
+        await _cacheService.RemoveByPrefixAsync(
+           "products",
+           cancellationToken);
 
         return Result.Success(
             "Product deleted successfully.");

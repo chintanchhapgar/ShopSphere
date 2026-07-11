@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
@@ -9,11 +10,13 @@ public sealed class ChangeBrandStatusCommandHandler
     : IRequestHandler<ChangeBrandStatusCommand, Result>
 {
     private readonly IBrandRepository _repository;
-
+    private readonly ICacheService _cacheService;
     public ChangeBrandStatusCommandHandler(
-        IBrandRepository repository)
+        IBrandRepository repository,
+        ICacheService cacheService)
     {
         _repository = repository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(
@@ -43,6 +46,10 @@ public sealed class ChangeBrandStatusCommandHandler
 
         await _repository.SaveChangesAsync(
             cancellationToken);
+
+        await _cacheService.RemoveByPrefixAsync(
+          "brands",
+          cancellationToken);
 
         return Result.Success(
             $"Brand {(request.IsActive ? "activated" : "deactivated")} successfully.");

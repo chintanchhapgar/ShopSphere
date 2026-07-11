@@ -150,7 +150,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Mono.
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Mono.Cecil.Rocks.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Mono.Cecil.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\NetArchTest.Rules.dll
-D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Serilog.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Serilog.AspNetCore.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
@@ -199,3 +198,9 @@ D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\sv\Ha
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\RESPite.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\System.IO.Hashing.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\System.IO.Pipelines.dll

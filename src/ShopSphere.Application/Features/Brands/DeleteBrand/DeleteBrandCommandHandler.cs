@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
@@ -9,11 +10,14 @@ public sealed class DeleteBrandCommandHandler
     : IRequestHandler<DeleteBrandCommand, Result>
 {
     private readonly IBrandRepository _repository;
+    private readonly ICacheService _cacheService;
 
     public DeleteBrandCommandHandler(
-        IBrandRepository repository)
+        IBrandRepository repository,
+        ICacheService cacheService)
     {
         _repository = repository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(
@@ -33,6 +37,10 @@ public sealed class DeleteBrandCommandHandler
         _repository.Remove(brand);
 
         await _repository.SaveChangesAsync(cancellationToken);
+
+        await _cacheService.RemoveByPrefixAsync(
+          "brands",
+          cancellationToken);
 
         return Result.Success(
             "Brand deleted successfully.");

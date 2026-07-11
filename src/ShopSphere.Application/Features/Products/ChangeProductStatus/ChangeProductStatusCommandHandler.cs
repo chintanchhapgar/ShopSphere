@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Interfaces;
 
@@ -8,11 +9,13 @@ public sealed class ChangeProductStatusCommandHandler
     : IRequestHandler<ChangeProductStatusCommand, Result>
 {
     private readonly IProductRepository _repository;
-
+    private readonly ICacheService _cacheService;
     public ChangeProductStatusCommandHandler(
-        IProductRepository repository)
+        IProductRepository repository,
+        ICacheService cacheService)
     {
         _repository = repository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result> Handle(
@@ -40,6 +43,10 @@ public sealed class ChangeProductStatusCommandHandler
 
         await _repository.SaveChangesAsync(
             cancellationToken);
+
+        await _cacheService.RemoveByPrefixAsync(
+           "products",
+           cancellationToken);
 
         return Result.Success(
             request.IsActive

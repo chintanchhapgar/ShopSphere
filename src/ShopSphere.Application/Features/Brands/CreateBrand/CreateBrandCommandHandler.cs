@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
@@ -9,11 +10,14 @@ public sealed class CreateBrandCommandHandler
     : IRequestHandler<CreateBrandCommand, Result<Guid>>
 {
     private readonly IBrandRepository _repository;
+    private readonly ICacheService _cacheService;
 
     public CreateBrandCommandHandler(
-        IBrandRepository repository)
+        IBrandRepository repository,
+        ICacheService cacheService)
     {
         _repository = repository;
+        _cacheService = cacheService;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -47,6 +51,10 @@ public sealed class CreateBrandCommandHandler
 
         await _repository.SaveChangesAsync(
             cancellationToken);
+
+        await _cacheService.RemoveByPrefixAsync(
+          "brands",
+          cancellationToken);
 
         return Result<Guid>.Success(
             brand.Id,
