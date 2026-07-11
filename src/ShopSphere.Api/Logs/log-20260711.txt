@@ -1,0 +1,93 @@
+2026-07-11 18:31:09.830 +05:30 [INF] Start installing Hangfire SQL objects...
+2026-07-11 18:31:10.907 +05:30 [INF] Hangfire SQL objects installed.
+2026-07-11 18:31:12.610 +05:30 [WRN] Entity 'Product' has a global query filter defined and is the required end of a relationship with the entity 'CartItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-11 18:31:12.623 +05:30 [WRN] Entity 'Order' has a global query filter defined and is the required end of a relationship with the entity 'OrderItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-11 18:31:12.638 +05:30 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-07-11 18:31:12.761 +05:30 [WRN] No store type was specified for the decimal property 'DiscountAmount' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-11 18:31:12.901 +05:30 [WRN] No store type was specified for the decimal property 'Weight' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-11 18:31:14.399 +05:30 [INF] Initializing UI Database
+2026-07-11 18:31:14.633 +05:30 [INF] Saving healthchecks configuration to database
+2026-07-11 18:31:16.087 +05:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost\MSSQLSERVER01@ShopSphereDb'
+2026-07-11 18:31:16.592 +05:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-11 18:31:16.595 +05:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-11 18:31:17.265 +05:30 [INF] Server desktop-ent1tv1:14112:9faf0bdd successfully announced in 612.0006 ms
+2026-07-11 18:31:17.280 +05:30 [INF] Server desktop-ent1tv1:14112:9faf0bdd is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-11 18:31:17.308 +05:30 [INF] 1 servers were removed due to timeout
+2026-07-11 18:31:17.605 +05:30 [INF] Server desktop-ent1tv1:14112:9faf0bdd all the dispatchers started
+2026-07-11 18:31:19.525 +05:30 [INF] Request 0HNMV9HV30KS1:00000001 GET /health responded 200 in 1765.9661 ms
+2026-07-11 18:31:30.250 +05:30 [INF] Request 0HNMV9HV30KS1:00000002 GET /health responded 200 in 8.2145 ms
+2026-07-11 18:31:40.358 +05:30 [INF] Request 0HNMV9HV30KS1:00000003 GET /health responded 200 in 15.9365 ms
+2026-07-11 18:31:50.408 +05:30 [INF] Request 0HNMV9HV30KS1:00000004 GET /health responded 200 in 18.8212 ms
+2026-07-11 18:32:00.229 +05:30 [INF] User (chintanchhapgar007@gmail.com) logged in successfully.
+2026-07-11 18:32:00.290 +05:30 [INF] Request 0HNMV9HV30KS0:00000009 POST /api/auth/login responded 200 in 1171.8320 ms
+2026-07-11 18:32:00.485 +05:30 [INF] Request 0HNMV9HV30KS1:00000005 GET /health responded 200 in 7.8546 ms
+2026-07-11 18:32:10.514 +05:30 [INF] Request 0HNMV9HV30KS1:00000006 GET /health responded 200 in 4.9707 ms
+2026-07-11 18:32:20.533 +05:30 [INF] Request 0HNMV9HV30KS1:00000007 GET /health responded 200 in 4.6875 ms
+2026-07-11 18:32:30.572 +05:30 [INF] Request 0HNMV9HV30KS1:00000008 GET /health responded 200 in 5.6433 ms
+2026-07-11 18:32:40.600 +05:30 [INF] Request 0HNMV9HV30KS1:00000009 GET /health responded 200 in 4.5371 ms
+2026-07-11 18:32:50.636 +05:30 [INF] Request 0HNMV9HV30KS1:0000000A GET /health responded 200 in 5.5552 ms
+2026-07-11 18:33:00.680 +05:30 [INF] Request 0HNMV9HV30KS1:0000000B GET /health responded 200 in 5.7827 ms
+2026-07-11 18:33:10.733 +05:30 [INF] Request 0HNMV9HV30KS1:0000000C GET /health responded 200 in 8.0618 ms
+2026-07-11 18:33:20.767 +05:30 [INF] Request 0HNMV9HV30KS2:00000001 GET /health responded 200 in 7.0698 ms
+2026-07-11 18:33:30.806 +05:30 [INF] Request 0HNMV9HV30KS2:00000002 GET /health responded 200 in 8.3347 ms
+2026-07-11 18:33:40.835 +05:30 [INF] Request 0HNMV9HV30KS2:00000003 GET /health responded 200 in 4.3252 ms
+2026-07-11 18:33:50.858 +05:30 [INF] Request 0HNMV9HV30KS2:00000004 GET /health responded 200 in 4.5004 ms
+2026-07-11 18:34:00.879 +05:30 [INF] Request 0HNMV9HV30KS2:00000005 GET /health responded 200 in 7.3868 ms
+2026-07-11 18:34:10.898 +05:30 [INF] Request 0HNMV9HV30KS2:00000006 GET /health responded 200 in 5.2922 ms
+2026-07-11 18:34:20.929 +05:30 [INF] Request 0HNMV9HV30KS2:00000007 GET /health responded 200 in 4.4560 ms
+2026-07-11 18:34:30.960 +05:30 [INF] Request 0HNMV9HV30KS2:00000008 GET /health responded 200 in 4.7516 ms
+2026-07-11 18:39:17.405 +05:30 [INF] Start installing Hangfire SQL objects...
+2026-07-11 18:39:18.647 +05:30 [INF] Hangfire SQL objects installed.
+2026-07-11 18:39:20.350 +05:30 [WRN] Entity 'Product' has a global query filter defined and is the required end of a relationship with the entity 'CartItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-11 18:39:20.366 +05:30 [WRN] Entity 'Order' has a global query filter defined and is the required end of a relationship with the entity 'OrderItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-11 18:39:20.383 +05:30 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-07-11 18:39:20.542 +05:30 [WRN] No store type was specified for the decimal property 'DiscountAmount' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-11 18:39:20.546 +05:30 [WRN] No store type was specified for the decimal property 'Weight' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-11 18:39:21.750 +05:30 [INF] Initializing UI Database
+2026-07-11 18:39:22.018 +05:30 [INF] Saving healthchecks configuration to database
+2026-07-11 18:39:24.183 +05:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost\MSSQLSERVER01@ShopSphereDb'
+2026-07-11 18:39:24.280 +05:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-11 18:39:24.287 +05:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-11 18:39:24.743 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 successfully announced in 369.3283 ms
+2026-07-11 18:39:24.779 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-11 18:39:24.822 +05:30 [INF] 1 servers were removed due to timeout
+2026-07-11 18:39:25.080 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 all the dispatchers started
+2026-07-11 18:39:27.235 +05:30 [INF] Request 0HNMV9MGB8MBP:00000001 GET /health responded 200 in 1762.6147 ms
+2026-07-11 18:39:38.037 +05:30 [INF] Request 0HNMV9MGB8MBP:00000002 GET /health responded 200 in 8.4353 ms
+2026-07-11 18:39:48.105 +05:30 [INF] Request 0HNMV9MGB8MBP:00000003 GET /health responded 200 in 10.3415 ms
+2026-07-11 18:39:58.133 +05:30 [INF] Request 0HNMV9MGB8MBP:00000004 GET /health responded 200 in 4.5979 ms
+2026-07-11 18:40:08.156 +05:30 [INF] Request 0HNMV9MGB8MBP:00000005 GET /health responded 200 in 6.0293 ms
+2026-07-11 18:40:18.185 +05:30 [INF] Request 0HNMV9MGB8MBP:00000006 GET /health responded 200 in 12.5608 ms
+2026-07-11 18:40:28.218 +05:30 [INF] Request 0HNMV9MGB8MBP:00000007 GET /health responded 200 in 5.6774 ms
+2026-07-11 18:40:38.244 +05:30 [INF] Request 0HNMV9MGB8MBP:00000008 GET /health responded 200 in 5.9619 ms
+2026-07-11 18:40:48.269 +05:30 [INF] Request 0HNMV9MGB8MBP:00000009 GET /health responded 200 in 5.4606 ms
+2026-07-11 18:40:58.300 +05:30 [INF] Request 0HNMV9MGB8MBP:0000000A GET /health responded 200 in 4.6208 ms
+2026-07-11 18:41:08.334 +05:30 [INF] Request 0HNMV9MGB8MBP:0000000B GET /health responded 200 in 5.0810 ms
+2026-07-11 18:41:18.371 +05:30 [INF] Request 0HNMV9MGB8MBP:0000000C GET /health responded 200 in 4.3469 ms
+2026-07-11 18:41:28.415 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000001 GET /health responded 200 in 5.5351 ms
+2026-07-11 18:41:38.440 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000002 GET /health responded 200 in 5.9889 ms
+2026-07-11 18:41:48.459 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000003 GET /health responded 200 in 4.8164 ms
+2026-07-11 18:41:58.483 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000004 GET /health responded 200 in 11.8936 ms
+2026-07-11 18:42:08.530 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000005 GET /health responded 200 in 5.3377 ms
+2026-07-11 18:42:18.561 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000006 GET /health responded 200 in 9.6409 ms
+2026-07-11 18:42:28.591 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000007 GET /health responded 200 in 8.4302 ms
+2026-07-11 18:42:38.641 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000008 GET /health responded 200 in 3.9477 ms
+2026-07-11 18:42:48.664 +05:30 [INF] Request 0HNMV9MGB8MBQ:00000009 GET /health responded 200 in 4.8349 ms
+2026-07-11 18:42:58.689 +05:30 [INF] Request 0HNMV9MGB8MBQ:0000000A GET /health responded 200 in 4.0610 ms
+2026-07-11 18:43:08.726 +05:30 [INF] Request 0HNMV9MGB8MBQ:0000000B GET /health responded 200 in 4.7330 ms
+2026-07-11 18:43:18.752 +05:30 [INF] Request 0HNMV9MGB8MBQ:0000000C GET /health responded 200 in 3.6289 ms
+2026-07-11 18:43:27.429 +05:30 [WRN] Stopping the server due to DomainUnload or ProcessExit event...
+2026-07-11 18:43:27.438 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 caught stopping signal...
+2026-07-11 18:43:27.442 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 caught stopped signal...
+2026-07-11 18:43:27.453 +05:30 [WRN] Server desktop-ent1tv1:18916:6cd8a0b5 caught shutdown signal...
+2026-07-11 18:43:27.457 +05:30 [WRN] Server desktop-ent1tv1:18916:6cd8a0b5 stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2026-07-11 18:43:27.489 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 successfully reported itself as stopped in 19.0566 ms
+2026-07-11 18:43:27.494 +05:30 [INF] Server desktop-ent1tv1:18916:6cd8a0b5 has been stopped in total 52.8205 ms

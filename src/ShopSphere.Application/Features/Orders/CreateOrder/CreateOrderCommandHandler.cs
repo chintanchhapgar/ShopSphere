@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
@@ -22,6 +23,7 @@ public sealed class CreateOrderCommandHandler
     private readonly IBackgroundJobService _backgroundJobs;
     private readonly IAddressRepository _addressRepository;
     private readonly IAuditService _auditService;
+    private readonly ILogger<CreateOrderCommandHandler> _logger;
 
     public CreateOrderCommandHandler(
     ICartRepository cartRepository,
@@ -32,7 +34,9 @@ public sealed class CreateOrderCommandHandler
     IUserService userService,
     INotificationService notificationService,
     IBackgroundJobService backgroundJobs,
-    IAuditService auditService)
+    IAuditService auditService,
+    ILogger<CreateOrderCommandHandler> logger
+    )
     {
         _cartRepository = cartRepository;
         _inventoryRepository = inventoryRepository;
@@ -43,6 +47,7 @@ public sealed class CreateOrderCommandHandler
         _notificationService = notificationService;
         _backgroundJobs = backgroundJobs;
         _auditService = auditService;
+        _logger = logger;
     }
 
     public async Task<Result<CreateOrderResponse>> Handle(
@@ -167,6 +172,17 @@ public sealed class CreateOrderCommandHandler
         await _orderRepository.SaveChangesAsync(
             cancellationToken);
 
+        _logger.LogInformation(
+            "Checkout completed for Cart {CartId}",
+            cart.Id);
+
+        _logger.LogInformation(
+            "Order {OrderNumber} ({OrderId}) created by User {UserId}. Total: {TotalAmount}",
+            order.OrderNumber,
+            order.Id,
+            order.UserId,
+            order.TotalAmount);
+
         await _auditService.LogAsync(
             AuditActions.CreateOrder,
             AuditEntities.Order,
@@ -186,6 +202,10 @@ public sealed class CreateOrderCommandHandler
 
         _backgroundJobs.Enqueue<IEmailJob>(
           x => x.SendOrderConfirmationAsync(order.Id));
+
+        _logger.LogInformation(
+            "Order confirmation email queued for Order {OrderNumber}",
+            order.OrderNumber);
 
         return Result<CreateOrderResponse>.Success(
             new CreateOrderResponse(

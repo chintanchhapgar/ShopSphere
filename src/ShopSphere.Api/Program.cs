@@ -3,22 +3,30 @@ using Hangfire.SqlServer;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using ShopSphere.Api.Endpoints;
 using ShopSphere.Api.Extensions;
 using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
-using ShopSphere.Application.Interfaces;
 using ShopSphere.Infrastructure;
 using ShopSphere.Infrastructure.Email.Models;
 using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
-using ShopSphere.Infrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, services, configuration) =>
+{
+    configuration
+        .ReadFrom.Configuration(context.Configuration)
+        .ReadFrom.Services(services)
+        .Enrich.FromLogContext()
+        .Enrich.WithMachineName()
+        .Enrich.WithThreadId()
+        .Enrich.WithProcessId();
+});
 
 builder.Services
     .AddApplication()
@@ -113,6 +121,24 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseMiddleware<GlobalExceptionMiddleware>();
+
+app.UseSerilogRequestLogging(options =>
+{
+    options.MessageTemplate =
+        "Request {RequestId} {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms";
+
+    options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+    {
+        diagnosticContext.Set("RequestId", httpContext.TraceIdentifier);
+        diagnosticContext.Set("RemoteIp", httpContext.Connection.RemoteIpAddress?.ToString());
+        diagnosticContext.Set("UserAgent", httpContext.Request.Headers.UserAgent.ToString());
+
+        if (httpContext.User.Identity?.IsAuthenticated == true)
+        {
+            diagnosticContext.Set("User", httpContext.User.Identity.Name);
+        }
+    };
+});
 
 app.UseHttpsRedirection();
 

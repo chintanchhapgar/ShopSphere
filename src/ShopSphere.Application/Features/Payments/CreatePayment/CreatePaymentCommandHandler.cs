@@ -13,14 +13,14 @@ public sealed class CreatePaymentCommandHandler
 {
     private readonly IPaymentService _paymentService;
     public CreatePaymentCommandHandler(
-    IPaymentService paymentService)
+        IPaymentService paymentService)
     {
         _paymentService = paymentService;
     }
 
     public async Task<Result<Guid>> Handle(
-    CreatePaymentCommand request,
-    CancellationToken cancellationToken)
+        CreatePaymentCommand request,
+        CancellationToken cancellationToken)
     {
         return await _paymentService.CreatePaymentAsync(
             request.OrderId,

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Common.Errors;
@@ -10,13 +11,15 @@ public sealed class RegisterCommandHandler
 {
     private readonly IIdentityService _identityService;
     private readonly IBackgroundJobService _backgroundJobs;
-
+    private readonly ILogger<RegisterCommandHandler> _logger;
     public RegisterCommandHandler(
         IIdentityService identityService,
-        IBackgroundJobService backgroundJobs)
+        IBackgroundJobService backgroundJobs,
+        ILogger<RegisterCommandHandler> logger)
     {
         _identityService = identityService;
         _backgroundJobs = backgroundJobs;
+        _logger = logger;
     }
 
     public async Task<Result> Handle(
@@ -35,9 +38,13 @@ public sealed class RegisterCommandHandler
                 AuthenticationErrors.RegistrationFailed);
         }
 
+        _logger.LogInformation(
+            "User registered with email {Email}.",
+            request.Email);
+
         var verification =
-     await _identityService.GenerateEmailVerificationTokenAsync(
-         request.Email);
+             await _identityService.GenerateEmailVerificationTokenAsync(
+                 request.Email);
 
         if (verification is not null)
         {
@@ -46,6 +53,10 @@ public sealed class RegisterCommandHandler
                     verification.UserId,
                     verification.Token));
         }
+
+        _logger.LogInformation(
+            "Email verification queued for {Email}.",
+            request.Email);        
 
         return Result.Success(
             "Registration completed successfully.");

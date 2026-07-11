@@ -1,4 +1,5 @@
-﻿using ShopSphere.Application.Features.Payments.PaymentGateway;
+﻿using Microsoft.Extensions.Logging;
+using ShopSphere.Application.Features.Payments.PaymentGateway;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
@@ -19,13 +20,15 @@ public sealed class PaymentService
     private readonly IBackgroundJobService _backgroundJobs;
     private readonly IPaymentGateway _paymentGateway;
     private readonly IAuditService _auditService;
+    private readonly ILogger<PaymentService> _logger;
     public PaymentService(
     IPaymentRepository paymentRepository,
     IOrderRepository orderRepository,
     IShipmentRepository shipmentRepository,
     IBackgroundJobService backgroundJobs,
     IPaymentGateway paymentGateway,
-    IAuditService auditService)
+    IAuditService auditService,
+    ILogger<PaymentService> logger)
     {
         _paymentRepository = paymentRepository;
         _orderRepository = orderRepository;
@@ -33,6 +36,7 @@ public sealed class PaymentService
         _backgroundJobs = backgroundJobs;
         _paymentGateway = paymentGateway;
         _auditService = auditService;
+        _logger = logger;
     }
 
     public async Task<Result<Guid>> CreatePaymentAsync(
@@ -73,6 +77,13 @@ public sealed class PaymentService
         await _paymentRepository.SaveChangesAsync(
             cancellationToken);
 
+        _logger.LogInformation(
+            "Payment {PaymentId} created for Order {OrderNumber}. Amount: {Amount}. Method: {Method}",
+            payment.Id,
+            order.OrderNumber,
+            payment.Amount,
+            payment.Method);
+
         var gatewayResponse =
             await _paymentGateway.CreatePaymentAsync(
                 new PaymentGatewayRequest
@@ -83,6 +94,10 @@ public sealed class PaymentService
                     OrderNumber = order.OrderNumber
                 },
                 cancellationToken);
+
+        _logger.LogInformation(
+            "Payment success email queued for Order {OrderNumber}.",
+            order.OrderNumber);
 
         payment.UpdateStatus(
             PaymentStatus.Pending,
@@ -118,15 +133,24 @@ public sealed class PaymentService
             transactionId,
             cancellationToken);
 
-                if (!verified)
-                {
-                    return Result.Failure(
-                        PaymentErrors.InvalidTransaction);
-                }
+        if (!verified)
+        {
+            _logger.LogWarning(
+                "Payment verification failed. TransactionId: {TransactionId}",
+                transactionId);
+
+            return Result.Failure(
+                 PaymentErrors.InvalidTransaction);
+        }
 
         payment.MarkPaid(
             transactionId,
             gatewayReference);
+
+        _logger.LogInformation(
+            "Payment {PaymentId} completed. TransactionId: {TransactionId}",
+            payment.Id,
+            transactionId);
 
         await _auditService.LogAsync(
             AuditActions.PaymentSucceeded,

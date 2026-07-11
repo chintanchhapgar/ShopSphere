@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
@@ -16,19 +17,23 @@ public sealed class CreateProductCommandHandler
     private readonly IBrandService _brandService;
     private readonly ICacheService _cacheService;
     private readonly IAuditService _auditService;
+    private readonly ILogger<CreateProductCommandHandler> _logger;  
 
     public CreateProductCommandHandler(
         IProductRepository productRepository,
         ICategoryService categoryService,
         IBrandService brandService,
         ICacheService cacheService,
-        IAuditService auditService)
+        IAuditService auditService,
+        ILogger<CreateProductCommandHandler> logger
+        )
     {
         _productRepository = productRepository;
         _categoryService = categoryService;
         _brandService = brandService;
         _cacheService = cacheService;
         _auditService = auditService;
+        _logger = logger;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -93,6 +98,11 @@ public sealed class CreateProductCommandHandler
 
         await _productRepository.SaveChangesAsync(
             cancellationToken);
+
+        _logger.LogInformation(
+            "Product {ProductId} created. Name: {Name}",
+            product.Id,
+            product.Name);
 
         await _auditService.LogAsync(
             AuditActions.Create,

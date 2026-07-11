@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Notifications;
 using ShopSphere.Application.Queries;
@@ -16,14 +17,18 @@ public sealed class UpdateShipmentStatusCommandHandler
     private readonly IShipmentRepository _shipmentRepository;
     private readonly IBackgroundJobService _backgroundJobs;
     private readonly IAuditService _auditService;
+    private readonly ILogger<UpdateShipmentStatusCommandHandler> _logger;
+
     public UpdateShipmentStatusCommandHandler(
         IShipmentRepository shipmentRepository,
         IBackgroundJobService backgroundJobs,
-        IAuditService auditService)
+        IAuditService auditService,
+        ILogger<UpdateShipmentStatusCommandHandler> logger)
     {
         _shipmentRepository = shipmentRepository;
         _backgroundJobs = backgroundJobs;
         _auditService = auditService;
+        _logger = logger;
     }
 
     public async Task<Result> Handle(
@@ -75,13 +80,16 @@ public sealed class UpdateShipmentStatusCommandHandler
 
         await _shipmentRepository.SaveChangesAsync(
             cancellationToken);
-
-        
+               
 
         switch (request.Status)
         {
 
             case ShipmentStatus.Processing:
+
+                _logger.LogInformation(
+                    "Shipment {ShipmentId} moved to Processing.",
+                    shipment.Id);
 
                 await _auditService.LogAsync(
                     AuditActions.ShipmentProcessing,
@@ -93,6 +101,12 @@ public sealed class UpdateShipmentStatusCommandHandler
                 break;
 
             case ShipmentStatus.Shipped:
+
+                _logger.LogInformation(
+                    "Shipment {ShipmentId} shipped via {Carrier}. Tracking: {TrackingNumber}",
+                    shipment.Id,
+                    shipment.Carrier,
+                    shipment.TrackingNumber);
 
                 await _auditService.LogAsync(
                     AuditActions.ShipmentShipped,
@@ -109,6 +123,10 @@ public sealed class UpdateShipmentStatusCommandHandler
 
             case ShipmentStatus.Delivered:
 
+                _logger.LogInformation(
+                    "Shipment {ShipmentId} delivered.",
+                    shipment.Id);
+
                 await _auditService.LogAsync(
                     AuditActions.ShipmentDelivered,
                     AuditEntities.Shipment,
@@ -123,6 +141,10 @@ public sealed class UpdateShipmentStatusCommandHandler
                 break;
 
             case ShipmentStatus.Returned:
+
+                _logger.LogWarning(
+                    "Shipment {ShipmentId} returned.",
+                    shipment.Id);
 
                 await _auditService.LogAsync(
                     AuditActions.ShipmentReturned,

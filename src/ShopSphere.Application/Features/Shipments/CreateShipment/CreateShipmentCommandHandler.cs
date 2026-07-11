@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
@@ -16,16 +17,20 @@ public sealed class CreateShipmentCommandHandler
     private readonly IShipmentRepository _shipmentRepository; 
     private readonly IBackgroundJobService _backgroundJobs;
     private readonly IAuditService _auditService;
+    private readonly ILogger<CreateShipmentCommandHandler> _logger;
+
     public CreateShipmentCommandHandler(
     IOrderRepository orderRepository,
     IShipmentRepository shipmentRepository,
     IBackgroundJobService backgroundJobs,
-    IAuditService auditService)
+    IAuditService auditService,
+    ILogger<CreateShipmentCommandHandler> logger)
     {
         _orderRepository = orderRepository;
         _shipmentRepository = shipmentRepository;
         _backgroundJobs = backgroundJobs;
         _auditService = auditService;
+        _logger = logger;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -63,6 +68,11 @@ public sealed class CreateShipmentCommandHandler
         await _shipmentRepository.SaveChangesAsync(
             cancellationToken);
 
+        _logger.LogInformation(
+            "Shipment {ShipmentId} created for Order {OrderNumber}.",
+            shipment.Id,
+            order.OrderNumber);
+
         await _auditService.LogAsync(
             AuditActions.ShipmentCreated,
             AuditEntities.Shipment,
@@ -92,6 +102,9 @@ public sealed class CreateShipmentCommandHandler
             x => x.SendShipmentCreatedAsync(
                 shipment.Id));
 
+        _logger.LogInformation(
+            "Shipment creation email queued for Order {OrderNumber}.",
+            order.OrderNumber);
 
         return Result<Guid>.Success(
             shipment.Id,

@@ -121,17 +121,24 @@ public sealed class GlobalExceptionMiddleware
     }
 
     private async Task HandleException(
-    HttpContext context,
-    Exception ex)
+        HttpContext context,
+        Exception ex)
     {
-        _logger.LogError(ex, ex.Message);
+        var userId = context.User.Identity?.IsAuthenticated == true
+            ? context.User.FindFirst("sub")?.Value ??
+              context.User.FindFirst("id")?.Value
+            : "Anonymous";
+
+        _logger.LogError(
+            ex,
+            "Unhandled exception. User: {UserId}. {Method} {Path}. RequestId: {RequestId}",
+            userId,
+            context.Request.Method,
+            context.Request.Path,
+            context.TraceIdentifier);
 
         context.Response.StatusCode = StatusCodes.Status500InternalServerError;
         context.Response.ContentType = "application/json";
-
-        var description = _environment.IsDevelopment()
-            ? ex.ToString()
-            : "Please contact support if the problem persists.";
 
         var response = new ApiResponse
         {
@@ -141,7 +148,9 @@ public sealed class GlobalExceptionMiddleware
             [
                 new ApiError(
                 ErrorCodes.ServerError,
-                description)
+                _environment.IsDevelopment()
+                    ? ex.Message
+                    : "Please contact support if the problem persists.")
             ]
         };
 

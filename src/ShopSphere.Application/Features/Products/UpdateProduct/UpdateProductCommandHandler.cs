@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
@@ -15,18 +16,22 @@ public sealed class UpdateProductCommandHandler
     private readonly IBrandService _brandService;
     private readonly ICacheService _cacheService;
     private readonly IAuditService _auditService;
+    private readonly ILogger<UpdateProductCommandHandler> _logger;
+
     public UpdateProductCommandHandler(
         IProductRepository repository,
         ICategoryService categoryService,
         IBrandService brandService,
         ICacheService cacheService,
-        IAuditService auditService)
+        IAuditService auditService,
+        ILogger<UpdateProductCommandHandler> logger)
     {
         _repository = repository;
         _categoryService = categoryService;
         _brandService = brandService;
         _cacheService = cacheService;
         _auditService = auditService;
+        _logger = logger;
     }
 
     public async Task<Result> Handle(
@@ -83,6 +88,10 @@ public sealed class UpdateProductCommandHandler
 
         await _repository.SaveChangesAsync(
             cancellationToken);
+
+        _logger.LogWarning(
+            "Product {ProductId} deleted.",
+            product.Id);
 
         await _auditService.LogAsync(
             AuditActions.Update,

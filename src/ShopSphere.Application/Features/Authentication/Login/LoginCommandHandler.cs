@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Authentication;
 using ShopSphere.Contracts.Common;
@@ -10,10 +11,11 @@ public sealed class LoginCommandHandler
     : IRequestHandler<LoginCommand, Result<TokenResponse>>
 {
     private readonly IIdentityService _identityService;
-
-    public LoginCommandHandler(IIdentityService identityService)
+    private readonly ILogger<LoginCommandHandler> _logger;
+    public LoginCommandHandler(IIdentityService identityService, ILogger<LoginCommandHandler> logger)
     {
         _identityService = identityService;
+        _logger = logger;
     }
 
     public async Task<Result<TokenResponse>> Handle(
@@ -26,9 +28,17 @@ public sealed class LoginCommandHandler
 
         if (token is null)
         {
+            _logger.LogWarning(
+                "Failed login attempt for {Email}.",
+                request.Email);
+
             return Result<TokenResponse>.Failure(
                 AuthenticationErrors.InvalidCredentials);
         }
+
+        _logger.LogInformation(
+            "User ({Email}) logged in successfully.",
+            request.Email);
 
         return Result<TokenResponse>.Success(
             token,
