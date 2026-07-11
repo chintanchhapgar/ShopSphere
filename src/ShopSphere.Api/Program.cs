@@ -1,6 +1,10 @@
 using Hangfire;
 using Hangfire.SqlServer;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.OpenApi.Models;
 using ShopSphere.Api.Endpoints;
 using ShopSphere.Api.Extensions;
@@ -13,6 +17,7 @@ using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
@@ -74,6 +79,30 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services
+    .AddHealthChecks()
+    .AddSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")!,
+        name: "sql",
+        tags: ["ready"])
+    .AddRedis(
+        builder.Configuration.GetConnectionString("Redis")!,
+        name: "redis",
+        tags: ["ready"])
+    .AddHangfire(
+        options => { },
+        name: "hangfire",
+        tags: ["ready"]);
+
+builder.Services
+    .AddHealthChecksUI(options =>
+    {
+        options.AddHealthCheckEndpoint(
+            "ShopSphere",
+            "/health");
+    })
+    .AddInMemoryStorage();
+
 
 var app = builder.Build();
 
@@ -96,6 +125,28 @@ app.UseHangfireDashboard("/hangfire");
 app.MapEndpoints();
 
 app.UseStaticFiles();
+
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.MapHealthChecks("/health/live", new HealthCheckOptions
+{
+    Predicate = _ => false,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.MapHealthChecks("/health/ready", new HealthCheckOptions
+{
+    Predicate = r => r.Tags.Contains("ready"),
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.MapHealthChecksUI(options =>
+{
+    options.UIPath = "/health-ui";
+});
 
 using (var scope = app.Services.CreateScope())
 {
