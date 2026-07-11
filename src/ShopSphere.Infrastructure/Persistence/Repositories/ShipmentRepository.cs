@@ -50,4 +50,15 @@ public sealed class ShipmentRepository : IShipmentRepository
                 x => x.Id == shipmentId,
                 cancellationToken);
     }
+
+    public async Task<Shipment?> GetByIdWithDetailsAsync(
+        Guid shipmentId,
+        CancellationToken cancellationToken)
+    {
+        return await _context.Shipments
+            .Include(x => x.Order)
+            .FirstOrDefaultAsync(
+                x => x.Id == shipmentId,
+                cancellationToken);
+    }
 }

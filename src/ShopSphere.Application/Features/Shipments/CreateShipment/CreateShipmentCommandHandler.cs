@@ -12,20 +12,17 @@ public sealed class CreateShipmentCommandHandler
     : IRequestHandler<CreateShipmentCommand, Result<Guid>>
 {
     private readonly IOrderRepository _orderRepository;
-    private readonly IShipmentRepository _shipmentRepository;
-    private readonly IUserService _userService;
-    private readonly INotificationService _notificationService;
+    private readonly IShipmentRepository _shipmentRepository; 
+    private readonly IBackgroundJobService _backgroundJobs;
 
     public CreateShipmentCommandHandler(
-        IOrderRepository orderRepository,
-        IShipmentRepository shipmentRepository, 
-        IUserService userService,
-        INotificationService notificationService)
+    IOrderRepository orderRepository,
+    IShipmentRepository shipmentRepository,
+    IBackgroundJobService backgroundJobs)
     {
         _orderRepository = orderRepository;
         _shipmentRepository = shipmentRepository;
-        _userService = userService;
-        _notificationService = notificationService;
+        _backgroundJobs = backgroundJobs;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -64,22 +61,27 @@ public sealed class CreateShipmentCommandHandler
             cancellationToken);
 
 
-        var user = await _userService.GetByIdAsync(
-        order.UserId.ToString(),
-        cancellationToken);
+        //var user = await _userService.GetByIdAsync(
+        //order.UserId.ToString(),
+        //cancellationToken);
 
-        if (user is not null)
-        {
-            await _notificationService.SendShipmentCreatedAsync(
-                new ShipmentCreatedEmailModel(
-                    user.FullName,
-                    user.Email,
-                    order.OrderNumber,
-                    shipment.TrackingNumber,
-                    shipment.Carrier,
-                    shipment.CreatedAtUtc.AddDays(10)),
-                cancellationToken);
-        }
+        //if (user is not null)
+        //{
+        //    await _notificationService.SendShipmentCreatedAsync(
+        //        new ShipmentCreatedEmailModel(
+        //            user.FullName,
+        //            user.Email,
+        //            order.OrderNumber,
+        //            shipment.TrackingNumber,
+        //            shipment.Carrier,
+        //            shipment.CreatedAtUtc.AddDays(10)),
+        //        cancellationToken);
+        //}
+
+        _backgroundJobs.Enqueue<IEmailJob>(
+            x => x.SendShipmentCreatedAsync(
+                shipment.Id));
+
 
         return Result<Guid>.Success(
             shipment.Id,

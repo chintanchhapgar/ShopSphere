@@ -13,17 +13,14 @@ public sealed class UpdateShipmentStatusCommandHandler
     : IRequestHandler<UpdateShipmentStatusCommand, Result>
 {
     private readonly IShipmentRepository _shipmentRepository;
-    private readonly IUserService _userService;
-    private readonly INotificationService _notificationService;
+    private readonly IBackgroundJobService _backgroundJobs;
 
     public UpdateShipmentStatusCommandHandler(
         IShipmentRepository shipmentRepository,
-        IUserService userService,
-        INotificationService notificationService)
+        IBackgroundJobService backgroundJobs)
     {
         _shipmentRepository = shipmentRepository;
-        _userService = userService;
-        _notificationService = notificationService;
+        _backgroundJobs = backgroundJobs;
     }
 
     public async Task<Result> Handle(
@@ -76,22 +73,41 @@ public sealed class UpdateShipmentStatusCommandHandler
         await _shipmentRepository.SaveChangesAsync(
             cancellationToken);
 
-        if (request.Status == ShipmentStatus.Delivered) {
-            var user = await _userService.GetByIdAsync(
-            shipment.Order.UserId.ToString(),
-            cancellationToken);
+        switch (request.Status)
+        {
+            case ShipmentStatus.Shipped:
 
-            if (user is not null)
-            {
-                await _notificationService.SendShipmentDeliveredAsync(
-                    new ShipmentDeliveredEmailModel(
-                        user.FullName,
-                        user.Email,
-                        shipment.Order.OrderNumber,
-                        shipment.TrackingNumber),
-                    cancellationToken);
-            }
+                _backgroundJobs.Enqueue<IEmailJob>(
+                    x => x.SendShipmentCreatedAsync(
+                        shipment.Id));
+
+                break;
+
+            case ShipmentStatus.Delivered:
+
+                _backgroundJobs.Enqueue<IEmailJob>(
+                    x => x.SendOrderDeliveredAsync(
+                        shipment.OrderId));
+
+                break;
         }
+
+        //if (request.Status == ShipmentStatus.Delivered) {
+        //    var user = await _userService.GetByIdAsync(
+        //    shipment.Order.UserId.ToString(),
+        //    cancellationToken);
+
+        //    if (user is not null)
+        //    {
+        //        await _notificationService.SendShipmentDeliveredAsync(
+        //            new ShipmentDeliveredEmailModel(
+        //                user.FullName,
+        //                user.Email,
+        //                shipment.Order.OrderNumber,
+        //                shipment.TrackingNumber),
+        //            cancellationToken);
+        //    }
+        //}
 
         return Result.Success(
             "Shipment updated successfully.");

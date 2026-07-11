@@ -18,4 +18,8 @@ public interface IShipmentRepository
         Guid shipmentId,
         CancellationToken cancellationToken);
 
+    Task<Shipment?> GetByIdWithDetailsAsync(
+        Guid shipmentId,
+        CancellationToken cancellationToken);
+
 }

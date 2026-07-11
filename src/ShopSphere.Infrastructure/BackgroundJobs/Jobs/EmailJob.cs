@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Domain.Interfaces;
 using ShopSphere.Infrastructure.Identity;
+using ShopSphere.Infrastructure.Persistence.Repositories;
 
 namespace ShopSphere.Infrastructure.BackgroundJobs.Jobs;
 
@@ -12,17 +13,20 @@ public sealed class EmailJob
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly IEmailService _emailService;
     private readonly IEmailTemplateRenderer _templateRenderer;
+    private readonly IShipmentRepository _shipmentRepository;
 
     public EmailJob(
         IOrderRepository orderRepository,
         UserManager<ApplicationUser> userManager,
         IEmailService emailService,
-        IEmailTemplateRenderer templateRenderer)
+        IEmailTemplateRenderer templateRenderer,
+        IShipmentRepository shipmentRepository)
     {
         _orderRepository = orderRepository;
         _userManager = userManager;
         _emailService = emailService;
         _templateRenderer = templateRenderer;
+        _shipmentRepository = shipmentRepository;
     }
 
     public async Task SendWelcomeAsync(
@@ -41,7 +45,7 @@ public sealed class EmailJob
             "Welcome",
             new Dictionary<string, string>
             {
-                ["FullName"] = user.LastName + " " + user.FirstName
+                ["CustomerName"] = $"{user.FirstName} {user.LastName}".Trim()
             });
 
         await _emailService.SendAsync(
@@ -87,27 +91,104 @@ public sealed class EmailJob
     }
 
     public async Task SendShipmentCreatedAsync(
-        Guid shipmentId)
+     Guid shipmentId)
     {
-        // TODO:
-        // Load shipment
-        // Load customer
-        // Render ShipmentCreated.html
-        // Send email
+        var shipment =
+            await _shipmentRepository.GetByIdWithDetailsAsync(
+                shipmentId,
+                CancellationToken.None);
 
-        await Task.CompletedTask;
+        if (shipment is null)
+        {
+            return;
+        }
+
+        var customer =
+            await _userManager.FindByIdAsync(
+                shipment.Order.UserId.ToString());
+
+        if (customer is null ||
+            string.IsNullOrWhiteSpace(customer.Email))
+        {
+            return;
+        }
+
+        var body =
+            await _templateRenderer.RenderAsync(
+                "ShipmentCreated",
+                new Dictionary<string, string>
+                {
+                    ["CustomerName"] =
+                        $"{customer.FirstName} {customer.LastName}".Trim(),
+
+                    ["OrderNumber"] =
+                        shipment.Order.OrderNumber,
+
+                    ["TrackingNumber"] =
+                        shipment.TrackingNumber ?? "Pending",
+
+                    ["Carrier"] =
+                        shipment.Carrier ?? "Not Assigned",
+
+                    ["EstimatedDelivery"] =
+                        shipment.CreatedAtUtc
+                            .AddDays(7)
+                            .ToString("dd MMM yyyy")
+                });
+
+        await _emailService.SendAsync(
+            customer.Email,
+            $"Shipment Created - {shipment.Order.OrderNumber}",
+            body);
     }
 
     public async Task SendOrderDeliveredAsync(
         Guid orderId)
     {
-        // TODO:
-        // Load order
-        // Load customer
-        // Render OrderDelivered.html
-        // Send email
+        var order =
+            await _orderRepository.GetByIdWithDetailsAsync(
+                orderId,
+                CancellationToken.None);
 
-        await Task.CompletedTask;
+        if (order is null)
+        {
+            return;
+        }
+
+        var customer =
+            await _userManager.FindByIdAsync(
+                order.UserId.ToString());
+
+        if (customer is null ||
+            string.IsNullOrWhiteSpace(customer.Email))
+        {
+            return;
+        }
+
+        var shipment =
+            await _shipmentRepository.GetByOrderIdAsync(
+                orderId,
+                CancellationToken.None);
+
+        var body =
+            await _templateRenderer.RenderAsync(
+                "ShipmentDelivered",
+                new Dictionary<string, string>
+                {
+                    ["CustomerName"] =
+                        $"{customer.FirstName} {customer.LastName}".Trim(),
+
+                    ["OrderNumber"] =
+                        order.OrderNumber,
+
+                    ["TrackingNumber"] =
+                        shipment?.TrackingNumber ?? "-"
+                });
+
+        await _emailService.SendAsync(
+            customer.Email,
+            $"Order Delivered - {order.OrderNumber}",
+            body);
     }
 
     public async Task SendPasswordResetAsync(
@@ -131,7 +212,7 @@ public sealed class EmailJob
                 "PasswordReset",
                 new Dictionary<string, string>
                 {
-                    ["FullName"] =
+                    ["CustomerName"] =
                         $"{user.FirstName} {user.LastName}".Trim(),
                     ["ResetLink"] = resetLink
                 });
@@ -166,7 +247,7 @@ public sealed class EmailJob
                 "VerifyEmail",
                 new Dictionary<string, string>
                 {
-                    ["FullName"] =
+                    ["CustomerName"] =
                         $"{user.FirstName} {user.LastName}".Trim(),
                     ["VerifyLink"] = verifyLink
                 });
