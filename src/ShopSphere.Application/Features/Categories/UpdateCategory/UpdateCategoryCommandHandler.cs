@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Application.Features.Categories.UpdateCategory;
@@ -11,12 +12,16 @@ public sealed class UpdateCategoryCommandHandler
 {
     private readonly ICategoryRepository _repository;
     private readonly ICacheService _cacheService;
+    private readonly IAuditService _auditService;
+
     public UpdateCategoryCommandHandler(
         ICategoryRepository repository,
-        ICacheService cacheService)
+        ICacheService cacheService,
+        IAuditService auditService)
     {
         _repository = repository;
         _cacheService = cacheService;
+        _auditService = auditService;
     }
 
     public async Task<Result> Handle(
@@ -63,6 +68,13 @@ public sealed class UpdateCategoryCommandHandler
             request.ParentCategoryId);
 
         await _repository.SaveChangesAsync(cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.Update,
+            AuditEntities.Category,
+            category.Id,
+            $"Updated category '{category.Name}'.",
+            cancellationToken);
 
         await _cacheService.RemoveByPrefixAsync(
            "categories",

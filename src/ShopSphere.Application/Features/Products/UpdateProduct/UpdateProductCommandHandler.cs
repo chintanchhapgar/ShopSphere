@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Application.Features.Products.UpdateProduct;
@@ -13,16 +14,19 @@ public sealed class UpdateProductCommandHandler
     private readonly ICategoryService _categoryService;
     private readonly IBrandService _brandService;
     private readonly ICacheService _cacheService;
+    private readonly IAuditService _auditService;
     public UpdateProductCommandHandler(
         IProductRepository repository,
         ICategoryService categoryService,
         IBrandService brandService,
-        ICacheService cacheService)
+        ICacheService cacheService,
+        IAuditService auditService)
     {
         _repository = repository;
         _categoryService = categoryService;
         _brandService = brandService;
         _cacheService = cacheService;
+        _auditService = auditService;
     }
 
     public async Task<Result> Handle(
@@ -78,6 +82,13 @@ public sealed class UpdateProductCommandHandler
             request.Weight);
 
         await _repository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.Update,
+            AuditEntities.Product,
+            product.Id,
+            $"Updated product '{product.Name}'.",
             cancellationToken);
 
         await _cacheService.RemoveByPrefixAsync(

@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
 
@@ -12,13 +13,16 @@ public sealed class CreateCategoryCommandHandler
 {
     private readonly ICategoryRepository _repository;
     private readonly ICacheService _cacheService;
+    private readonly IAuditService _auditService;
 
     public CreateCategoryCommandHandler(
         ICategoryRepository repository,
-        ICacheService cacheService)
+        ICacheService cacheService,
+        IAuditService auditService)
     {
         _repository = repository;
         _cacheService = cacheService;
+        _auditService = auditService;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -52,6 +56,13 @@ public sealed class CreateCategoryCommandHandler
         }
 
         await _repository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.Create,
+            AuditEntities.Category,
+            category.Id,
+            $"Created category '{category.Name}'.",
             cancellationToken);
 
         await _cacheService.RemoveByPrefixAsync(

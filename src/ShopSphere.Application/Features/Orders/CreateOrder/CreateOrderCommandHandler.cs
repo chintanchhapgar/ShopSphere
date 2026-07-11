@@ -4,6 +4,7 @@ using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Common.Errors;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
 
@@ -20,6 +21,8 @@ public sealed class CreateOrderCommandHandler
     private readonly INotificationService _notificationService;
     private readonly IBackgroundJobService _backgroundJobs;
     private readonly IAddressRepository _addressRepository;
+    private readonly IAuditService _auditService;
+
     public CreateOrderCommandHandler(
     ICartRepository cartRepository,
     IInventoryRepository inventoryRepository,
@@ -28,7 +31,8 @@ public sealed class CreateOrderCommandHandler
     ICurrentUserService currentUserService,
     IUserService userService,
     INotificationService notificationService,
-    IBackgroundJobService backgroundJobs)
+    IBackgroundJobService backgroundJobs,
+    IAuditService auditService)
     {
         _cartRepository = cartRepository;
         _inventoryRepository = inventoryRepository;
@@ -38,6 +42,7 @@ public sealed class CreateOrderCommandHandler
         _userService = userService;
         _notificationService = notificationService;
         _backgroundJobs = backgroundJobs;
+        _auditService = auditService;
     }
 
     public async Task<Result<CreateOrderResponse>> Handle(
@@ -160,6 +165,13 @@ public sealed class CreateOrderCommandHandler
         _cartRepository.RemoveItems(cart);
 
         await _orderRepository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.CreateOrder,
+            AuditEntities.Order,
+            order.Id,
+            $"Created order '{order.OrderNumber}' with total {order.TotalAmount:C}.",
             cancellationToken);
 
         //var user = await _userService.GetByIdAsync(

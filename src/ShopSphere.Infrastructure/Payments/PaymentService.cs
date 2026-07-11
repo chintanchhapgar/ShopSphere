@@ -2,9 +2,11 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Enums;
 using ShopSphere.Domain.Interfaces;
+using ShopSphere.Infrastructure.Services;
 
 namespace ShopSphere.Infrastructure.Payments;
 
@@ -16,19 +18,21 @@ public sealed class PaymentService
     private readonly IShipmentRepository _shipmentRepository;
     private readonly IBackgroundJobService _backgroundJobs;
     private readonly IPaymentGateway _paymentGateway;
-
+    private readonly IAuditService _auditService;
     public PaymentService(
     IPaymentRepository paymentRepository,
     IOrderRepository orderRepository,
     IShipmentRepository shipmentRepository,
     IBackgroundJobService backgroundJobs,
-    IPaymentGateway paymentGateway)
+    IPaymentGateway paymentGateway,
+    IAuditService auditService)
     {
         _paymentRepository = paymentRepository;
         _orderRepository = orderRepository;
         _shipmentRepository = shipmentRepository;
         _backgroundJobs = backgroundJobs;
         _paymentGateway = paymentGateway;
+        _auditService = auditService;
     }
 
     public async Task<Result<Guid>> CreatePaymentAsync(
@@ -124,6 +128,13 @@ public sealed class PaymentService
             transactionId,
             gatewayReference);
 
+        await _auditService.LogAsync(
+            AuditActions.PaymentSucceeded,
+            AuditEntities.Payment,
+            payment.Id,
+            $"Payment successful. Transaction: {transactionId}.",
+            cancellationToken);
+
         var order = await _orderRepository.GetByIdAsync(
             payment.OrderId,
             cancellationToken);
@@ -182,6 +193,13 @@ public sealed class PaymentService
 
         payment.MarkFailed();
 
+        await _auditService.LogAsync(
+            AuditActions.PaymentFailed,
+            AuditEntities.Payment,
+            payment.Id,
+            $"Payment failed for order '{payment.Order.OrderNumber}'.",
+            cancellationToken);
+
         await _orderRepository.SaveChangesAsync(
             cancellationToken);
 
@@ -211,6 +229,13 @@ public sealed class PaymentService
             PaymentStatus.Refunded);
 
         await _orderRepository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.PaymentRefunded,
+            AuditEntities.Payment,
+            payment.Id,
+            $"Refund processed. Transaction: {payment.TransactionId}.",
             cancellationToken);
 
         return Result.Success(

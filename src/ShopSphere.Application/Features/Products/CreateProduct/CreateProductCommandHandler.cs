@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
 
@@ -14,16 +15,20 @@ public sealed class CreateProductCommandHandler
     private readonly ICategoryService _categoryService;
     private readonly IBrandService _brandService;
     private readonly ICacheService _cacheService;
+    private readonly IAuditService _auditService;
+
     public CreateProductCommandHandler(
         IProductRepository productRepository,
         ICategoryService categoryService,
         IBrandService brandService,
-        ICacheService cacheService)
+        ICacheService cacheService,
+        IAuditService auditService)
     {
         _productRepository = productRepository;
         _categoryService = categoryService;
         _brandService = brandService;
         _cacheService = cacheService;
+        _auditService = auditService;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -87,6 +92,13 @@ public sealed class CreateProductCommandHandler
                 }
 
         await _productRepository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.Create,
+            AuditEntities.Product,
+            product.Id,
+            $"Created product '{product.Name}'.",
             cancellationToken);
 
         await _cacheService.RemoveByPrefixAsync(

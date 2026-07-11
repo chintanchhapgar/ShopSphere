@@ -4,6 +4,7 @@ using ShopSphere.Application.Notifications;
 using ShopSphere.Application.Queries;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Enums;
 using ShopSphere.Domain.Interfaces;
@@ -14,13 +15,15 @@ public sealed class UpdateShipmentStatusCommandHandler
 {
     private readonly IShipmentRepository _shipmentRepository;
     private readonly IBackgroundJobService _backgroundJobs;
-
+    private readonly IAuditService _auditService;
     public UpdateShipmentStatusCommandHandler(
         IShipmentRepository shipmentRepository,
-        IBackgroundJobService backgroundJobs)
+        IBackgroundJobService backgroundJobs,
+        IAuditService auditService)
     {
         _shipmentRepository = shipmentRepository;
         _backgroundJobs = backgroundJobs;
+        _auditService = auditService;
     }
 
     public async Task<Result> Handle(
@@ -73,9 +76,30 @@ public sealed class UpdateShipmentStatusCommandHandler
         await _shipmentRepository.SaveChangesAsync(
             cancellationToken);
 
+        
+
         switch (request.Status)
         {
+
+            case ShipmentStatus.Processing:
+
+                await _auditService.LogAsync(
+                    AuditActions.ShipmentProcessing,
+                    AuditEntities.Shipment,
+                    shipment.Id,
+                    $"Shipment is now processing.",
+                    cancellationToken);
+
+                break;
+
             case ShipmentStatus.Shipped:
+
+                await _auditService.LogAsync(
+                    AuditActions.ShipmentShipped,
+                    AuditEntities.Shipment,
+                    shipment.Id,
+                     $"Shipment dispatched via {shipment.Carrier} ({shipment.TrackingNumber}).",
+                    cancellationToken);
 
                 _backgroundJobs.Enqueue<IEmailJob>(
                     x => x.SendShipmentCreatedAsync(
@@ -85,9 +109,27 @@ public sealed class UpdateShipmentStatusCommandHandler
 
             case ShipmentStatus.Delivered:
 
+                await _auditService.LogAsync(
+                    AuditActions.ShipmentDelivered,
+                    AuditEntities.Shipment,
+                    shipment.Id,
+                    $"Shipment delivered successfully.",
+                    cancellationToken);
+
                 _backgroundJobs.Enqueue<IEmailJob>(
                     x => x.SendOrderDeliveredAsync(
                         shipment.OrderId));
+
+                break;
+
+            case ShipmentStatus.Returned:
+
+                await _auditService.LogAsync(
+                    AuditActions.ShipmentReturned,
+                    AuditEntities.Shipment,
+                    shipment.Id,
+                    $"Shipment returned.",
+                    cancellationToken);
 
                 break;
         }

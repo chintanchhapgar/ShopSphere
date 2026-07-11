@@ -2,6 +2,7 @@
 using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Contracts.Common;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Application.Features.Brands.UpdateBrand;
@@ -12,15 +13,18 @@ public sealed class UpdateBrandCommandHandler
     private readonly IBrandRepository _repository;
     private readonly IBrandService _brandService;
     private readonly ICacheService _cacheService;
+    private readonly IAuditService _auditService;
 
     public UpdateBrandCommandHandler(
         IBrandRepository repository, 
         IBrandService brandService,
-        ICacheService cacheService)
+        ICacheService cacheService,
+        IAuditService auditService)
     {
         _repository = repository;
         _brandService = brandService;
         _cacheService = cacheService;
+        _auditService = auditService;
     }
 
     public async Task<Result> Handle(
@@ -54,6 +58,13 @@ public sealed class UpdateBrandCommandHandler
             request.Description);
 
         await _repository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.Update,
+            AuditEntities.Brand,
+            brand.Id,
+            $"Updated brand '{brand.Name}'.",
             cancellationToken);
 
         await _cacheService.RemoveByPrefixAsync(

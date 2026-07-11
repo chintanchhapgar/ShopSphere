@@ -3,6 +3,7 @@ using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Notifications;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Entities;
 using ShopSphere.Domain.Interfaces;
 
@@ -14,15 +15,17 @@ public sealed class CreateShipmentCommandHandler
     private readonly IOrderRepository _orderRepository;
     private readonly IShipmentRepository _shipmentRepository; 
     private readonly IBackgroundJobService _backgroundJobs;
-
+    private readonly IAuditService _auditService;
     public CreateShipmentCommandHandler(
     IOrderRepository orderRepository,
     IShipmentRepository shipmentRepository,
-    IBackgroundJobService backgroundJobs)
+    IBackgroundJobService backgroundJobs,
+    IAuditService auditService)
     {
         _orderRepository = orderRepository;
         _shipmentRepository = shipmentRepository;
         _backgroundJobs = backgroundJobs;
+        _auditService = auditService;
     }
 
     public async Task<Result<Guid>> Handle(
@@ -58,6 +61,13 @@ public sealed class CreateShipmentCommandHandler
             cancellationToken);
 
         await _shipmentRepository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.ShipmentCreated,
+            AuditEntities.Shipment,
+            shipment.Id,
+            $"Shipment created for order '{order.OrderNumber}'.",
             cancellationToken);
 
 

@@ -3,6 +3,7 @@ using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Contracts.Common.Errors;
 using ShopSphere.Contracts.Errors;
+using ShopSphere.Domain.Constants;
 using ShopSphere.Domain.Interfaces;
 
 namespace ShopSphere.Application.Features.Orders.CancelOrder;
@@ -13,15 +14,17 @@ public sealed class CancelOrderCommandHandler
     private readonly IOrderRepository _orderRepository;
     private readonly IInventoryRepository _inventoryRepository;
     private readonly ICurrentUserService _currentUserService;
-
+    private readonly IAuditService _auditService;
     public CancelOrderCommandHandler(
         IOrderRepository orderRepository,
         IInventoryRepository inventoryRepository,
-        ICurrentUserService currentUserService)
+        ICurrentUserService currentUserService,
+        IAuditService auditService)
     {
         _orderRepository = orderRepository;
         _inventoryRepository = inventoryRepository;
         _currentUserService = currentUserService;
+        _auditService = auditService;
     }
 
     public async Task<Result> Handle(
@@ -84,6 +87,13 @@ public sealed class CancelOrderCommandHandler
         order.Cancel();
 
         await _orderRepository.SaveChangesAsync(
+            cancellationToken);
+
+        await _auditService.LogAsync(
+            AuditActions.CancelOrder,
+            AuditEntities.Order,
+            order.Id,
+            $"Cancelled order '{order.OrderNumber}'.",
             cancellationToken);
 
         return Result.Success(

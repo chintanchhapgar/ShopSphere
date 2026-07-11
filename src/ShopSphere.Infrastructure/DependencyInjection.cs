@@ -145,6 +145,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped<ICacheService, RedisCacheService>();
+        services.AddScoped<IAuditService, AuditService>();
 
         services.AddSingleton<IConnectionMultiplexer>(_ =>
             ConnectionMultiplexer.Connect(
