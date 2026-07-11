@@ -15,6 +15,7 @@ public static class WishlistEndpoints
     {
         var group = app.MapGroup("/api/wishlist")
             .WithTags("Wishlist")
+            .RequireRateLimiting("authenticated")
             .RequireAuthorization();
 
         group.MapPost("/",

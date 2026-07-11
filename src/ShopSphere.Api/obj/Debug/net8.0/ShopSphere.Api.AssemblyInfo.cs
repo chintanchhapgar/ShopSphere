@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2ff48ae6049d0e6ad1eb70fe1fe2381f895aa9f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c616a7e54595772e4a0d5ea3e3f4a0495569562")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

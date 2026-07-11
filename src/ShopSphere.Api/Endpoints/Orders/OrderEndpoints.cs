@@ -14,6 +14,7 @@ public static class OrderEndpoints
         this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/orders")
+            .RequireRateLimiting("authenticated")
             .WithTags("Orders");
 
         group.MapPost("/",

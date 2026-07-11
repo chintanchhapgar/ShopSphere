@@ -18,6 +18,7 @@ public static class BrandEndpoints
         this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/brands")
+            .RequireRateLimiting("anonymous")
             .WithTags("Brands");
 
         group.MapPost("/",

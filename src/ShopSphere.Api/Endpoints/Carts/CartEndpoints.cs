@@ -22,6 +22,7 @@ public static class CartEndpoints
     {
         var group = app.MapGroup("/api/cart")
             .WithTags("Cart")
+            .RequireRateLimiting("authenticated")
             .RequireAuthorization();
 
         group.MapGet(

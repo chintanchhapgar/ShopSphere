@@ -11,6 +11,7 @@ public static class ProductSearchEndpoints
     {
         var group = app.MapGroup("/api/products")
             .WithTags("Products")
+            .RequireRateLimiting("anonymous")
             .AllowAnonymous();
 
         group.MapGet(

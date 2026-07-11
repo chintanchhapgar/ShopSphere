@@ -19,6 +19,7 @@ public static class CategoryEndpoints
     {
         var group = app.MapGroup("/api/categories")
             .WithTags("Categories")
+            .RequireRateLimiting("anonymous")
             .RequireAuthorization(policy =>
                 policy.RequireRole(Roles.Admin));
 

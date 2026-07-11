@@ -18,6 +18,7 @@ public static class PaymentEndpoints
         this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/orders")
+            .RequireRateLimiting("authenticated")
             .WithTags("Payments");
 
         group.MapPost("/{id:guid}/payment",

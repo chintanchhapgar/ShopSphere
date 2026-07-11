@@ -9,4 +9,5 @@ public static class ErrorCodes
     public const string InvalidRequest = "INVALID_REQUEST";
     public const string Conflict = "CONFLICT";
     public const string ServerError = "SERVER_ERROR";
+    public const string RateLimitExceeded = "RATE_LIMIT_EXCEEDED";
 }

@@ -18,7 +18,8 @@ public static class AuthenticationEndpoints
         this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/auth")
-                       .WithTags("Authentication");
+            .RequireRateLimiting("anonymous")
+            .WithTags("Authentication");
 
         group.MapPost("/register",
             async (

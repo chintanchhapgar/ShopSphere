@@ -13,6 +13,7 @@ public static class AdminOrderEndpoints
         this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/admin/orders")
+            .RequireRateLimiting("admin")
             .WithTags("Admin Orders");
 
         group.MapGet("/",

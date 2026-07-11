@@ -9,11 +9,13 @@ using ShopSphere.Api.Endpoints;
 using ShopSphere.Api.Extensions;
 using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
+using ShopSphere.Contracts.Common;
 using ShopSphere.Infrastructure;
 using ShopSphere.Infrastructure.Email.Models;
 using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +46,78 @@ builder.Services.AddHangfire(configuration =>
 });
 
 builder.Services.AddHangfireServer();
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+    options.OnRejected = async (context, cancellationToken) =>
+    {
+        context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+        context.HttpContext.Response.ContentType = "application/json";
+
+        var response = new ApiResponse
+        {
+            Success = false,
+            Message = "Too many requests.",
+            Errors =
+            [
+                new ApiError(
+                ErrorCodes.RateLimitExceeded,
+                "Please wait before trying again.")
+            ]
+        };
+
+        await context.HttpContext.Response.WriteAsJsonAsync(
+            response,
+            cancellationToken);
+    };
+
+    options.AddPolicy("anonymous", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            "anonymous",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 30,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            }));
+
+    options.AddPolicy("authenticated", context =>
+    {
+        var userId = context.User.Identity?.IsAuthenticated == true
+            ? context.User.FindFirst("sub")?.Value ??
+              context.User.FindFirst("id")?.Value ??
+              "authenticated"
+            : "anonymous";
+
+        return RateLimitPartition.GetFixedWindowLimiter(
+            userId,
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 100,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            });
+    });
+
+    options.AddPolicy("admin", context =>
+    {
+        var key = context.User.Identity?.Name ?? "admin";
+
+        return RateLimitPartition.GetFixedWindowLimiter(
+            key,
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 500,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            });
+    });
+});
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -139,6 +213,8 @@ app.UseSerilogRequestLogging(options =>
         }
     };
 });
+
+app.UseRateLimiter();
 
 app.UseHttpsRedirection();
 
