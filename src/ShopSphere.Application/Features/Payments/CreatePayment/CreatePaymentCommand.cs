@@ -6,5 +6,5 @@ namespace ShopSphere.Application.Features.Payments.CreatePayment;
 
 public sealed record CreatePaymentCommand(
     Guid OrderId,
-    PaymentMethod PaymentMethod)
+    PaymentMethod Method)
     : IRequest<Result<Guid>>;

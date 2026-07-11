@@ -15,6 +15,7 @@ using ShopSphere.Infrastructure.BackgroundJobs;
 using ShopSphere.Infrastructure.Email.Rendering;
 using ShopSphere.Infrastructure.Email.Services;
 using ShopSphere.Infrastructure.Identity;
+using ShopSphere.Infrastructure.Payments;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Persistence.Interceptors;
 using ShopSphere.Infrastructure.Persistence.Repositories;
@@ -79,7 +80,7 @@ public static class DependencyInjection
         services.AddScoped<ICategoryService, CategoryService>();
         services.AddScoped<IBrandService, BrandService>();
         services.AddScoped<IOrderFulfillmentService, OrderFulfillmentService>();
-
+        services.AddScoped<IPaymentService, PaymentService>();
 
         // Repositories
         services.AddScoped<ICategoryRepository, CategoryRepository>();

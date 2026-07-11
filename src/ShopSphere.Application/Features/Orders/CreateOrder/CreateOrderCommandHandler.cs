@@ -19,18 +19,21 @@ public sealed class CreateOrderCommandHandler
     private readonly IUserService _userService;
     private readonly INotificationService _notificationService;
     private readonly IBackgroundJobService _backgroundJobs;
+    private readonly IAddressRepository _addressRepository;
     public CreateOrderCommandHandler(
-        ICartRepository cartRepository,
-        IInventoryRepository inventoryRepository,
-        IOrderRepository orderRepository,
-        ICurrentUserService currentUserService,
-        IUserService userService,
-        INotificationService notificationService,
-        IBackgroundJobService backgroundJobs)
+    ICartRepository cartRepository,
+    IInventoryRepository inventoryRepository,
+    IOrderRepository orderRepository,
+    IAddressRepository addressRepository,
+    ICurrentUserService currentUserService,
+    IUserService userService,
+    INotificationService notificationService,
+    IBackgroundJobService backgroundJobs)
     {
         _cartRepository = cartRepository;
         _inventoryRepository = inventoryRepository;
         _orderRepository = orderRepository;
+        _addressRepository = addressRepository;
         _currentUserService = currentUserService;
         _userService = userService;
         _notificationService = notificationService;
@@ -82,20 +85,32 @@ public sealed class CreateOrderCommandHandler
             }
         }
 
+
+        var address = await _addressRepository.GetByIdAsync(
+        request.AddressId,
+        cancellationToken);
+
+            if (address is null)
+            {
+                return Result<CreateOrderResponse>.Failure(
+                    AddressErrors.NotFound);
+            }
+
+
         var orderNumber =
             $"ORD-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid():N}"[..23];
 
         var order = Order.Create(
             customerId,
             orderNumber,
-            request.ShippingName,
-            request.PhoneNumber,
-            request.AddressLine1,
-            request.AddressLine2,
-            request.City,
-            request.State,
-            request.PostalCode,
-            request.Country);
+            address.FullName,
+            address.PhoneNumber,
+            address.AddressLine1,
+            address.AddressLine2,
+            address.City,
+            address.State,
+            address.PostalCode,
+            address.Country);
 
         foreach (var cartItem in cart.Items)
         {

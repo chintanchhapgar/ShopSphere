@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.UnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d6d6ce4ed44bd68ac86d407e502452730769cb3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56d825d67704ac9503271ab327999edda070683d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.UnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.UnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using ShopSphere.Api.Common.Extensions;
 using ShopSphere.Application.Features.Payments.CreatePayment;
 using ShopSphere.Application.Features.Payments.GetPayment;
-using ShopSphere.Application.Features.Payments.UpdatePaymentStatus;
+using ShopSphere.Application.Features.Payments.PaymentFailed;
+using ShopSphere.Application.Features.Payments.PaymentSucceeded;
+using ShopSphere.Application.Features.Payments.RefundPayment;
 using ShopSphere.Contracts.Payments;
 using ShopSphere.Domain.Enums;
 
@@ -32,20 +34,6 @@ public static class PaymentEndpoints
                     $"/api/orders/{id}/payment");
             });
 
-        group.MapPatch("/{paymentId:guid}/status",
-            [Authorize(Roles = "Admin")] async (
-                Guid paymentId,
-                UpdatePaymentStatusRequest request,
-                ISender sender) =>
-            {
-                var result = await sender.Send(
-                    new UpdatePaymentStatusCommand(
-                        paymentId,
-                        request.Status,
-                        request.TransactionId));
-
-                return result.ToHttpResult();
-            });
 
         group.MapGet("/{orderId:guid}/payment",
             [Authorize] async (
@@ -54,6 +42,45 @@ public static class PaymentEndpoints
             {
                 var result = await sender.Send(
                     new GetPaymentQuery(orderId));
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/{paymentId:guid}/success",
+            [Authorize(Roles = "Admin")] async (
+                Guid paymentId,
+                PaymentSucceededRequest request,
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+                    new PaymentSucceededCommand(
+                        paymentId,
+                        request.TransactionId));
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/{paymentId:guid}/failed",
+            [Authorize(Roles = "Admin")] async (
+                Guid paymentId,
+                PaymentFailedRequest request,
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+            new PaymentFailedCommand(
+                paymentId,
+                request.Reason));
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/{paymentId:guid}/refund",
+            [Authorize(Roles = "Admin")] async (
+                Guid paymentId,
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+            new RefundPaymentCommand(paymentId));
 
                 return result.ToHttpResult();
             });

@@ -1126,8 +1126,31 @@
         }
       }
     },
-    "/api/orders/{paymentId}/status": {
-      "patch": {
+    "/api/orders/{orderId}/payment": {
+      "get": {
+        "tags": [
+          "Payments"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/orders/{paymentId}/success": {
+      "post": {
         "tags": [
           "Payments"
         ],
@@ -1146,7 +1169,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdatePaymentStatusRequest"
+                "$ref": "#/components/schemas/PaymentSucceededRequest"
               }
             }
           },
@@ -1159,14 +1182,47 @@
         }
       }
     },
-    "/api/orders/{orderId}/payment": {
-      "get": {
+    "/api/orders/{paymentId}/failed": {
+      "post": {
         "tags": [
           "Payments"
         ],
         "parameters": [
           {
-            "name": "orderId",
+            "name": "paymentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentFailedRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/orders/{paymentId}/refund": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "parameters": [
+          {
+            "name": "paymentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2081,37 +2137,9 @@
       "CreateOrderCommand": {
         "type": "object",
         "properties": {
-          "shippingName": {
+          "addressId": {
             "type": "string",
-            "nullable": true
-          },
-          "phoneNumber": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressLine1": {
-            "type": "string",
-            "nullable": true
-          },
-          "addressLine2": {
-            "type": "string",
-            "nullable": true
-          },
-          "city": {
-            "type": "string",
-            "nullable": true
-          },
-          "state": {
-            "type": "string",
-            "nullable": true
-          },
-          "postalCode": {
-            "type": "string",
-            "nullable": true
-          },
-          "country": {
-            "type": "string",
-            "nullable": true
+            "format": "uuid"
           }
         },
         "additionalProperties": false
@@ -2223,6 +2251,16 @@
         "type": "integer",
         "format": "int32"
       },
+      "PaymentFailedRequest": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PaymentMethod": {
         "enum": [
           1,
@@ -2242,15 +2280,15 @@
         },
         "additionalProperties": false
       },
-      "PaymentStatus": {
-        "enum": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "type": "integer",
-        "format": "int32"
+      "PaymentSucceededRequest": {
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "RegisterCommand": {
         "type": "object",
@@ -2457,19 +2495,6 @@
         "properties": {
           "status": {
             "$ref": "#/components/schemas/OrderStatus"
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdatePaymentStatusRequest": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/PaymentStatus"
-          },
-          "transactionId": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
