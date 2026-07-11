@@ -5,6 +5,7 @@ using ShopSphere.Application.Features.Payments.CreatePayment;
 using ShopSphere.Application.Features.Payments.GetPayment;
 using ShopSphere.Application.Features.Payments.PaymentFailed;
 using ShopSphere.Application.Features.Payments.PaymentSucceeded;
+using ShopSphere.Application.Features.Payments.PaymentWebhook;
 using ShopSphere.Application.Features.Payments.RefundPayment;
 using ShopSphere.Contracts.Payments;
 using ShopSphere.Domain.Enums;
@@ -55,7 +56,8 @@ public static class PaymentEndpoints
                 var result = await sender.Send(
                     new PaymentSucceededCommand(
                         paymentId,
-                        request.TransactionId));
+                        request.TransactionId,
+                        request.GatewayReference));
 
                 return result.ToHttpResult();
             });
@@ -81,6 +83,20 @@ public static class PaymentEndpoints
             {
                 var result = await sender.Send(
             new RefundPaymentCommand(paymentId));
+
+                return result.ToHttpResult();
+            });
+
+        group.MapPost("/webhook",
+            async (
+                PaymentWebhookRequest request,
+                ISender sender) =>
+            {
+                var result = await sender.Send(
+                    new PaymentWebhookCommand(
+                        request.TransactionId,
+                        request.Event,
+                        request.PaymentReference));
 
                 return result.ToHttpResult();
             });

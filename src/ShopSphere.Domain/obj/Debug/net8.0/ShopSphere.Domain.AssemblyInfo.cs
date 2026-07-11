@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopSphere.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56d825d67704ac9503271ab327999edda070683d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef9d7ab9223581db4a2cc879d79d06dc0a19ad6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopSphere.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopSphere.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

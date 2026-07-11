@@ -1238,6 +1238,28 @@
         }
       }
     },
+    "/api/orders/webhook": {
+      "post": {
+        "tags": [
+          "Payments"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentWebhookRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/products/{productId}/images": {
       "post": {
         "tags": [
@@ -2284,6 +2306,24 @@
         "type": "object",
         "properties": {
           "transactionId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentWebhookRequest": {
+        "type": "object",
+        "properties": {
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "event": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentReference": {
             "type": "string",
             "nullable": true
           }

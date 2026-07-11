@@ -14,7 +14,7 @@ public sealed class FakePaymentGateway
         {
             Success = true,
             TransactionId = Guid.NewGuid().ToString("N"),
-            GatewayReference = $"FAKE-{Random.Shared.Next(100000, 999999)}"
+            GatewayReference = $"FAKE-{Guid.NewGuid():N}"
         };
 
         return Task.FromResult(response);

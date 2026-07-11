@@ -13,6 +13,7 @@ public interface IPaymentService
     Task<Result> MarkPaymentSucceededAsync(
         Guid paymentId,
         string transactionId,
+        string gatewayReference,
         CancellationToken cancellationToken);
 
     Task<Result> MarkPaymentFailedAsync(

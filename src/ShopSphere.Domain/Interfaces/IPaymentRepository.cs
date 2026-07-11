@@ -18,4 +18,12 @@ public interface IPaymentRepository
     Task<Payment?> GetByIdAsync(
         Guid id,
         CancellationToken cancellationToken);
+
+    Task<Payment?> GetByTransactionIdAsync(
+        string transactionId,
+        CancellationToken cancellationToken);
+
+    Task<Payment?> GetByGatewayReferenceAsync(
+        string gatewayReference,
+        CancellationToken cancellationToken);
 }

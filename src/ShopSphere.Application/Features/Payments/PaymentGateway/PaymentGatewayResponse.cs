@@ -12,7 +12,7 @@ namespace ShopSphere.Application.Features.Payments.PaymentGateway
 
         public string TransactionId { get; init; } = string.Empty;
 
-        public string? GatewayReference { get; init; }
+        public string GatewayReference { get; init; } = string.Empty;
 
         public string? ErrorMessage { get; init; }
     }

@@ -20,8 +20,9 @@ public sealed class PaymentSucceededCommandHandler
         CancellationToken cancellationToken)
     {
         return await _paymentService.MarkPaymentSucceededAsync(
-            request.PaymentId,
-            request.TransactionId,
-            cancellationToken);
+         request.PaymentId,
+         request.TransactionId,
+         request.GatewayReference,
+         cancellationToken);
     }
 }

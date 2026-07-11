@@ -30,6 +30,7 @@ public sealed class Payment : AuditableEntity
     public PaymentMethod Method { get; private set; }
 
     public string? TransactionId { get; private set; }
+    public string? GatewayReference { get; private set; }
 
     public static Payment Create(
         Guid orderId,
@@ -43,10 +44,12 @@ public sealed class Payment : AuditableEntity
     }
 
     public void MarkPaid(
-        string? transactionId = null)
+        string? transactionId = null,
+        string? gatewayReference = null)
     {
         Status = PaymentStatus.Paid;
         TransactionId = transactionId;
+        GatewayReference = gatewayReference;
     }
 
     public void MarkFailed()
@@ -55,8 +58,9 @@ public sealed class Payment : AuditableEntity
     }
 
     public void UpdateStatus(
-    PaymentStatus status,
-    string? transactionId = null)
+        PaymentStatus status,
+        string? transactionId = null,
+        string? gatewayReference = null)
     {
         if (Status == PaymentStatus.Paid &&
             status != PaymentStatus.Refunded)
@@ -70,6 +74,11 @@ public sealed class Payment : AuditableEntity
         if (!string.IsNullOrWhiteSpace(transactionId))
         {
             TransactionId = transactionId;
+        }
+
+        if (!string.IsNullOrWhiteSpace(gatewayReference))
+        {
+            GatewayReference = gatewayReference;
         }
     }
 }

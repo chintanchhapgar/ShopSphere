@@ -80,15 +80,20 @@ public sealed class PaymentService
                 },
                 cancellationToken);
 
+        payment.UpdateStatus(
+            PaymentStatus.Pending,
+            gatewayReference: gatewayResponse.GatewayReference);
+
         return Result<Guid>.Success(
             payment.Id,
             "Payment created successfully.");
     }
 
     public async Task<Result> MarkPaymentSucceededAsync(
-    Guid paymentId,
-    string transactionId,
-    CancellationToken cancellationToken)
+        Guid paymentId,
+        string transactionId,
+        string gatewayReference,
+        CancellationToken cancellationToken)
     {
         var payment = await _paymentRepository.GetByIdAsync(
             paymentId,
@@ -115,7 +120,9 @@ public sealed class PaymentService
                         PaymentErrors.InvalidTransaction);
                 }
 
-        payment.MarkPaid(transactionId);
+        payment.MarkPaid(
+            transactionId,
+            gatewayReference);
 
         var order = await _orderRepository.GetByIdAsync(
             payment.OrderId,

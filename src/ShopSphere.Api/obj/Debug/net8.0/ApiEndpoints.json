@@ -1298,6 +1298,31 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.Payments.PaymentEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapPaymentEndpoints\u003Eb__0_5",
+    "RelativePath": "api/orders/webhook",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Application.Features.Payments.PaymentWebhook.PaymentWebhookRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Payments"
+    ]
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Products.ProductEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapProductEndpoints\u003Eb__0_0",
     "RelativePath": "api/products/",
