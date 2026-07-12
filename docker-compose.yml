@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+
+  shopsphere-api:
+    container_name: shopsphere-api
+    build:
+      context: .
+      dockerfile: src/ShopSphere.Api/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "5000:8080"
+    depends_on:
+      - sqlserver
+      - redis
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=ShopSphereDb;User Id=sa;Password=ShopSphere@123;TrustServerCertificate=True;"
+      ConnectionStrings__Redis: "redis:6379"
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: shopsphere-sql
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "ShopSphere@123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  redis:
+    image: redis:7
+    container_name: shopsphere-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  sql_data:
+  redis_data:

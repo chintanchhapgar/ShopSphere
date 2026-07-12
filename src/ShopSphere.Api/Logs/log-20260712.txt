@@ -1,0 +1,206 @@
+2026-07-12 09:09:43.102 +05:30 [INF] Start installing Hangfire SQL objects...
+2026-07-12 09:09:57.529 +05:30 [INF] Hangfire SQL objects installed.
+2026-07-12 09:10:04.618 +05:30 [WRN] Entity 'Product' has a global query filter defined and is the required end of a relationship with the entity 'CartItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-12 09:10:04.636 +05:30 [WRN] Entity 'Order' has a global query filter defined and is the required end of a relationship with the entity 'OrderItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-12 09:10:04.653 +05:30 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-07-12 09:10:04.786 +05:30 [WRN] No store type was specified for the decimal property 'DiscountAmount' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-12 09:10:04.791 +05:30 [WRN] No store type was specified for the decimal property 'Weight' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-12 09:10:08.427 +05:30 [INF] Initializing UI Database
+2026-07-12 09:10:08.957 +05:30 [INF] Saving healthchecks configuration to database
+2026-07-12 09:10:15.831 +05:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost\MSSQLSERVER01@ShopSphereDb'
+2026-07-12 09:10:15.833 +05:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-12 09:10:15.835 +05:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-12 09:10:20.563 +05:30 [INF] Server desktop-ent1tv1:5356:585b768e successfully announced in 4601.4162 ms
+2026-07-12 09:10:20.582 +05:30 [INF] Server desktop-ent1tv1:5356:585b768e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-12 09:10:20.980 +05:30 [INF] Server desktop-ent1tv1:5356:585b768e all the dispatchers started
+2026-07-12 09:43:59.038 +05:30 [INF] Start installing Hangfire SQL objects...
+2026-07-12 09:44:02.535 +05:30 [INF] Hangfire SQL objects installed.
+2026-07-12 09:44:07.407 +05:30 [WRN] Entity 'Product' has a global query filter defined and is the required end of a relationship with the entity 'CartItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-12 09:44:07.428 +05:30 [WRN] Entity 'Order' has a global query filter defined and is the required end of a relationship with the entity 'OrderItem'. This may lead to unexpected results when the required entity is filtered out. Either configure the navigation as optional, or define matching query filters for both entities in the navigation. See https://go.microsoft.com/fwlink/?linkid=2131316 for more information.
+2026-07-12 09:44:07.444 +05:30 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-07-12 09:44:07.760 +05:30 [WRN] No store type was specified for the decimal property 'DiscountAmount' on entity type 'Cart'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-12 09:44:08.119 +05:30 [WRN] No store type was specified for the decimal property 'Weight' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-07-12 09:44:11.982 +05:30 [INF] Initializing UI Database
+2026-07-12 09:44:12.412 +05:30 [INF] Saving healthchecks configuration to database
+2026-07-12 09:44:17.905 +05:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: localhost\MSSQLSERVER01@ShopSphereDb'
+2026-07-12 09:44:17.981 +05:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-07-12 09:44:17.997 +05:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-07-12 09:44:20.745 +05:30 [INF] Server desktop-ent1tv1:12972:f9f7e1fa successfully announced in 2058.1657 ms
+2026-07-12 09:44:21.270 +05:30 [INF] Server desktop-ent1tv1:12972:f9f7e1fa is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-07-12 09:44:21.856 +05:30 [INF] 1 servers were removed due to timeout
+2026-07-12 09:44:22.257 +05:30 [INF] Server desktop-ent1tv1:12972:f9f7e1fa all the dispatchers started
+2026-07-12 09:44:29.113 +05:30 [INF] Request 0HNMVPG4L2HQI:00000001 GET /health responded 200 in 9441.3316 ms
+2026-07-12 09:44:41.292 +05:30 [INF] Request 0HNMVPG4L2HQI:00000002 GET /health responded 200 in 43.0189 ms
+2026-07-12 09:44:51.382 +05:30 [INF] Request 0HNMVPG4L2HQI:00000003 GET /health responded 200 in 19.0087 ms
+2026-07-12 09:45:01.431 +05:30 [INF] Request 0HNMVPG4L2HQI:00000004 GET /health responded 200 in 17.8651 ms
+2026-07-12 09:45:11.473 +05:30 [INF] Request 0HNMVPG4L2HQI:00000005 GET /health responded 200 in 21.1698 ms
+2026-07-12 09:45:21.525 +05:30 [INF] Request 0HNMVPG4L2HQI:00000006 GET /health responded 200 in 5.6142 ms
+2026-07-12 09:45:31.570 +05:30 [INF] Request 0HNMVPG4L2HQI:00000007 GET /health responded 200 in 5.9573 ms
+2026-07-12 09:45:41.602 +05:30 [INF] Request 0HNMVPG4L2HQI:00000008 GET /health responded 200 in 5.0647 ms
+2026-07-12 09:45:51.650 +05:30 [INF] Request 0HNMVPG4L2HQI:00000009 GET /health responded 200 in 4.7235 ms
+2026-07-12 09:46:01.669 +05:30 [INF] Request 0HNMVPG4L2HQI:0000000A GET /health responded 200 in 5.8875 ms
+2026-07-12 09:46:12.053 +05:30 [INF] Request 0HNMVPG4L2HQI:0000000B GET /health responded 200 in 358.2889 ms
+2026-07-12 09:46:27.842 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 5745.5271ms with message 'null'
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s) localhost:6379/Interactive. Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code. ConnectTimeout, command=PING, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Initializing, in: 0, in-pipe: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 23, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 1, mc: 1/1/0, clientName: DESKTOP-ENT1TV1(SE.Redis-v3.0.17.2819), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=1,Free=32766,Min=4,Max=32767), POOL: (Threads=8,QueuedItems=0,CompletedItems=2527,Timers=12), v: 3.0.17.2819 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s) localhost:6379/Interactive. Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code. ConnectTimeout
+   --- End of inner exception stack trace ---
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 75
+2026-07-12 09:46:27.890 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000001 GET /health responded 503 in 5803.9943 ms
+2026-07-12 09:46:50.318 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12233.823ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:46:50.396 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000002 GET /health responded 503 in 12314.5630 ms
+2026-07-12 09:46:50.410 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:47:08.616 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8188.4095ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:47:08.643 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000003 GET /health responded 503 in 8213.5632 ms
+2026-07-12 09:47:08.656 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:47:26.832 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8155.5494ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:47:26.841 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000004 GET /health responded 503 in 8165.2152 ms
+2026-07-12 09:47:26.851 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:47:49.644 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12772.8269ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:47:49.752 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000005 GET /health responded 503 in 12881.3218 ms
+2026-07-12 09:47:49.797 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:48:08.067 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8173.9991ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:48:08.100 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000006 GET /health responded 503 in 8226.4565 ms
+2026-07-12 09:48:08.120 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:48:26.268 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8131.548ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:48:26.275 +05:30 [ERR] Request 0HNMVPG4L2HQJ:00000007 GET /health responded 503 in 8139.5445 ms
+2026-07-12 09:48:26.283 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:48:48.521 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12214.2598ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:48:48.534 +05:30 [ERR] Request 0HNMVPG4L2HQK:00000001 GET /health responded 503 in 12229.8818 ms
+2026-07-12 09:48:48.542 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:49:10.784 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12235.3671ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:49:10.799 +05:30 [ERR] Request 0HNMVPG4L2HQK:00000002 GET /health responded 503 in 12251.3938 ms
+2026-07-12 09:49:10.807 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:49:33.043 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12239.1412ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:49:33.055 +05:30 [ERR] Request 0HNMVPG4L2HQK:00000003 GET /health responded 503 in 12251.4182 ms
+2026-07-12 09:49:33.068 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:49:51.248 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8157.304ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:49:51.259 +05:30 [ERR] Request 0HNMVPG4L2HQK:00000004 GET /health responded 503 in 8172.2136 ms
+2026-07-12 09:49:51.272 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:50:09.426 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8153.5113ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:50:09.435 +05:30 [ERR] Request 0HNMVPG4L2HQK:00000005 GET /health responded 503 in 8162.5634 ms
+2026-07-12 09:50:09.443 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:50:31.664 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12204.9549ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:50:31.681 +05:30 [ERR] Request 0HNMVPG4L2HQK:00000006 GET /health responded 503 in 12222.5420 ms
+2026-07-12 09:50:31.695 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:50:49.854 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8132.1218ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:50:49.863 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000001 GET /health responded 503 in 8142.1149 ms
+2026-07-12 09:50:49.872 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:51:12.138 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 12250.7384ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:51:12.146 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000002 GET /health responded 503 in 12261.2517 ms
+2026-07-12 09:51:12.152 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:51:30.377 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8197.6237ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:51:30.389 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000003 GET /health responded 503 in 8211.0632 ms
+2026-07-12 09:51:30.401 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:51:48.565 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8152.0253ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:51:48.575 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000004 GET /health responded 503 in 8163.7973 ms
+2026-07-12 09:51:48.583 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:52:06.785 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8185.4973ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:52:06.805 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000005 GET /health responded 503 in 8206.9403 ms
+2026-07-12 09:52:06.825 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:52:25.025 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8172.9364ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:52:25.036 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000006 GET /health responded 503 in 8185.4336 ms
+2026-07-12 09:52:25.045 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:52:43.220 +05:30 [ERR] Health check redis with status "Unhealthy" completed after 8154.9088ms with message 'null'
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 596
+   at HealthChecks.Redis.RedisHealthCheck.TimeoutAsync(Task`1 task, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 124
+   at HealthChecks.Redis.RedisHealthCheck.CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken) in /home/runner/work/AspNetCore.Diagnostics.HealthChecks/AspNetCore.Diagnostics.HealthChecks/src/HealthChecks.Redis/RedisHealthCheck.cs:line 54
+2026-07-12 09:52:43.229 +05:30 [ERR] Request 0HNMVPG4L2HQL:00000007 GET /health responded 503 in 8164.9724 ms
+2026-07-12 09:52:43.236 +05:30 [INF] Notification is sent on same window time.
+2026-07-12 09:52:53.320 +05:30 [INF] Request 0HNMVPG4L2HQM:00000001 GET /health responded 200 in 51.7286 ms
+2026-07-12 09:53:03.338 +05:30 [INF] Request 0HNMVPG4L2HQM:00000002 GET /health responded 200 in 5.9558 ms
+2026-07-12 09:53:13.412 +05:30 [INF] Request 0HNMVPG4L2HQM:00000003 GET /health responded 200 in 50.9041 ms
+2026-07-12 09:53:23.472 +05:30 [INF] Request 0HNMVPG4L2HQM:00000004 GET /health responded 200 in 28.1465 ms
+2026-07-12 09:53:33.536 +05:30 [INF] Request 0HNMVPG4L2HQM:00000005 GET /health responded 200 in 12.0576 ms
+2026-07-12 09:53:43.560 +05:30 [INF] Request 0HNMVPG4L2HQM:00000006 GET /health responded 200 in 5.5446 ms
+2026-07-12 09:53:53.639 +05:30 [INF] Request 0HNMVPG4L2HQM:00000007 GET /health responded 200 in 53.6049 ms
+2026-07-12 09:54:03.672 +05:30 [INF] Request 0HNMVPG4L2HQM:00000008 GET /health responded 200 in 8.4032 ms
+2026-07-12 09:54:13.707 +05:30 [INF] Request 0HNMVPG4L2HQM:00000009 GET /health responded 200 in 15.1893 ms
+2026-07-12 09:54:23.748 +05:30 [INF] Request 0HNMVPG4L2HQM:0000000A GET /health responded 200 in 7.4655 ms
+2026-07-12 09:54:33.783 +05:30 [INF] Request 0HNMVPG4L2HQM:0000000B GET /health responded 200 in 13.2387 ms
+2026-07-12 09:54:43.808 +05:30 [INF] Request 0HNMVPG4L2HQM:0000000C GET /health responded 200 in 4.9188 ms
+2026-07-12 09:54:53.846 +05:30 [INF] Request 0HNMVPG4L2HQN:00000001 GET /health responded 200 in 5.7058 ms
+2026-07-12 09:55:03.881 +05:30 [INF] Request 0HNMVPG4L2HQN:00000002 GET /health responded 200 in 5.6562 ms
+2026-07-12 09:55:13.902 +05:30 [INF] Request 0HNMVPG4L2HQN:00000003 GET /health responded 200 in 5.4272 ms
+2026-07-12 09:55:23.927 +05:30 [INF] Request 0HNMVPG4L2HQN:00000004 GET /health responded 200 in 5.1150 ms
+2026-07-12 09:55:33.968 +05:30 [INF] Request 0HNMVPG4L2HQN:00000005 GET /health responded 200 in 24.5996 ms

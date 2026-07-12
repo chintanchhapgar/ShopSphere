@@ -1,0 +1,14 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.idea/
+.git/
+.gitignore
+
+README.md
+
+TestResults/
+
+node_modules/
+
+Logs/
