@@ -187,6 +187,22 @@ public sealed class Order : AuditableEntity
         Status = OrderStatus.Delivered;
     }
 
+    public void Complete()
+    {
+        if (Status != OrderStatus.Delivered)
+        {
+            throw new InvalidOperationException(
+                "Only delivered orders can be completed.");
+        }
+
+        Status = OrderStatus.Completed;
+    }
+
+    public bool CanBeCompleted()
+    {
+        return Status == OrderStatus.Delivered;
+    }
+
     private bool CanMoveTo(OrderStatus status)
     {
         return Status switch

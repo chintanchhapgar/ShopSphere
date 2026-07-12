@@ -22,4 +22,11 @@ public interface IOrderRepository
     Task<Order?> GetByIdWithDetailsAsync(
         Guid orderId,
         CancellationToken cancellationToken);
+    Task<IReadOnlyList<Order>> GetExpiredPendingOrdersAsync(
+        DateTime cutoff,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyList<Order>> GetDeliveredOrdersForCompletionAsync(
+        DateTime cutoff,
+        CancellationToken cancellationToken = default);
 }

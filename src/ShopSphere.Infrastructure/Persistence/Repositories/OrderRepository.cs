@@ -63,4 +63,26 @@ public sealed class OrderRepository : Repository<Order>,IOrderRepository
                 x => x.Id == orderId,
                 cancellationToken);
     }
+
+    public async Task<IReadOnlyList<Order>> GetExpiredPendingOrdersAsync(
+        DateTime cutoff,
+        CancellationToken cancellationToken = default)
+    {
+        return await _context.Orders
+            .Where(x =>
+                x.Status == OrderStatus.Pending &&
+                x.CreatedAtUtc <= cutoff)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyList<Order>> GetDeliveredOrdersForCompletionAsync(
+        DateTime cutoff,
+        CancellationToken cancellationToken = default)
+    {
+        return await _context.Orders
+            .Where(x =>
+                x.Status == OrderStatus.Delivered &&
+                x.UpdatedAtUtc <= cutoff)
+            .ToListAsync(cancellationToken);
+    }
 }

@@ -18,6 +18,8 @@ using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using System.Threading.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using ShopSphere.Infrastructure.BackgroundJobs;
+using ShopSphere.Infrastructure.BackgroundJobs.Jobs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -120,6 +122,11 @@ builder.Services.AddRateLimiter(options =>
             });
     });
 });
+
+//Jobs
+builder.Services.AddScoped<CancelExpiredOrdersJob>();
+
+builder.Services.AddScoped<CompleteDeliveredOrdersJob>();
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -226,6 +233,16 @@ app.UseAuthorization();
 
 app.UseHangfireDashboard("/hangfire");
 
+RecurringJob.AddOrUpdate<CancelExpiredOrdersJob>(
+    "cancel-expired-orders",
+    job => job.ExecuteAsync(),
+    Cron.Minutely);
+
+RecurringJob.AddOrUpdate<CompleteDeliveredOrdersJob>(
+    "complete-delivered-orders",
+    job => job.ExecuteAsync(),
+    Cron.Daily);
+
 app.MapEndpoints();
 
 app.UseStaticFiles();
@@ -259,10 +276,12 @@ using (var scope = app.Services.CreateScope())
 
     await RoleSeeder.SeedAsync(roleManager);
 }
+
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
     dbContext.Database.Migrate();
 }
+
 app.Run();
