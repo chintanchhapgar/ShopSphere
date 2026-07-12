@@ -1,5 +1,6 @@
 ﻿namespace ShopSphere.Application.Features.Authentication.Register;
 
 public sealed record RegisterResponse(
-    bool Success,
+    bool Succeeded,
+    string? UserId,
     string Message);

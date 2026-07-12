@@ -36,7 +36,6 @@
   <ItemGroup>
     <Folder Include="Application\Categories\" />
     <Folder Include="Application\Brands\" />
-    <Folder Include="Application\Coupons\" />
     <Folder Include="Application\Authentication\" />
     <Folder Include="Application\Reviews\" />
     <Folder Include="Application\Products\" />
