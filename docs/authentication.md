@@ -4,68 +4,104 @@ ShopSphere uses **JWT Bearer Authentication** with **ASP.NET Core Identity** and
 
 ---
 
-# Features
+## Table of Contents
 
-- User Registration
-- JWT Authentication
-- Email Verification
-- Forgot Password
-- Password Reset
-- Current User Endpoint
-- Role-Based Authorization
-- Background Email Processing (Hangfire)
+- [Features](#features)
+- [Authentication Flow](#authentication-flow)
+- [Authentication Endpoints](#authentication-endpoints)
+- [Register](#register)
+- [Login](#login)
+- [Current User](#current-user)
+- [Verify Email](#verify-email)
+- [Forgot Password](#forgot-password)
+- [Reset Password](#reset-password)
+- [JWT Authentication](#jwt-authentication)
+- [Authorization](#authorization)
+- [Background Processing](#background-processing)
+- [Security Features](#security-features)
+- [Authentication Lifecycle](#authentication-lifecycle)
 
 ---
 
-# Authentication Flow
+## Features
+
+| Feature | Status |
+|---|:---:|
+| User Registration | ✅ |
+| JWT Authentication | ✅ |
+| Email Verification | ✅ |
+| Forgot Password | ✅ |
+| Password Reset | ✅ |
+| Current User Endpoint | ✅ |
+| Role-Based Authorization | ✅ |
+| Background Email Processing (Hangfire) | ✅ |
+
+---
+
+## Authentication Flow
 
 ```mermaid
 flowchart TD
+    A["Client"]
+    B["POST /api/auth/register"]
+    C["RegisterCommand"]
+    D["RegisterCommandHandler"]
+    E["IdentityService"]
+    F["ASP.NET Identity"]
+    G["Generate Email Verification Token"]
+    H["Hangfire Email Job"]
+    I["Email Service"]
+    J["User Verifies Email"]
+    K["POST /api/auth/login"]
+    L["LoginCommand"]
+    M["LoginCommandHandler"]
+    N["JWT Token Provider"]
+    O["JWT Access Token"]
+    P["Authenticated Requests"]
 
-A[Client] --> B[POST /api/auth/register]
-B --> C[RegisterCommand]
-C --> D[RegisterCommandHandler]
-D --> E[IdentityService]
-E --> F[ASP.NET Identity]
-F --> G[Generate Email Verification Token]
-G --> H[Hangfire Email Job]
-H --> I[Email Service]
-I --> J[User Verifies Email]
-
-J --> K[POST /api/auth/login]
-K --> L[LoginCommand]
-L --> M[LoginCommandHandler]
-M --> N[JWT Token Provider]
-N --> O[JWT Access Token]
-O --> P[Authenticated Requests]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+    L --> M
+    M --> N
+    N --> O
+    O --> P
 ```
 
 ---
 
-# Authentication Endpoints
+## Authentication Endpoints
 
-| Endpoint | Method | Authentication | Description |
-|----------|--------|----------------|-------------|
-| `/api/auth/register` | POST | No | Register new user |
-| `/api/auth/login` | POST | No | Authenticate user |
-| `/api/auth/me` | GET | Yes | Get current user |
-| `/api/auth/verify-email` | POST | No | Verify email address |
-| `/api/auth/forgot-password` | POST | No | Generate password reset token |
-| `/api/auth/reset-password` | POST | No | Reset password |
+| Endpoint | Method | Auth Required | Description |
+|---|:---:|:---:|---|
+| `/api/auth/register` | `POST` | ❌ | Register a new user account |
+| `/api/auth/login` | `POST` | ❌ | Authenticate and receive JWT token |
+| `/api/auth/me` | `GET` | ✅ | Get current authenticated user |
+| `/api/auth/verify-email` | `POST` | ❌ | Verify email address with token |
+| `/api/auth/forgot-password` | `POST` | ❌ | Generate a password reset token |
+| `/api/auth/reset-password` | `POST` | ❌ | Reset password using a valid token |
 
 ---
 
-# Register
+## Register
 
 Creates a new user account.
 
-## Endpoint
+### Endpoint
 
 ```
 POST /api/auth/register
 ```
 
-## Request
+### Request Body
 
 ```json
 {
@@ -76,7 +112,7 @@ POST /api/auth/register
 }
 ```
 
-## Success Response
+### Success Response
 
 ```json
 {
@@ -85,25 +121,25 @@ POST /api/auth/register
 }
 ```
 
-After successful registration:
+### What happens after registration
 
-- User is created.
-- Email verification token is generated.
-- Hangfire queues an email verification job.
+- User account is created in the database
+- Email verification token is generated
+- Hangfire queues a background email verification job
 
 ---
 
-# Login
+## Login
 
-Authenticates an existing user.
+Authenticates an existing user and returns a JWT access token.
 
-## Endpoint
+### Endpoint
 
 ```
 POST /api/auth/login
 ```
 
-## Request
+### Request Body
 
 ```json
 {
@@ -112,7 +148,7 @@ POST /api/auth/login
 }
 ```
 
-## Success Response
+### Success Response
 
 ```json
 {
@@ -126,23 +162,23 @@ POST /api/auth/login
 
 ---
 
-# Current User
+## Current User
 
-Returns the authenticated user's profile.
+Returns the authenticated user's profile information.
 
-## Endpoint
+### Endpoint
 
 ```
 GET /api/auth/me
 ```
 
-## Authorization
+### Authorization Header
 
 ```
 Authorization: Bearer <token>
 ```
 
-## Success Response
+### Success Response
 
 ```json
 {
@@ -161,17 +197,17 @@ Authorization: Bearer <token>
 
 ---
 
-# Verify Email
+## Verify Email
 
-Confirms the user's email address.
+Confirms the user's email address using the verification token.
 
-## Endpoint
+### Endpoint
 
 ```
 POST /api/auth/verify-email
 ```
 
-## Request
+### Request Body
 
 ```json
 {
@@ -180,7 +216,7 @@ POST /api/auth/verify-email
 }
 ```
 
-## Success Response
+### Success Response
 
 ```json
 {
@@ -189,24 +225,24 @@ POST /api/auth/verify-email
 }
 ```
 
-After successful verification:
+### What happens after verification
 
-- Email is marked as verified.
-- Welcome email is queued using Hangfire.
+- Email address is marked as verified
+- A welcome email is queued via Hangfire background job
 
 ---
 
-# Forgot Password
+## Forgot Password
 
-Generates a password reset token.
+Generates a secure password reset token and sends it to the user's email.
 
-## Endpoint
+### Endpoint
 
 ```
 POST /api/auth/forgot-password
 ```
 
-## Request
+### Request Body
 
 ```json
 {
@@ -214,7 +250,7 @@ POST /api/auth/forgot-password
 }
 ```
 
-## Success Response
+### Success Response
 
 ```json
 {
@@ -223,21 +259,21 @@ POST /api/auth/forgot-password
 }
 ```
 
-> For security reasons, the API returns the same response even when the email address does not exist.
+> **Security Note:** The API always returns the same response regardless of whether the email address exists — this prevents user enumeration attacks.
 
 ---
 
-# Reset Password
+## Reset Password
 
 Resets the user's password using a valid reset token.
 
-## Endpoint
+### Endpoint
 
 ```
 POST /api/auth/reset-password
 ```
 
-## Request
+### Request Body
 
 ```json
 {
@@ -247,7 +283,7 @@ POST /api/auth/reset-password
 }
 ```
 
-## Success Response
+### Success Response
 
 ```json
 {
@@ -258,19 +294,21 @@ POST /api/auth/reset-password
 
 ---
 
-# JWT Authentication
+## JWT Authentication
 
-ShopSphere uses **JWT Bearer Tokens**.
+ShopSphere uses **JWT Bearer Tokens** for stateless authentication.
 
-Each token contains:
+### Token Payload
 
-- User Id
-- Email
-- Roles
-- Expiration
-- JWT ID (JTI)
+| Claim | Description |
+|---|---|
+| **User Id** | Unique user identifier |
+| **Email** | User email address |
+| **Roles** | Assigned user roles |
+| **Expiration** | Token expiry timestamp |
+| **JTI** | Unique JWT identifier |
 
-Example Authorization header:
+### Authorization Header Format
 
 ```
 Authorization: Bearer eyJhbGciOi...
@@ -278,60 +316,80 @@ Authorization: Bearer eyJhbGciOi...
 
 ---
 
-# Authorization
+## Authorization
 
-Protected endpoints require a valid JWT.
+Protected endpoints require a valid JWT Bearer token.
 
-Example:
+### Require Authentication
 
 ```csharp
 [Authorize]
 ```
 
-Role-based endpoints can use:
+### Require Specific Role
 
 ```csharp
 [Authorize(Roles = "Admin")]
 ```
 
----
+### Role Hierarchy
 
-# Background Processing
-
-Authentication uses Hangfire for non-blocking email operations.
-
-Current jobs include:
-
-- Email Verification
-- Welcome Email
-- Password Reset Email
-
-This keeps API response times fast while ensuring reliable email delivery.
+| Role | Access Level |
+|---|---|
+| **Admin** | Full system access |
+| **Vendor** | Vendor-specific operations |
+| **Customer** | Standard customer operations |
 
 ---
 
-# Security Features
+## Background Processing
 
-- ASP.NET Core Identity
-- Password Hashing
-- JWT Authentication
-- Email Verification
-- Secure Password Reset Tokens
-- Role-Based Authorization
-- Background Email Processing
-- Global Exception Handling
-- Rate Limiting
+Authentication uses **Hangfire** for non-blocking email delivery, keeping API response times fast while ensuring reliable email operations.
+
+| Job | Trigger |
+|---|---|
+| **Email Verification Job** | User registration |
+| **Welcome Email Job** | Successful email verification |
+| **Password Reset Email Job** | Forgot password request |
 
 ---
 
-# Authentication Lifecycle
+## Security Features
+
+| Feature | Description |
+|---|---|
+| **ASP.NET Core Identity** | Industry-standard identity management |
+| **Password Hashing** | Secure bcrypt-based password storage |
+| **JWT Authentication** | Stateless token-based authentication |
+| **Email Verification** | Ensures valid email ownership |
+| **Secure Reset Tokens** | Time-limited password reset tokens |
+| **Role-Based Authorization** | Fine-grained access control |
+| **Background Email Processing** | Non-blocking Hangfire job queue |
+| **Global Exception Handling** | No sensitive data exposed in errors |
+| **Rate Limiting** | Prevents brute-force attacks |
+
+---
+
+## Authentication Lifecycle
 
 ```mermaid
 flowchart LR
+    A["Register"]
+    B["Verify Email"]
+    C["Login"]
+    D["JWT Token"]
+    E["Authorized API Access"]
+    F["Logout"]
 
-Register --> VerifyEmail
-VerifyEmail --> Login
-Login --> JWT
-JWT --> AuthorizedAPI
-AuthorizedAPI --> Logout
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
+
+---
+
+<p align="center">
+  <sub>Built with precision · Engineered for scale · Designed for clarity</sub>
+</p>
