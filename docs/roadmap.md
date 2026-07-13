@@ -4,46 +4,58 @@ The ShopSphere roadmap outlines the planned evolution of the platform. The proje
 
 ---
 
-# Vision
+## Table of Contents
+
+- [Vision](#vision)
+- [Development Timeline](#development-timeline)
+- [Current Progress](#current-progress)
+- [Phase 1 — Foundation](#phase-1--foundation-)
+- [Phase 2 — Product Catalog](#phase-2--product-catalog-)
+- [Phase 3 — Inventory](#phase-3--inventory-)
+- [Phase 4 — Orders](#phase-4--orders-)
+- [Phase 5 — Payments](#phase-5--payments-)
+- [Phase 6 — Infrastructure](#phase-6--infrastructure-)
+- [Phase 7 — Documentation](#phase-7--documentation-)
+- [Phase 8 — CICD](#phase-8--cicd-)
+- [Phase 9 — Vendor Portal](#phase-9--vendor-portal-)
+- [Phase 10 — Production Ready](#phase-10--production-ready-)
+- [Future Features](#future-features)
+- [Long-Term Vision](#long-term-vision)
+- [Project Goals](#project-goals)
+- [Technologies](#technologies)
+- [Current Project Status](#current-project-status)
+
+---
+
+## Vision
 
 Build a scalable, production-ready, multi-vendor e-commerce backend that demonstrates enterprise architecture, modern engineering practices, and cloud-native deployment.
 
 ---
 
-# Development Timeline
+## Development Timeline
 
 ```mermaid
 timeline
-
-title ShopSphere Roadmap
-
-Phase 1 : Foundation
-
-Phase 2 : Catalog
-
-Phase 3 : Inventory
-
-Phase 4 : Orders
-
-Phase 5 : Payments
-
-Phase 6 : Infrastructure
-
-Phase 7 : Documentation
-
-Phase 8 : CI/CD
-
-Phase 9 : Vendor Portal
-
-Phase 10 : Production Ready
+    title ShopSphere Development Roadmap
+    Phase 1 : Foundation
+    Phase 2 : Catalog
+    Phase 3 : Inventory
+    Phase 4 : Orders
+    Phase 5 : Payments
+    Phase 6 : Infrastructure
+    Phase 7 : Documentation
+    Phase 8 : CI/CD
+    Phase 9 : Vendor Portal
+    Phase 10 : Production Ready
 ```
 
 ---
 
-# Current Progress
+## Current Progress
 
 | Module | Status |
-|----------|:------:|
+|---|:---:|
 | Clean Architecture | ✅ |
 | Authentication | ✅ |
 | Categories | ✅ |
@@ -63,240 +75,242 @@ Phase 10 : Production Ready
 | Architecture Tests | ✅ |
 | GitHub Actions | ✅ |
 | Documentation | ✅ |
-| Integration Tests | 🚧 |
+| Integration Tests | 🚧 In Progress |
 
 ---
 
-# Phase 1 — Foundation ✅
+## Phase 1 — Foundation ✅
 
-Completed
-
-- Clean Architecture
-- CQRS
-- MediatR
-- Repository Pattern
-- Result Pattern
-- Dependency Injection
-- Global Exception Middleware
-- Logging
-- JWT Authentication
-
----
-
-# Phase 2 — Product Catalog ✅
-
-Completed
-
-- Categories
-- Brands
-- Products
-- Product Images
-- Search
-- Pagination
-- Filtering
+| Feature | Status |
+|---|:---:|
+| Clean Architecture | ✅ |
+| CQRS | ✅ |
+| MediatR | ✅ |
+| Repository Pattern | ✅ |
+| Result Pattern | ✅ |
+| Dependency Injection | ✅ |
+| Global Exception Middleware | ✅ |
+| Logging | ✅ |
+| JWT Authentication | ✅ |
 
 ---
 
-# Phase 3 — Inventory ✅
+## Phase 2 — Product Catalog ✅
 
-Completed
-
-- Inventory Management
-- Stock Updates
-- Inventory Transactions
-- Reservation
-- Validation
-
----
-
-# Phase 4 — Orders ✅
-
-Completed
-
-- Order Creation
-- Order Items
-- Order Status
-- Shipment
-- Completion
-- Cancellation
+| Feature | Status |
+|---|:---:|
+| Categories | ✅ |
+| Brands | ✅ |
+| Products | ✅ |
+| Product Images | ✅ |
+| Search | ✅ |
+| Pagination | ✅ |
+| Filtering | ✅ |
 
 ---
 
-# Phase 5 — Payments ✅
+## Phase 3 — Inventory ✅
 
-Completed
-
-- Payment Entity
-- Payment Tracking
-- Payment Success Flow
-- Payment Notifications
-
----
-
-# Phase 6 — Infrastructure ✅
-
-Completed
-
-- Email Templates
-- Notification Service
-- Hangfire
-- Background Jobs
-- Health Checks
-- Redis Support
-- Serilog
+| Feature | Status |
+|---|:---:|
+| Inventory Management | ✅ |
+| Stock Updates | ✅ |
+| Inventory Transactions | ✅ |
+| Reservation | ✅ |
+| Validation | ✅ |
 
 ---
 
-# Phase 7 — Documentation ✅
+## Phase 4 — Orders ✅
 
-Completed
-
-- README
-- Architecture
-- Authentication
-- Catalog
-- Inventory
-- Orders
-- Background Jobs
-- Testing
-- Deployment
-- Roadmap
+| Feature | Status |
+|---|:---:|
+| Order Creation | ✅ |
+| Order Items | ✅ |
+| Order Status | ✅ |
+| Shipment | ✅ |
+| Completion | ✅ |
+| Cancellation | ✅ |
 
 ---
 
-# Phase 8 — CI/CD ✅
+## Phase 5 — Payments ✅
 
-Completed
-
-- GitHub Actions
-- Build Automation
-- Unit Tests
-- Coverage Reports
-- Build Artifacts
-
----
-
-# Phase 9 — Vendor Portal 🚧
-
-Planned features:
-
-- Vendor Registration
-- Vendor Dashboard
-- Product Management
-- Vendor Inventory
-- Vendor Analytics
-- Vendor Orders
-- Vendor Payouts
+| Feature | Status |
+|---|:---:|
+| Payment Entity | ✅ |
+| Payment Tracking | ✅ |
+| Payment Success Flow | ✅ |
+| Payment Notifications | ✅ |
 
 ---
 
-# Phase 10 — Production Ready 🚧
+## Phase 6 — Infrastructure ✅
 
-Planned improvements:
-
-- Docker
-- Docker Compose
-- Kubernetes
-- Azure Deployment
-- Redis Cache
-- Distributed Cache
-- API Versioning
-- API Documentation Portal
-- Performance Optimization
-- Production Monitoring
+| Feature | Status |
+|---|:---:|
+| Email Templates | ✅ |
+| Notification Service | ✅ |
+| Hangfire | ✅ |
+| Background Jobs | ✅ |
+| Health Checks | ✅ |
+| Redis Support | ✅ |
+| Serilog | ✅ |
 
 ---
 
-# Future Features
+## Phase 7 — Documentation ✅
 
-## Customer
-
-- Wishlist
-- Product Reviews
-- Product Ratings
-- Recently Viewed
-- Product Recommendations
-- Saved Addresses
-- Multiple Shipping Addresses
-
----
-
-## Orders
-
-- Coupons
-- Gift Cards
-- Partial Refunds
-- Partial Shipments
-- Exchanges
-- Returns (RMA)
-- Invoice PDF
-- Order Timeline
+| Document | Status |
+|---|:---:|
+| README | ✅ |
+| Architecture | ✅ |
+| Authentication | ✅ |
+| Catalog | ✅ |
+| Inventory | ✅ |
+| Orders | ✅ |
+| Background Jobs | ✅ |
+| Testing | ✅ |
+| Deployment | ✅ |
+| Roadmap | ✅ |
 
 ---
 
-## Payments
+## Phase 8 — CI/CD ✅
 
-- Stripe
-- Razorpay
-- PayPal
-- Webhooks
-- Refunds
-- Subscription Payments
-
----
-
-## Search
-
-- Elasticsearch
-- Full-text Search
-- Search Suggestions
-- Popular Searches
+| Feature | Status |
+|---|:---:|
+| GitHub Actions | ✅ |
+| Build Automation | ✅ |
+| Unit Tests | ✅ |
+| Coverage Reports | ✅ |
+| Build Artifacts | ✅ |
 
 ---
 
-## Performance
+## Phase 9 — Vendor Portal 🚧
 
-- Response Caching
-- Distributed Cache
-- Background Processing
-- Query Optimization
-- Read Replicas
-
----
-
-## Security
-
-- Refresh Tokens
-- MFA Authentication
-- Account Lockout
-- Device Management
-- Audit Logs
-- Security Headers
+| Feature | Status |
+|---|:---:|
+| Vendor Registration | 📅 Planned |
+| Vendor Dashboard | 📅 Planned |
+| Product Management | 📅 Planned |
+| Vendor Inventory | 📅 Planned |
+| Vendor Analytics | 📅 Planned |
+| Vendor Orders | 📅 Planned |
+| Vendor Payouts | 📅 Planned |
 
 ---
 
-## Administration
+## Phase 10 — Production Ready 🚧
 
-- Admin Dashboard
-- User Management
-- Role Management
-- Audit Viewer
-- Sales Dashboard
-- Analytics
-
----
-
-## Reporting
-
-- Sales Reports
-- Inventory Reports
-- Vendor Reports
-- Customer Reports
-- Revenue Dashboard
+| Feature | Status |
+|---|:---:|
+| Docker | 📅 Planned |
+| Docker Compose | 📅 Planned |
+| Kubernetes | 📅 Planned |
+| Azure Deployment | 📅 Planned |
+| Redis Cache | 📅 Planned |
+| Distributed Cache | 📅 Planned |
+| API Versioning | 📅 Planned |
+| API Documentation Portal | 📅 Planned |
+| Performance Optimization | 📅 Planned |
+| Production Monitoring | 📅 Planned |
 
 ---
 
-# Long-Term Vision
+## Future Features
+
+### Customer
+
+| Feature | Status |
+|---|:---:|
+| Wishlist | 📅 Planned |
+| Product Reviews | 📅 Planned |
+| Product Ratings | 📅 Planned |
+| Recently Viewed | 📅 Planned |
+| Product Recommendations | 📅 Planned |
+| Saved Addresses | 📅 Planned |
+| Multiple Shipping Addresses | 📅 Planned |
+
+### Orders
+
+| Feature | Status |
+|---|:---:|
+| Coupons | 📅 Planned |
+| Gift Cards | 📅 Planned |
+| Partial Refunds | 📅 Planned |
+| Partial Shipments | 📅 Planned |
+| Exchanges | 📅 Planned |
+| Returns (RMA) | 📅 Planned |
+| Invoice PDF | 📅 Planned |
+| Order Timeline | 📅 Planned |
+
+### Payments
+
+| Feature | Status |
+|---|:---:|
+| Stripe | 📅 Planned |
+| Razorpay | 📅 Planned |
+| PayPal | 📅 Planned |
+| Webhooks | 📅 Planned |
+| Refunds | 📅 Planned |
+| Subscription Payments | 📅 Planned |
+
+### Search
+
+| Feature | Status |
+|---|:---:|
+| Elasticsearch | 📅 Planned |
+| Full-text Search | 📅 Planned |
+| Search Suggestions | 📅 Planned |
+| Popular Searches | 📅 Planned |
+
+### Performance
+
+| Feature | Status |
+|---|:---:|
+| Response Caching | 📅 Planned |
+| Distributed Cache | 📅 Planned |
+| Background Processing | 📅 Planned |
+| Query Optimization | 📅 Planned |
+| Read Replicas | 📅 Planned |
+
+### Security
+
+| Feature | Status |
+|---|:---:|
+| Refresh Tokens | 📅 Planned |
+| MFA Authentication | 📅 Planned |
+| Account Lockout | 📅 Planned |
+| Device Management | 📅 Planned |
+| Audit Logs | 📅 Planned |
+| Security Headers | 📅 Planned |
+
+### Administration
+
+| Feature | Status |
+|---|:---:|
+| Admin Dashboard | 📅 Planned |
+| User Management | 📅 Planned |
+| Role Management | 📅 Planned |
+| Audit Viewer | 📅 Planned |
+| Sales Dashboard | 📅 Planned |
+| Analytics | 📅 Planned |
+
+### Reporting
+
+| Feature | Status |
+|---|:---:|
+| Sales Reports | 📅 Planned |
+| Inventory Reports | 📅 Planned |
+| Vendor Reports | 📅 Planned |
+| Customer Reports | 📅 Planned |
+| Revenue Dashboard | 📅 Planned |
+
+---
+
+## Long-Term Vision
 
 ```mermaid
 mindmap
@@ -330,47 +344,57 @@ mindmap
 
 ---
 
-# Project Goals
+## Project Goals
 
-- Enterprise-grade architecture
-- High test coverage
-- Cloud-ready deployment
-- Clean and maintainable codebase
-- Comprehensive documentation
-- Automated CI/CD
-- Production-ready scalability
-
----
-
-# Technologies
-
-- ASP.NET Core 8
-- Entity Framework Core
-- SQL Server
-- Redis
-- Hangfire
-- MediatR
-- FluentValidation
-- Serilog
-- xUnit
-- GitHub Actions
-- Docker *(Planned)*
-- Kubernetes *(Planned)*
-- Azure *(Planned)*
+| Goal | Description |
+|---|---|
+| **Enterprise Architecture** | Clean Architecture · CQRS · DDD principles |
+| **High Test Coverage** | Unit · Integration · Architecture tests |
+| **Cloud-Ready Deployment** | Docker · Kubernetes · Azure support |
+| **Clean Codebase** | SOLID · Maintainable · Well-structured |
+| **Comprehensive Docs** | Every module fully documented |
+| **Automated CI/CD** | GitHub Actions build and test pipeline |
+| **Production Scalability** | Horizontal scaling · Redis · Health checks |
 
 ---
 
-# Current Project Status
+## Technologies
 
-**Overall Completion:** **~90%**
+| Category | Technology |
+|---|---|
+| **Framework** | ASP.NET Core 8 |
+| **ORM** | Entity Framework Core |
+| **Database** | SQL Server |
+| **Cache** | Redis |
+| **Background Jobs** | Hangfire |
+| **Mediator** | MediatR |
+| **Validation** | FluentValidation |
+| **Logging** | Serilog |
+| **Testing** | xUnit |
+| **CI/CD** | GitHub Actions |
+| **Containerization** | Docker _(Planned)_ |
+| **Orchestration** | Kubernetes _(Planned)_ |
+| **Cloud** | Azure _(Planned)_ |
 
-Remaining major milestones:
+---
 
-- Complete Integration Tests
-- Docker & Docker Compose
-- Kubernetes Deployment
-- Vendor Portal
-- Advanced Payment Gateways
-- Performance Optimization
-- Monitoring & Observability
-- Production Release (v1.0)
+## Current Project Status
+
+> **Overall Completion: ~90%**
+
+| Milestone | Status |
+|---|:---:|
+| Complete Integration Tests | 🚧 In Progress |
+| Docker & Docker Compose | 📅 Planned |
+| Kubernetes Deployment | 📅 Planned |
+| Vendor Portal | 📅 Planned |
+| Advanced Payment Gateways | 📅 Planned |
+| Performance Optimization | 📅 Planned |
+| Monitoring & Observability | 📅 Planned |
+| Production Release (v1.0) | 📅 Planned |
+
+---
+
+<p align="center">
+  <sub>Built with precision · Engineered for scale · Designed for clarity</sub>
+</p>
