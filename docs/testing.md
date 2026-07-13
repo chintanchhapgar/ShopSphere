@@ -4,182 +4,171 @@ ShopSphere follows a layered testing strategy to ensure reliability, maintainabi
 
 ---
 
-# Testing Strategy
+## Table of Contents
 
-The solution uses four levels of testing:
+- [Testing Strategy](#testing-strategy)
+- [Test Projects](#test-projects)
+- [Project Responsibilities](#project-responsibilities)
+- [Unit Tests](#unit-tests)
+- [Application Tests](#application-tests)
+- [Infrastructure Tests](#infrastructure-tests)
+- [Integration Tests](#integration-tests)
+- [Architecture Tests](#architecture-tests)
+- [Mocking](#mocking)
+- [Assertions](#assertions)
+- [Test Naming Convention](#test-naming-convention)
+- [Test Structure](#test-structure)
+- [Code Coverage](#code-coverage)
+- [Continuous Integration](#continuous-integration)
+- [GitHub Actions](#github-actions)
+- [Testing Workflow](#testing-workflow)
+- [Current Test Coverage](#current-test-coverage)
+- [Best Practices](#best-practices)
+- [Planned Improvements](#planned-improvements)
+- [Technologies](#technologies)
+
+---
+
+## Testing Strategy
+
+The solution uses four levels of testing to ensure complete coverage across all layers.
 
 ```mermaid
 flowchart TD
+    A["🏛 Architecture Tests\nLayer boundary validation"]
+    B["⚡ Unit Tests\nBusiness logic & handlers"]
+    C["🔗 Integration Tests\nAPI endpoint validation"]
+    D["🖥 Manual Testing / Swagger\nExploratory & verification"]
 
-A[Architecture Tests]
-
-B[Unit Tests]
-
-C[Integration Tests]
-
-D[Manual Testing / Swagger]
-
-A --> B
-
-B --> C
-
-C --> D
+    A --> B
+    B --> C
+    C --> D
 ```
 
 ---
 
-# Test Projects
+## Test Projects
 
 ```text
 tests/
-
-├── ShopSphere.ApplicationTests
-├── ShopSphere.InfrastructureTests
-├── ShopSphere.IntegrationTests
-└── ShopSphere.ArchitectureTests
+│
+├── ShopSphere.ApplicationTests      # Unit tests — Handlers, Validators, Business Logic
+├── ShopSphere.InfrastructureTests   # Infrastructure service tests
+├── ShopSphere.IntegrationTests      # End-to-end API tests
+└── ShopSphere.ArchitectureTests     # Architecture boundary enforcement tests
 ```
 
 ---
 
-# Project Responsibilities
+## Project Responsibilities
 
 | Project | Purpose |
-|----------|----------|
-| ApplicationTests | Business logic & handlers |
-| InfrastructureTests | Infrastructure services |
-| IntegrationTests | API endpoints |
-| ArchitectureTests | Architecture validation |
+|---|---|
+| **ApplicationTests** | Validates business logic, command handlers, query handlers, and validators |
+| **InfrastructureTests** | Tests infrastructure services such as email, JWT, and background jobs |
+| **IntegrationTests** | Verifies complete HTTP request pipelines end-to-end |
+| **ArchitectureTests** | Enforces Clean Architecture layer dependency rules |
 
 ---
 
-# Unit Tests
+## Unit Tests
 
-Unit tests validate isolated business logic.
+Unit tests validate isolated business logic without external dependencies.
 
-Covered areas include:
-
-- Command Handlers
-- Query Handlers
-- Validators
-- Domain Services
-- Result Objects
-- Business Rules
-
----
-
-# Application Tests
-
-Current coverage includes:
-
-```text
-Authentication
-
-Categories
-
-Brands
-
-Products
-
-Inventory
-
-Orders
-
-Payments
-
-CQRS Handlers
-
-Validators
-
-Background Commands
-```
+| Area | Description |
+|---|---|
+| **Command Handlers** | Validates correct command processing |
+| **Query Handlers** | Validates correct query responses |
+| **Validators** | Ensures FluentValidation rules are enforced |
+| **Domain Services** | Tests core domain business rules |
+| **Result Objects** | Validates success and failure result patterns |
+| **Business Rules** | Ensures all edge cases are handled correctly |
 
 ---
 
-# Infrastructure Tests
+## Application Tests
+
+| Module | Status |
+|---|:---:|
+| Authentication | ✅ |
+| Categories | ✅ |
+| Brands | ✅ |
+| Products | ✅ |
+| Inventory | ✅ |
+| Orders | ✅ |
+| Payments | ✅ |
+| CQRS Handlers | ✅ |
+| Validators | ✅ |
+| Background Commands | ✅ |
+
+---
+
+## Infrastructure Tests
 
 Infrastructure tests validate services that interact with external systems.
 
-Current coverage:
-
-- JWT Token Provider
-- Email Notification Service
-- Email Template Renderer
-- Background Jobs
-- Hangfire Jobs
-- Repository Helpers
+| Service | Status |
+|---|:---:|
+| JWT Token Provider | ✅ |
+| Email Notification Service | ✅ |
+| Email Template Renderer | ✅ |
+| Background Jobs | ✅ |
+| Hangfire Jobs | ✅ |
+| Repository Helpers | ✅ |
 
 ---
 
-# Integration Tests
+## Integration Tests
 
-Integration tests verify complete HTTP request pipelines.
-
-Example flow:
+Integration tests verify the complete HTTP request pipeline from endpoint to database.
 
 ```mermaid
 sequenceDiagram
+    participant Client as Test Client
+    participant API as API Endpoint
+    participant Middleware
+    participant Handler
+    participant Database as In-Memory Database
 
-Client->>API
-
-API->>Middleware
-
-Middleware->>Endpoint
-
-Endpoint->>Handler
-
-Handler->>Database
-
-Database-->>Client
+    Client->>API: HTTP Request
+    API->>Middleware: Process Request
+    Middleware->>Handler: Dispatch Command / Query
+    Handler->>Database: Read / Write Data
+    Database-->>Client: HTTP Response
 ```
+## Architecture Tests
+
+Architecture tests enforce Clean Architecture dependency rules to prevent layer violations.
+
+| Rule | Description |
+|---|---|
+| **Application → Domain only** | Application layer must not reference Infrastructure |
+| **Domain has no dependencies** | Domain layer has zero external references |
+| **API → Application only** | API layer depends only on Application |
+| **Handler contracts** | All handlers must implement `IRequestHandler` |
+| **Repository abstractions** | Repository interfaces must remain inside Application |
 
 ---
 
-Current endpoint coverage:
+## Mocking
 
-- Register
-- Login *(Planned)*
-- Forgot Password *(Planned)*
-- Email Verification *(Planned)*
-- Products *(Planned)*
-- Orders *(Planned)*
+External dependencies are mocked using **Moq** to keep unit tests fast and isolated.
 
----
-
-# Architecture Tests
-
-Architecture tests ensure the solution follows Clean Architecture.
-
-Examples:
-
-- Application does not reference Infrastructure
-- Domain has no external dependencies
-- API depends on Application only
-- Handlers implement IRequestHandler
-- Repository interfaces remain inside Application
+| Mocked Service | Purpose |
+|---|---|
+| `IIdentityService` | Mocks user identity operations |
+| `IRepository` | Mocks data access layer |
+| `IMediator` | Mocks MediatR dispatching |
+| `ILogger` | Mocks structured logging |
+| `INotificationService` | Mocks notification dispatch |
+| `IEmailService` | Mocks SMTP email delivery |
+| `IBackgroundJobService` | Mocks Hangfire job scheduling |
 
 ---
 
-# Mocking
+## Assertions
 
-External dependencies are mocked using **Moq**.
-
-Typical mocked services include:
-
-- IIdentityService
-- IRepository
-- IMediator
-- ILogger
-- INotificationService
-- IEmailService
-- IBackgroundJobService
-
----
-
-# Assertions
-
-Assertions are written using **FluentAssertions**.
-
-Example:
+All assertions are written using **FluentAssertions** for readable and expressive test output.
 
 ```csharp
 result.IsSuccess.Should().BeTrue();
@@ -191,226 +180,189 @@ response.StatusCode.Should().Be(HttpStatusCode.Created);
 
 ---
 
-# Test Naming Convention
+## Test Naming Convention
 
-Tests follow the Arrange–Act–Assert (AAA) pattern.
+Tests follow the **Arrange–Act–Assert (AAA)** pattern with a consistent naming convention.
 
-Recommended naming:
-
-```text
-Method_Should_ExpectedResult_WhenCondition
+**Format:**
+```
+MethodName_Should_ExpectedResult_WhenCondition
 ```
 
-Examples:
+**Examples:**
 
 ```text
-Handle_Should_Create_Order_When_Request_Is_Valid
+Handle_Should_CreateOrder_When_RequestIsValid
 
-Handle_Should_Return_Failure_When_Product_Not_Found
+Handle_Should_ReturnFailure_When_ProductNotFound
 
-ExecuteAsync_Should_LogWarning_When_Job_Fails
-```
-
----
-
-# Test Structure
-
-```text
-Arrange
-
-↓
-
-Act
-
-↓
-
-Assert
+ExecuteAsync_Should_LogWarning_When_JobFails
 ```
 
 ---
 
-# Code Coverage
+## Test Structure
 
-Code coverage is generated during GitHub Actions.
+Every test is structured using the **Arrange → Act → Assert** pattern:
 
-Coverage includes:
+```mermaid
+flowchart LR
+    A["🔧 Arrange\nSet up dependencies\nand test data"]
+    B["⚡ Act\nExecute the method\nor action under test"]
+    C["✅ Assert\nVerify the expected\noutcome"]
 
-- Application
-- Infrastructure
-- Domain
+    A --> B
+    B --> C
+```
 
-Generated report:
+---
 
-```text
+## Code Coverage
+
+Code coverage is automatically generated during the GitHub Actions CI pipeline.
+
+| Layer | Coverage |
+|---|:---:|
+| Application | ✅ Included |
+| Infrastructure | ✅ Included |
+| Domain | ✅ Included |
+
+**Generated report file:**
+
+```
 coverage.cobertura.xml
 ```
 
 ---
 
-# Continuous Integration
+## Continuous Integration
 
-Every Pull Request executes:
-
-```text
-Restore
-
-↓
-
-Build
-
-↓
-
-Run Tests
-
-↓
-
-Generate Coverage
-
-↓
-
-Upload Artifacts
-```
-
----
-
-# GitHub Actions
-
-Current CI pipeline performs:
-
-- Restore Packages
-- Build Solution
-- Execute Unit Tests
-- Execute Integration Tests
-- Upload Test Results
-- Upload Coverage Reports
-
----
-
-# Testing Workflow
+Every push and pull request automatically triggers the full CI pipeline:
 
 ```mermaid
 flowchart LR
+    A["📦 Push / PR"]
+    B["🔄 Restore"]
+    C["🔨 Build"]
+    D["🧪 Run Tests"]
+    E["📊 Generate Coverage"]
+    F["📁 Upload Artifacts"]
 
-Developer
-
-↓
-
-Commit
-
-↓
-
-GitHub Actions
-
-↓
-
-Restore
-
-↓
-
-Build
-
-↓
-
-Tests
-
-↓
-
-Coverage
-
-↓
-
-Artifacts
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
 
 ---
 
-# Current Test Coverage
+## GitHub Actions
 
-## Application
-
-✅ Authentication
-
-✅ Categories
-
-✅ Brands
-
-✅ Products
-
-✅ Inventory
-
-✅ Orders
-
-✅ Payments
+| Step | Description |
+|---|---|
+| **Restore Packages** | Restores all NuGet dependencies |
+| **Build Solution** | Compiles the entire solution |
+| **Execute Unit Tests** | Runs all unit and application tests |
+| **Execute Integration Tests** | Runs all API integration tests |
+| **Upload Test Results** | Stores test results as pipeline artifacts |
+| **Upload Coverage Reports** | Stores coverage report for review |
 
 ---
 
-## Infrastructure
+## Testing Workflow
 
-✅ Email Service
+```mermaid
+flowchart TD
+    A["👨‍💻 Developer"]
+    B["💾 Commit & Push"]
+    C["⚙️ GitHub Actions"]
+    D["🔄 Restore"]
+    E["🔨 Build"]
+    F["🧪 Tests"]
+    G["📊 Coverage"]
+    H["📁 Artifacts"]
 
-✅ Email Templates
-
-✅ JWT Provider
-
-✅ Background Jobs
-
----
-
-## Integration
-
-✅ Register Endpoint
-
-🚧 Login Endpoint
-
-🚧 Product APIs
-
-🚧 Order APIs
-
----
-
-## Architecture
-
-✅ Layer Dependency Rules
-
-✅ Clean Architecture Validation
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+```
 
 ---
 
-# Best Practices
+## Current Test Coverage
 
-- One assertion target per test
-- Mock only external dependencies
-- Keep tests deterministic
-- Avoid database dependencies in unit tests
-- Test business behavior instead of implementation details
-- Follow AAA pattern consistently
+### Application Layer
+
+| Module | Status |
+|---|:---:|
+| Authentication | ✅ |
+| Categories | ✅ |
+| Brands | ✅ |
+| Products | ✅ |
+| Inventory | ✅ |
+| Orders | ✅ |
+| Payments | ✅ |
+
+### Infrastructure Layer
+
+| Service | Status |
+|---|:---:|
+| Email Service | ✅ |
+| Email Templates | ✅ |
+| JWT Provider | ✅ |
+| Background Jobs | ✅ |
+
+### Integration Layer
+
+| Endpoint | Status |
+|---|:---:|
+| Register Endpoint | ✅ |
+| Login Endpoint | 🚧 In Progress |
+| Product APIs | 🚧 In Progress |
+| Order APIs | 🚧 In Progress |
+
+### Architecture Layer
+
+| Rule | Status |
+|---|:---:|
+| Layer Dependency Rules | ✅ |
+| Clean Architecture Validation | ✅ |
 
 ---
 
-# Planned Improvements
+## Best Practices
 
-Future enhancements include:
-
-- 90%+ Code Coverage
-- API Contract Tests
-- Performance Tests
-- Load Testing
-- Security Testing
-- End-to-End Tests
-- Snapshot Testing
-- Docker-based Integration Tests
-- Testcontainers for SQL Server & Redis
-- Mutation Testing
+| Practice | Description |
+|---|---|
+| **Single Assertion Target** | One logical assertion focus per test |
+| **Mock Only Externals** | Only mock dependencies outside the system under test |
+| **Deterministic Tests** | Tests must produce the same result on every run |
+| **No Database in Unit Tests** | Use mocks — never real databases in unit tests |
+| **Test Behavior** | Test what the code does, not how it does it |
+| **AAA Pattern** | Always follow Arrange → Act → Assert consistently |
 
 ---
 
-# Technologies
+## Technologies
 
-- xUnit
-- FluentAssertions
-- Moq
-- ASP.NET Core Testing
-- Microsoft.AspNetCore.Mvc.Testing
-- Testcontainers
-- GitHub Actions
-- Coverlet
+| Category | Technology |
+|---|---|
+| **Test Framework** | xUnit |
+| **Assertions** | FluentAssertions |
+| **Mocking** | Moq |
+| **API Testing** | Microsoft.AspNetCore.Mvc.Testing |
+| **Coverage** | Coverlet |
+| **Architecture Testing** | NetArchTest |
+| **Future** | Testcontainers |
+| **CI/CD** | GitHub Actions |
+
+---
+
+<p align="center">
+  <sub>Built with precision · Engineered for scale · Designed for clarity</sub>
+</p>
