@@ -1,60 +1,316 @@
-# Catalog
+# Deployment
 
-The Catalog module is responsible for managing the products available in ShopSphere. It provides APIs for managing categories, brands, products, images, pricing, and inventory visibility.
+ShopSphere is designed for cloud-native deployment using modern DevOps practices. The application can be deployed locally, on a Virtual Machine, Azure App Service, Docker containers, or Kubernetes with minimal configuration changes.
 
 ---
 
 ## Table of Contents
 
-- [Features](#features)
-- [Module Overview](#module-overview)
-- [Catalog Structure](#catalog-structure)
-- [Category](#category)
-- [Brand](#brand)
-- [Product](#product)
-- [Product Images](#product-images)
-- [Inventory Relationship](#inventory-relationship)
-- [CQRS Implementation](#cqrs-implementation)
-- [Request Flow](#request-flow)
-- [Validation](#validation)
-- [Relationships](#relationships)
-- [Current API Endpoints](#current-api-endpoints)
-- [Future Enhancements](#future-enhancements)
+- [Deployment Architecture](#deployment-architecture)
+- [Production Architecture](#production-architecture)
+- [Deployment Options](#deployment-options)
+- [Environment Configuration](#environment-configuration)
+- [Required Configuration](#required-configuration)
+- [Deployment Pipeline](#deployment-pipeline)
+- [GitHub Actions](#github-actions)
+- [Publish](#publish)
+- [Database Migration](#database-migration)
+- [Hangfire](#hangfire)
+- [Health Checks](#health-checks)
+- [Logging](#logging)
+- [HTTPS](#https)
+- [Reverse Proxy](#reverse-proxy)
+- [Scaling](#scaling)
+- [Deployment Checklist](#deployment-checklist)
+- [Production Checklist](#production-checklist)
+- [Monitoring](#monitoring)
+- [Backup Strategy](#backup-strategy)
+- [Disaster Recovery](#disaster-recovery)
+- [Future Improvements](#future-improvements)
 - [Technologies](#technologies)
 
 ---
 
-## Features
-
-| Feature | Status |
-|---|:---:|
-| Category Management | ✅ |
-| Brand Management | ✅ |
-| Product Management | ✅ |
-| Product Images | ✅ |
-| Inventory Integration | ✅ |
-| Soft Validation | ✅ |
-| Pagination Support | ✅ |
-| Filtering & Search Ready | ✅ |
-| Clean Architecture | ✅ |
-| CQRS with MediatR | ✅ |
-
----
-
-## Module Overview
+## Deployment Architecture
 
 ```mermaid
 flowchart TD
+    A["Developer"]
+    B["GitHub"]
+    C["GitHub Actions"]
+    D["Build & Test"]
+    E["Publish Artifact"]
+    F["Deploy"]
+    G["Production Server"]
+    H[("SQL Server")]
+    I[("Redis")]
+    J["Hangfire"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    G --> I
+    G --> J
+```
+
+---
+
+## Production Architecture
+
+```mermaid
+flowchart LR
     A["Client"]
-    B["Products API"]
-    C["Categories API"]
-    D["Brands API"]
-    E["MediatR"]
-    F["Commands / Queries"]
-    G["Handlers"]
-    H["Repositories"]
-    I["Entity Framework Core"]
-    J[("SQL Server")]
+    B["Nginx / IIS"]
+    C["ShopSphere API"]
+    D[("SQL Server")]
+    E[("Redis")]
+    F["Hangfire"]
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    C --> F
+    F --> D
+```
+
+---
+
+## Deployment Options
+
+| Target | Status |
+|---|:---:|
+| IIS | ✅ Supported |
+| Linux VM | ✅ Supported |
+| Windows Server | ✅ Supported |
+| Docker | 📅 Planned |
+| Azure App Service | 📅 Planned |
+| Azure Container Apps | 📅 Planned |
+| Azure Kubernetes Service (AKS) | 📅 Planned |
+
+---
+
+## Environment Configuration
+
+Configuration is managed through **appsettings** files and environment variables.
+
+| File | Purpose |
+|---|---|
+| `appsettings.json` | Base configuration shared across all environments |
+| `appsettings.Development.json` | Local development overrides |
+| `appsettings.Production.json` | Production environment values |
+
+---
+
+## Required Configuration
+
+### Database
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Your_SQL_Server_Connection_String"
+  }
+}
+```
+
+### Redis
+
+```json
+{
+  "ConnectionStrings": {
+    "Redis": "Your_Redis_Connection_String"
+  }
+}
+```
+
+### JWT
+
+```json
+{
+  "Jwt": {
+    "Issuer": "your-issuer",
+    "Audience": "your-audience",
+    "SecretKey": "your-secret-key-minimum-32-characters"
+  }
+}
+```
+
+### Email
+
+```json
+{
+  "EmailSettings": {
+    "Host": "smtp.your-provider.com",
+    "Port": "587",
+    "Username": "your-email@domain.com",
+    "Password": "your-email-password"
+  }
+}
+```
+
+---
+
+## Deployment Pipeline
+
+```mermaid
+flowchart LR
+    A["Restore"]
+    B["Build"]
+    C["Run Tests"]
+    D["Publish"]
+    E["Deploy"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+```
+
+---
+
+## GitHub Actions
+
+The current CI/CD pipeline automatically performs:
+
+| Step | Description |
+|---|---|
+| **Restore** | Restores all NuGet packages |
+| **Build** | Compiles the entire solution |
+| **Unit Tests** | Runs all unit tests |
+| **Integration Tests** | Runs all integration tests |
+| **Code Coverage** | Generates test coverage report |
+| **Upload Artifacts** | Stores build artifacts |
+
+---
+
+## Publish
+
+Generate deployment-ready files:
+
+```bash
+dotnet publish src/ShopSphere.Api \
+  -c Release \
+  -o publish
+```
+
+Output structure:
+
+```text
+publish/
+├── ShopSphere.Api.dll
+├── appsettings.json
+├── wwwroot/
+└── Dependencies
+```
+
+---
+
+## Database Migration
+
+Run migrations before starting the application:
+
+```bash
+dotnet ef database update
+```
+
+Or apply migrations automatically during application startup:
+
+```csharp
+dbContext.Database.Migrate();
+```
+
+---
+
+## Hangfire
+
+Hangfire initializes automatically on startup:
+
+| Action | Description |
+|---|---|
+| **Schema Creation** | Creates required Hangfire database tables |
+| **Processing Server** | Starts the background job processing server |
+| **Recurring Jobs** | Registers all scheduled recurring jobs |
+
+**Dashboard Endpoint:**
+
+```
+/hangfire
+```
+
+---
+
+## Health Checks
+
+Available health monitoring endpoints:
+
+| Endpoint | Description |
+|---|---|
+| `/health` | Overall application health status |
+| `/health/live` | Liveness probe |
+| `/health/ready` | Readiness probe |
+| `/health-ui` | Visual health check dashboard |
+
+---
+
+## Logging
+
+Production logging is powered by **Serilog**.
+
+| Output | Status |
+|---|:---:|
+| Console | ✅ Active |
+| File | ✅ Active |
+| Structured JSON | ✅ Active |
+| Seq | 📅 Planned |
+| Azure Monitor | 📅 Planned |
+
+---
+
+## HTTPS
+
+Production deployments must always enforce:
+
+- ✅ HTTPS enabled
+- ✅ HSTS headers
+- ✅ TLS 1.2 or higher
+
+---
+
+## Reverse Proxy
+
+Recommended production setup using Nginx in front of Kestrel:
+
+```mermaid
+flowchart LR
+    A["Internet"]
+    B["Nginx"]
+    C["Kestrel"]
+    D["ShopSphere API"]
+
+    A --> B
+    B --> C
+    C --> D
+```
+
+---
+
+## Scaling
+
+ShopSphere supports horizontal scaling through shared infrastructure:
+
+```mermaid
+flowchart TD
+    A["Load Balancer"]
+    B["API Instance 1"]
+    C["API Instance 2"]
+    D["API Instance 3"]
+    E[("Shared SQL Server")]
+    F[("Redis")]
 
     A --> B
     A --> C
@@ -62,262 +318,104 @@ flowchart TD
     B --> E
     C --> E
     D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
-    I --> J
+    B --> F
+    C --> F
+    D --> F
 ```
 
 ---
 
-## Catalog Structure
+## Deployment Checklist
 
-```text
-Catalog/
-│
-├── Categories
-├── Brands
-├── Products
-├── Product Images
-└── Inventory
-```
+### Pre-Release
 
----
-
-## Category
-
-Categories organize products into logical groups.
-
-**Examples:** Electronics · Fashion · Furniture · Books
-
-### Category Entity
-
-| Property | Description |
+| Check | Description |
 |---|---|
-| **Id** | Unique identifier |
-| **Name** | Category name |
-| **Description** | Optional description |
-| **IsActive** | Active status |
-| **CreatedOn** | Audit field |
-| **ModifiedOn** | Audit field |
+| ✅ Build Succeeds | Solution compiles without errors |
+| ✅ Tests Pass | All unit and integration tests pass |
+| ✅ Migration Generated | Latest EF Core migration is applied |
+| ✅ Secrets Configured | All sensitive values are set |
+| ✅ Connection Strings | Database and Redis strings verified |
+| ✅ JWT Configured | Issuer, Audience, and SecretKey set |
+| ✅ Email Configured | SMTP settings verified |
+| ✅ Redis Available | Cache connection confirmed |
+| ✅ Hangfire Running | Background job server active |
 
 ---
 
-## Brand
+## Production Checklist
 
-Brands represent manufacturers or product owners.
+| Item | Status |
+|---|:---:|
+| HTTPS Enabled | ✅ |
+| SQL Server Available | ✅ |
+| Redis Running | ✅ |
+| Hangfire Running | ✅ |
+| Health Checks Enabled | ✅ |
+| Serilog Configured | ✅ |
+| Database Migrated | ✅ |
 
-**Examples:** Apple · Samsung · Nike · Sony
+---
 
-### Brand Entity
+## Monitoring
 
-| Property | Description |
+| Area | Tool / Method |
 |---|---|
-| **Id** | Unique identifier |
-| **Name** | Brand name |
-| **Description** | Optional description |
-| **IsActive** | Active status |
+| **Application Logs** | Serilog structured logs |
+| **SQL Performance** | SQL Server query monitoring |
+| **Redis Health** | Redis health check endpoint |
+| **Background Jobs** | Hangfire Dashboard |
+| **API Health** | Health check endpoints |
+| **Application Metrics** | Prometheus _(Planned)_ |
 
 ---
 
-## Product
+## Backup Strategy
 
-Products are the primary catalog items.
-
-Each product belongs to:
-- One **Category**
-- One **Brand**
-
-Each product can have:
-- Multiple **Images**
-- One **Inventory Record**
-
-### Product Entity
-
-| Property | Description |
+| Backup Type | Frequency |
 |---|---|
-| **Id** | Product identifier |
-| **Name** | Product name |
-| **Description** | Product description |
-| **SKU** | Stock Keeping Unit |
-| **Price** | Selling price |
-| **CategoryId** | Category reference |
-| **BrandId** | Brand reference |
-| **IsActive** | Availability status |
-| **CreatedOn** | Audit field |
-| **ModifiedOn** | Audit field |
+| **Full Database Backup** | Weekly |
+| **Differential Backup** | Daily |
+| **Transaction Log Backup** | Hourly |
+| **Configuration Backup** | On every change |
+| **Artifact Backup** | On every release |
 
 ---
 
-## Product Images
-
-Each product supports multiple images.
-
-### Product Image Entity
-
-| Property | Description |
-|---|---|
-| **Id** | Image identifier |
-| **ProductId** | Product reference |
-| **ImageUrl** | Image location URL |
-| **DisplayOrder** | Sort order for display |
-| **IsPrimary** | Marks the primary image |
-
----
-
-## Inventory Relationship
-
-Every product has exactly one inventory record.
-
-```mermaid
-erDiagram
-    CATEGORY ||--o{ PRODUCT : contains
-    BRAND ||--o{ PRODUCT : owns
-    PRODUCT ||--o{ PRODUCT_IMAGE : has
-    PRODUCT ||--|| INVENTORY : tracks
-```
-
----
-
-## CQRS Implementation
-
-The Catalog module follows the CQRS pattern using MediatR.
-
-### Commands
-
-| Command | Description |
-|---|---|
-| `CreateCategoryCommand` | Creates a new category |
-| `UpdateCategoryCommand` | Updates an existing category |
-| `DeleteCategoryCommand` | Removes a category |
-| `CreateBrandCommand` | Creates a new brand |
-| `UpdateBrandCommand` | Updates an existing brand |
-| `DeleteBrandCommand` | Removes a brand |
-| `CreateProductCommand` | Creates a new product |
-| `UpdateProductCommand` | Updates an existing product |
-| `DeleteProductCommand` | Removes a product |
-
-### Queries
-
-| Query | Description |
-|---|---|
-| `GetCategoriesQuery` | Retrieves all categories |
-| `GetCategoryByIdQuery` | Retrieves a category by ID |
-| `GetBrandsQuery` | Retrieves all brands |
-| `GetBrandByIdQuery` | Retrieves a brand by ID |
-| `GetProductsQuery` | Retrieves all products |
-| `GetProductByIdQuery` | Retrieves a product by ID |
-
----
-
-## Request Flow
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant API
-    participant Mediator as MediatR
-    participant Handler as CreateProductCommandHandler
-    participant Repository
-    participant EF as EF Core
-    participant DB as SQL Server
-
-    Client->>API: Create Product Request
-    API->>Mediator: Send Command
-    Mediator->>Handler: Dispatch
-    Handler->>Repository: Add Product
-    Repository->>EF: SaveChanges()
-    EF->>DB: INSERT Product
-    DB-->>Client: Success Response
-```
-
----
-
-## Validation
-
-The Catalog module validates all incoming requests using **FluentValidation**.
-
-| Validation Rule | Description |
-|---|---|
-| **Required Fields** | Name and key fields must be present |
-| **Duplicate Names** | Category and brand names must be unique |
-| **Existing Category** | Product must reference a valid category |
-| **Existing Brand** | Product must reference a valid brand |
-| **Positive Price** | Product price must be greater than zero |
-| **SKU Uniqueness** | Each product must have a unique SKU |
-
----
-
-## Relationships
+## Disaster Recovery
 
 ```mermaid
 flowchart TD
-    A["Category"]
-    B["Brand"]
-    C["Products"]
-    D["Images"]
-    E["Inventory"]
+    A["Restore Database"]
+    B["Deploy Latest Release"]
+    C["Restore Configuration"]
+    D["Verify Health Checks"]
+    E["Resume Traffic"]
 
-    A --> C
+    A --> B
     B --> C
     C --> D
-    C --> E
+    D --> E
 ```
 
 ---
 
-## Current API Endpoints
-
-### Categories
-
-| Method | Endpoint | Description |
-|:---:|---|---|
-| `POST` | `/api/categories` | Create a new category |
-| `GET` | `/api/categories` | Retrieve all categories |
-| `GET` | `/api/categories/{id}` | Retrieve category by ID |
-| `PUT` | `/api/categories/{id}` | Update a category |
-| `DELETE` | `/api/categories/{id}` | Delete a category |
-
-### Brands
-
-| Method | Endpoint | Description |
-|:---:|---|---|
-| `POST` | `/api/brands` | Create a new brand |
-| `GET` | `/api/brands` | Retrieve all brands |
-| `GET` | `/api/brands/{id}` | Retrieve brand by ID |
-| `PUT` | `/api/brands/{id}` | Update a brand |
-| `DELETE` | `/api/brands/{id}` | Delete a brand |
-
-### Products
-
-| Method | Endpoint | Description |
-|:---:|---|---|
-| `POST` | `/api/products` | Create a new product |
-| `GET` | `/api/products` | Retrieve all products |
-| `GET` | `/api/products/{id}` | Retrieve product by ID |
-| `PUT` | `/api/products/{id}` | Update a product |
-| `DELETE` | `/api/products/{id}` | Delete a product |
-
----
-
-## Future Enhancements
+## Future Improvements
 
 | Feature | Status |
 |---|:---:|
-| Product Search | 📅 Planned |
-| Advanced Filtering | 📅 Planned |
-| Product Reviews | 📅 Planned |
-| Product Ratings | 📅 Planned |
-| Wishlist Integration | 📅 Planned |
-| Product Recommendations | 📅 Planned |
-| ElasticSearch Integration | 📅 Planned |
-| Full-text Search | 📅 Planned |
-| Product Variants | 📅 Planned |
-| Product Attributes | 📅 Planned |
-| Product Specifications | 📅 Planned |
-| Bulk Import / Export | 📅 Planned |
-| Cloud Image Storage | 📅 Planned |
+| Docker Support | 📅 Planned |
+| Docker Compose | 📅 Planned |
+| Kubernetes Manifests | 📅 Planned |
+| Helm Charts | 📅 Planned |
+| Azure DevOps Pipeline | 📅 Planned |
+| Terraform Infrastructure | 📅 Planned |
+| Blue-Green Deployment | 📅 Planned |
+| Canary Releases | 📅 Planned |
+| Automatic Rollback | 📅 Planned |
+| Azure Key Vault Secrets | 📅 Planned |
+| Prometheus Metrics | 📅 Planned |
+| Grafana Dashboards | 📅 Planned |
 
 ---
 
@@ -326,12 +424,15 @@ flowchart TD
 | Category | Technology |
 |---|---|
 | **Framework** | ASP.NET Core 8 |
-| **ORM** | Entity Framework Core |
 | **Database** | SQL Server |
-| **Mediator** | MediatR |
-| **Validation** | FluentValidation |
-| **Architecture** | Clean Architecture |
-| **Pattern** | Repository Pattern · CQRS |
+| **Cache** | Redis |
+| **Background Jobs** | Hangfire |
+| **CI/CD** | GitHub Actions |
+| **Logging** | Serilog |
+| **Health Checks** | ASP.NET Core Health Checks |
+| **Web Server** | IIS / Nginx |
+| **Containerization** | Docker _(Planned)_ |
+| **Orchestration** | Kubernetes _(Planned)_ |
 
 ---
 
