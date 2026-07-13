@@ -1,6 +1,7 @@
 <p align="center">
   <img src="docs/images/banner.png" alt="ShopSphere Banner"/>
 </p>
+
 <h1 align="center">ShopSphere</h1>
 
 <p align="center">
@@ -30,29 +31,25 @@
 
 <p align="center">
   <img src="https://github.com/chintanchhapgar/ShopSphere/actions/workflows/build.yml/badge.svg" alt="Build Status"/>
-  &nbsp;
-  <img src="https://img.shields.io/github/license/chintanchhapgar/ShopSphere?style=for-the-badge" alt="License"/>
-  &nbsp;
-  <img src="https://img.shields.io/github/last-commit/chintanchhapgar/ShopSphere?style=for-the-badge" alt="Last Commit"/>
-  &nbsp;
-  <img src="https://img.shields.io/github/repo-size/chintanchhapgar/ShopSphere?style=for-the-badge" alt="Repo Size"/>
 </p>
 
 ---
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Highlights](#-highlights)
-- [Project Status](#-project-status)
-- [Architecture Overview](#-architecture-overview)
-- [Solution Structure](#-solution-structure)
-- [Clean Architecture Layers](#-clean-architecture-layers)
-- [Request Flow](#-request-flow)
-- [Modules](#-modules)
-- [Technology Stack](#-technology-stack)
-- [Engineering Practices](#-engineering-practices)
-- [Documentation](#-documentation)
+- [Overview](#overview)
+- [Highlights](#highlights)
+- [Project Status](#project-status)
+- [Architecture Overview](#architecture-overview)
+- [Solution Structure](#solution-structure)
+- [Clean Architecture Layers](#clean-architecture-layers)
+- [Request Flow](#request-flow)
+- [Modules](#modules)
+- [Technology Stack](#technology-stack)
+- [Engineering Practices](#engineering-practices)
+- [Documentation](#documentation)
+- [License](#license)
+- [Author](#author)
 
 ---
 
@@ -289,6 +286,7 @@ flowchart TD
 | [Roadmap](docs/roadmap.md) | Planned features & future enhancements |
 
 ---
+
 ## License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
@@ -310,6 +308,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 </p>
 
 ---
+
 <p align="center">
   <sub>Built with precision · Engineered for scale · Designed for clarity</sub>
 </p>
