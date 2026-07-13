@@ -33,4 +33,25 @@ jobs:
         run: dotnet build --no-restore --configuration Release
 
       - name: Run Tests
-        run: dotnet test --no-build --configuration Release
+      run: |
+        dotnet test \
+          --no-build \
+          --configuration Release \
+          --collect:"XPlat Code Coverage" \
+          --logger "trx"
+          
+      - name: Upload Test Results
+          uses: actions/upload-artifact@v4
+          if: always()
+          with:
+            name: TestResults
+            path: |
+              **/*.trx
+              
+     - name: Upload Code Coverage
+          uses: actions/upload-artifact@v4
+          if: always()
+          with:
+            name: CodeCoverage
+            path: |
+              **/coverage.cobertura.xml
