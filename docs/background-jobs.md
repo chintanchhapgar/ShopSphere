@@ -4,394 +4,356 @@ The Background Jobs module is responsible for executing asynchronous and schedul
 
 ---
 
-# Features
+## Table of Contents
 
-- Hangfire Integration
-- Recurring Jobs
-- Fire-and-Forget Jobs
-- Email Processing
-- Order Automation
-- Automatic Retry
-- Dashboard Monitoring
-- Structured Logging
-- Dependency Injection Support
+- [Features](#features)
+- [Architecture Overview](#architecture-overview)
+- [Background Job Types](#background-job-types)
+- [Current Jobs](#current-jobs)
+- [Email Jobs](#email-jobs)
+- [Email Workflow](#email-workflow)
+- [Hangfire Dashboard](#hangfire-dashboard)
+- [Dependency Injection](#dependency-injection)
+- [Logging](#logging)
+- [Error Handling](#error-handling)
+- [Job Registration](#job-registration)
+- [MediatR Integration](#mediatr-integration)
+- [Benefits](#benefits)
+- [Current Workflow](#current-workflow)
+- [Current Capabilities](#current-capabilities)
+- [Planned Enhancements](#planned-enhancements)
+- [Technologies](#technologies)
 
 ---
 
-# Architecture Overview
+## Features
+
+| Feature | Status |
+|---|:---:|
+| Hangfire Integration | ✅ |
+| Recurring Jobs | ✅ |
+| Fire-and-Forget Jobs | ✅ |
+| Email Processing | ✅ |
+| Order Automation | ✅ |
+| Automatic Retry | ✅ |
+| Dashboard Monitoring | ✅ |
+| Structured Logging | ✅ |
+| Dependency Injection Support | ✅ |
+
+---
+
+## Architecture Overview
 
 ```mermaid
 flowchart TD
+    A["API"]
+    B["BackgroundJobService"]
+    C["Hangfire"]
+    D["Job"]
+    E["MediatR"]
+    F["CommandHandler"]
+    G[("Database")]
 
-API
-
-API --> BackgroundJobService
-
-BackgroundJobService --> Hangfire
-
-Hangfire --> Job
-
-Job --> MediatR
-
-MediatR --> CommandHandler
-
-CommandHandler --> Database
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
 ```
 
 ---
 
-# Background Job Types
+## Background Job Types
 
 | Type | Purpose |
-|------|---------|
-| Fire-and-Forget | Execute once immediately |
-| Recurring | Scheduled execution |
-| Delayed | Execute after a delay |
-| Continuation | Execute after another job |
-| Batch *(Future)* | Multiple jobs together |
+|---|---|
+| **Fire-and-Forget** | Execute once immediately after being queued |
+| **Recurring** | Scheduled execution on a defined interval |
+| **Delayed** | Execute after a specified delay |
+| **Continuation** | Execute after another job completes |
+| **Batch** _(Future)_ | Execute multiple jobs together as a group |
 
 ---
 
-# Current Jobs
+## Current Jobs
 
-## CancelExpiredOrdersJob
+### CancelExpiredOrdersJob
 
 Automatically cancels unpaid orders after the expiration period.
 
-### Schedule
-
-```text
-Every Minute
-```
-
-### Workflow
+**Schedule:** Every Minute
 
 ```mermaid
 flowchart LR
+    A["Hangfire"]
+    B["CancelExpiredOrdersJob"]
+    C["CancelExpiredOrdersCommand"]
+    D["Order Repository"]
+    E[("SQL Server")]
 
-Hangfire
-
-↓
-
-CancelExpiredOrdersJob
-
-↓
-
-CancelExpiredOrdersCommand
-
-↓
-
-Order Repository
-
-↓
-
-SQL Server
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 ---
 
-## CompleteDeliveredOrdersJob
+### CompleteDeliveredOrdersJob
 
-Marks delivered orders as completed after the configured period.
+Marks delivered orders as completed after the configured delivery period.
 
-### Schedule
-
-```text
-Daily
-```
-
-### Workflow
+**Schedule:** Daily
 
 ```mermaid
 flowchart LR
+    A["Hangfire"]
+    B["CompleteDeliveredOrdersJob"]
+    C["CompleteDeliveredOrdersCommand"]
+    D["Order Repository"]
+    E[("SQL Server")]
 
-Hangfire
-
-↓
-
-CompleteDeliveredOrdersJob
-
-↓
-
-CompleteDeliveredOrdersCommand
-
-↓
-
-Order Repository
-
-↓
-
-SQL Server
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 ---
 
-# Email Jobs
+## Email Jobs
 
-The application queues emails instead of sending them during API requests.
+The application queues all emails as background jobs instead of sending them during API requests, ensuring fast response times and reliable delivery.
 
-Current email jobs include:
-
-- Welcome Email
-- Email Verification
-- Password Reset
-- Order Confirmation
-- Payment Confirmation
-- Shipment Notification
-- Delivery Notification
+| Email Job | Trigger |
+|---|---|
+| **Welcome Email** | Successful email verification |
+| **Email Verification** | New user registration |
+| **Password Reset** | Forgot password request |
+| **Order Confirmation** | Successful order placement |
+| **Payment Confirmation** | Successful payment |
+| **Shipment Notification** | Order shipped |
+| **Delivery Notification** | Order delivered |
 
 ---
 
-# Email Workflow
+## Email Workflow
 
 ```mermaid
 sequenceDiagram
+    participant API
+    participant BackgroundJobService as Background Job Service
+    participant Hangfire
+    participant EmailJob as Email Job
+    participant NotificationService as Notification Service
+    participant SMTP as SMTP Server
+    participant Customer
 
-API->>BackgroundJobService: Queue Email
-
-BackgroundJobService->>Hangfire: Enqueue()
-
-Hangfire->>EmailJob: Execute()
-
-EmailJob->>NotificationService: Send Email
-
-NotificationService->>SMTP Server: Send
-
-SMTP-->>Customer: Email Delivered
+    API->>BackgroundJobService: Queue Email
+    BackgroundJobService->>Hangfire: Enqueue()
+    Hangfire->>EmailJob: Execute()
+    EmailJob->>NotificationService: Send Email
+    NotificationService->>SMTP: Send
+    SMTP-->>Customer: Email Delivered
 ```
 
 ---
 
-# Hangfire Dashboard
+## Hangfire Dashboard
 
-The Hangfire Dashboard provides monitoring for:
+The Hangfire Dashboard provides real-time monitoring for all background jobs.
 
-- Scheduled Jobs
-- Running Jobs
-- Failed Jobs
-- Processing Jobs
-- Retry Attempts
-- Job History
+| Section | Description |
+|---|---|
+| **Scheduled Jobs** | Jobs queued for future execution |
+| **Running Jobs** | Jobs currently being processed |
+| **Failed Jobs** | Jobs that encountered errors |
+| **Processing Jobs** | Jobs in active execution |
+| **Retry Attempts** | Jobs being retried after failure |
+| **Job History** | Complete log of all executed jobs |
 
-Default endpoint:
+**Default Dashboard Endpoint:**
 
-```text
+```
 /hangfire
 ```
 
 ---
 
-# Dependency Injection
+## Dependency Injection
 
-Jobs are registered through dependency injection.
+All jobs are registered through the built-in dependency injection container.
 
-```text
-CancelExpiredOrdersJob
-
-CompleteDeliveredOrdersJob
-
-EmailJob
-```
+| Job | Type |
+|---|---|
+| `CancelExpiredOrdersJob` | Recurring |
+| `CompleteDeliveredOrdersJob` | Recurring |
+| `EmailJob` | Fire-and-Forget |
 
 ---
 
-# Logging
+## Logging
 
-Every background job records structured logs.
+Every background job records structured logs using **Serilog**.
 
-Examples:
-
-```text
-Job Started
-
-Orders Cancelled
-
-Orders Completed
-
-Email Sent
-
-Job Failed
-```
-
-Logs are captured using **Serilog**.
+| Log Event | Description |
+|---|---|
+| `Job Started` | Job execution has begun |
+| `Orders Cancelled` | Expired orders were cancelled |
+| `Orders Completed` | Delivered orders were completed |
+| `Email Sent` | Email was delivered successfully |
+| `Job Failed` | Job encountered an error |
 
 ---
 
-# Error Handling
+## Error Handling
 
-Background jobs automatically support:
-
-- Retry on failure
-- Exception logging
-- Failure history
-- Dashboard diagnostics
-
-Example flow:
+Background jobs automatically support fault tolerance through Hangfire's built-in retry mechanism.
 
 ```mermaid
 flowchart TD
+    A["Execute Job"]
+    B{"Success?"}
+    C["Complete"]
+    D["Retry"]
+    E{"Max Retries Reached?"}
+    F["Failed Job Queue"]
 
-Execute Job
-
-↓
-
-Success?
-
-Yes --> Complete
-
-No --> Retry
-
-Retry --> Failed?
-
-No --> Complete
-
-Yes --> Failed Job Queue
+    A --> B
+    B -->|Yes| C
+    B -->|No| D
+    D --> E
+    E -->|No| A
+    E -->|Yes| F
 ```
 
----
-
-# Job Registration
-
-Recurring jobs are registered during application startup.
-
-Current schedules:
-
-| Job | Schedule |
-|------|----------|
-| CancelExpiredOrdersJob | Every Minute |
-| CompleteDeliveredOrdersJob | Daily |
+| Feature | Description |
+|---|---|
+| **Automatic Retry** | Failed jobs are retried automatically |
+| **Exception Logging** | All exceptions are captured via Serilog |
+| **Failure History** | Complete failure history stored in Hangfire |
+| **Dashboard Diagnostics** | Visual failure inspection via Hangfire Dashboard |
 
 ---
 
-# MediatR Integration
+## Job Registration
 
-Background jobs never contain business logic.
+Recurring jobs are registered automatically during application startup.
 
-Instead they simply execute MediatR commands.
+| Job | Schedule | Cron |
+|---|---|---|
+| `CancelExpiredOrdersJob` | Every Minute | `* * * * *` |
+| `CompleteDeliveredOrdersJob` | Daily | `0 0 * * *` |
+
+---
+
+## MediatR Integration
+
+Background jobs contain **no business logic**. They act purely as lightweight triggers that dispatch MediatR commands to the appropriate handlers.
 
 ```mermaid
 flowchart LR
+    A["Hangfire"]
+    B["Job"]
+    C["MediatR"]
+    D["Command"]
+    E["Handler"]
+    F["Repository"]
 
-Hangfire
-
-↓
-
-Job
-
-↓
-
-Mediator
-
-↓
-
-Command
-
-↓
-
-Handler
-
-↓
-
-Repository
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ```
 
 ---
 
-# Benefits
+## Benefits
 
-Using MediatR keeps:
-
-- Business logic reusable
-- Jobs lightweight
-- Testing simple
-- Separation of concerns clean
+| Benefit | Description |
+|---|---|
+| **Reusable Business Logic** | Handlers can be called from anywhere |
+| **Lightweight Jobs** | Jobs only dispatch commands |
+| **Simple Testing** | Handlers can be unit tested independently |
+| **Clean Separation** | Clear boundary between scheduling and logic |
 
 ---
 
-# Current Workflow
+## Current Workflow
 
 ```mermaid
 flowchart TD
+    A["Application Starts"]
+    B["Register Hangfire"]
+    C["Register Jobs"]
+    D["Schedule Recurring Jobs"]
+    E["Hangfire Server"]
+    F["Execute Jobs"]
+    G["Update Database"]
+    H["Write Logs"]
 
-Application Starts
-
-↓
-
-Register Hangfire
-
-↓
-
-Register Jobs
-
-↓
-
-Schedule Recurring Jobs
-
-↓
-
-Hangfire Server
-
-↓
-
-Execute Jobs
-
-↓
-
-Update Database
-
-↓
-
-Write Logs
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
 ```
 
 ---
 
-# Current Capabilities
+## Current Capabilities
 
-✅ Hangfire Integration
-
-✅ Recurring Jobs
-
-✅ Email Queueing
-
-✅ Order Automation
-
-✅ Structured Logging
-
-✅ Retry Support
-
-✅ Dashboard Monitoring
-
-✅ Dependency Injection
+| Capability | Status |
+|---|:---:|
+| Hangfire Integration | ✅ |
+| Recurring Jobs | ✅ |
+| Email Queueing | ✅ |
+| Order Automation | ✅ |
+| Structured Logging | ✅ |
+| Retry Support | ✅ |
+| Dashboard Monitoring | ✅ |
+| Dependency Injection | ✅ |
 
 ---
 
-# Planned Enhancements
+## Planned Enhancements
 
-Future background processing includes:
-
-- Inventory Synchronization
-- Low Stock Notifications
-- Payment Reconciliation
-- Invoice Generation
-- Sales Report Generation
-- Cleanup Jobs
-- Audit Log Archiving
-- Product Recommendation Cache
-- Search Index Rebuild
-- Scheduled Database Backups
-- Customer Reminder Emails
-- Analytics Aggregation
+| Feature | Status |
+|---|:---:|
+| Inventory Synchronization | 📅 Planned |
+| Low Stock Notifications | 📅 Planned |
+| Payment Reconciliation | 📅 Planned |
+| Invoice Generation | 📅 Planned |
+| Sales Report Generation | 📅 Planned |
+| Cleanup Jobs | 📅 Planned |
+| Audit Log Archiving | 📅 Planned |
+| Product Recommendation Cache | 📅 Planned |
+| Search Index Rebuild | 📅 Planned |
+| Scheduled Database Backups | 📅 Planned |
+| Customer Reminder Emails | 📅 Planned |
+| Analytics Aggregation | 📅 Planned |
 
 ---
 
-# Technologies
+## Technologies
 
-- Hangfire
-- ASP.NET Core 8
-- MediatR
-- Entity Framework Core
-- SQL Server
-- Serilog
-- Dependency Injection
-- Clean Architecture
+| Category | Technology |
+|---|---|
+| **Background Jobs** | Hangfire |
+| **Framework** | ASP.NET Core 8 |
+| **Mediator** | MediatR |
+| **ORM** | Entity Framework Core |
+| **Database** | SQL Server |
+| **Logging** | Serilog |
+| **Architecture** | Clean Architecture |
+| **DI Container** | .NET Dependency Injection |
+
+---
+
+<p align="center">
+  <sub>Built with precision · Engineered for scale · Designed for clarity</sub>
+</p>
