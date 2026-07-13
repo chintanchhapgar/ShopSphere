@@ -23,4 +23,10 @@ public static class AuthenticationErrors
         new(
             "Authentication.InvalidEmailVerificationToken",
             "The email verification token is invalid or has expired.");
+
+    public static readonly Error InvalidEmail =
+        new("INVALID_EMAIL", "Invalid email.");
+
+    public static readonly Error EmailNotFound =
+       new("EMAIL_NOT_FOUND", "Email not found.");
 }

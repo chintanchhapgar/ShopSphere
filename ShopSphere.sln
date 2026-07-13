@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.ArchitectureTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.ApplicationTests", "tests\ShopSphere.ApplicationTests\ShopSphere.ApplicationTests.csproj", "{3D63E50E-A52B-40D6-9DDA-57FC816DE8C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.InfrastructureTests", "tests\ShopSphere.InfrastructureTests\ShopSphere.InfrastructureTests.csproj", "{3BFAC6A3-C9DF-4732-A765-922B8AD7DB72}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{3D63E50E-A52B-40D6-9DDA-57FC816DE8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D63E50E-A52B-40D6-9DDA-57FC816DE8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D63E50E-A52B-40D6-9DDA-57FC816DE8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BFAC6A3-C9DF-4732-A765-922B8AD7DB72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFAC6A3-C9DF-4732-A765-922B8AD7DB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFAC6A3-C9DF-4732-A765-922B8AD7DB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFAC6A3-C9DF-4732-A765-922B8AD7DB72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,6 @@ Global
 		{037AECA3-C1BF-48C4-AF2C-93D5FDAB5952} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
 		{BAC91BEF-7F18-42D7-9FCF-744FF11D3ABA} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
 		{3D63E50E-A52B-40D6-9DDA-57FC816DE8C9} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
+		{3BFAC6A3-C9DF-4732-A765-922B8AD7DB72} = {73B643FA-045C-4048-89FD-1E6AE27EFBBE}
 	EndGlobalSection
 EndGlobal
