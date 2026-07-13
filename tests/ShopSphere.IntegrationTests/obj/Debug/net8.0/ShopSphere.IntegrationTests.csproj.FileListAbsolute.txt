@@ -560,3 +560,4 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Serilo
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\System.Text.Json.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\FluentAssertions.dll

@@ -36,6 +36,7 @@
     ".NETCoreApp,Version=v8.0": {
       "ShopSphere.IntegrationTests/1.0.0": {
         "dependencies": {
+          "FluentAssertions": "8.10.0",
           "Microsoft.AspNetCore.Mvc.Testing": "8.0.16",
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "ShopSphere.Api": "1.0.0",
@@ -580,6 +581,17 @@
         },
         "compile": {
           "lib/netstandard2.1/Docker.DotNet.X509.dll": {}
+        }
+      },
+      "FluentAssertions/8.10.0": {
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "assemblyVersion": "8.10.0.0",
+            "fileVersion": "8.10.0.0"
+          }
+        },
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {}
         }
       },
       "FluentValidation/11.11.0": {
@@ -5249,6 +5261,13 @@
       "sha512": "sha512-ONQN7ImrL3tHStUUCCPHwrFFQVpIpE+7L6jaDAMwSF+yTEmeWBmRARQZDRuvfj/+WtB8RR0oTW0tT3qQMSyHOw==",
       "path": "docker.dotnet.x509/3.125.15",
       "hashPath": "docker.dotnet.x509.3.125.15.nupkg.sha512"
+    },
+    "FluentAssertions/8.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yGvv+xp0gHFgGwhQcGoDdKIrhLhPi3zYYWWLLHPMctr+G6PWD7QH8L4wqoa5WRZquPbfSV/cP1MraI7ppAHrWw==",
+      "path": "fluentassertions/8.10.0",
+      "hashPath": "fluentassertions.8.10.0.nupkg.sha512"
     },
     "FluentValidation/11.11.0": {
       "type": "package",

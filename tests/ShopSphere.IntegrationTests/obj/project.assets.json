@@ -289,6 +289,19 @@
           }
         }
       },
+      "FluentAssertions/8.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "FluentValidation/11.11.0": {
         "type": "package",
         "compile": {
@@ -4613,6 +4626,31 @@
         "lib/netstandard2.0/Docker.DotNet.X509.pdb",
         "lib/netstandard2.1/Docker.DotNet.X509.dll",
         "lib/netstandard2.1/Docker.DotNet.X509.pdb"
+      ]
+    },
+    "FluentAssertions/8.10.0": {
+      "sha512": "yGvv+xp0gHFgGwhQcGoDdKIrhLhPi3zYYWWLLHPMctr+G6PWD7QH8L4wqoa5WRZquPbfSV/cP1MraI7ppAHrWw==",
+      "type": "package",
+      "path": "fluentassertions/8.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "LICENSE",
+        "fluentassertions.8.10.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/net6.0/FluentAssertions.dll",
+        "lib/net6.0/FluentAssertions.pdb",
+        "lib/net6.0/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
       ]
     },
     "FluentValidation/11.11.0": {
@@ -11818,6 +11856,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "FluentAssertions >= 8.10.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 8.0.16",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "ShopSphere.Api >= 1.0.0",
@@ -11882,6 +11921,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[8.10.0, )"
+          },
           "Microsoft.AspNetCore.Mvc.Testing": {
             "target": "Package",
             "version": "[8.0.16, )"

@@ -110,7 +110,7 @@ public sealed class EmailNotificationService
             "Welcome",
             new Dictionary<string, string>
             {
-                ["FullName"] = model.FullName
+                ["CustomerName"] = model.FullName
             });
 
         await _emailService.SendAsync(

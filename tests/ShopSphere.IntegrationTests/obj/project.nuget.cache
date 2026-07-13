@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Meu4TDYUZeI=",
+  "dgSpecHash": "pu/nBeRJ58E=",
   "success": true,
   "projectFilePath": "D:\\Projects\\ShopSphere\\tests\\ShopSphere.IntegrationTests\\ShopSphere.IntegrationTests.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "C:\\Users\\Chintan\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\Chintan\\.nuget\\packages\\docker.dotnet\\3.125.15\\docker.dotnet.3.125.15.nupkg.sha512",
     "C:\\Users\\Chintan\\.nuget\\packages\\docker.dotnet.x509\\3.125.15\\docker.dotnet.x509.3.125.15.nupkg.sha512",
+    "C:\\Users\\Chintan\\.nuget\\packages\\fluentassertions\\8.10.0\\fluentassertions.8.10.0.nupkg.sha512",
     "C:\\Users\\Chintan\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\Chintan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\Chintan\\.nuget\\packages\\fractions\\7.3.0\\fractions.7.3.0.nupkg.sha512",
@@ -234,10 +235,8 @@
     {
       "code": "NU1608",
       "level": "Warning",
-      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.4.1 was resolved.",
-      "projectPath": "D:\\Projects\\ShopSphere\\tests\\ShopSphere.IntegrationTests\\ShopSphere.IntegrationTests.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\Projects\\ShopSphere\\tests\\ShopSphere.IntegrationTests\\ShopSphere.IntegrationTests.csproj",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.4.1 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net8.0"
