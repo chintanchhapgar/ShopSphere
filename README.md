@@ -1,7 +1,6 @@
 <p align="center">
   <img src="docs/images/banner.png" alt="ShopSphere Banner"/>
 </p>
-
 <h1 align="center">ShopSphere</h1>
 
 <p align="center">
