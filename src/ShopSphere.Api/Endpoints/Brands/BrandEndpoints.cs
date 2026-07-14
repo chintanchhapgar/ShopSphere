@@ -33,7 +33,7 @@ public static class BrandEndpoints
             });
 
         group.MapGet("/",
-            [Authorize] async (
+             [AllowAnonymous] async (
                 ISender sender) =>
             {
                 var result = await sender.Send(

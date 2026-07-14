@@ -17,7 +17,6 @@ using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
 using System.Threading.RateLimiting;
-using Microsoft.EntityFrameworkCore;
 using ShopSphere.Infrastructure.BackgroundJobs;
 using ShopSphere.Infrastructure.BackgroundJobs.Jobs;
 
@@ -32,6 +31,23 @@ builder.Host.UseSerilog((context, services, configuration) =>
         .Enrich.WithMachineName()
         .Enrich.WithThreadId()
         .Enrich.WithProcessId();
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy
+            .WithOrigins(
+                "http://localhost:3000",
+                "http://localhost:5173",  // Vite default
+                "https://localhost:3000",
+                "https://localhost:5173"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
 });
 
 builder.Services
@@ -123,9 +139,8 @@ builder.Services.AddRateLimiter(options =>
     });
 });
 
-//Jobs
+// Jobs
 builder.Services.AddScoped<CancelExpiredOrdersJob>();
-
 builder.Services.AddScoped<CompleteDeliveredOrdersJob>();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -194,7 +209,6 @@ builder.Services
     })
     .AddInMemoryStorage();
 
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -227,6 +241,8 @@ app.UseRateLimiter();
 
 app.UseHttpsRedirection();
 
+app.UseCors("AllowReactApp");
+
 app.UseAuthentication();
 
 app.UseAuthorization();
@@ -236,7 +252,7 @@ app.UseHangfireDashboard("/hangfire");
 RecurringJob.AddOrUpdate<CancelExpiredOrdersJob>(
     "cancel-expired-orders",
     job => job.ExecuteAsync(),
-    Cron.Minutely);
+    Cron.Monthly);
 
 RecurringJob.AddOrUpdate<CompleteDeliveredOrdersJob>(
     "complete-delivered-orders",
@@ -279,7 +295,8 @@ using (var scope = app.Services.CreateScope())
 
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    var dbContext = scope.ServiceProvider
+        .GetRequiredService<ApplicationDbContext>();
 
     if (dbContext.Database.IsRelational())
     {
@@ -293,6 +310,4 @@ using (var scope = app.Services.CreateScope())
 
 app.Run();
 
-public partial class Program
-{
-}
+public partial class Program { }

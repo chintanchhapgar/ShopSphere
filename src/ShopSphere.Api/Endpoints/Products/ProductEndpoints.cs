@@ -33,7 +33,7 @@ public static class ProductEndpoints
             });
 
         group.MapGet("/",
-            [Authorize] async (
+             [AllowAnonymous] async (
                 ISender sender) =>
             {
                 var result = await sender.Send(
@@ -43,7 +43,7 @@ public static class ProductEndpoints
             });
 
         group.MapGet("/{id:guid}",
-            [Authorize] async (
+             [AllowAnonymous] async (
                 Guid id,
                 ISender sender) =>
             {

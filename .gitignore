@@ -1,27 +1,35 @@
-# Visual Studio
+# ── Visual Studio ─────────────────────────────────────────────────────────────
 .vs/
 .vscode/
-
-# Build
-bin/
-obj/
-
-# Rider
-.idea/
-
-# User files
 *.user
 *.suo
 
-# Logs
-*.log
+# ── Rider ────────────────────────────────────────────────────────────────────
+.idea/
 
-# Publish
+# ── Build Output ──────────────────────────────────────────────────────────────
+bin/
+obj/
 publish/
 
-# Node
-node_modules/
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
 
-# OS
+# ── Node / Frontend ───────────────────────────────────────────────────────────
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+
+# ── OS ────────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+
+# ── Environment / Secrets ────────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+appsettings.Development.json

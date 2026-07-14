@@ -46,7 +46,8 @@ public static class CategoryEndpoints
             });
 
         group.MapGet("/",
-            async (ISender sender) =>
+            [AllowAnonymous]
+        async (ISender sender) =>
             {
                 var result = await sender.Send(
                     new GetCategoriesQuery());
