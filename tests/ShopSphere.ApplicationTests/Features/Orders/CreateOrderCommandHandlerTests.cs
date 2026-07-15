@@ -38,7 +38,7 @@ public sealed class CreateOrderCommandHandlerTests
     private readonly Mock<ILogger<CreateOrderCommandHandler>> _logger = new();
 
     private readonly CreateOrderCommandHandler _handler;
-
+    private readonly Mock<IPushNotificationService> _pushNotificationService = new();
     public CreateOrderCommandHandlerTests()
     {
         _handler = new CreateOrderCommandHandler(
@@ -51,7 +51,8 @@ public sealed class CreateOrderCommandHandlerTests
             _notificationService.Object,
             _backgroundJobs.Object,
             _auditService.Object,
-            _logger.Object);
+            _logger.Object,
+            _pushNotificationService.Object);
     }
 
     [Fact]

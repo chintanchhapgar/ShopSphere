@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Package, Save } from "lucide-react";
+import { ArrowLeft, Package, Save, Sparkles } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -12,6 +12,7 @@ import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
 import Spinner from "@/components/ui/Spinner";
 import toast from "react-hot-toast";
+import { aiApi } from "@/api/ai.api";
 
 const schema = z.object({
   name:        z.string().min(2, "Name is required"),
@@ -36,6 +37,7 @@ const AdminProductForm = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [brands, setBrands]         = useState<Brand[]>([]);
   const [isLoading, setIsLoading]   = useState(true);
+  const [generating, setGenerating] = useState(false);
 
   const {
     register,
@@ -100,6 +102,42 @@ const AdminProductForm = () => {
     load();
   }, [id]);
 
+    // ── Generate Description ─────────────────────────────────────────────────
+
+    const handleGenerateDescription = async () => {
+    const nameValue = watch("name");
+    const categoryId = watch("categoryId");
+    const brandId = watch("brandId");
+
+    if (!nameValue) {
+        toast.error("Please enter product name first");
+        return;
+    }
+    if (!categoryId || !brandId) {
+        toast.error("Please select category and brand first");
+        return;
+    }
+
+    const category = categories.find((c) => c.id === categoryId)?.name || "";
+    const brand = brands.find((b) => b.id === brandId)?.name || "";
+
+    setGenerating(true);
+        try {
+            const description = await aiApi.generateDescription({
+            productName: nameValue,
+            category,
+            brand,
+            shortInfo: watch("description") || undefined,
+            });
+
+            setValue("description", description);
+            toast.success("Description generated! ✨");
+        } catch (err) {
+            toast.error((err as Error).message || "Failed to generate");
+        } finally {
+            setGenerating(false);
+        }
+    };
   // ── Submit ─────────────────────────────────────────────────────────────────
   const onSubmit = async (data: FormData) => {
     try {
@@ -164,21 +202,39 @@ const AdminProductForm = () => {
 
           {/* Description */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              Description
-            </label>
+            <div className="flex items-center justify-between mb-1.5">
+                <label className="block text-sm font-medium text-gray-700">
+                Description
+                </label>
+                <button
+                type="button"
+                onClick={handleGenerateDescription}
+                disabled={generating}
+                className="flex items-center gap-1 text-xs font-medium text-primary-600 hover:text-primary-700 disabled:opacity-50 transition"
+                >
+                {generating ? (
+                    <>
+                    <Spinner size="lg" className="text-primary-600" />
+                    Generating...
+                    </>
+                ) : (
+                    <>
+                    <Sparkles className="w-3 h-3" />
+                    Generate with AI
+                    </>
+                )}
+                </button>
+            </div>
             <textarea
-              placeholder="Describe the product..."
-              rows={4}
-              className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 resize-none transition"
-              {...register("description")}
+                placeholder="Describe the product..."
+                rows={4}
+                className="w-full px-3 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 resize-none transition"
+                {...register("description")}
             />
             {errors.description && (
-              <p className="mt-1.5 text-xs text-red-500">
-                {errors.description.message}
-              </p>
+                <p className="mt-1.5 text-xs text-red-500">{errors.description.message}</p>
             )}
-          </div>
+            </div>
 
           {/* SKU & Slug */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

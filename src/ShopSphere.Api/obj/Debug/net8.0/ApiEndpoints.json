@@ -328,6 +328,32 @@
     "Summary": "Chat with AI shopping assistant"
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.AIChatEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAIChatEndpoints\u003Eb__0_1",
+    "RelativePath": "api/ai/generate-description",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Api.Endpoints.GenerateDescriptionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "AI Assistant"
+    ],
+    "EndpointName": "GenerateDescription"
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_3",
     "RelativePath": "api/auth/forgot-password",

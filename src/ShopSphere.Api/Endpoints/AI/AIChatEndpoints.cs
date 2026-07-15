@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.AI;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Infrastructure.AI;
@@ -35,5 +36,34 @@ public static class AIChatEndpoints
         })
         .WithName("AIChat")
         .WithSummary("Chat with AI shopping assistant");
+
+        group.MapPost("/generate-description", async (
+            [FromBody] GenerateDescriptionRequest request,
+            IAIChatService aiService,
+            CancellationToken ct) =>
+        {
+            var description = await aiService.GenerateProductDescriptionAsync(
+                request.ProductName,
+                request.Category,
+                request.Brand,
+                request.ShortInfo,
+                ct);
+
+            return Results.Ok(new ApiResponse<object>
+            {
+                Success = true,
+                Data = new { description },
+                Message = "Description generated"
+            });
+        })
+        .WithName("GenerateDescription");
     }
+
+
 }
+
+public record GenerateDescriptionRequest(
+    string ProductName,
+    string Category,
+    string Brand,
+    string? ShortInfo);

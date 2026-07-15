@@ -1,16 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using OpenAI.Chat;
+using ShopSphere.Application.Interfaces;
 using ShopSphere.Contracts.AI;
 using ShopSphere.Domain.Interfaces;
 using System.Text.Json;
 
 namespace ShopSphere.Infrastructure.AI;
-
-public interface IAIChatService
-{
-    Task<ChatResponse> SendMessageAsync(ChatRequest request, string? userId, CancellationToken ct = default);
-}
 
 public sealed class OpenAIService : IAIChatService
 {
@@ -151,5 +147,54 @@ When suggesting a product, use this exact format at the end of your message:
             .Select(Guid.Parse)
             .Distinct()
             .ToList();
+    }
+
+    public async Task<string> GenerateProductDescriptionAsync(
+    string productName,
+    string category,
+    string brand,
+    string? shortInfo,
+    CancellationToken ct = default)
+    {
+        try
+        {
+            var prompt = $@"Generate a compelling product description for an e-commerce website.
+
+                Product Details:
+                - Name: {productName}
+                - Category: {category}
+                - Brand: {brand}
+                - Additional Info: {shortInfo ?? "N/A"}
+
+                Requirements:
+                - 60-100 words
+                - Highlight 3-4 key features
+                - Persuasive but professional tone
+                - No markdown formatting
+                - No bullet points
+                - Write as one flowing paragraph
+                - Include benefits for the buyer";
+
+            var messages = new List<OpenAI.Chat.ChatMessage>
+        {
+            new SystemChatMessage("You are an expert e-commerce copywriter."),
+            new UserChatMessage(prompt),
+        };
+
+            var completion = await _client.CompleteChatAsync(
+                messages,
+                new ChatCompletionOptions
+                {
+                    Temperature = 0.8f,
+                    MaxOutputTokenCount = 250,
+                });
+
+            return completion.Value.Content[0].Text.Trim();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Description generation failed");
+            return "Failed to generate description. Please write manually.";
+        }
     }
 }
