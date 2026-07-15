@@ -204,3 +204,4 @@ D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\Syste
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\RESPite.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\System.IO.Hashing.dll
 D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\System.IO.Pipelines.dll
+D:\Projects\ShopSphere\tests\ShopSphere.ArchitectureTests\bin\Debug\net8.0\OpenAI.dll

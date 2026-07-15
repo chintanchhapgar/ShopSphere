@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import AIChatbot from "@/components/features/AIChatbot";
 
 const Layout = () => {
   return (
@@ -10,6 +11,9 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+
+      {/* AI Chatbot - Available on all pages */}
+      <AIChatbot />
     </div>
   );
 };

@@ -11,7 +11,7 @@ public static class ReviewEndpoints
         this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/reviews")
-             .WithTags("Rseviews")
+             .WithTags("Reviews")
             .RequireAuthorization();
 
         group.MapPost(

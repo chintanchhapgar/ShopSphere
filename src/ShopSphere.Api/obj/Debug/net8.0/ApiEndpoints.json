@@ -301,6 +301,33 @@
     ]
   },
   {
+    "ContainingType": "ShopSphere.Api.Endpoints.AIChatEndpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapAIChatEndpoints\u003Eb__0_0",
+    "RelativePath": "api/ai/chat",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ShopSphere.Contracts.AI.ChatRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "AI Assistant"
+    ],
+    "EndpointName": "AIChat",
+    "Summary": "Chat with AI shopping assistant"
+  },
+  {
     "ContainingType": "ShopSphere.Api.Endpoints.Authentication.AuthenticationEndpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapAuthenticationEndpoints\u003Eb__0_3",
     "RelativePath": "api/auth/forgot-password",
@@ -1826,7 +1853,7 @@
       }
     ],
     "Tags": [
-      "Rseviews"
+      "Reviews"
     ]
   },
   {
@@ -1851,7 +1878,7 @@
       }
     ],
     "Tags": [
-      "Rseviews"
+      "Reviews"
     ]
   },
   {

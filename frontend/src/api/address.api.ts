@@ -6,7 +6,7 @@ export const addressApi = {
   // Response: { data: [...], success, message }
   getAddresses: async (): Promise<Address[]> => {
     const res = await axiosInstance.get("/addresses");
-    console.log("=== ADDRESSES RAW ===", res.data);
+    //console.log("=== ADDRESSES RAW ===", res.data);
 
     const data = res.data?.data ?? res.data?.value ?? res.data;
 

@@ -17,4 +17,7 @@ public interface IProductRepository : IRepository<Product>
         Product product,
         CancellationToken cancellationToken);
 
+    Task<IReadOnlyList<Product>> GetAllProductsAsync(
+       CancellationToken cancellationToken);
+
 }

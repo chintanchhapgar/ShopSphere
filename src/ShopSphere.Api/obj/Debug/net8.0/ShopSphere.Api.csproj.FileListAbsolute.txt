@@ -240,3 +240,4 @@ D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\Serilog.Sinks.Seq.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\System.Text.Json.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\OpenAI.dll

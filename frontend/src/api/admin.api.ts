@@ -25,14 +25,14 @@ export const adminApi = {
   // GET /api/admin/dashboard
   getDashboard: async (): Promise<DashboardStats> => {
     const res = await axiosInstance.get("/admin/dashboard");
-    console.log("=== DASHBOARD RAW ===", res.data);
+    //console.log("=== DASHBOARD RAW ===", res.data);
     return res.data?.data ?? res.data?.value ?? res.data;
   },
 
   // GET /api/admin/dashboard/sales?days=30
   getSalesAnalytics: async (days: number): Promise<SalesDataItem[]> => {
     const res = await axiosInstance.get("/admin/dashboard/sales", { params: { days } });
-    console.log("=== SALES RAW ===", res.data);
+    //console.log("=== SALES RAW ===", res.data);
 
     const data = res.data?.data ?? res.data?.value ?? res.data;
 

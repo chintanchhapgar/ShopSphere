@@ -55,6 +55,7 @@ builder.Services
     .AddInfrastructure(builder.Configuration)
     .AddJwtAuthentication(builder.Configuration);
 
+
 builder.Services.AddHangfire(configuration =>
 {
     configuration.UseSqlServerStorage(

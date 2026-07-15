@@ -6,7 +6,7 @@ export const reviewApi = {
   // Response: { data: { statistics: {...}, reviews: [...] }, success, message }
   getProductReviews: async (productId: string): Promise<ReviewsResponse> => {
     const res = await axiosInstance.get(`/reviews/${productId}`);
-    console.log("=== REVIEWS RAW ===", res.data);
+    //console.log("=== REVIEWS RAW ===", res.data);
 
     const data = res.data?.data ?? res.data?.value ?? res.data;
 
@@ -31,7 +31,7 @@ export const reviewApi = {
     data: AddReviewRequest
   ): Promise<string> => {
     const res = await axiosInstance.post(`/reviews/${productId}`, data);
-    console.log("=== ADD REVIEW RAW ===", res.data);
+    //console.log("=== ADD REVIEW RAW ===", res.data);
     return res.data?.data ?? res.data?.value ?? "";
   },
 };

@@ -6,7 +6,7 @@ export const wishlistApi = {
   // Response: { data: { items: [...] }, success, message }
   getWishlist: async (): Promise<WishlistItem[]> => {
     const res = await axiosInstance.get("/wishlist");
-    console.log("=== WISHLIST RAW ===", res.data);
+    //console.log("=== WISHLIST RAW ===", res.data);
 
     const data  = res.data?.data ?? res.data?.value ?? res.data;
     const items = data?.items ?? data;

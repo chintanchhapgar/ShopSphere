@@ -11,6 +11,7 @@ using ShopSphere.Application.Interfaces;
 using ShopSphere.Application.Queries;
 using ShopSphere.Application.Services.Interfaces;
 using ShopSphere.Domain.Interfaces;
+using ShopSphere.Infrastructure.AI;
 using ShopSphere.Infrastructure.Authentication;
 using ShopSphere.Infrastructure.BackgroundJobs;
 using ShopSphere.Infrastructure.Caching;
@@ -146,6 +147,7 @@ public static class DependencyInjection
 
         services.AddScoped<ICacheService, RedisCacheService>();
         services.AddScoped<IAuditService, AuditService>();
+        services.AddScoped<IAIChatService, OpenAIService>();
 
         services.AddSingleton<IConnectionMultiplexer>(_ =>
             ConnectionMultiplexer.Connect(

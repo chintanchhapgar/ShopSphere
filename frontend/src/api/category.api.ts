@@ -5,7 +5,7 @@ export const categoryApi = {
   // GET /api/categories
   getAll: async (): Promise<Category[]> => {
     const res = await axiosInstance.get("/categories");
-    console.log("=== CATEGORIES RAW ===", res.data);
+    //console.log("=== CATEGORIES RAW ===", res.data);
     const data = res.data;
     if (Array.isArray(data)) return data;
     if (Array.isArray(data?.data)) return data.data;

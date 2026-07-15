@@ -45,7 +45,7 @@ export const authApi = {
   // Response: { data: { id, email, firstName, lastName, roles: [...] } }
   getMe: async (): Promise<User> => {
     const res = await axiosInstance.get("/auth/me");
-    console.log("=== ME RAW ===", res.data);
+    //console.log("=== ME RAW ===", res.data);
 
     const data = res.data?.data ?? res.data?.value ?? res.data;
 

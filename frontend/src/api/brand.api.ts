@@ -5,7 +5,7 @@ export const brandApi = {
   // GET /api/brands
   getAll: async (): Promise<Brand[]> => {
     const res = await axiosInstance.get("/brands");
-    console.log("=== BRANDS RAW ===", res.data);
+    //console.log("=== BRANDS RAW ===", res.data);
     const data = res.data;
     if (Array.isArray(data)) return data;
     if (Array.isArray(data?.data)) return data.data;

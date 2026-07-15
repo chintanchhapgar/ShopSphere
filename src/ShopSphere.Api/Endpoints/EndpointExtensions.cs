@@ -38,6 +38,7 @@ public static class EndpointExtensions
         app.MapProductSearchEndpoints();
         app.MapAddressEndpoints();
         app.MapDashboardEndpoints();
+        app.MapAIChatEndpoints();
 
         return app;
     }

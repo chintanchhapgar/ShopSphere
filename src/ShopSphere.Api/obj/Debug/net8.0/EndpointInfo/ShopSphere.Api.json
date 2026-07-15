@@ -266,6 +266,30 @@
         }
       }
     },
+    "/api/ai/chat": {
+      "post": {
+        "tags": [
+          "AI Assistant"
+        ],
+        "summary": "Chat with AI shopping assistant",
+        "operationId": "AIChat",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/auth/register": {
       "post": {
         "tags": [
@@ -1681,7 +1705,7 @@
     "/api/reviews/{productId}": {
       "post": {
         "tags": [
-          "Rseviews"
+          "Reviews"
         ],
         "parameters": [
           {
@@ -1712,7 +1736,7 @@
       },
       "get": {
         "tags": [
-          "Rseviews"
+          "Reviews"
         ],
         "parameters": [
           {
@@ -2032,6 +2056,37 @@
         "properties": {
           "isActive": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChatMessage": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChatRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatMessage"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

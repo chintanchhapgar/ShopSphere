@@ -79,4 +79,14 @@ public sealed class ProductRepository
 
         return true;
     }
+
+    public async Task<IReadOnlyList<Product>> GetAllProductsAsync(
+       CancellationToken cancellationToken = default)
+    {
+        return await _context.Products
+            .Include(x => x.Images)
+            .Include(x => x.Category)
+            .Include(x => x.Brand)
+            .ToListAsync(cancellationToken);
+    }
 }

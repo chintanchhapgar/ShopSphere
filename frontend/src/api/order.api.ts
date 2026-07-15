@@ -13,7 +13,7 @@ export const orderApi = {
   // POST /api/orders
   createOrder: async (data: CreateOrderCommand): Promise<any> => {
     const res = await axiosInstance.post("/orders", data);
-    console.log("=== CREATE ORDER RAW ===", res.data);
+    //console.log("=== CREATE ORDER RAW ===", res.data);
     return res.data?.data ?? res.data?.value ?? res.data;
   },
 
@@ -40,14 +40,14 @@ export const orderApi = {
   // POST /api/orders/:orderId/payment → returns paymentId
   initiatePayment: async (orderId: string, data: PaymentRequest): Promise<string> => {
     const res = await axiosInstance.post(`/orders/${orderId}/payment`, data);
-    console.log("=== INITIATE PAYMENT RAW ===", res.data);
+    //console.log("=== INITIATE PAYMENT RAW ===", res.data);
     return res.data?.data ?? res.data?.value ?? "";
   },
 
   // GET /api/orders/:orderId/payment → returns Payment object
   getPayment: async (orderId: string): Promise<Payment> => {
     const res = await axiosInstance.get(`/orders/${orderId}/payment`);
-    console.log("=== GET PAYMENT RAW ===", res.data);
+    //console.log("=== GET PAYMENT RAW ===", res.data);
     return res.data?.data ?? res.data?.value ?? res.data;
   },
 

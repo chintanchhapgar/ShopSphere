@@ -2214,6 +2214,23 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
+      "OpenAI/2.0.0-beta.13": {
+        "type": "package",
+        "dependencies": {
+          "System.ClientModel": "1.1.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1"
+        },
+        "compile": {
+          "lib/net6.0/OpenAI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/OpenAI.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "RESPite/3.0.17": {
         "type": "package",
         "compile": {
@@ -2779,11 +2796,11 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
-      "System.ClientModel/1.0.0": {
+      "System.ClientModel/1.1.0": {
         "type": "package",
         "dependencies": {
           "System.Memory.Data": "1.0.2",
-          "System.Text.Json": "4.7.2"
+          "System.Text.Json": "6.0.9"
         },
         "compile": {
           "lib/net6.0/System.ClientModel.dll": {
@@ -4210,6 +4227,7 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.16",
           "Microsoft.AspNetCore.OpenApi": "8.0.28",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.16",
+          "OpenAI": "2.0.0-beta.13",
           "Serilog.AspNetCore": "10.0.0",
           "Serilog.Enrichers.Environment": "3.0.1",
           "Serilog.Enrichers.Process": "3.0.0",
@@ -4287,6 +4305,7 @@
           "Microsoft.EntityFrameworkCore": "8.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.16",
           "Microsoft.Extensions.Caching.StackExchangeRedis": "10.0.9",
+          "OpenAI": "2.0.0-beta.13",
           "Serilog.AspNetCore": "8.0.3",
           "Serilog.Sinks.Console": "5.0.1",
           "Serilog.Sinks.File": "5.0.0",
@@ -7386,6 +7405,24 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "OpenAI/2.0.0-beta.13": {
+      "sha512": "cTa6eEkQL1CxvC0AMEpJ7CLRB6BqdOpBpm1uPPHfMKcjPFBEdKKvIAT5nqcjY6EvPa05rkpZ3i7gSe7QyuzYHg==",
+      "type": "package",
+      "path": "openai/2.0.0-beta.13",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "OpenAI.png",
+        "README.md",
+        "lib/net6.0/OpenAI.dll",
+        "lib/net6.0/OpenAI.xml",
+        "lib/netstandard2.0/OpenAI.dll",
+        "lib/netstandard2.0/OpenAI.xml",
+        "openai.2.0.0-beta.13.nupkg.sha512",
+        "openai.nuspec"
+      ]
+    },
     "RESPite/3.0.17": {
       "sha512": "68slEMyRTUNLc75DruEDsEohFmFfNwkHLLtwQ46bobF+8Tl+UXMKM1kM87ihhKy6JdAqy1RrvAfvBWeLmcY9Gg==",
       "type": "package",
@@ -8243,10 +8280,10 @@
         "version.txt"
       ]
     },
-    "System.ClientModel/1.0.0": {
-      "sha512": "I3CVkvxeqFYjIVEP59DnjbeoGNfo/+SZrCLpRz2v/g0gpCHaEMPtWSY0s9k/7jR1rAsLNg2z2u1JRB76tPjnIw==",
+    "System.ClientModel/1.1.0": {
+      "sha512": "UocOlCkxLZrG2CKMAAImPcldJTxeesHnHGHwhJ0pNlZEvEXcWKuQvVOER2/NiOkJGRJk978SNdw3j6/7O9H1lg==",
       "type": "package",
-      "path": "system.clientmodel/1.0.0",
+      "path": "system.clientmodel/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8257,7 +8294,7 @@
         "lib/net6.0/System.ClientModel.xml",
         "lib/netstandard2.0/System.ClientModel.dll",
         "lib/netstandard2.0/System.ClientModel.xml",
-        "system.clientmodel.1.0.0.nupkg.sha512",
+        "system.clientmodel.1.1.0.nupkg.sha512",
         "system.clientmodel.nuspec"
       ]
     },
