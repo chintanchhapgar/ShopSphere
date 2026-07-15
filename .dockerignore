@@ -1,14 +1,33 @@
-**/bin/
-**/obj/
-**/.vs/
-**/.idea/
-.git/
+# Build outputs
+**/bin
+**/obj
+**/dist
+**/node_modules
+**/publish
+
+# IDE
+.vs
+.vscode
+.idea
+*.user
+
+# Git
+.git
 .gitignore
 
-README.md
+# Docker
+docker-compose*.yml
+Dockerfile*
+.dockerignore
 
-TestResults/
+# OS
+.DS_Store
+Thumbs.db
 
-node_modules/
+# Logs
+*.log
+logs/
 
-Logs/
+# Env
+.env
+.env.local

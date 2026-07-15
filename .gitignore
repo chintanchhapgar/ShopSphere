@@ -65,3 +65,8 @@ desktop.ini
 # Docker
 # ═══════════════════════════════════════════════════════════════
 docker-compose.override.yml
+
+
+.env
+.env.local
+.env.productio
