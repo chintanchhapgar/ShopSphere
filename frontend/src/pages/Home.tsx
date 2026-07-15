@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth";
 import type { Product, Category, Brand } from "@/types";
 import ProductCard from "@/components/features/ProductCard";
 import Spinner from "@/components/ui/Spinner";
+import { useTranslation } from "react-i18next";
 
 const FEATURES = [
   { icon: Truck,     title: "Free Shipping", desc: "On all orders over ₹500", color: "text-blue-600 bg-blue-50" },
@@ -43,7 +44,7 @@ const getCategoryEmoji = (name: string): string => {
 
 const Home = () => {
   const { isAuthenticated } = useAuth();
-
+  const { t } = useTranslation();
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [categories, setCategories]             = useState<Category[]>([]);
   const [brands, setBrands]                     = useState<Brand[]>([]);
@@ -100,15 +101,14 @@ const Home = () => {
             <span className="text-primary-200">Live Better</span>
           </h1>
           <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
-            Discover thousands of products across every category, with
-            unbeatable prices and fast delivery.
+            {t("home.hero_subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/products"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 font-semibold rounded-xl hover:bg-primary-50 transition text-lg shadow-lg"
             >
-              Shop Now <ArrowRight className="w-5 h-5" />
+              {t("home.shop_now")} <ArrowRight className="w-5 h-5" />
             </Link>
             {!isAuthenticated && (
               <Link

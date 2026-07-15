@@ -1,0 +1,36 @@
+{
+  "common": {
+    "search": "શોધો",
+    "cart": "કાર્ટ",
+    "login": "લોગિન",
+    "register": "નોંધણી",
+    "logout": "લોગઆઉટ",
+    "profile": "પ્રોફાઇલ",
+    "orders": "ઓર્ડર",
+    "wishlist": "વિશલિસ્ટ",
+    "products": "ઉત્પાદનો",
+    "home": "હોમ",
+    "checkout": "ચેકઆઉટ",
+    "add_to_cart": "કાર્ટમાં ઉમેરો",
+    "buy_now": "હમણાં ખરીદો",
+    "loading": "લોડ થઈ રહ્યું છે..."
+  },
+  "nav": {
+    "products": "ઉત્પાદનો",
+    "cart": "કાર્ટ",
+    "my_profile": "મારી પ્રોફાઇલ",
+    "my_orders": "મારા ઓર્ડર",
+    "wishlist": "વિશલિસ્ટ",
+    "logout": "લોગઆઉટ",
+    "sign_up": "સાઇન અપ",
+    "login": "લોગિન"
+  },
+  "home": {
+    "hero_title": "સ્માર્ટ ખરીદો, વધુ સારું જીવો",
+    "hero_subtitle": "દરેક શ્રેણીમાં હજારો ઉત્પાદનો શોધો.",
+    "shop_now": "હમણાં ખરીદો",
+    "shop_by_category": "શ્રેણી પ્રમાણે ખરીદો",
+    "top_brands": "ટોચની બ્રાન્ડ્સ",
+    "featured_products": "વિશેષ ઉત્પાદનો"
+  }
+}

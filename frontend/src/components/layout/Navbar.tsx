@@ -28,6 +28,8 @@ import { APP_NAME } from "@/utils/constants";
 import { waitForDebugger } from "inspector";
 import { useTheme } from "@/hooks/useTheme";
 import NotificationsDropdown from "@/components/features/NotificationsDropdown";
+import LanguageSwitcher from "@/components/features/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
@@ -37,6 +39,7 @@ const Navbar = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [searchValue, setSearchValue]       = useState("");
   const { theme, toggleTheme } = useTheme();
+  const { t } = useTranslation();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,6 +120,8 @@ const adminMenuItems = [
             >
               Products
             </Link>
+
+            <LanguageSwitcher />
 
             <button
               onClick={toggleTheme}
@@ -348,7 +353,7 @@ const adminMenuItems = [
               onClick={() => setIsMobileOpen(false)}
             >
               <Package className="w-4 h-4 text-gray-400" />
-              Products
+              {t("nav.products")}
             </Link>
 
             <Link

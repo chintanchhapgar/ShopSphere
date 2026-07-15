@@ -162,8 +162,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAQwDkAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:30:28.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T13:30:28.829Z"
             },
             {
               "$type": "Document",
@@ -175,8 +174,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:28:56.053Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T13:28:56.053Z"
             },
             {
               "$type": "Document",
@@ -188,8 +186,7 @@
               "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAQwDYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T12:58:43.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T12:58:43.313Z"
             },
             {
               "$type": "Document",
@@ -201,8 +198,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T12:41:32.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T12:41:32.991Z"
             },
             {
               "$type": "Document",
@@ -227,8 +223,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\AI\\OpenAIService.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAAAmwMEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:00:55.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:00:55.876Z"
             },
             {
               "$type": "Document",
@@ -240,8 +235,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T12:45:00.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T12:45:00.677Z"
             },
             {
               "$type": "Document",
@@ -253,8 +247,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\PushNotification\\PushNotificationHub.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:08:15.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T13:08:15.919Z"
             },
             {
               "$type": "Document",
@@ -266,8 +259,7 @@
               "RelativeToolTip": "tests\\ShopSphere.ApplicationTests\\Features\\Orders\\CreateOrderCommandHandlerTests.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAADYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:25:55.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T13:25:55.111Z"
             },
             {
               "$type": "Document",
@@ -279,8 +271,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\PushNotification\\PushNotificationService.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwA4AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:08:42.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T13:08:42.03Z"
             },
             {
               "$type": "Document",
@@ -292,8 +283,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\OrderRepository.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAAAswFEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:58:25.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:58:25.847Z"
             },
             {
               "$type": "Document",
@@ -305,8 +295,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:54:49.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:54:49.162Z"
             },
             {
               "$type": "Document",
@@ -318,8 +307,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductRepository.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAkwFIAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:54:06.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:54:06.157Z"
             },
             {
               "$type": "Document",
@@ -331,8 +319,7 @@
               "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:52:04.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:52:04.95Z"
             },
             {
               "$type": "Document",
@@ -344,8 +331,7 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\Repository.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAASwCgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:52:14.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:52:14.163Z"
             },
             {
               "$type": "Document",
@@ -357,8 +343,7 @@
               "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:16:07.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:16:07.204Z"
             }
           ]
         }
