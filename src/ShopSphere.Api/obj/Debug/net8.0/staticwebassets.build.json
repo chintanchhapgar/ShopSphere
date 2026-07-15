@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sOhdrdVENnC/hJZzw5+lpqObiT5z9t9SlsXa/bLGKhc=",
+  "Hash": "HXQpcXh6nbtfO6JVg5wF6sGvmGdw3eYaVpumNBR0vD8=",
   "Source": "ShopSphere.Api",
   "BasePath": "_content/ShopSphere.Api",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\wwwroot\\uploads\\664ecfa4814f43088969c50e4cbf8c8b.webp",
+      "SourceId": "ShopSphere.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\wwwroot\\",
+      "BasePath": "_content/ShopSphere.Api",
+      "RelativePath": "uploads/664ecfa4814f43088969c50e4cbf8c8b.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\664ecfa4814f43088969c50e4cbf8c8b.webp"
+    },
     {
       "Identity": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\wwwroot\\uploads\\8ca44523975948b7af6928eecd230e60.jpg",
       "SourceId": "ShopSphere.Api",

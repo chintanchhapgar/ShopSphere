@@ -12,11 +12,18 @@ import {
   LayoutDashboard,
   Heart,
   Settings,
+  FolderTree,
+  Award,
+  ShoppingBag,
+  MapPin,
+  Tag,
+  Warehouse,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
 import { cn } from "@/utils/cn";
 import { APP_NAME } from "@/utils/constants";
+import { waitForDebugger } from "inspector";
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
@@ -31,12 +38,14 @@ const Navbar = () => {
     if (searchValue.trim()) {
       navigate(`/products?search=${encodeURIComponent(searchValue)}`);
       setSearchValue("");
+      setIsMobileOpen(false);
     }
   };
 
   const handleLogout = () => {
     logout();
     setIsUserMenuOpen(false);
+    setIsMobileOpen(false);
     navigate("/");
   };
 
@@ -44,8 +53,26 @@ const Navbar = () => {
   const userInitial  = user?.firstName?.charAt(0).toUpperCase() ?? "U";
   const userFullName = user ? `${user.firstName} ${user.lastName}`.trim() : "";
   const userDisplay  = user?.firstName ?? "";
-  const isAdmin      = user?.role === "Admin";
-console.log(user);
+  const isAdmin      = user?.role === "Admin" || user?.roles?.includes("Admin");
+
+  // ─── Menu Items ───────────────────────────────────────────────────────────
+  const customerMenuItems = [
+    { to: "/profile",  label: "My Profile", icon: User },
+    { to: "/orders",   label: "My Orders",  icon: Package },
+    { to: "/wishlist", label: "Wishlist",    icon: Heart },
+  ];
+
+const adminMenuItems = [
+  { to: "/admin/dashboard",  label: "Dashboard",       icon: LayoutDashboard },
+  { to: "/admin/orders",     label: "Manage Orders",   icon: ShoppingBag },
+  { to: "/admin/products",   label: "Manage Products", icon: Settings },
+  { to: "/admin/inventory",  label: "Manage Inventory",       icon: Warehouse },
+  { to: "/admin/categories", label: "Manage Categories",      icon: FolderTree },
+  { to: "/admin/brands",     label: "Manage Brands",          icon: Award },
+  { to: "/admin/coupons",    label: "Manage Coupons",         icon: Tag },         
+  { to: "/admin/reviews",    label: "Pending Reviews", icon: MessageSquare },
+];
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +113,7 @@ console.log(user);
               Products
             </Link>
 
-            {/* Cart Icon */}
+            {/* Cart */}
             <Link
               to="/cart"
               className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition"
@@ -98,6 +125,16 @@ console.log(user);
                 </span>
               )}
             </Link>
+
+            {/* Wishlist */}
+            {isAuthenticated && (
+              <Link
+                to="/wishlist"
+                className="p-2 text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-lg transition"
+              >
+                <Heart className="w-5 h-5" />
+              </Link>
+            )}
 
             {/* Auth Section */}
             {isAuthenticated ? (
@@ -114,14 +151,14 @@ console.log(user);
                   </span>
                 </button>
 
-                {/* ── Desktop Dropdown Menu ───────────────────────────────── */}
+                {/* ── Desktop Dropdown ─────────────────────────────────────── */}
                 {isUserMenuOpen && (
                   <>
                     <div
                       className="fixed inset-0 z-10"
                       onClick={() => setIsUserMenuOpen(false)}
                     />
-                    <div className="absolute right-0 top-full mt-1 w-56 bg-white rounded-xl border border-gray-100 shadow-lg py-1 z-20">
+                    <div className="absolute right-0 top-full mt-1 w-56 bg-white rounded-xl border border-gray-100 shadow-lg py-1 z-20 max-h-[80vh] overflow-y-auto">
 
                       {/* User Info */}
                       <div className="px-4 py-3 border-b border-gray-50">
@@ -143,23 +180,24 @@ console.log(user);
                         </span>
                       </div>
 
-                      {/* Customer Menu Items */}
-                      <Link
-                        to="/profile"
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <User className="w-4 h-4 text-gray-400" />
-                        My Profile
-                      </Link>
-                      <Link
-                        to="/orders"
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Package className="w-4 h-4 text-gray-400" />
-                        My Orders
-                      </Link>
+                      {/* Customer Menu */}
+                      {customerMenuItems.map(({ to, label, icon: Icon }) => (
+                        <Link
+                          key={to}
+                          to={to}
+                          className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
+                          onClick={() => setIsUserMenuOpen(false)}
+                        >
+                          <Icon className="w-4 h-4 text-gray-400" />
+                          {label}
+                          {label === "My Cart" && totalItems > 0 && (
+                            <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
+                              {totalItems}
+                            </span>
+                          )}
+                        </Link>
+                      ))}
+
                       <Link
                         to="/cart"
                         className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
@@ -173,16 +211,8 @@ console.log(user);
                           </span>
                         )}
                       </Link>
-                      <Link
-                        to="/wishlist"
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Heart className="w-4 h-4 text-gray-400" />
-                        Wishlist
-                      </Link>
 
-                      {/* ── Admin Section ──────────────────────────────────── */}
+                      {/* Admin Menu */}
                       {isAdmin && (
                         <>
                           <hr className="my-1 border-gray-100" />
@@ -191,43 +221,22 @@ console.log(user);
                               Admin
                             </p>
                           </div>
-                          <Link
-                            to="/admin/dashboard"
-                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                            onClick={() => setIsUserMenuOpen(false)}
-                          >
-                            <LayoutDashboard className="w-4 h-4 text-gray-400" />
-                            Dashboard
-                          </Link>
-                          <Link
-                            to="/admin/reviews"
-                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                            onClick={() => setIsUserMenuOpen(false)}
-                          >
-                            <MessageSquare className="w-4 h-4 text-gray-400" />
-                            Pending Reviews
-                          </Link>
-                          <Link
-                            to="/admin/orders"
-                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                            onClick={() => setIsUserMenuOpen(false)}
-                          >
-                            <Package className="w-4 h-4 text-gray-400" />
-                            Manage Orders
-                          </Link>
-                          <Link
-                            to="/admin/products"
-                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
-                            onClick={() => setIsUserMenuOpen(false)}
-                          >
-                            <Settings className="w-4 h-4 text-gray-400" />
-                            Manage Products
-                          </Link>
+                          {adminMenuItems.map(({ to, label, icon: Icon }) => (
+                            <Link
+                              key={to}
+                              to={to}
+                              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
+                              onClick={() => setIsUserMenuOpen(false)}
+                            >
+                              <Icon className="w-4 h-4 text-gray-400" />
+                              {label}
+                            </Link>
+                          ))}
                         </>
                       )}
 
+                      {/* Logout */}
                       <hr className="my-1 border-gray-100" />
-
                       <button
                         onClick={handleLogout}
                         className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 w-full transition"
@@ -266,9 +275,11 @@ console.log(user);
           </button>
         </div>
 
-        {/* ── Mobile Menu ───────────────────────────────────────────────────── */}
+        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* ── Mobile Menu ──────────────────────────────────────────────────── */}
+        {/* ══════════════════════════════════════════════════════════════════ */}
         {isMobileOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 space-y-1">
+          <div className="md:hidden py-4 border-t border-gray-100 space-y-1 max-h-[80vh] overflow-y-auto">
 
             {/* Mobile Search */}
             <form onSubmit={handleSearch} className="mb-3">
@@ -295,9 +306,7 @@ console.log(user);
                     {userFullName}
                   </p>
                   <div className="flex items-center gap-2">
-                    <p className="text-xs text-gray-500 truncate">
-                      {user?.email}
-                    </p>
+                    <p className="text-xs text-gray-500 truncate">{user?.email}</p>
                     <span
                       className={cn(
                         "px-1.5 py-0.5 text-xs rounded-full font-medium shrink-0",
@@ -313,7 +322,7 @@ console.log(user);
               </div>
             )}
 
-            {/* Mobile Nav Links */}
+            {/* ── Mobile Nav Links ─────────────────────────────────────────── */}
             <Link
               to="/products"
               className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
@@ -341,32 +350,29 @@ console.log(user);
 
             {isAuthenticated ? (
               <>
+                {/* Customer Links */}
+                {customerMenuItems.map(({ to, label, icon: Icon }) => (
+                  <Link
+                    key={to}
+                    to={to}
+                    className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                    onClick={() => setIsMobileOpen(false)}
+                  >
+                    <Icon className="w-4 h-4 text-gray-400" />
+                    {label}
+                  </Link>
+                ))}
+
                 <Link
-                  to="/profile"
+                  to="/addresses/new"
                   className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
                   onClick={() => setIsMobileOpen(false)}
                 >
-                  <User className="w-4 h-4 text-gray-400" />
-                  My Profile
-                </Link>
-                <Link
-                  to="/orders"
-                  className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  <Package className="w-4 h-4 text-gray-400" />
-                  My Orders
-                </Link>
-                <Link
-                  to="/wishlist"
-                  className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  <Heart className="w-4 h-4 text-gray-400" />
-                  Wishlist
+                  <MapPin className="w-4 h-4 text-gray-400" />
+                  Addresses
                 </Link>
 
-                {/* ── Admin Section (Mobile) ───────────────────────────────── */}
+                {/* ── Admin Section (Mobile) ────────────────────────────────── */}
                 {isAdmin && (
                   <>
                     <hr className="my-2 border-gray-100" />
@@ -375,47 +381,24 @@ console.log(user);
                         Admin Panel
                       </p>
                     </div>
-                    <Link
-                      to="/admin/dashboard"
-                      className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      <LayoutDashboard className="w-4 h-4 text-gray-400" />
-                      Dashboard
-                    </Link>
-                    <Link
-                      to="/admin/reviews"
-                      className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      <MessageSquare className="w-4 h-4 text-gray-400" />
-                      Pending Reviews
-                    </Link>
-                    <Link
-                      to="/admin/orders"
-                      className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      <Package className="w-4 h-4 text-gray-400" />
-                      Manage Orders
-                    </Link>
-                    <Link
-                      to="/admin/products"
-                      className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      <Settings className="w-4 h-4 text-gray-400" />
-                      Manage Products
-                    </Link>
+                    {adminMenuItems.map(({ to, label, icon: Icon }) => (
+                      <Link
+                        key={to}
+                        to={to}
+                        className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                        onClick={() => setIsMobileOpen(false)}
+                      >
+                        <Icon className="w-4 h-4 text-gray-400" />
+                        {label}
+                      </Link>
+                    ))}
                   </>
                 )}
 
+                {/* Logout */}
                 <hr className="border-gray-100 my-1" />
                 <button
-                  onClick={() => {
-                    handleLogout();
-                    setIsMobileOpen(false);
-                  }}
+                  onClick={handleLogout}
                   className="flex items-center gap-2 w-full px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition"
                 >
                   <LogOut className="w-4 h-4" />

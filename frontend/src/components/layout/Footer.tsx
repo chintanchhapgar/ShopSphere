@@ -22,24 +22,26 @@ const Footer = () => {
               title: "Shop",
               links: [
                 { label: "All Products", to: "/products" },
-                { label: "New Arrivals", to: "/products?sort=-createdAt" },
-                { label: "Top Rated", to: "/products?sort=-rating" },
+                { label: "New Arrivals", to: "/products?sortBy=0" },
+                { label: "Top Rated",    to: "/products?sortBy=5" },
               ],
             },
             {
               title: "Account",
               links: [
-                { label: "Login", to: "/login" },
-                { label: "Register", to: "/register" },
-                { label: "My Orders", to: "/orders" },
+                { label: "Login",      to: "/login" },
+                { label: "Register",   to: "/register" },
+                { label: "My Orders",  to: "/orders" },
+                { label: "Wishlist",   to: "/wishlist" },
+                { label: "My Profile", to: "/profile" },
               ],
             },
             {
               title: "Support",
               links: [
-                { label: "FAQ", to: "/faq" },
-                { label: "Contact", to: "/contact" },
-                { label: "Returns", to: "/returns" },
+                { label: "FAQ",            to: "/faq" },
+                { label: "Contact Us",     to: "/contact" },
+                { label: "Returns Policy", to: "/returns" },
               ],
             },
           ].map((section) => (
@@ -48,10 +50,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      to={link.to}
-                      className="text-sm hover:text-white transition"
-                    >
+                    <Link to={link.to} className="text-sm hover:text-white transition">
                       {link.label}
                     </Link>
                   </li>

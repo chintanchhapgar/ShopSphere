@@ -16,11 +16,24 @@ import Wishlist from "@/pages/Wishlist";
 import Profile from "@/pages/Profile";
 import AddressForm from "@/pages/AddressForm";
 import VerifyEmail from "@/pages/VerifyEmail";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
 import NotFound from "@/pages/NotFound";
 
 import AdminDashboard from "@/pages/admin/AdminDashboard";
 import AdminOrders from "@/pages/admin/AdminOrders";
 import AdminReviews from "@/pages/admin/AdminReviews";
+import AdminProducts from "@/pages/admin/AdminProducts";
+import AdminProductForm from "@/pages/admin/AdminProductForm";
+import AdminProductImages from "@/pages/admin/AdminProductImages";
+import AdminCategories from "@/pages/admin/AdminCategories";
+import AdminBrands from "@/pages/admin/AdminBrands";
+import AdminCoupons from "@/pages/admin/AdminCoupons";
+import AdminInventory from "@/pages/admin/AdminInventory";
+
+import FAQ from "@/pages/FAQ";
+import Contact from "@/pages/Contact";
+import Returns from "@/pages/Returns";
 
 const App = () => {
   return (
@@ -33,6 +46,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
         {/* Protected */}
         <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
@@ -49,6 +64,19 @@ const App = () => {
         <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
         <Route path="/admin/orders" element={<ProtectedRoute><AdminOrders /></ProtectedRoute>} />
         <Route path="/admin/reviews" element={<ProtectedRoute><AdminReviews /></ProtectedRoute>} />
+        <Route path="/admin/products" element={<ProtectedRoute><AdminProducts /></ProtectedRoute>} />
+        <Route path="/admin/products/new" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
+        <Route path="/admin/products/:id/edit" element={<ProtectedRoute><AdminProductForm /></ProtectedRoute>} />
+        <Route path="/admin/products/:id/images" element={<ProtectedRoute><AdminProductImages /></ProtectedRoute>} />
+        <Route path="/admin/categories" element={<ProtectedRoute><AdminCategories /></ProtectedRoute>} />
+        <Route path="/admin/brands" element={<ProtectedRoute><AdminBrands /></ProtectedRoute>} />
+        <Route path="/admin/coupons" element={<ProtectedRoute><AdminCoupons /></ProtectedRoute>} />
+        <Route path="/admin/inventory" element={<ProtectedRoute><AdminInventory /></ProtectedRoute>} />
+        
+        // Inside public routes:
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/returns" element={<Returns />} />
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />

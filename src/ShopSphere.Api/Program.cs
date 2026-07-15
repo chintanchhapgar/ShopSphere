@@ -257,7 +257,7 @@ RecurringJob.AddOrUpdate<CancelExpiredOrdersJob>(
 RecurringJob.AddOrUpdate<CompleteDeliveredOrdersJob>(
     "complete-delivered-orders",
     job => job.ExecuteAsync(),
-    Cron.Daily);
+    Cron.Minutely);
 
 app.MapEndpoints();
 

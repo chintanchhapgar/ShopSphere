@@ -654,7 +654,8 @@ export const AdminStatusTransitions: Record<string, string[]> = {
   Confirmed:  ["Processing", "Cancelled"],
   Processing: ["Shipped", "Cancelled"],
   Shipped:    ["Delivered"],
-  Delivered:  ["Completed"],
+  Delivered:  [],
   Cancelled:  [],
   Completed:  [],
 };
+

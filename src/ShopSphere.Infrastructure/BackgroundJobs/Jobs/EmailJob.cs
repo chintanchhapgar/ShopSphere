@@ -205,7 +205,7 @@ public sealed class EmailJob
         }
 
         var resetLink =
-            $"https://localhost:7065/reset-password?email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(token)}";
+            $"http://localhost:3000/reset-password?email={Uri.EscapeDataString(user.Email)}&token={Uri.EscapeDataString(token)}";
 
         var body =
             await _templateRenderer.RenderAsync(
@@ -238,7 +238,7 @@ public sealed class EmailJob
         }
 
         var verifyLink =
-            $"http://localhost:5173/verify-email" +
+            $"http://localhost:3000/verify-email" +
             $"?email={Uri.EscapeDataString(user.Email)}" +
             $"&token={Uri.EscapeDataString(token)}";
 
