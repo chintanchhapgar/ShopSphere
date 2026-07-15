@@ -18,12 +18,15 @@ import {
   MapPin,
   Tag,
   Warehouse,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
 import { cn } from "@/utils/cn";
 import { APP_NAME } from "@/utils/constants";
 import { waitForDebugger } from "inspector";
+import { useTheme } from "@/hooks/useTheme";
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
@@ -32,6 +35,7 @@ const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen]     = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [searchValue, setSearchValue]       = useState("");
+  const { theme, toggleTheme } = useTheme();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,7 +78,7 @@ const adminMenuItems = [
 ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
@@ -112,6 +116,18 @@ const adminMenuItems = [
             >
               Products
             </Link>
+
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
+              title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+            >
+              {theme === "light" ? (
+                <Moon className="w-5 h-5" />
+              ) : (
+                <Sun className="w-5 h-5" />
+              )}
+            </button>
 
             {/* Cart */}
             <Link
