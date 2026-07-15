@@ -127,7 +127,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Forms.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Server.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Components.Web.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cors.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -191,7 +190,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.Session.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.SignalR.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
@@ -211,7 +209,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\M
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.Features.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
@@ -562,3 +559,6 @@ D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\System
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\FluentAssertions.dll
 D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\OpenAI.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+D:\Projects\ShopSphere\tests\ShopSphere.IntegrationTests\bin\Debug\net8.0\Microsoft.Extensions.Features.dll

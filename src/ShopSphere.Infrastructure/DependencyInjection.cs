@@ -22,6 +22,7 @@ using ShopSphere.Infrastructure.Payments;
 using ShopSphere.Infrastructure.Persistence;
 using ShopSphere.Infrastructure.Persistence.Interceptors;
 using ShopSphere.Infrastructure.Persistence.Repositories;
+using ShopSphere.Infrastructure.PushNotification;
 using ShopSphere.Infrastructure.Queries;
 using ShopSphere.Infrastructure.Services;
 using ShopSphere.Infrastructure.Storage;
@@ -148,6 +149,7 @@ public static class DependencyInjection
         services.AddScoped<ICacheService, RedisCacheService>();
         services.AddScoped<IAuditService, AuditService>();
         services.AddScoped<IAIChatService, OpenAIService>();
+        services.AddScoped<IPushNotificationService, PushNotificationService>();
 
         services.AddSingleton<IConnectionMultiplexer>(_ =>
             ConnectionMultiplexer.Connect(

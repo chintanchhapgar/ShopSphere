@@ -241,3 +241,6 @@ D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\System.Text.Encodings
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\System.Text.Json.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\OpenAI.dll
+D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+D:\Projects\ShopSphere\src\ShopSphere.Api\bin\Debug\net8.0\Microsoft.Extensions.Features.dll

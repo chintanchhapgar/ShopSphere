@@ -24,7 +24,7 @@ public sealed class CreateOrderCommandHandler
     private readonly IAddressRepository _addressRepository;
     private readonly IAuditService _auditService;
     private readonly ILogger<CreateOrderCommandHandler> _logger;
-
+    private readonly IPushNotificationService _pushNotificationService;
     public CreateOrderCommandHandler(
     ICartRepository cartRepository,
     IInventoryRepository inventoryRepository,
@@ -35,7 +35,8 @@ public sealed class CreateOrderCommandHandler
     INotificationService notificationService,
     IBackgroundJobService backgroundJobs,
     IAuditService auditService,
-    ILogger<CreateOrderCommandHandler> logger
+    ILogger<CreateOrderCommandHandler> logger,
+    IPushNotificationService pushNotificationService
     )
     {
         _cartRepository = cartRepository;
@@ -48,6 +49,7 @@ public sealed class CreateOrderCommandHandler
         _backgroundJobs = backgroundJobs;
         _auditService = auditService;
         _logger = logger;
+        _pushNotificationService = pushNotificationService;
     }
 
     public async Task<Result<CreateOrderResponse>> Handle(
@@ -206,6 +208,19 @@ public sealed class CreateOrderCommandHandler
         _logger.LogInformation(
             "Order confirmation email queued for Order {OrderNumber}",
             order.OrderNumber);
+
+        // Notify customer
+        await _pushNotificationService.NotifyUserAsync(
+            order.UserId.ToString(),
+            "Order Placed! 🎉",
+            $"Your order {orderNumber} has been placed successfully.",
+            "success");
+
+        // Notify all admins
+        await _pushNotificationService.NotifyAdminsAsync(
+            "New Order Received",
+            $"Order {orderNumber} for ₹{order.TotalAmount:N0}",
+            "info");
 
         return Result<CreateOrderResponse>.Success(
             new CreateOrderResponse(

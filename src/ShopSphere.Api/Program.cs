@@ -12,15 +12,18 @@ using ShopSphere.Api.Middlewares;
 using ShopSphere.Application;
 using ShopSphere.Contracts.Common;
 using ShopSphere.Infrastructure;
+using ShopSphere.Infrastructure.BackgroundJobs;
+using ShopSphere.Infrastructure.BackgroundJobs.Jobs;
 using ShopSphere.Infrastructure.Email.Models;
 using ShopSphere.Infrastructure.Email.Settings;
 using ShopSphere.Infrastructure.Identity;
 using ShopSphere.Infrastructure.Persistence;
+using ShopSphere.Infrastructure.PushNotification;
 using System.Threading.RateLimiting;
-using ShopSphere.Infrastructure.BackgroundJobs;
-using ShopSphere.Infrastructure.BackgroundJobs.Jobs;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSignalR();
 
 builder.Host.UseSerilog((context, services, configuration) =>
 {
@@ -249,6 +252,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.UseHangfireDashboard("/hangfire");
+
+app.MapHub<PushNotificationHub>("/hubs/notifications");
 
 RecurringJob.AddOrUpdate<CancelExpiredOrdersJob>(
     "cancel-expired-orders",

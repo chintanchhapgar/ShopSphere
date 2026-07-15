@@ -27,6 +27,7 @@ import { cn } from "@/utils/cn";
 import { APP_NAME } from "@/utils/constants";
 import { waitForDebugger } from "inspector";
 import { useTheme } from "@/hooks/useTheme";
+import NotificationsDropdown from "@/components/features/NotificationsDropdown";
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
@@ -128,6 +129,8 @@ const adminMenuItems = [
                 <Sun className="w-5 h-5" />
               )}
             </button>
+
+            <NotificationsDropdown />
 
             {/* Cart */}
             <Link
