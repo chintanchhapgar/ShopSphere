@@ -26,6 +26,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
 import { useTheme } from "@/hooks/useTheme";
 import { useCompare } from "@/hooks/useCompare";
+import { useClickOutside } from "@/hooks/useClickOutside";
 import { cn } from "@/utils/cn";
 import { APP_NAME } from "@/utils/constants";
 import NotificationsDropdown from "@/components/features/NotificationsDropdown";
@@ -44,6 +45,17 @@ const Navbar = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [searchValue, setSearchValue]       = useState("");
 
+  // ✅ Click outside refs
+  const userMenuRef = useClickOutside<HTMLDivElement>(
+    () => setIsUserMenuOpen(false),
+    isUserMenuOpen
+  );
+
+  const mobileMenuRef = useClickOutside<HTMLDivElement>(
+    () => setIsMobileOpen(false),
+    isMobileOpen
+  );
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue.trim()) {
@@ -60,13 +72,11 @@ const Navbar = () => {
     navigate("/");
   };
 
-  // ─── Helpers ──────────────────────────────────────────────────────────────
   const userInitial  = user?.firstName?.charAt(0).toUpperCase() ?? "U";
   const userFullName = user ? `${user.firstName} ${user.lastName}`.trim() : "";
   const userDisplay  = user?.firstName ?? "";
   const isAdmin      = user?.role === "Admin" || user?.roles?.includes("Admin");
 
-  // ─── Menu Items ───────────────────────────────────────────────────────────
   const customerMenuItems = [
     { to: "/profile",  label: "My Profile", icon: User },
     { to: "/orders",   label: "My Orders",  icon: Package },
@@ -89,7 +99,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          {/* ── Logo ─────────────────────────────────────────────────────── */}
+          {/* Logo */}
           <Link
             to="/"
             className="flex items-center gap-2 text-primary-600 font-bold text-xl shrink-0"
@@ -98,11 +108,8 @@ const Navbar = () => {
             <span>{APP_NAME}</span>
           </Link>
 
-          {/* ── Search Bar Desktop ────────────────────────────────────────── */}
-          <form
-            onSubmit={handleSearch}
-            className="hidden md:flex flex-1 max-w-md mx-8"
-          >
+          {/* Search Bar Desktop */}
+          <form onSubmit={handleSearch} className="hidden md:flex flex-1 max-w-md mx-8">
             <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
@@ -115,7 +122,7 @@ const Navbar = () => {
             </div>
           </form>
 
-          {/* ── Desktop Nav ───────────────────────────────────────────────── */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             <Link
               to="/products"
@@ -124,26 +131,18 @@ const Navbar = () => {
               {t("nav.products", "Products")}
             </Link>
 
-            {/* Language Switcher */}
             <LanguageSwitcher />
 
-            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
               title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
             >
-              {theme === "light" ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
+              {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
 
-            {/* Notifications */}
             <NotificationsDropdown />
 
-            {/* ── Compare Products ─────────────────────────────────────────── */}
             <Link
               to="/compare"
               className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
@@ -157,7 +156,6 @@ const Navbar = () => {
               )}
             </Link>
 
-            {/* Cart */}
             <Link
               to="/cart"
               className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
@@ -170,7 +168,6 @@ const Navbar = () => {
               )}
             </Link>
 
-            {/* Wishlist */}
             {isAuthenticated && (
               <Link
                 to="/wishlist"
@@ -180,9 +177,9 @@ const Navbar = () => {
               </Link>
             )}
 
-            {/* Auth Section */}
+            {/* User Menu with Click Outside */}
             {isAuthenticated ? (
-              <div className="relative ml-1">
+              <div ref={userMenuRef} className="relative ml-1">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
@@ -195,112 +192,98 @@ const Navbar = () => {
                   </span>
                 </button>
 
-                {/* ── Desktop Dropdown ─────────────────────────────────────── */}
                 {isUserMenuOpen && (
-                  <>
-                    <div
-                      className="fixed inset-0 z-10"
-                      onClick={() => setIsUserMenuOpen(false)}
-                    />
-                    <div className="absolute right-0 top-full mt-1 w-56 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg py-1 z-20 max-h-[80vh] overflow-y-auto">
-
-                      {/* User Info */}
-                      <div className="px-4 py-3 border-b border-gray-50 dark:border-gray-700">
-                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 truncate">
-                          {userFullName}
-                        </p>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                          {user?.email}
-                        </p>
-                        <span
-                          className={cn(
-                            "inline-block mt-1 px-2 py-0.5 text-xs rounded-full font-medium",
-                            isAdmin
-                              ? "bg-red-50 text-red-700"
-                              : "bg-primary-50 text-primary-700"
-                          )}
-                        >
-                          {user?.role}
-                        </span>
-                      </div>
-
-                      {/* Customer Menu */}
-                      {customerMenuItems.map(({ to, label, icon: Icon }) => (
-                        <Link
-                          key={to}
-                          to={to}
-                          className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
-                          onClick={() => setIsUserMenuOpen(false)}
-                        >
-                          <Icon className="w-4 h-4 text-gray-400" />
-                          {label}
-                        </Link>
-                      ))}
-
-                      {/* My Cart */}
-                      <Link
-                        to="/cart"
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <ShoppingCart className="w-4 h-4 text-gray-400" />
-                        My Cart
-                        {totalItems > 0 && (
-                          <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
-                            {totalItems}
-                          </span>
+                  <div className="absolute right-0 top-full mt-1 w-56 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg py-1 z-20 max-h-[80vh] overflow-y-auto animate-fadeIn">
+                    <div className="px-4 py-3 border-b border-gray-50 dark:border-gray-700">
+                      <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 truncate">
+                        {userFullName}
+                      </p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                        {user?.email}
+                      </p>
+                      <span
+                        className={cn(
+                          "inline-block mt-1 px-2 py-0.5 text-xs rounded-full font-medium",
+                          isAdmin
+                            ? "bg-red-50 text-red-700"
+                            : "bg-primary-50 text-primary-700"
                         )}
-                      </Link>
-
-                      {/* Compare */}
-                      <Link
-                        to="/compare"
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
-                        onClick={() => setIsUserMenuOpen(false)}
                       >
-                        <GitCompare className="w-4 h-4 text-gray-400" />
-                        Compare Products
-                        {compareCount > 0 && (
-                          <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
-                            {compareCount}
-                          </span>
-                        )}
-                      </Link>
-
-                      {/* Admin Menu */}
-                      {isAdmin && (
-                        <>
-                          <hr className="my-1 border-gray-100 dark:border-gray-700" />
-                          <div className="px-4 py-1">
-                            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                              Admin
-                            </p>
-                          </div>
-                          {adminMenuItems.map(({ to, label, icon: Icon }) => (
-                            <Link
-                              key={to}
-                              to={to}
-                              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
-                              onClick={() => setIsUserMenuOpen(false)}
-                            >
-                              <Icon className="w-4 h-4 text-gray-400" />
-                              {label}
-                            </Link>
-                          ))}
-                        </>
-                      )}
-
-                      {/* Logout */}
-                      <hr className="my-1 border-gray-100 dark:border-gray-700" />
-                      <button
-                        onClick={handleLogout}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 w-full transition"
-                      >
-                        <LogOut className="w-4 h-4" />
-                        Logout
-                      </button>
+                        {user?.role}
+                      </span>
                     </div>
-                  </>
+
+                    {customerMenuItems.map(({ to, label, icon: Icon }) => (
+                      <Link
+                        key={to}
+                        to={to}
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <Icon className="w-4 h-4 text-gray-400" />
+                        {label}
+                      </Link>
+                    ))}
+
+                    <Link
+                      to="/cart"
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                      onClick={() => setIsUserMenuOpen(false)}
+                    >
+                      <ShoppingCart className="w-4 h-4 text-gray-400" />
+                      My Cart
+                      {totalItems > 0 && (
+                        <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
+                          {totalItems}
+                        </span>
+                      )}
+                    </Link>
+
+                    <Link
+                      to="/compare"
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                      onClick={() => setIsUserMenuOpen(false)}
+                    >
+                      <GitCompare className="w-4 h-4 text-gray-400" />
+                      Compare Products
+                      {compareCount > 0 && (
+                        <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
+                          {compareCount}
+                        </span>
+                      )}
+                    </Link>
+
+                    {isAdmin && (
+                      <>
+                        <hr className="my-1 border-gray-100 dark:border-gray-700" />
+                        <div className="px-4 py-1">
+                          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                            Admin
+                          </p>
+                        </div>
+                        {adminMenuItems.map(({ to, label, icon: Icon }) => (
+                          <Link
+                            key={to}
+                            to={to}
+                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                            onClick={() => setIsUserMenuOpen(false)}
+                          >
+                            <Icon className="w-4 h-4 text-gray-400" />
+                            {label}
+                          </Link>
+                        ))}
+                      </>
+                    )}
+
+                    <hr className="my-1 border-gray-100 dark:border-gray-700" />
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 w-full transition"
+                    >
+                      <LogOut className="w-4 h-4" />
+                      Logout
+                    </button>
+                  </div>
                 )}
               </div>
             ) : (
@@ -321,7 +304,7 @@ const Navbar = () => {
             )}
           </nav>
 
-          {/* ── Mobile Toggle ─────────────────────────────────────────────── */}
+          {/* Mobile Toggle */}
           <button
             className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -330,13 +313,12 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* ══════════════════════════════════════════════════════════════════ */}
-        {/* ── Mobile Menu ──────────────────────────────────────────────────── */}
-        {/* ══════════════════════════════════════════════════════════════════ */}
+        {/* Mobile Menu with Click Outside */}
         {isMobileOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800 space-y-1 max-h-[80vh] overflow-y-auto">
-
-            {/* Mobile Search */}
+          <div
+            ref={mobileMenuRef}
+            className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800 space-y-1 max-h-[80vh] overflow-y-auto animate-fadeIn"
+          >
             <form onSubmit={handleSearch} className="mb-3">
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -350,31 +332,6 @@ const Navbar = () => {
               </div>
             </form>
 
-            {/* Mobile Quick Actions */}
-            <div className="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <LanguageSwitcher />
-              <button
-                onClick={toggleTheme}
-                className="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition"
-              >
-                {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-              </button>
-              <NotificationsDropdown />
-              <Link
-                to="/compare"
-                onClick={() => setIsMobileOpen(false)}
-                className="relative p-2 text-gray-600 dark:text-gray-300"
-              >
-                <GitCompare className="w-5 h-5" />
-                {compareCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
-                    {compareCount}
-                  </span>
-                )}
-              </Link>
-            </div>
-
-            {/* Mobile User Info */}
             {isAuthenticated && (
               <div className="flex items-center gap-3 px-3 py-3 bg-gray-50 dark:bg-gray-800 rounded-lg mb-2">
                 <div className="w-9 h-9 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold shrink-0">
@@ -403,7 +360,6 @@ const Navbar = () => {
               </div>
             )}
 
-            {/* ── Mobile Nav Links ─────────────────────────────────────────── */}
             <Link
               to="/products"
               className="flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
@@ -447,7 +403,6 @@ const Navbar = () => {
 
             {isAuthenticated ? (
               <>
-                {/* Customer Links */}
                 {customerMenuItems.map(({ to, label, icon: Icon }) => (
                   <Link
                     key={to}
@@ -469,7 +424,6 @@ const Navbar = () => {
                   Addresses
                 </Link>
 
-                {/* ── Admin Section (Mobile) ────────────────────────────────── */}
                 {isAdmin && (
                   <>
                     <hr className="my-2 border-gray-100 dark:border-gray-800" />
@@ -492,7 +446,6 @@ const Navbar = () => {
                   </>
                 )}
 
-                {/* Logout */}
                 <hr className="border-gray-100 dark:border-gray-800 my-1" />
                 <button
                   onClick={handleLogout}

@@ -3,6 +3,7 @@ import { Bell, X, CheckCheck, Trash2, Info, CheckCircle, AlertTriangle, XCircle 
 import { useSignalR } from "@/hooks/useSignalR";
 import { cn } from "@/utils/cn";
 import { useAuth } from "@/hooks/useAuth";
+import { useClickOutside } from "@/hooks/useClickOutside";
 
 const iconMap = {
   info:    { icon: Info,           color: "text-blue-500 bg-blue-50" },
@@ -16,6 +17,11 @@ const NotificationsDropdown = () => {
   const { notifications, unreadCount, connected, markAsRead, markAllAsRead, clearAll } = useSignalR();
   const [isOpen, setIsOpen] = useState(false);
 
+  const ref = useClickOutside<HTMLDivElement>(
+    () => setIsOpen(false),
+    isOpen
+  );
+
   if (!isAuthenticated) return null;
 
   const timeAgo = (timestamp: string) => {
@@ -27,7 +33,7 @@ const NotificationsDropdown = () => {
   };
 
   return (
-    <div className="relative">
+    <div ref={ref} className="relative">
       {/* Bell Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
