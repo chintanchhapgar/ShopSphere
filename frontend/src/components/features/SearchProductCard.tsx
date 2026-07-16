@@ -8,6 +8,8 @@ import { formatPrice } from "@/utils/formatPrice";
 import { cn } from "@/utils/cn";
 import type { ProductSearchItem } from "@/types";
 import toast from "react-hot-toast";
+import { useCompare } from "@/hooks/useCompare";
+import { GitCompare } from "lucide-react";
 
 interface SearchProductCardProps {
   product: ProductSearchItem;
@@ -25,6 +27,24 @@ const SearchProductCard = ({
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [imgError, setImgError]         = useState(false);
   const [wishLoading, setWishLoading]   = useState(false);
+
+  const { addToCompare, isInCompare, removeFromCompare, isFull } = useCompare();
+  const inCompare = isInCompare(product.id);
+
+  const handleCompare = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (inCompare) {
+      removeFromCompare(product.id);
+      toast.success("Removed from comparison");
+    } else if (isFull) {
+      toast.error("Maximum 4 products can be compared");
+    } else {
+      addToCompare(product);
+      toast.success("Added to comparison");
+    }
+  };
 
   // ✅ Sync wishlist state from parent
   useEffect(() => {
@@ -113,6 +133,19 @@ const SearchProductCard = ({
               isWishlisted ? "fill-red-500 text-red-500" : "text-gray-400 hover:text-red-400"
             )}
           />
+        </button>
+
+        <button
+          onClick={handleCompare}
+          className={cn(
+            "absolute top-2 left-2 p-1.5 rounded-full shadow-md transition opacity-0 group-hover:opacity-100",
+            inCompare
+              ? "bg-primary-600 text-white opacity-100"
+              : "bg-white text-gray-400 hover:text-primary-600"
+          )}
+          title={inCompare ? "Remove from comparison" : "Add to comparison"}
+        >
+          <GitCompare className="w-4 h-4" />
         </button>
 
         {product.stock > 0 && product.stock <= 5 && (

@@ -20,26 +20,29 @@ import {
   Warehouse,
   Sun,
   Moon,
+  GitCompare,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
+import { useTheme } from "@/hooks/useTheme";
+import { useCompare } from "@/hooks/useCompare";
 import { cn } from "@/utils/cn";
 import { APP_NAME } from "@/utils/constants";
-import { waitForDebugger } from "inspector";
-import { useTheme } from "@/hooks/useTheme";
 import NotificationsDropdown from "@/components/features/NotificationsDropdown";
 import LanguageSwitcher from "@/components/features/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useAuth();
-  const { totalItems } = useCart();
-  const navigate = useNavigate();
+  const { totalItems }                    = useCart();
+  const { theme, toggleTheme }            = useTheme();
+  const { count: compareCount }           = useCompare();
+  const { t }                             = useTranslation();
+  const navigate                          = useNavigate();
+
   const [isMobileOpen, setIsMobileOpen]     = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [searchValue, setSearchValue]       = useState("");
-  const { theme, toggleTheme } = useTheme();
-  const { t } = useTranslation();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,19 +70,19 @@ const Navbar = () => {
   const customerMenuItems = [
     { to: "/profile",  label: "My Profile", icon: User },
     { to: "/orders",   label: "My Orders",  icon: Package },
-    { to: "/wishlist", label: "Wishlist",    icon: Heart },
+    { to: "/wishlist", label: "Wishlist",   icon: Heart },
   ];
 
-const adminMenuItems = [
-  { to: "/admin/dashboard",  label: "Dashboard",       icon: LayoutDashboard },
-  { to: "/admin/orders",     label: "Manage Orders",   icon: ShoppingBag },
-  { to: "/admin/products",   label: "Manage Products", icon: Settings },
-  { to: "/admin/inventory",  label: "Manage Inventory",       icon: Warehouse },
-  { to: "/admin/categories", label: "Manage Categories",      icon: FolderTree },
-  { to: "/admin/brands",     label: "Manage Brands",          icon: Award },
-  { to: "/admin/coupons",    label: "Manage Coupons",         icon: Tag },         
-  { to: "/admin/reviews",    label: "Pending Reviews", icon: MessageSquare },
-];
+  const adminMenuItems = [
+    { to: "/admin/dashboard",  label: "Dashboard",         icon: LayoutDashboard },
+    { to: "/admin/orders",     label: "Manage Orders",     icon: ShoppingBag },
+    { to: "/admin/products",   label: "Manage Products",   icon: Settings },
+    { to: "/admin/inventory",  label: "Manage Inventory",  icon: Warehouse },
+    { to: "/admin/categories", label: "Manage Categories", icon: FolderTree },
+    { to: "/admin/brands",     label: "Manage Brands",     icon: Award },
+    { to: "/admin/coupons",    label: "Manage Coupons",    icon: Tag },
+    { to: "/admin/reviews",    label: "Pending Reviews",   icon: MessageSquare },
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800">
@@ -107,7 +110,7 @@ const adminMenuItems = [
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Search products..."
-                className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition"
+                className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-full bg-gray-50 dark:bg-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-400 transition"
               />
             </div>
           </form>
@@ -116,13 +119,15 @@ const adminMenuItems = [
           <nav className="hidden md:flex items-center gap-1">
             <Link
               to="/products"
-              className="px-4 py-2 text-sm text-gray-600 hover:text-primary-600 font-medium transition rounded-lg hover:bg-gray-50"
+              className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
             >
-              Products
+              {t("nav.products", "Products")}
             </Link>
 
+            {/* Language Switcher */}
             <LanguageSwitcher />
 
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
@@ -135,12 +140,27 @@ const adminMenuItems = [
               )}
             </button>
 
+            {/* Notifications */}
             <NotificationsDropdown />
+
+            {/* ── Compare Products ─────────────────────────────────────────── */}
+            <Link
+              to="/compare"
+              className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
+              title="Compare Products"
+            >
+              <GitCompare className="w-5 h-5" />
+              {compareCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium leading-none">
+                  {compareCount}
+                </span>
+              )}
+            </Link>
 
             {/* Cart */}
             <Link
               to="/cart"
-              className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition"
+              className="relative p-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 dark:text-gray-300 dark:hover:bg-gray-800 rounded-lg transition"
             >
               <ShoppingCart className="w-5 h-5" />
               {totalItems > 0 && (
@@ -154,7 +174,7 @@ const adminMenuItems = [
             {isAuthenticated && (
               <Link
                 to="/wishlist"
-                className="p-2 text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-lg transition"
+                className="p-2 text-gray-600 hover:text-red-500 hover:bg-red-50 dark:text-gray-300 dark:hover:bg-red-900/20 rounded-lg transition"
               >
                 <Heart className="w-5 h-5" />
               </Link>
@@ -165,7 +185,7 @@ const adminMenuItems = [
               <div className="relative ml-1">
                 <button
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                  className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition"
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
                 >
                   <div className="w-7 h-7 bg-primary-600 text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">
                     {userInitial}
@@ -182,14 +202,14 @@ const adminMenuItems = [
                       className="fixed inset-0 z-10"
                       onClick={() => setIsUserMenuOpen(false)}
                     />
-                    <div className="absolute right-0 top-full mt-1 w-56 bg-white rounded-xl border border-gray-100 shadow-lg py-1 z-20 max-h-[80vh] overflow-y-auto">
+                    <div className="absolute right-0 top-full mt-1 w-56 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 shadow-lg py-1 z-20 max-h-[80vh] overflow-y-auto">
 
                       {/* User Info */}
-                      <div className="px-4 py-3 border-b border-gray-50">
-                        <p className="text-sm font-semibold text-gray-800 truncate">
+                      <div className="px-4 py-3 border-b border-gray-50 dark:border-gray-700">
+                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 truncate">
                           {userFullName}
                         </p>
-                        <p className="text-xs text-gray-500 truncate">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
                           {user?.email}
                         </p>
                         <span
@@ -209,22 +229,18 @@ const adminMenuItems = [
                         <Link
                           key={to}
                           to={to}
-                          className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
+                          className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
                           <Icon className="w-4 h-4 text-gray-400" />
                           {label}
-                          {label === "My Cart" && totalItems > 0 && (
-                            <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
-                              {totalItems}
-                            </span>
-                          )}
                         </Link>
                       ))}
 
+                      {/* My Cart */}
                       <Link
                         to="/cart"
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         <ShoppingCart className="w-4 h-4 text-gray-400" />
@@ -236,10 +252,25 @@ const adminMenuItems = [
                         )}
                       </Link>
 
+                      {/* Compare */}
+                      <Link
+                        to="/compare"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <GitCompare className="w-4 h-4 text-gray-400" />
+                        Compare Products
+                        {compareCount > 0 && (
+                          <span className="ml-auto bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
+                            {compareCount}
+                          </span>
+                        )}
+                      </Link>
+
                       {/* Admin Menu */}
                       {isAdmin && (
                         <>
-                          <hr className="my-1 border-gray-100" />
+                          <hr className="my-1 border-gray-100 dark:border-gray-700" />
                           <div className="px-4 py-1">
                             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                               Admin
@@ -249,7 +280,7 @@ const adminMenuItems = [
                             <Link
                               key={to}
                               to={to}
-                              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition"
+                              className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
                               onClick={() => setIsUserMenuOpen(false)}
                             >
                               <Icon className="w-4 h-4 text-gray-400" />
@@ -260,10 +291,10 @@ const adminMenuItems = [
                       )}
 
                       {/* Logout */}
-                      <hr className="my-1 border-gray-100" />
+                      <hr className="my-1 border-gray-100 dark:border-gray-700" />
                       <button
                         onClick={handleLogout}
-                        className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 w-full transition"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 w-full transition"
                       >
                         <LogOut className="w-4 h-4" />
                         Logout
@@ -276,7 +307,7 @@ const adminMenuItems = [
               <div className="flex items-center gap-2 ml-1">
                 <Link
                   to="/login"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary-600 transition rounded-lg hover:bg-gray-50"
+                  className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 transition rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800"
                 >
                   Login
                 </Link>
@@ -292,7 +323,7 @@ const adminMenuItems = [
 
           {/* ── Mobile Toggle ─────────────────────────────────────────────── */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition"
+            className="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
           >
             {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -303,7 +334,7 @@ const adminMenuItems = [
         {/* ── Mobile Menu ──────────────────────────────────────────────────── */}
         {/* ══════════════════════════════════════════════════════════════════ */}
         {isMobileOpen && (
-          <div className="md:hidden py-4 border-t border-gray-100 space-y-1 max-h-[80vh] overflow-y-auto">
+          <div className="md:hidden py-4 border-t border-gray-100 dark:border-gray-800 space-y-1 max-h-[80vh] overflow-y-auto">
 
             {/* Mobile Search */}
             <form onSubmit={handleSearch} className="mb-3">
@@ -314,23 +345,49 @@ const adminMenuItems = [
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                   placeholder="Search products..."
-                  className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                  className="w-full pl-10 pr-4 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
                 />
               </div>
             </form>
 
+            {/* Mobile Quick Actions */}
+            <div className="flex items-center justify-between px-3 py-2 mb-2 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <LanguageSwitcher />
+              <button
+                onClick={toggleTheme}
+                className="p-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition"
+              >
+                {theme === "light" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+              </button>
+              <NotificationsDropdown />
+              <Link
+                to="/compare"
+                onClick={() => setIsMobileOpen(false)}
+                className="relative p-2 text-gray-600 dark:text-gray-300"
+              >
+                <GitCompare className="w-5 h-5" />
+                {compareCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary-600 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                    {compareCount}
+                  </span>
+                )}
+              </Link>
+            </div>
+
             {/* Mobile User Info */}
             {isAuthenticated && (
-              <div className="flex items-center gap-3 px-3 py-3 bg-gray-50 rounded-lg mb-2">
+              <div className="flex items-center gap-3 px-3 py-3 bg-gray-50 dark:bg-gray-800 rounded-lg mb-2">
                 <div className="w-9 h-9 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold shrink-0">
                   {userInitial}
                 </div>
                 <div className="overflow-hidden">
-                  <p className="text-sm font-semibold text-gray-800 truncate">
+                  <p className="text-sm font-semibold text-gray-800 dark:text-gray-100 truncate">
                     {userFullName}
                   </p>
                   <div className="flex items-center gap-2">
-                    <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                      {user?.email}
+                    </p>
                     <span
                       className={cn(
                         "px-1.5 py-0.5 text-xs rounded-full font-medium shrink-0",
@@ -349,16 +406,16 @@ const adminMenuItems = [
             {/* ── Mobile Nav Links ─────────────────────────────────────────── */}
             <Link
               to="/products"
-              className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+              className="flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
               onClick={() => setIsMobileOpen(false)}
             >
               <Package className="w-4 h-4 text-gray-400" />
-              {t("nav.products")}
+              Products
             </Link>
 
             <Link
               to="/cart"
-              className="flex items-center justify-between px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+              className="flex items-center justify-between px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
               onClick={() => setIsMobileOpen(false)}
             >
               <div className="flex items-center gap-2">
@@ -372,6 +429,22 @@ const adminMenuItems = [
               )}
             </Link>
 
+            <Link
+              to="/compare"
+              className="flex items-center justify-between px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
+              onClick={() => setIsMobileOpen(false)}
+            >
+              <div className="flex items-center gap-2">
+                <GitCompare className="w-4 h-4 text-gray-400" />
+                Compare
+              </div>
+              {compareCount > 0 && (
+                <span className="bg-primary-100 text-primary-700 text-xs rounded-full px-2 py-0.5 font-medium">
+                  {compareCount}
+                </span>
+              )}
+            </Link>
+
             {isAuthenticated ? (
               <>
                 {/* Customer Links */}
@@ -379,7 +452,7 @@ const adminMenuItems = [
                   <Link
                     key={to}
                     to={to}
-                    className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                    className="flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
                     onClick={() => setIsMobileOpen(false)}
                   >
                     <Icon className="w-4 h-4 text-gray-400" />
@@ -389,7 +462,7 @@ const adminMenuItems = [
 
                 <Link
                   to="/addresses/new"
-                  className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                  className="flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
                   onClick={() => setIsMobileOpen(false)}
                 >
                   <MapPin className="w-4 h-4 text-gray-400" />
@@ -399,7 +472,7 @@ const adminMenuItems = [
                 {/* ── Admin Section (Mobile) ────────────────────────────────── */}
                 {isAdmin && (
                   <>
-                    <hr className="my-2 border-gray-100" />
+                    <hr className="my-2 border-gray-100 dark:border-gray-800" />
                     <div className="px-3 py-1">
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
                         Admin Panel
@@ -409,7 +482,7 @@ const adminMenuItems = [
                       <Link
                         key={to}
                         to={to}
-                        className="flex items-center gap-2 px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                        className="flex items-center gap-2 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
                         onClick={() => setIsMobileOpen(false)}
                       >
                         <Icon className="w-4 h-4 text-gray-400" />
@@ -420,10 +493,10 @@ const adminMenuItems = [
                 )}
 
                 {/* Logout */}
-                <hr className="border-gray-100 my-1" />
+                <hr className="border-gray-100 dark:border-gray-800 my-1" />
                 <button
                   onClick={handleLogout}
-                  className="flex items-center gap-2 w-full px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition"
+                  className="flex items-center gap-2 w-full px-3 py-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition"
                 >
                   <LogOut className="w-4 h-4" />
                   Logout
@@ -431,10 +504,10 @@ const adminMenuItems = [
               </>
             ) : (
               <>
-                <hr className="border-gray-100 my-1" />
+                <hr className="border-gray-100 dark:border-gray-800 my-1" />
                 <Link
                   to="/login"
-                  className="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                  className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition"
                   onClick={() => setIsMobileOpen(false)}
                 >
                   Login

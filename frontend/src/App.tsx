@@ -34,6 +34,7 @@ import AdminInventory from "@/pages/admin/AdminInventory";
 import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
 import Returns from "@/pages/Returns";
+import Compare from "@/pages/Compare";
 
 const App = () => {
   return (
@@ -48,7 +49,8 @@ const App = () => {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-
+        <Route path="/compare" element={<Compare />} />
+        
         {/* Protected */}
         <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
