@@ -21,6 +21,7 @@ import {
   Sun,
   Moon,
   GitCompare,
+  BarChart3,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useCart } from "@/hooks/useCart";
@@ -92,6 +93,7 @@ const Navbar = () => {
     { to: "/admin/brands",     label: "Manage Brands",     icon: Award },
     { to: "/admin/coupons",    label: "Manage Coupons",    icon: Tag },
     { to: "/admin/reviews",    label: "Pending Reviews",   icon: MessageSquare },
+    { to: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   ];
 
   return (

@@ -30,6 +30,7 @@ import AdminCategories from "@/pages/admin/AdminCategories";
 import AdminBrands from "@/pages/admin/AdminBrands";
 import AdminCoupons from "@/pages/admin/AdminCoupons";
 import AdminInventory from "@/pages/admin/AdminInventory";
+import AdminAnalytics from "@/pages/admin/AdminAnalytics";
 
 import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
@@ -50,7 +51,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/compare" element={<Compare />} />
-        
+
         {/* Protected */}
         <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
@@ -74,6 +75,7 @@ const App = () => {
         <Route path="/admin/brands" element={<ProtectedRoute><AdminBrands /></ProtectedRoute>} />
         <Route path="/admin/coupons" element={<ProtectedRoute><AdminCoupons /></ProtectedRoute>} />
         <Route path="/admin/inventory" element={<ProtectedRoute><AdminInventory /></ProtectedRoute>} />
+        <Route path="/admin/analytics" element={<ProtectedRoute><AdminAnalytics /></ProtectedRoute>} />
         
         // Inside public routes:
         <Route path="/faq" element={<FAQ />} />
