@@ -1891,6 +1891,42 @@
         }
       }
     },
+    "/api/stripe/checkout/{orderId}": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "operationId": "CreateStripeCheckout",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/stripe/webhook": {
+      "post": {
+        "tags": [
+          "Stripe"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/test/email": {
       "post": {
         "tags": [

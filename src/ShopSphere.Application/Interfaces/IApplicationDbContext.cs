@@ -19,5 +19,5 @@ public interface IApplicationDbContext
     DbSet<OrderItem> OrderItems { get; }
     DbSet<Wishlist> Wishlists { get; }
     DbSet<WishlistItem> WishlistItems { get; }
-
+    DbSet<Payment> Payments { get; }
 }

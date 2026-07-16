@@ -150,6 +150,7 @@ public static class DependencyInjection
         services.AddScoped<IAuditService, AuditService>();
         services.AddScoped<IAIChatService, OpenAIService>();
         services.AddScoped<IPushNotificationService, PushNotificationService>();
+        services.AddScoped<IStripeService, StripeService>();
 
         services.AddSingleton<IConnectionMultiplexer>(_ =>
             ConnectionMultiplexer.Connect(

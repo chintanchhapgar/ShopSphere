@@ -39,6 +39,7 @@ public static class EndpointExtensions
         app.MapAddressEndpoints();
         app.MapDashboardEndpoints();
         app.MapAIChatEndpoints();
+        app.MapStripeEndpoints();
 
         return app;
     }

@@ -3,6 +3,70 @@
   "WorkspaceRootPath": "D:\\Projects\\ShopSphere\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\endpoints\\payments\\stripeendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\endpoints\\payments\\stripeendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\payments\\stripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\payments\\stripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\payments\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\payments\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\payments\\istripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\payments\\istripeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\payments\\dtos\\paymentintentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\payments\\dtos\\paymentintentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\payments\\dtos\\checkoutsessionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\payments\\dtos\\checkoutsessionresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\payments\\dtos\\stripelineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\payments\\dtos\\stripelineitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\persistence\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\persistence\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|d:\\projects\\shopsphere\\src\\shopsphere.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF66BA50-5081-4CB5-AAEF-59A9111136C3}|src\\ShopSphere.Application\\ShopSphere.Application.csproj|solutionrelative:src\\shopsphere.application\\interfaces\\iapplicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\entities\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\entities\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\endpoints\\endpointextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\endpoints\\endpointextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -31,10 +95,6 @@
       "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|d:\\projects\\shopsphere\\src\\shopsphere.infrastructure\\pushnotification\\pushnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{49FF608B-D46D-4346-AF2F-DCA922178DF5}|src\\ShopSphere.Infrastructure\\ShopSphere.Infrastructure.csproj|solutionrelative:src\\shopsphere.infrastructure\\pushnotification\\pushnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -61,10 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|d:\\projects\\shopsphere\\src\\shopsphere.domain\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A620C99-96B5-48DB-941B-31429F5E0CF5}|src\\ShopSphere.Domain\\ShopSphere.Domain.csproj|solutionrelative:src\\shopsphere.domain\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|d:\\projects\\shopsphere\\src\\shopsphere.api\\endpoints\\endpointextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{671CAC05-20B4-41B9-A369-7E1FDF522E28}|src\\ShopSphere.Api\\ShopSphere.Api.csproj|solutionrelative:src\\shopsphere.api\\endpoints\\endpointextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 24,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,43 +210,189 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AIChatEndpoints.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
-              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAQwDkAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "IStripeService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\IStripeService.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Payments\\IStripeService.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\IStripeService.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Payments\\IStripeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:30:28.829Z"
+              "WhenOpened": "2026-07-16T04:24:15.041Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAIChatService.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
-              "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "PaymentIntentResponse.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\DTOs\\PaymentIntentResponse.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Payments\\DTOs\\PaymentIntentResponse.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\DTOs\\PaymentIntentResponse.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Payments\\DTOs\\PaymentIntentResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T13:28:56.053Z"
+              "WhenOpened": "2026-07-16T04:22:39.88Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CreateOrderCommandHandler.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
-              "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwDYAAAAsAAAAAAAAAA==",
+              "Title": "CheckoutSessionResponse.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\DTOs\\CheckoutSessionResponse.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Payments\\DTOs\\CheckoutSessionResponse.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\DTOs\\CheckoutSessionResponse.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Payments\\DTOs\\CheckoutSessionResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T12:58:43.313Z"
+              "WhenOpened": "2026-07-16T04:22:27.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StripeService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\StripeService.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Payments\\StripeService.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\StripeService.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Payments\\StripeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:41:40.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\PaymentService.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Payments\\PaymentService.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\PaymentService.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Payments\\PaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:41:30.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StripeEndpoints.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\Payments\\StripeEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\Payments\\StripeEndpoints.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\Payments\\StripeEndpoints.cs",
+              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\Payments\\StripeEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:42:53.177Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "StripeLineItem.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\DTOs\\StripeLineItem.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Payments\\DTOs\\StripeLineItem.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Payments\\DTOs\\StripeLineItem.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Payments\\DTOs\\StripeLineItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T04:22:13.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\Order.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Order.cs",
+              "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Order.cs",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAAOcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:48:38.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\OrderItem.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\OrderItem.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\OrderItem.cs",
+              "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\OrderItem.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAUwC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:48:54.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Payment.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Entities\\Payment.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Entities\\Payment.cs",
+              "RelativeToolTip": "src\\ShopSphere.Domain\\Entities\\Payment.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAuwFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:49:07.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Enums\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Enums\\PaymentStatus.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Enums\\PaymentStatus.cs",
+              "RelativeToolTip": "src\\ShopSphere.Domain\\Enums\\PaymentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:49:18.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:49:30.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\Persistence\\ApplicationDbContext.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAgwEYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:50:08.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "src\\ShopSphere.Domain\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T03:48:18.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Program.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Program.cs",
@@ -202,20 +404,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 16,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\appsettings.json",
               "RelativeDocumentMoniker": "src\\ShopSphere.Api\\appsettings.json",
               "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\appsettings.json",
               "RelativeToolTip": "src\\ShopSphere.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-07-15T12:07:41.409Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
+              "Title": "EndpointExtensions.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
+              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T11:16:07.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CreateOrderCommandHandler.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Features\\Orders\\CreateOrder\\CreateOrderCommandHandler.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAQwDYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T12:58:43.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAQwJkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T12:45:00.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IAIChatService.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
+              "RelativeToolTip": "src\\ShopSphere.Application\\Interfaces\\IAIChatService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T13:28:56.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AIChatEndpoints.cs",
+              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
+              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
+              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\AI\\AIChatEndpoints.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwDkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-15T13:30:28.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "OpenAIService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\AI\\OpenAIService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\AI\\OpenAIService.cs",
@@ -223,23 +487,12 @@
               "RelativeToolTip": "src\\ShopSphere.Infrastructure\\AI\\OpenAIService.cs",
               "ViewState": "AgIAAJYAAAAAAAAAAAAmwMEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:00:55.876Z"
+              "WhenOpened": "2026-07-15T11:00:55.876Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "src\\ShopSphere.Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T12:45:00.677Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "PushNotificationHub.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\PushNotification\\PushNotificationHub.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\PushNotification\\PushNotificationHub.cs",
@@ -251,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 20,
               "Title": "CreateOrderCommandHandlerTests.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\tests\\ShopSphere.ApplicationTests\\Features\\Orders\\CreateOrderCommandHandlerTests.cs",
               "RelativeDocumentMoniker": "tests\\ShopSphere.ApplicationTests\\Features\\Orders\\CreateOrderCommandHandlerTests.cs",
@@ -263,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "PushNotificationService.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\PushNotification\\PushNotificationService.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\PushNotification\\PushNotificationService.cs",
@@ -275,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 27,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\OrderRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\OrderRepository.cs",
@@ -287,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 26,
               "Title": "IProductRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IProductRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IProductRepository.cs",
@@ -299,7 +552,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 25,
               "Title": "ProductRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\ProductRepository.cs",
@@ -311,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 29,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Domain\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Domain\\Interfaces\\IRepository.cs",
@@ -323,7 +576,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 28,
               "Title": "Repository.cs",
               "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "src\\ShopSphere.Infrastructure\\Persistence\\Repositories\\Repository.cs",
@@ -332,18 +585,6 @@
               "ViewState": "AgIAABEAAAAAAAAAAAASwCgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-15T11:52:14.163Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "EndpointExtensions.cs",
-              "DocumentMoniker": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
-              "RelativeDocumentMoniker": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
-              "ToolTip": "D:\\Projects\\ShopSphere\\src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
-              "RelativeToolTip": "src\\ShopSphere.Api\\Endpoints\\EndpointExtensions.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T11:16:07.204Z"
             }
           ]
         }
