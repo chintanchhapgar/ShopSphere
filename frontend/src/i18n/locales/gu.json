@@ -27,10 +27,35 @@
   },
   "home": {
     "hero_title": "સ્માર્ટ ખરીદો, વધુ સારું જીવો",
-    "hero_subtitle": "દરેક શ્રેણીમાં હજારો ઉત્પાદનો શોધો.",
+    "hero_subtitle": "દરેક શ્રેણીમાં હજારો ઉત્પાદનો શોધો, અદમ્ય કિંમતો અને ઝડપી ડિલિવરી સાથે.",
     "shop_now": "હમણાં ખરીદો",
+    "create_account": "એકાઉન્ટ બનાવો",
+    "new_arrivals": "દર અઠવાડિયે નવા આગમન",
     "shop_by_category": "શ્રેણી પ્રમાણે ખરીદો",
+    "browse_categories": "અમારી વિશાળ શ્રેણી બ્રાઉઝ કરો",
     "top_brands": "ટોચની બ્રાન્ડ્સ",
-    "featured_products": "વિશેષ ઉત્પાદનો"
+    "trusted_brands": "વિશ્વસનીય બ્રાન્ડ્સથી ખરીદો",
+    "featured_products": "વિશેષ ઉત્પાદનો",
+    "handpicked": "તમારા માટે પસંદ કરેલા",
+    "view_all": "બધું જુઓ",
+    "no_products": "કોઈ ઉત્પાદનો ઉપલબ્ધ નથી",
+    "login_to_see": "ઉત્પાદનો જોવા માટે લોગિન કરો",
+    "login_browse": "ઉત્પાદનો બ્રાઉઝ કરવા માટે લોગિન કરો",
+    "features": {
+      "free_shipping": "મફત શિપિંગ",
+      "free_shipping_desc": "₹500થી વધુના તમામ ઓર્ડર પર",
+      "secure_payment": "સુરક્ષિત ચુકવણી",
+      "secure_payment_desc": "100% સુરક્ષિત વ્યવહારો",
+      "easy_returns": "સરળ પરત",
+      "easy_returns_desc": "30-દિવસની પરત નીતિ",
+      "top_rated": "ટોચ રેટેડ",
+      "top_rated_desc": "હજારો દ્વારા વિશ્વસનીય"
+    },
+    "newsletter": {
+      "title": "અપડેટ રહો",
+      "subtitle": "વિશિષ્ટ સોદા અને નવા આગમન મેળવવા સબ્સ્ક્રાઇબ કરો",
+      "placeholder": "તમારો ઈમેલ દાખલ કરો",
+      "subscribe": "સબ્સ્ક્રાઇબ કરો"
+    }
   }
 }

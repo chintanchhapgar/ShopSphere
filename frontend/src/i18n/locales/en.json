@@ -42,12 +42,15 @@
     "create_account": "Create Account",
     "new_arrivals": "New arrivals every week",
     "shop_by_category": "Shop by Category",
+    "browse_categories": "Browse our wide range of categories",
     "top_brands": "Top Brands",
+    "trusted_brands": "Shop from trusted brands",
     "featured_products": "Featured Products",
     "handpicked": "Handpicked for you",
     "view_all": "View All",
-    "browse_categories": "Browse our wide range of categories",
-    "trusted_brands": "Shop from trusted brands",
+    "no_products": "No products available",
+    "login_to_see": "Login to see products",
+    "login_browse": "Login to browse products",
     "features": {
       "free_shipping": "Free Shipping",
       "free_shipping_desc": "On all orders over ₹500",
@@ -57,6 +60,12 @@
       "easy_returns_desc": "30-day return policy",
       "top_rated": "Top Rated",
       "top_rated_desc": "Trusted by thousands"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Subscribe to get exclusive deals and new arrivals",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
     }
   },
   "auth": {
