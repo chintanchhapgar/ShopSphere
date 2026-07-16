@@ -110,15 +110,12 @@ const Checkout = () => {
     setIsPlacingOrder(true);
 
     try {
-      // ── STEP 1: Create Order ─────────────────────────────────────────────
-      console.log("📦 Creating order...");
+      // ── STEP 1: Create Order ──────────────────────────────────────────
       toast.loading("Creating your order...", { id: "checkout" });
 
       const orderResult = await orderApi.createOrder({
         addressId: selectedAddressId,
       });
-
-      console.log("✅ Order created:", orderResult);
 
       const orderId =
         typeof orderResult === "string"
@@ -129,16 +126,17 @@ const Checkout = () => {
         throw new Error("Order created but no ID returned");
       }
 
-      // ── STEP 2: Handle Payment Based on Method ───────────────────────────
+      // ✅ CLEAR CART IMMEDIATELY (Backend auto-clears too)
+      dispatch(resetCart());
 
-      // ✅ STRIPE PAYMENT - Redirect to Stripe Checkout
+      // ── STEP 2: Handle Payment ────────────────────────────────────────
+
+      // STRIPE
       if (method.isStripe) {
-        console.log("💳 Initiating Stripe checkout for order:", orderId);
         toast.loading("Redirecting to Stripe...", { id: "checkout" });
 
         try {
           const stripeResponse = await stripeApi.createCheckoutSession(orderId);
-          console.log("✅ Stripe session:", stripeResponse);
 
           if (!stripeResponse.sessionUrl) {
             throw new Error("Failed to create Stripe session");
@@ -146,55 +144,51 @@ const Checkout = () => {
 
           toast.success("Redirecting to secure payment...", { id: "checkout" });
 
-          // Clear cart before redirect
-          await clearCart();
-
-          // Redirect to Stripe (small delay for UX)
           setTimeout(() => {
             window.location.href = stripeResponse.sessionUrl;
           }, 500);
           return;
         } catch (stripeErr) {
-          console.error("❌ Stripe error:", stripeErr);
+          console.error("Stripe error:", stripeErr);
           toast.error(
             (stripeErr as Error).message || "Stripe payment failed",
             { id: "checkout" }
           );
-          // Order is created but Stripe failed - redirect to payment page for retry
           setTimeout(() => navigate(`/orders/${orderId}/payment`), 1500);
           return;
         }
       }
 
-      // ✅ COD - Just confirm order
+      // COD
       if (method.value === "cod") {
         await orderApi.initiatePayment(orderId, {
           paymentMethod: method.apiValue,
         });
 
-        await clearCart();
         toast.success("Order placed! Pay on delivery.", { id: "checkout" });
         setTimeout(() => navigate(`/orders/${orderId}`), 1000);
         return;
       }
 
-      // ✅ PAYPAL - Initiate payment then redirect
+      // PAYPAL
       if (method.value === "paypal") {
         await orderApi.initiatePayment(orderId, {
           paymentMethod: method.apiValue,
         });
 
-        await clearCart();
         toast.success("Order placed!", { id: "checkout" });
         setTimeout(() => navigate(`/orders/${orderId}/payment`), 1000);
         return;
       }
     } catch (err) {
-      console.error("❌ Checkout error:", err);
+      console.error("Checkout error:", err);
       toast.error(
         (err as Error).message || "Failed to place order",
         { id: "checkout" }
       );
+
+      // ✅ Refresh cart in case it was partially updated
+      await fetchCart();
     } finally {
       setIsPlacingOrder(false);
     }

@@ -3,25 +3,30 @@ import { cartApi } from "@/api/cart.api";
 import type { Cart, AddCartItemRequest } from "@/types";
 
 interface CartState {
-  data: Cart | null;
-  isLoading: boolean;
-  error: string | null;
+  data:       Cart | null;
+  isLoading:  boolean;
+  error:      string | null;
   couponCode: string | null;
 }
 
 const initialState: CartState = {
-  data: null,
-  isLoading: false,
-  error: null,
+  data:       null,
+  isLoading:  false,
+  error:      null,
   couponCode: null,
 };
 
-// All thunks re-fetch cart after action
+// ═══════════════════════════════════════════════════════════════════════════
+// Thunks
+// ═══════════════════════════════════════════════════════════════════════════
 export const fetchCartThunk = createAsyncThunk<Cart, void, { rejectValue: string }>(
   "cart/fetch",
   async (_, { rejectWithValue }) => {
-    try { return await cartApi.getCart(); }
-    catch (err) { return rejectWithValue((err as Error).message); }
+    try {
+      return await cartApi.getCart();
+    } catch (err) {
+      return rejectWithValue((err as Error).message);
+    }
   }
 );
 
@@ -31,17 +36,25 @@ export const addToCartThunk = createAsyncThunk<Cart, AddCartItemRequest, { rejec
     try {
       await cartApi.addItem(data);
       return await cartApi.getCart();
-    } catch (err) { return rejectWithValue((err as Error).message); }
+    } catch (err) {
+      return rejectWithValue((err as Error).message);
+    }
   }
 );
 
-export const updateCartItemThunk = createAsyncThunk<Cart, { itemId: string; quantity: number }, { rejectValue: string }>(
+export const updateCartItemThunk = createAsyncThunk<
+  Cart,
+  { itemId: string; quantity: number },
+  { rejectValue: string }
+>(
   "cart/updateItem",
   async ({ itemId, quantity }, { rejectWithValue }) => {
     try {
       await cartApi.updateItem(itemId, { quantity });
       return await cartApi.getCart();
-    } catch (err) { return rejectWithValue((err as Error).message); }
+    } catch (err) {
+      return rejectWithValue((err as Error).message);
+    }
   }
 );
 
@@ -51,15 +64,20 @@ export const removeFromCartThunk = createAsyncThunk<Cart, string, { rejectValue:
     try {
       await cartApi.removeItem(itemId);
       return await cartApi.getCart();
-    } catch (err) { return rejectWithValue((err as Error).message); }
+    } catch (err) {
+      return rejectWithValue((err as Error).message);
+    }
   }
 );
 
 export const clearCartThunk = createAsyncThunk<void, void, { rejectValue: string }>(
   "cart/clear",
   async (_, { rejectWithValue }) => {
-    try { await cartApi.clearCart(); }
-    catch (err) { return rejectWithValue((err as Error).message); }
+    try {
+      await cartApi.clearCart();
+    } catch (err) {
+      return rejectWithValue((err as Error).message);
+    }
   }
 );
 
@@ -92,10 +110,14 @@ export const removeCouponThunk = createAsyncThunk<Cart, void, { rejectValue: str
   }
 );
 
+// ═══════════════════════════════════════════════════════════════════════════
+// Slice
+// ═══════════════════════════════════════════════════════════════════════════
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    // ✅ Reset cart locally (after order placed)
     resetCart(state) {
       state.data       = null;
       state.error      = null;
@@ -103,15 +125,18 @@ const cartSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // ── Helpers ──────────────────────────────────────────────────────────────
     const setLoading = (state: CartState) => {
       state.isLoading = true;
       state.error     = null;
     };
+
     const setCart = (state: CartState, { payload }: { payload: Cart }) => {
-      state.isLoading = false;
-      state.data      = payload;
+      state.isLoading  = false;
+      state.data       = payload;
+      // Also update coupon code from cart if present
+      if (payload.couponCode) state.couponCode = payload.couponCode;
     };
+
     const setError = (state: CartState, { payload }: { payload: unknown }) => {
       state.isLoading = false;
       state.error     = payload as string;
@@ -122,24 +147,29 @@ const cartSlice = createSlice({
       .addCase(fetchCartThunk.pending, setLoading)
       .addCase(fetchCartThunk.fulfilled, setCart)
       .addCase(fetchCartThunk.rejected, setError)
+
       // Add
       .addCase(addToCartThunk.pending, setLoading)
       .addCase(addToCartThunk.fulfilled, setCart)
       .addCase(addToCartThunk.rejected, setError)
+
       // Update
       .addCase(updateCartItemThunk.pending, setLoading)
       .addCase(updateCartItemThunk.fulfilled, setCart)
       .addCase(updateCartItemThunk.rejected, setError)
+
       // Remove
       .addCase(removeFromCartThunk.pending, setLoading)
       .addCase(removeFromCartThunk.fulfilled, setCart)
       .addCase(removeFromCartThunk.rejected, setError)
+
       // Clear
       .addCase(clearCartThunk.fulfilled, (state) => {
         state.data       = null;
         state.isLoading  = false;
         state.couponCode = null;
       })
+
       // Apply Coupon
       .addCase(applyCouponThunk.pending, setLoading)
       .addCase(applyCouponThunk.fulfilled, (state, { payload }) => {
@@ -148,6 +178,7 @@ const cartSlice = createSlice({
         state.couponCode = payload.code;
       })
       .addCase(applyCouponThunk.rejected, setError)
+
       // Remove Coupon
       .addCase(removeCouponThunk.pending, setLoading)
       .addCase(removeCouponThunk.fulfilled, (state, { payload }) => {

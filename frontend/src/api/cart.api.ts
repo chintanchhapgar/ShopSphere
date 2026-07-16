@@ -6,8 +6,18 @@ import type {
   ApplyCouponCommand,
 } from "@/types";
 
+const emptyCart: Cart = {
+  items: [],
+  total: 0,
+  couponCode: null,
+  discountAmount: 0,
+};
+
 const unwrapCart = (resData: any): Cart => {
   const data = resData?.value ?? resData?.data ?? resData;
+
+  if (!data) return emptyCart;
+
   return {
     items:          Array.isArray(data?.items) ? data.items : [],
     total:          data?.total ?? 0,
@@ -17,9 +27,19 @@ const unwrapCart = (resData: any): Cart => {
 };
 
 export const cartApi = {
+  // GET /api/cart
   getCart: async (): Promise<Cart> => {
-    const res = await axiosInstance.get("/cart");
-    return unwrapCart(res.data);
+    try {
+      const res = await axiosInstance.get("/cart");
+      console.log("=== CART RAW ===", res.data);
+      return unwrapCart(res.data);
+    } catch (err: any) {
+      // If cart doesn't exist, return empty
+      if (err?.response?.status === 404) {
+        return emptyCart;
+      }
+      throw err;
+    }
   },
 
   addItem: async (data: AddCartItemRequest): Promise<void> => {
@@ -38,12 +58,10 @@ export const cartApi = {
     await axiosInstance.delete("/cart");
   },
 
-  // POST /api/cart/coupon
   applyCoupon: async (data: ApplyCouponCommand): Promise<void> => {
     await axiosInstance.post("/cart/coupon", data);
   },
 
-  // DELETE /api/cart/coupon
   removeCoupon: async (): Promise<void> => {
     await axiosInstance.delete("/cart/coupon");
   },
